@@ -44,7 +44,7 @@ useSchemaOrg([
       <SectionSocialProof />
       <SectionPrice />
       <SectionFAQ />
-      <section id="formulario" aria-label="Formulário de consultoria" class="py-16 px-6 bg-[var(--color-brand-bg)]">
+      <section id="formulario" aria-label="Formulário de consultoria" class="py-16 px-6 bg-transparent">
         <SectionLeadForm />
       </section>
     </main>
