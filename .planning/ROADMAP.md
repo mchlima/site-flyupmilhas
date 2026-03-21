@@ -62,7 +62,10 @@ Plans:
   3. A valid form submission on the staging URL creates a MongoDB document and shows the user a success message ("Recebi! Marcio vai te chamar no WhatsApp em ate 24h") with no CORS error in the browser console
   4. A form with the honeypot field filled (simulated bot) is rejected at the Fastify layer and never written to MongoDB
   5. Clicking the WhatsApp CTA button opens `wa.me/` in the WhatsApp app with a pre-filled message identifying the visitor as a lead from the landing page
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 03-01-PLAN.md — useLeadForm composable, SectionLeadForm component, app.vue wiring (LEAD-01, LEAD-02, LEAD-03, LEAD-04, LEAD-05, CTA-01)
 
 ---
 
@@ -71,8 +74,8 @@ Plans:
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Infrastructure | 3/3 | Complete |  |
-| 2. Display Sections | 2/3 | In Progress|  |
-| 3. Lead Form & Conversion | 0/? | Not started | - |
+| 2. Display Sections | 3/3 | Complete |  |
+| 3. Lead Form & Conversion | 0/1 | Not started | - |
 
 ---
 
@@ -111,4 +114,4 @@ Plans:
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 after Phase 2 planning (3 plans created)*
+*Last updated: 2026-03-21 after Phase 3 planning (1 plan created)*
