@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: — MVP Launch
 status: unknown
-last_updated: "2026-03-21T07:56:42.599Z"
+last_updated: "2026-03-21T08:17:47.643Z"
 progress:
   total_phases: 3
   completed_phases: 3
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
-**Current Focus:** Phase 04 — visual-overhaul-navigation
+**Current Focus:** Phase 05 — form-polish-footer
 
 ---
 
 ## Current Position
 
-Phase: 04
-Plan: Not started
+Phase: 05 (form-polish-footer) — COMPLETE
+Plan: 1 of 1 (complete)
 
 ## Performance Metrics
 
@@ -37,6 +37,7 @@ Plan: Not started
 | Phase 04-visual-overhaul-navigation P02 | 6 | 3 tasks | 3 files |
 | Phase 04-visual-overhaul-navigation P01 | 1 | 2 tasks | 2 files |
 | Phase 04 P03 | 1 min | 2 tasks | 2 files |
+| Phase 05 P01 | 8 | 2 tasks | 3 files |
 
 ### v1.0 History (all complete)
 
@@ -90,6 +91,9 @@ Plan: Not started
 | opacity/pointer-events overlay over v-if for mobile menu | SSR-safe (ref(false) identical on server+client), avoids DOM CLS on each toggle | Confirmed — implemented in 04-01 |
 | scroll-margin-top: 72px on section[id] | Prevents fixed 64px header overlapping anchored section content; 8px breathing room | Confirmed — implemented in 04-01 |
 | SCROLL_THRESHOLD=64 for smart-sticky | Matches header height; smart-sticky activates only after full header has been scrolled past | Confirmed — implemented in 04-01 |
+| Plain button over UButton for form submit | UButton Reka UI internals fight explicit centering classes; native button with flex guarantees text alignment | Confirmed — implemented in 05-01 |
+| template #label slot on UFormField for white labels | UFormField label text not reachable via class on the component root; slot injection is the Nuxt UI v4 pattern | Confirmed — implemented in 05-01 |
+| Footer navy background as visual bookend | Header and footer both navy creates consistent page frame; off-white body sits between two navy anchors | Confirmed — implemented in 05-01 |
 
 ### Critical Pre-Build Blockers
 
@@ -121,16 +125,18 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 04-03 complete — SectionMethod bento grid + app.vue assembly (2026-03-21)
-**Next action:** Phase 05 — form improvements and footer
+**Last action:** Phase 05-01 complete — form navy card, spacing, centered button, footer redesign (2026-03-21)
+**Next action:** v1.1 milestone complete — awaiting client content and launch approval
 
 **Context for next session:**
 
 - v1.0 all complete (phases 1-3, 7 plans, 26/26 requirements)
 - Phase 4 all complete (3/3 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, app.vue assembly
-- v1.1 Phase 5 remaining: 3 plans (FORM-01, FORM-02, FOOT-01) — form improvements and footer
-- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue)
+- Phase 5 complete (1/1 plan): form navy card, field spacing, centered button, footer with Agencia 201 credit
+- v1.1 milestone COMPLETE — all planned visual refinements shipped
+- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
+- Open: Agencia 201 URL confirmation (https://agencia201.com.br assumed)
 - NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
 
 ---

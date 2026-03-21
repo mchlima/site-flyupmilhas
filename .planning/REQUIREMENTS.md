@@ -77,9 +77,9 @@
 
 ### Formulario & Footer
 
-- [ ] **FORM-01**: Layout do formulario melhorado com melhor espacamento e alinhamento
-- [ ] **FORM-02**: Alinhamento do texto no botao de submit corrigido
-- [ ] **FOOT-01**: Footer inclui credito "Desenvolvido por Agencia 201"
+- [x] **FORM-01**: Layout do formulario melhorado com melhor espacamento e alinhamento
+- [x] **FORM-02**: Alinhamento do texto no botao de submit corrigido
+- [x] **FOOT-01**: Footer inclui credito "Desenvolvido por Agencia 201"
 
 ## v2 Requirements
 
@@ -166,9 +166,9 @@
 | CONT-01 | Phase 4 | Complete |
 | CONT-02 | Phase 4 | Complete |
 | CONT-03 | Phase 4 | Complete |
-| FORM-01 | Phase 5 | Pending |
-| FORM-02 | Phase 5 | Pending |
-| FOOT-01 | Phase 5 | Pending |
+| FORM-01 | Phase 5 | Complete |
+| FORM-02 | Phase 5 | Complete |
+| FOOT-01 | Phase 5 | Complete |
 
 **v1.1 Coverage:**
 - Requirements: 12 total
