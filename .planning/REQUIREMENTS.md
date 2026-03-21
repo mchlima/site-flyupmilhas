@@ -7,26 +7,26 @@
 
 ### Hero & Branding
 
-- [ ] **HERO-01**: Hero section com headline focado em beneficio ("Sua proxima viagem de executiva custa menos que um jantar fora")
-- [ ] **HERO-02**: Subheadline explicando o mecanismo (consultoria personalizada)
-- [ ] **HERO-03**: CTA unico acima da dobra ("Quero minha Consultoria") em cor de destaque (laranja/dourado)
-- [ ] **HERO-04**: Layout mobile-first responsivo com fundo claro (off-white/cinza ultra claro)
-- [ ] **HERO-05**: Tipografia sans-serif moderna (Inter ou Geist) com legibilidade maxima
+- [x] **HERO-01**: Hero section com headline focado em beneficio ("Sua proxima viagem de executiva custa menos que um jantar fora")
+- [x] **HERO-02**: Subheadline explicando o mecanismo (consultoria personalizada)
+- [x] **HERO-03**: CTA unico acima da dobra ("Quero minha Consultoria") em cor de destaque (laranja/dourado)
+- [x] **HERO-04**: Layout mobile-first responsivo com fundo claro (off-white/cinza ultra claro)
+- [x] **HERO-05**: Tipografia sans-serif moderna (Inter ou Geist) com legibilidade maxima
 
 ### Autoridade
 
-- [ ] **AUTH-01**: Secao do especialista com foto, bio e resultados reais do Marcio
-- [ ] **AUTH-02**: Numeros especificos de resultados (milhas acumuladas, paises visitados, economia gerada)
+- [x] **AUTH-01**: Secao do especialista com foto, bio e resultados reais do Marcio
+- [x] **AUTH-02**: Numeros especificos de resultados (milhas acumuladas, paises visitados, economia gerada)
 
 ### Metodo
 
-- [ ] **METD-01**: Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo)
-- [ ] **METD-02**: Descricao clara da oferta (R$200, 2 reunioes, 1 mes acompanhamento, entregaveis)
+- [x] **METD-01**: Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo)
+- [x] **METD-02**: Descricao clara da oferta (R$200, 2 reunioes, 1 mes acompanhamento, entregaveis)
 
 ### Prova Social
 
-- [ ] **SOCL-01**: Secao de depoimentos com nomes reais e resultados especificos (R$ economizados, destinos, classe)
-- [ ] **SOCL-02**: Prints de resultados reais (passagens emitidas, screenshots de economia)
+- [x] **SOCL-01**: Secao de depoimentos com nomes reais e resultados especificos (R$ economizados, destinos, classe)
+- [x] **SOCL-02**: Prints de resultados reais (passagens emitidas, screenshots de economia)
 
 ### Formulario de Leads
 
@@ -93,17 +93,17 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HERO-01 | Phase 2 | Pending |
-| HERO-02 | Phase 2 | Pending |
-| HERO-03 | Phase 2 | Pending |
-| HERO-04 | Phase 2 | Pending |
-| HERO-05 | Phase 2 | Pending |
-| AUTH-01 | Phase 2 | Pending |
-| AUTH-02 | Phase 2 | Pending |
-| METD-01 | Phase 2 | Pending |
-| METD-02 | Phase 2 | Pending |
-| SOCL-01 | Phase 2 | Pending |
-| SOCL-02 | Phase 2 | Pending |
+| HERO-01 | Phase 2 | Complete |
+| HERO-02 | Phase 2 | Complete |
+| HERO-03 | Phase 2 | Complete |
+| HERO-04 | Phase 2 | Complete |
+| HERO-05 | Phase 2 | Complete |
+| AUTH-01 | Phase 2 | Complete |
+| AUTH-02 | Phase 2 | Complete |
+| METD-01 | Phase 2 | Complete |
+| METD-02 | Phase 2 | Complete |
+| SOCL-01 | Phase 2 | Complete |
+| SOCL-02 | Phase 2 | Complete |
 | LEAD-01 | Phase 3 | Pending |
 | LEAD-02 | Phase 3 | Pending |
 | LEAD-03 | Phase 3 | Pending |

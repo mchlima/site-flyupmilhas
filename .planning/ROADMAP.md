@@ -28,7 +28,7 @@
   3. A test POST to `/leads` from a browser on the staging URL returns 200 and creates a MongoDB document — no CORS error, no 500
   4. A test POST to `/leads` from the same IP beyond the rate limit returns 429
   5. The page scores 90+ on PageSpeed mobile in a `nuxt build && nuxt preview` run, and LCP is under 2.5s on a 3G throttled profile
-**Plans:** 2/3 plans executed
+**Plans:** 3 plans
 
 Plans:
 - [x] 01-01-PLAN.md — Nuxt 4 scaffold, dependencies, design tokens, app shell (INFR-01)
@@ -45,7 +45,12 @@ Plans:
   3. The "Como Funciona" section displays exactly 4 labeled steps (Diagnostico, Estrategia, Execucao, Voo) in a visual flow that is readable on mobile and desktop
   4. The social proof section shows at least two testimonials with real first name, city, R$ savings or route + cabin class, and one result screenshot served from R2
   5. The price (R$200) is visible in context with a value anchor ("passagens que custam R$3.000+ emitidas por menos") and the FAQ section renders 5-7 questions in expandable or static format
-**Plans**: TBD
+**Plans:** 2/3 plans executed
+
+Plans:
+- [x] 02-01-PLAN.md — useScroll composable, SectionHero, SectionExpert (HERO-01-05, AUTH-01-02)
+- [x] 02-02-PLAN.md — SectionMethod, SectionSocialProof (METD-01-02, SOCL-01-02)
+- [ ] 02-03-PLAN.md — SectionPrice, SectionFAQ, app.vue assembly (CTA-02, CTA-03)
 
 ### Phase 3: Lead Form & Conversion
 **Goal**: A visitor can fill out the 4-field qualification form on mobile, submit it successfully, receive a confirmation message, and reach Marcio via WhatsApp — with every submission stored in MongoDB and protected from bots and spam.
@@ -65,8 +70,8 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Infrastructure | 2/3 | In Progress|  |
-| 2. Display Sections | 0/? | Not started | - |
+| 1. Foundation & Infrastructure | 3/3 | Complete |  |
+| 2. Display Sections | 2/3 | In Progress|  |
 | 3. Lead Form & Conversion | 0/? | Not started | - |
 
 ---
@@ -106,4 +111,4 @@ Plans:
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 after Phase 1 planning*
+*Last updated: 2026-03-21 after Phase 2 planning (3 plans created)*
