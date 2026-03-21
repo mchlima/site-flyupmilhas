@@ -14,11 +14,11 @@
 
 - [ ] **CONT-04**: Titulo da SectionAbout mais impactante que "Sobre a Fly Up Milhas" — refletir proposta de valor
 - [ ] **CONT-05**: Conteudo do quarto passo (Voo) em Como Funciona ajustado para refletir o que a consultoria realmente entrega
-- [ ] **CONT-06**: Card "O que esta incluido" removido de SectionMethod e seu conteudo integrado/enriquecido na SectionPrice
+- [x] **CONT-06**: Card "O que esta incluido" removido de SectionMethod e seu conteudo integrado/enriquecido na SectionPrice
 
 ### UX & Navegacao
 
-- [ ] **UX-01**: Botao flutuante de voltar ao topo visivel apos scroll, com transicao suave
+- [x] **UX-01**: Botao flutuante de voltar ao topo visivel apos scroll, com transicao suave
 
 ## Out of Scope
 
@@ -36,8 +36,8 @@
 | CTRST-02 | Phase 6 | Pending |
 | CONT-04 | Phase 6 | Pending |
 | CONT-05 | Phase 6 | Pending |
-| CONT-06 | Phase 6 | Pending |
-| UX-01 | Phase 6 | Pending |
+| CONT-06 | Phase 6 | Complete |
+| UX-01 | Phase 6 | Complete |
 
 **Coverage:**
 - v1.2 requirements: 6 total

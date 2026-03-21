@@ -54,7 +54,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 Plans:
 - [ ] 06-01-PLAN.md — Fix contrast (FAQ labels, form inputs) and update content (About heading, Method step 4)
-- [ ] 06-02-PLAN.md — Move offer block to SectionPrice and add back-to-top button
+- [x] 06-02-PLAN.md — Move offer block to SectionPrice and add back-to-top button
 
 ---
 
@@ -67,7 +67,7 @@ Plans:
 | 3. Lead Form & Conversion | v1.0 | 1/1 | Complete | 2026-03-21 |
 | 4. Visual Overhaul & Navigation | v1.1 | 3/3 | Complete | 2026-03-21 |
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
-| 6. Content & Layout Polish | v1.2 | 0/2 | Not started | - |
+| 6. Content & Layout Polish | v1.2 | 1/2 | In Progress|  |
 
 ---
 *Roadmap created: 2026-03-21*
