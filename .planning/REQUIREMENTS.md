@@ -117,6 +117,8 @@
 
 ## Traceability
 
+### v1.0
+
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | HERO-01 | Phase 2 | Complete |
@@ -146,11 +148,33 @@
 | BACK-02 | Phase 1 | Complete |
 | BACK-03 | Phase 1 | Complete |
 
-**Coverage:**
-- v1 requirements: 26 total
+**v1.0 Coverage:**
+- Requirements: 26 total
 - Mapped to phases: 26
+- Unmapped: 0 ✓
+
+### v1.1
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| VISL-01 | Phase 4 | Pending |
+| VISL-02 | Phase 4 | Pending |
+| VISL-03 | Phase 4 | Pending |
+| NAV-01 | Phase 4 | Pending |
+| NAV-02 | Phase 4 | Pending |
+| NAV-03 | Phase 4 | Pending |
+| CONT-01 | Phase 4 | Pending |
+| CONT-02 | Phase 4 | Pending |
+| CONT-03 | Phase 4 | Pending |
+| FORM-01 | Phase 5 | Pending |
+| FORM-02 | Phase 5 | Pending |
+| FOOT-01 | Phase 5 | Pending |
+
+**v1.1 Coverage:**
+- Requirements: 12 total
+- Mapped to phases: 12
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 after phase mapping*
+*Last updated: 2026-03-21 — v1.1 traceability added (phases 4-5)*

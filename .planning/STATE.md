@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: Refinamento Visual
-status: defining-requirements
-last_updated: "2026-03-21T06:40:55.414Z"
+status: roadmap-defined
+last_updated: "2026-03-21T00:00:00.000Z"
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 7
-  completed_plans: 7
+  total_phases: 2
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # State: Fly Up Milhas
@@ -16,36 +16,42 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
-**Current Focus:** Milestone v1.1 — Refinamento Visual
+**Current Focus:** Milestone v1.1 — Refinamento Visual (Phase 4 next)
 
 ---
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 4 — Visual Overhaul & Navigation (not started)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-21 — Milestone v1.1 started
+Status: Roadmap defined, ready for planning
+Last activity: 2026-03-21 — v1.1 roadmap created (phases 4-5)
+
+Progress: [----------] 0/2 phases complete
 
 ## Performance Metrics
 
 | Metric | Target | Current |
 |--------|--------|---------|
-| Requirements mapped | 26/26 | 26/26 |
-| Phases defined | 3 | 3 |
-| Plans complete | — | 0 |
-| LCP (mobile, 3G) | < 2.5s | Not measured |
-| PageSpeed mobile | 90+ | Not measured |
+| v1.1 requirements mapped | 12/12 | 12/12 |
+| v1.1 phases defined | 2 | 2 |
+| v1.1 plans complete | — | 0 |
+| Background tint | None (off-white) | Not verified |
+| FAQ contrast ratio | 4.5:1+ WCAG AA | Not measured |
 
+### v1.0 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 01-foundation-infrastructure P01 | 5 min | 2 tasks | 12 files |
 | Phase 01-foundation-infrastructure P02 | 5 min | 2 tasks | 5 files |
+| Phase 01-foundation-infrastructure P03 | 2 min | 2 tasks | 2 files |
+| Phase 02-display-sections P01 | 8 min | 3 tasks | 3 files |
+| Phase 02-display-sections P02 | 2 min | 2 tasks | 2 files |
+| Phase 02-display-sections P03 | 2 min | 3 tasks | 3 files |
+| Phase 03-lead-form-conversion P01 | 3 min | 3 tasks | 3 files |
 
 ---
-| Phase 01-foundation-infrastructure P01 | 5 | 2 tasks | 12 files |
-| Phase 01-foundation-infrastructure P03 | 2min | 2 tasks | 2 files |
-| Phase 02-display-sections P01 | 8min | 3 tasks | 3 files |
-| Phase 02-display-sections P02 | 2min | 2 tasks | 2 files |
-| Phase 02-display-sections P03 | 2min | 3 tasks | 3 files |
-| Phase 03-lead-form-conversion P01 | 3min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -78,6 +84,8 @@ Last activity: 2026-03-21 — Milestone v1.1 started
 | USelect uses items prop (not options) with value-key/label-key | Nuxt UI v4 Select.vue source confirmed; options prop does not exist in v4 | Confirmed — implemented in 03-01 |
 | simple-icons @iconify-json not installed — inline SVG for WhatsApp CTA | Package absent; inline SVG path used in both CTA button instances | Confirmed — implemented in 03-01 |
 | WhatsApp CTA URL defined as constant with TODO marker | WHATSAPP_URL = wa.me/55XXXXXXXXXXX; Marcio's real number required before launch | Open — needs Marcio's number |
+| Bento grid replaces flat section layout (v1.1) | Modern visual pattern; cards with rounded corners improve perceived quality and scannability | Phase 4 — to implement |
+| SectionExpert replaced by SectionAbout (v1.1) | Milestone requirement: company story + renda extra value prop, not personal bio | Phase 4 — to implement |
 
 ### Critical Pre-Build Blockers
 
@@ -86,6 +94,7 @@ Last activity: 2026-03-21 — Milestone v1.1 started
 - [ ] Confirm Fastify deployment topology — same domain subdomain or cross-origin? (determines CORS vs proxy strategy)
 - [ ] Collect content from Marcio before Phase 2: average client savings figure, monthly capacity, named testimonials with specific R$/route/cabin data, personal results story, WhatsApp number, professional photo
 - [ ] Confirm guarantee offer (Marcio must explicitly agree before including in copy)
+- [ ] Confirm copy for "Sobre a Fly Up Milhas" section — company founding story, renda extra framing, key differentiators
 
 ### Technical Pitfalls to Watch
 
@@ -94,6 +103,8 @@ Last activity: 2026-03-21 — Milestone v1.1 started
 3. Hydration mismatch: wrap browser-only logic in `<ClientOnly>` or `if (import.meta.client)`; test with `nuxt build && nuxt preview` not `nuxt dev`
 4. Hero image: set `fetchpriority="high"` and `loading="eager"` — never lazy-load the LCP element
 5. Honeypot field name must be agreed between frontend and backend before Phase 3
+6. Hamburger menu (Phase 4): use `<ClientOnly>` or `import.meta.client` guard for any transition/animation state to avoid SSR hydration mismatch
+7. Bento grid (Phase 4): validate layout at 375px, 768px, and 1280px — CSS Grid areas can break at intermediate breakpoints
 
 ### Architecture Constraints
 
@@ -106,18 +117,18 @@ Last activity: 2026-03-21 — Milestone v1.1 started
 
 ## Session Continuity
 
-**Last action:** Completed 03-01-PLAN.md — Lead form, useLeadForm composable, WhatsApp CTA (2026-03-21) — Phase 3 COMPLETE
-**Next action:** Pre-launch — gather Marcio's real WhatsApp number and real content (photos, metrics, testimonials)
+**Last action:** v1.1 roadmap created — phases 4 and 5 defined (2026-03-21)
+**Next action:** Plan Phase 4 — Visual Overhaul & Navigation
 
 **Context for next session:**
 
-- All 3 phases complete, all 7 plans done, 100% progress
-- Phase 3 complete: useLeadForm composable with Zod/$fetch, SectionLeadForm.vue with 4 fields + honeypot + WhatsApp CTA, app.vue wired
-- pnpm nuxt build passes clean — no SSR or type errors
-- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue line 5)
-- Open: Content gaps — real photo, real metrics, real testimonials, WhatsApp number
+- v1.0 all complete (phases 1-3, 7 plans, 26/26 requirements)
+- v1.1 roadmap ready: Phase 4 (9 requirements: VISL-01..03, NAV-01..03, CONT-01..03) and Phase 5 (3 requirements: FORM-01, FORM-02, FOOT-01)
+- Phase 4 is structural — touches header component (new), multiple existing section components (bento refactor), SectionExpert replacement, FAQ contrast fix, background token
+- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue)
+- Open: Real content (photo, metrics, testimonials) still needed for launch
 - NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 after completing 03-01 (lead form + composable + WhatsApp CTA — Phase 3 complete, all plans done)*
+*Last updated: 2026-03-21 — v1.1 roadmap defined, phases 4-5 added*
