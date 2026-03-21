@@ -30,15 +30,15 @@
 
 ### Formulario de Leads
 
-- [ ] **LEAD-01**: Formulario com 4 campos: nome, WhatsApp (mascara BR), gasto mensal no cartao, objetivo principal
-- [ ] **LEAD-02**: Validacao client-side com Zod (campos obrigatorios, formato WhatsApp)
-- [ ] **LEAD-03**: Submissao via $fetch para endpoint Fastify POST /leads
-- [ ] **LEAD-04**: Feedback visual de sucesso/erro apos submissao
-- [ ] **LEAD-05**: Protecao anti-spam (honeypot field)
+- [x] **LEAD-01**: Formulario com 4 campos: nome, WhatsApp (mascara BR), gasto mensal no cartao, objetivo principal
+- [x] **LEAD-02**: Validacao client-side com Zod (campos obrigatorios, formato WhatsApp)
+- [x] **LEAD-03**: Submissao via $fetch para endpoint Fastify POST /leads
+- [x] **LEAD-04**: Feedback visual de sucesso/erro apos submissao
+- [x] **LEAD-05**: Protecao anti-spam (honeypot field)
 
 ### CTA & Conversao
 
-- [ ] **CTA-01**: WhatsApp como CTA primario com link wa.me/ e mensagem pre-preenchida
+- [x] **CTA-01**: WhatsApp como CTA primario com link wa.me/ e mensagem pre-preenchida
 - [x] **CTA-02**: Preco visivel (R$200) com ancoragem de valor (economia media vs custo)
 - [x] **CTA-03**: Secao FAQ com 5-7 perguntas que tratam objecoes de compra
 
@@ -104,12 +104,12 @@
 | METD-02 | Phase 2 | Complete |
 | SOCL-01 | Phase 2 | Complete |
 | SOCL-02 | Phase 2 | Complete |
-| LEAD-01 | Phase 3 | Pending |
-| LEAD-02 | Phase 3 | Pending |
-| LEAD-03 | Phase 3 | Pending |
-| LEAD-04 | Phase 3 | Pending |
-| LEAD-05 | Phase 3 | Pending |
-| CTA-01 | Phase 3 | Pending |
+| LEAD-01 | Phase 3 | Complete |
+| LEAD-02 | Phase 3 | Complete |
+| LEAD-03 | Phase 3 | Complete |
+| LEAD-04 | Phase 3 | Complete |
+| LEAD-05 | Phase 3 | Complete |
+| CTA-01 | Phase 3 | Complete |
 | CTA-02 | Phase 2 | Complete |
 | CTA-03 | Phase 2 | Complete |
 | INFR-01 | Phase 1 | Complete |

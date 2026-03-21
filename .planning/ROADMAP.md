@@ -65,7 +65,7 @@ Plans:
 **Plans:** 1 plan
 
 Plans:
-- [ ] 03-01-PLAN.md — useLeadForm composable, SectionLeadForm component, app.vue wiring (LEAD-01, LEAD-02, LEAD-03, LEAD-04, LEAD-05, CTA-01)
+- [x] 03-01-PLAN.md — useLeadForm composable, SectionLeadForm component, app.vue wiring (LEAD-01, LEAD-02, LEAD-03, LEAD-04, LEAD-05, CTA-01)
 
 ---
 

@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-last_updated: "2026-03-21T06:13:24.622Z"
+last_updated: "2026-03-21T06:35:59.726Z"
 progress:
   total_phases: 3
-  completed_phases: 2
-  total_plans: 6
-  completed_plans: 6
+  completed_phases: 3
+  total_plans: 7
+  completed_plans: 7
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
-**Current Focus:** Phase 03 — form-integration (next)
+**Current Focus:** Phase 03 — lead-form-conversion
 
 ---
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
+Phase: 03 (lead-form-conversion) — COMPLETE
+Plan: 1 of 1 (all plans done)
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Plan: Not started
 | Phase 02-display-sections P01 | 8min | 3 tasks | 3 files |
 | Phase 02-display-sections P02 | 2min | 2 tasks | 2 files |
 | Phase 02-display-sections P03 | 2min | 3 tasks | 3 files |
+| Phase 03-lead-form-conversion P01 | 3min | 3 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -72,6 +73,9 @@ Plan: Not started
 | SectionPrice dark navy background | Departs from alternating pattern to create urgency/conversion contrast at pricing moment | Confirmed — implemented in 02-03 |
 | UAccordion single-open behavior for FAQ | Better mobile reading flow than multiple-open accordion | Confirmed — implemented in 02-03 |
 | formulario anchor stub in app.vue | Phase 3 SectionLeadForm target; all CTA scroll calls confirmed working | Confirmed — implemented in 02-03 |
+| USelect uses items prop (not options) with value-key/label-key | Nuxt UI v4 Select.vue source confirmed; options prop does not exist in v4 | Confirmed — implemented in 03-01 |
+| simple-icons @iconify-json not installed — inline SVG for WhatsApp CTA | Package absent; inline SVG path used in both CTA button instances | Confirmed — implemented in 03-01 |
+| WhatsApp CTA URL defined as constant with TODO marker | WHATSAPP_URL = wa.me/55XXXXXXXXXXX; Marcio's real number required before launch | Open — needs Marcio's number |
 
 ### Critical Pre-Build Blockers
 
@@ -100,21 +104,18 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Completed 02-03-PLAN.md — SectionPrice + SectionFAQ + full app.vue assembly (2026-03-21)
-**Next action:** Execute Phase 3 — form integration (SectionLeadForm, useLeadForm, Fastify POST /leads)
+**Last action:** Completed 03-01-PLAN.md — Lead form, useLeadForm composable, WhatsApp CTA (2026-03-21) — Phase 3 COMPLETE
+**Next action:** Pre-launch — gather Marcio's real WhatsApp number and real content (photos, metrics, testimonials)
 
 **Context for next session:**
 
-- 3 phases defined, 26/26 requirements mapped
-- Phase 1 all 3 plans complete: Nuxt 4 scaffold + Fastify backend + SEO meta + R2 image pipeline
-- Phase 2 all 3 plans complete: all 6 sections built and assembled in app.vue, build passes
-- `id="formulario"` anchor exists in app.vue — all CTA scroll calls target it correctly
-- Phase 3 SectionLeadForm replaces stub inside `<section id="formulario">` (not the section element itself)
-- `useLeadForm.ts` composable stub at app/composables/useLeadForm.ts from Phase 1
-- Honeypot field name must be agreed with Marcio before Phase 3 implementation
+- All 3 phases complete, all 7 plans done, 100% progress
+- Phase 3 complete: useLeadForm composable with Zod/$fetch, SectionLeadForm.vue with 4 fields + honeypot + WhatsApp CTA, app.vue wired
+- pnpm nuxt build passes clean — no SSR or type errors
+- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue line 5)
+- Open: Content gaps — real photo, real metrics, real testimonials, WhatsApp number
 - NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
-- Content gaps: Marcio photo, real metrics, real testimonials, WhatsApp number — all need input before launch
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 after completing 02-03 (SectionPrice + SectionFAQ + full page assembly — Phase 2 complete)*
+*Last updated: 2026-03-21 after completing 03-01 (lead form + composable + WhatsApp CTA — Phase 3 complete, all plans done)*
