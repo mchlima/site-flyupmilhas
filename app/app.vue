@@ -37,9 +37,9 @@ useSchemaOrg([
 <template>
   <UApp>
     <AppHeader />
-    <main id="main-content">
+    <main id="main-content" class="pt-16">
       <SectionHero />
-      <SectionExpert />
+      <SectionAbout />
       <SectionMethod />
       <SectionSocialProof />
       <SectionPrice />
