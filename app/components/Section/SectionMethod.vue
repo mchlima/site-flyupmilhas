@@ -38,31 +38,38 @@ const steps = [
         4 passos para voar em executiva
       </p>
 
-      <!-- Steps grid (D-14): 4 columns on desktop, 1 column on mobile -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
+      <!-- Steps bento grid: 1 col mobile, 2 col tablet, 4 col desktop -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
         <div
           v-for="step in steps"
           :key="step.number"
-          class="text-center"
+          class="rounded-xl p-6"
+          :class="step.number === '04'
+            ? 'bg-[var(--color-brand-primary)] text-white'
+            : 'bg-white shadow-sm'"
         >
-          <span class="text-4xl font-bold text-[var(--color-brand-cta)] opacity-30 block mb-2">
-            {{ step.number }}
-          </span>
+          <span
+            class="text-4xl font-bold opacity-30 block mb-2"
+            :class="step.number === '04' ? 'text-white' : 'text-[var(--color-brand-cta)]'"
+          >{{ step.number }}</span>
           <UIcon
             :name="step.icon"
-            class="w-10 h-10 text-[var(--color-brand-primary)] mx-auto mb-3"
+            class="w-10 h-10 mb-3"
+            :class="step.number === '04' ? 'text-white/70' : 'text-[var(--color-brand-primary)]'"
           />
-          <h3 class="text-lg font-semibold text-[var(--color-brand-primary)] mb-2">
-            {{ step.title }}
-          </h3>
-          <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
-            {{ step.description }}
-          </p>
+          <h3
+            class="text-lg font-semibold mb-2"
+            :class="step.number === '04' ? 'text-white' : 'text-[var(--color-brand-primary)]'"
+          >{{ step.title }}</h3>
+          <p
+            class="text-sm leading-relaxed"
+            :class="step.number === '04' ? 'text-white/80' : 'text-[var(--color-brand-text-muted)]'"
+          >{{ step.description }}</p>
         </div>
       </div>
 
-      <!-- Offer block (D-15): visually distinct card -->
-      <div class="bg-white rounded-2xl shadow p-8 text-center max-w-2xl mx-auto">
+      <!-- Offer block: visually distinct card -->
+      <div class="bg-white rounded-xl shadow p-8">
         <h3 class="text-xl font-bold text-[var(--color-brand-primary)] mb-4">
           O que está incluído
         </h3>
