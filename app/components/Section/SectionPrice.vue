@@ -30,7 +30,7 @@ const { scrollTo } = useScroll()
       </p>
 
       <!-- What's included summary -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
         <div class="text-center text-white/80 text-sm">
           2 reuniões online
         </div>
@@ -39,6 +39,12 @@ const { scrollTo } = useScroll()
         </div>
         <div class="text-center text-white/80 text-sm">
           Plano personalizado
+        </div>
+        <div class="text-center text-white/80 text-sm">
+          Lista de cartões recomendados
+        </div>
+        <div class="text-center text-white/80 text-sm col-span-2 sm:col-span-1">
+          Suporte na primeira emissão
         </div>
       </div>
 

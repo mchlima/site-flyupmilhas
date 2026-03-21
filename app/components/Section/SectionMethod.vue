@@ -39,7 +39,7 @@ const steps = [
       </p>
 
       <!-- Steps bento grid: 1 col mobile, 2 col tablet, 4 col desktop -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <div
           v-for="step in steps"
           :key="step.number"
@@ -68,29 +68,6 @@ const steps = [
         </div>
       </div>
 
-      <!-- Offer block: visually distinct card -->
-      <div class="bg-white rounded-xl shadow p-8">
-        <h3 class="text-xl font-bold text-[var(--color-brand-primary)] mb-4">
-          O que está incluído
-        </h3>
-        <ul class="text-left inline-block">
-          <li class="flex items-center gap-2 text-[var(--color-brand-text)] mb-2">
-            <UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-[var(--color-brand-cta)] flex-shrink-0" />
-            <span>R$200 — pagamento único, sem mensalidade</span>
-          </li>
-          <li class="flex items-center gap-2 text-[var(--color-brand-text)] mb-2">
-            <UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-[var(--color-brand-cta)] flex-shrink-0" />
-            <span>2 reuniões online (diagnóstico + revisão)</span>
-          </li>
-          <li class="flex items-center gap-2 text-[var(--color-brand-text)] mb-2">
-            <UIcon name="i-heroicons-check-circle" class="w-5 h-5 text-[var(--color-brand-cta)] flex-shrink-0" />
-            <span>1 mês de acompanhamento via WhatsApp</span>
-          </li>
-        </ul>
-        <p class="text-sm text-[var(--color-brand-text-muted)] mt-4">
-          Entregáveis: plano de milhas personalizado, lista de cartões recomendados e suporte na primeira emissão.
-        </p>
-      </div>
     </div>
   </section>
 </template>
