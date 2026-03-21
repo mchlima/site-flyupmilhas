@@ -111,7 +111,10 @@ Plans:
   1. On a 375px mobile viewport, all form fields and the submit button share consistent horizontal padding and vertical spacing — no field appears wider or narrower than its siblings
   2. The submit button label is vertically and horizontally centered within the button bounds on both mobile and desktop (no text clipping or misalignment visible at any viewport width)
   3. The footer displays "Desenvolvido por Agencia 201" in legible text against the footer background, visible on both mobile and desktop
-**Plans**: TBD
+**Plans:** 1 plan
+
+Plans:
+- [ ] 05-01-PLAN.md — Form navy card wrapper, spacing/button fix, footer redesign with Agencia 201 credit (FORM-01, FORM-02, FOOT-01)
 
 ---
 
@@ -123,7 +126,7 @@ Plans:
 | 2. Display Sections | 3/3 | Complete | 2026-03-21 |
 | 3. Lead Form & Conversion | 1/1 | Complete | 2026-03-21 |
 | 4. Visual Overhaul & Navigation | 3/3 | Complete   | 2026-03-21 |
-| 5. Form Polish & Footer | 0/? | Not started | - |
+| 5. Form Polish & Footer | 0/1 | Not started | - |
 
 ---
 
@@ -183,4 +186,4 @@ Plans:
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 — Phase 4 plans created (3 plans, 2 waves)*
+*Last updated: 2026-03-21 — Phase 5 plans created (1 plan, 1 wave)*
