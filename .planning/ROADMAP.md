@@ -28,11 +28,11 @@
   3. A test POST to `/leads` from a browser on the staging URL returns 200 and creates a MongoDB document — no CORS error, no 500
   4. A test POST to `/leads` from the same IP beyond the rate limit returns 429
   5. The page scores 90+ on PageSpeed mobile in a `nuxt build && nuxt preview` run, and LCP is under 2.5s on a 3G throttled profile
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 
 Plans:
 - [ ] 01-01-PLAN.md — Nuxt 4 scaffold, dependencies, design tokens, app shell (INFR-01)
-- [ ] 01-02-PLAN.md — Fastify POST /leads with CORS, rate limiting, MongoDB (BACK-01, BACK-02, BACK-03)
+- [x] 01-02-PLAN.md — Fastify POST /leads with CORS, rate limiting, MongoDB (BACK-01, BACK-02, BACK-03)
 - [ ] 01-03-PLAN.md — R2 image pipeline, SEO meta, LocalBusiness schema, performance validation (INFR-02, INFR-03, INFR-04)
 
 ### Phase 2: Display Sections
@@ -65,7 +65,7 @@ Plans:
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Infrastructure | 0/3 | Planned | - |
+| 1. Foundation & Infrastructure | 1/3 | In Progress|  |
 | 2. Display Sections | 0/? | Not started | - |
 | 3. Lead Form & Conversion | 0/? | Not started | - |
 

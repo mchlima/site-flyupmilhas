@@ -51,9 +51,9 @@
 
 ### Integracao Backend
 
-- [ ] **BACK-01**: Endpoint Fastify POST /leads com validacao e armazenamento no MongoDB
-- [ ] **BACK-02**: CORS configurado no Fastify para dominio da LP
-- [ ] **BACK-03**: Rate limiting no endpoint de leads (@fastify/rate-limit)
+- [x] **BACK-01**: Endpoint Fastify POST /leads com validacao e armazenamento no MongoDB
+- [x] **BACK-02**: CORS configurado no Fastify para dominio da LP
+- [x] **BACK-03**: Rate limiting no endpoint de leads (@fastify/rate-limit)
 
 ## v2 Requirements
 
@@ -116,9 +116,9 @@
 | INFR-02 | Phase 1 | Pending |
 | INFR-03 | Phase 1 | Pending |
 | INFR-04 | Phase 1 | Pending |
-| BACK-01 | Phase 1 | Pending |
-| BACK-02 | Phase 1 | Pending |
-| BACK-03 | Phase 1 | Pending |
+| BACK-01 | Phase 1 | Complete |
+| BACK-02 | Phase 1 | Complete |
+| BACK-03 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 26 total
