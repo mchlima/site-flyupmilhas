@@ -1,0 +1,24 @@
+/* app/assets/css/main.css */
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  /* Brand colors */
+  --color-brand-primary: #1a3a5c;       /* azul aviacao — headings, nav, trust elements */
+  --color-brand-bg: #f8f9fa;            /* branco gelo / cinza ultra claro — page background */
+  --color-brand-cta: #e67e22;           /* laranja/dourado — CTA buttons and accents */
+  --color-brand-cta-hover: #d35400;     /* CTA hover state */
+  --color-brand-text: #1a1a1a;          /* body text */
+  --color-brand-text-muted: #6b7280;    /* secondary text */
+
+  /* Typography (per D-05) */
+  --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Base styles */
+html {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+}
