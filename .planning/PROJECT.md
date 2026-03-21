@@ -46,14 +46,16 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ Formulario em card navy com espacamento e botao centralizado — v1.1
 - ✓ Footer split layout com credito Agencia 201 e WhatsApp — v1.1
 
+- ✓ FAQ accordion labels com contraste #1a1a1a — v1.2
+- ✓ Titulo SectionAbout "Sua estrategia de milhas comeca aqui" — v1.2
+- ✓ Step 4 "Autonomia" com texto sobre independencia — v1.2
+- ✓ Card "O que esta incluido" removido, SectionPrice enriquecida (5 itens) — v1.2
+- ✓ Form inputs bg-white com bordas visiveis no card navy — v1.2
+- ✓ Botao flutuante back-to-top com scroll detection — v1.2
+
 ### Active
 
-- [ ] FAQ accordion labels com contraste adequado contra o fundo
-- [ ] Titulo da SectionAbout mais impactante
-- [ ] Conteudo dos passos em Como Funciona coerente com a oferta real
-- [ ] Remover card "O que esta incluido" de Como Funciona e enriquecer SectionPrice
-- [ ] Corrigir cores estranhas no formulario
-- [ ] Botao flutuante de voltar ao topo
+(No active requirements — v1.2 milestone complete)
 
 ## Current Milestone: v1.2 Polimento de Conteudo e Layout
 
