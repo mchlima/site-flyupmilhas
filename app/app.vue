@@ -44,12 +44,8 @@ useSchemaOrg([
       <SectionSocialProof />
       <SectionPrice />
       <SectionFAQ />
-      <!-- Phase 3 will fill this section with SectionLeadForm -->
       <section id="formulario" aria-label="Formulário de consultoria" class="py-16 px-6 bg-[var(--color-brand-bg)]">
-        <!-- TODO: Phase 3 — SectionLeadForm goes here -->
-        <div class="max-w-xl mx-auto text-center">
-          <p class="text-[var(--color-brand-text-muted)]">Formulário em breve...</p>
-        </div>
+        <SectionLeadForm />
       </section>
     </main>
     <AppFooter />
