@@ -33,7 +33,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 ## Phases
 
-- [ ] **Phase 6: Content & Layout Polish** - FAQ legivel, conteudo coerente, formulario corrigido e botao back-to-top
+- [x] **Phase 6: Content & Layout Polish** - FAQ legivel, conteudo coerente, formulario corrigido e botao back-to-top (completed 2026-03-21)
 
 ---
 
@@ -53,7 +53,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 **Plans**: 2 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Fix contrast (FAQ labels, form inputs) and update content (About heading, Method step 4)
+- [x] 06-01-PLAN.md — Fix contrast (FAQ labels, form inputs) and update content (About heading, Method step 4)
 - [x] 06-02-PLAN.md — Move offer block to SectionPrice and add back-to-top button
 
 ---
@@ -67,7 +67,7 @@ Plans:
 | 3. Lead Form & Conversion | v1.0 | 1/1 | Complete | 2026-03-21 |
 | 4. Visual Overhaul & Navigation | v1.1 | 3/3 | Complete | 2026-03-21 |
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
-| 6. Content & Layout Polish | v1.2 | 1/2 | In Progress|  |
+| 6. Content & Layout Polish | v1.2 | 2/2 | Complete   | 2026-03-21 |
 
 ---
 *Roadmap created: 2026-03-21*

@@ -7,13 +7,13 @@
 
 ### Contraste & Visual
 
-- [ ] **CTRST-01**: Titulos (labels) do accordion FAQ visiveis com contraste adequado contra o fundo — nao usar o estilo muted padrao do UAccordion
-- [ ] **CTRST-02**: Cores do formulario corrigidas — inputs legiveis, labels visiveis, sem conflito visual no card navy
+- [x] **CTRST-01**: Titulos (labels) do accordion FAQ visiveis com contraste adequado contra o fundo — nao usar o estilo muted padrao do UAccordion
+- [x] **CTRST-02**: Cores do formulario corrigidas — inputs legiveis, labels visiveis, sem conflito visual no card navy
 
 ### Conteudo & Secoes
 
-- [ ] **CONT-04**: Titulo da SectionAbout mais impactante que "Sobre a Fly Up Milhas" — refletir proposta de valor
-- [ ] **CONT-05**: Conteudo do quarto passo (Voo) em Como Funciona ajustado para refletir o que a consultoria realmente entrega
+- [x] **CONT-04**: Titulo da SectionAbout mais impactante que "Sobre a Fly Up Milhas" — refletir proposta de valor
+- [x] **CONT-05**: Conteudo do quarto passo (Voo) em Como Funciona ajustado para refletir o que a consultoria realmente entrega
 - [x] **CONT-06**: Card "O que esta incluido" removido de SectionMethod e seu conteudo integrado/enriquecido na SectionPrice
 
 ### UX & Navegacao
@@ -32,10 +32,10 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CTRST-01 | Phase 6 | Pending |
-| CTRST-02 | Phase 6 | Pending |
-| CONT-04 | Phase 6 | Pending |
-| CONT-05 | Phase 6 | Pending |
+| CTRST-01 | Phase 6 | Complete |
+| CTRST-02 | Phase 6 | Complete |
+| CONT-04 | Phase 6 | Complete |
+| CONT-05 | Phase 6 | Complete |
 | CONT-06 | Phase 6 | Complete |
 | UX-01 | Phase 6 | Complete |
 
