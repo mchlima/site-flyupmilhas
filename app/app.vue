@@ -49,5 +49,6 @@ useSchemaOrg([
       </section>
     </main>
     <AppFooter />
+    <BackToTop />
   </UApp>
 </template>
