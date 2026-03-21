@@ -55,6 +55,32 @@
 - [x] **BACK-02**: CORS configurado no Fastify para dominio da LP
 - [x] **BACK-03**: Rate limiting no endpoint de leads (@fastify/rate-limit)
 
+## v1.1 Requirements — Refinamento Visual
+
+### Visual & Layout
+
+- [ ] **VISL-01**: Background da pagina corrigido para off-white limpo (remover tom amarelado)
+- [ ] **VISL-02**: Layout bento grid nas secoes principais com cards levemente arredondados, visual moderno e marcante
+- [ ] **VISL-03**: Contraste do texto no FAQ melhorado para legibilidade adequada
+
+### Navegacao
+
+- [ ] **NAV-01**: Menu responsivo no header com links ancora para secoes da LP (Sobre, Como Funciona, Depoimentos, FAQ, Contato)
+- [ ] **NAV-02**: CTA destacado no menu ("Quero minha Consultoria") em cor de destaque
+- [ ] **NAV-03**: Menu hamburger no mobile com animacao de abertura/fechamento
+
+### Conteudo & Secoes
+
+- [ ] **CONT-01**: Secao "Sobre a Fly Up Milhas" substituindo secao do especialista — foco na empresa, nao na pessoa
+- [ ] **CONT-02**: Proposta de valor inclui renda extra com milhas alem de viagens
+- [ ] **CONT-03**: Remover elemento "Comprovante de Resultado" (screenshot) da secao de prova social
+
+### Formulario & Footer
+
+- [ ] **FORM-01**: Layout do formulario melhorado com melhor espacamento e alinhamento
+- [ ] **FORM-02**: Alinhamento do texto no botao de submit corrigido
+- [ ] **FOOT-01**: Footer inclui credito "Desenvolvido por Agencia 201"
+
 ## v2 Requirements
 
 ### Otimizacao
