@@ -45,9 +45,9 @@
 ### Infraestrutura
 
 - [x] **INFR-01**: Projeto Nuxt 4 com SSR configurado (nuxt.config.ts, Nuxt UI v4, design tokens)
-- [ ] **INFR-02**: Assets estaticos servidos via Cloudflare R2 (imagens otimizadas)
-- [ ] **INFR-03**: SEO basico (meta tags, Open Graph, structured data para servico)
-- [ ] **INFR-04**: Performance: LCP < 2s, pagina inteira < 3s em 3G
+- [x] **INFR-02**: Assets estaticos servidos via Cloudflare R2 (imagens otimizadas)
+- [x] **INFR-03**: SEO basico (meta tags, Open Graph, structured data para servico)
+- [x] **INFR-04**: Performance: LCP < 2s, pagina inteira < 3s em 3G
 
 ### Integracao Backend
 
@@ -113,9 +113,9 @@
 | CTA-02 | Phase 2 | Pending |
 | CTA-03 | Phase 2 | Pending |
 | INFR-01 | Phase 1 | Complete |
-| INFR-02 | Phase 1 | Pending |
-| INFR-03 | Phase 1 | Pending |
-| INFR-04 | Phase 1 | Pending |
+| INFR-02 | Phase 1 | Complete |
+| INFR-03 | Phase 1 | Complete |
+| INFR-04 | Phase 1 | Complete |
 | BACK-01 | Phase 1 | Complete |
 | BACK-02 | Phase 1 | Complete |
 | BACK-03 | Phase 1 | Complete |

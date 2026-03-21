@@ -33,7 +33,7 @@
 Plans:
 - [x] 01-01-PLAN.md — Nuxt 4 scaffold, dependencies, design tokens, app shell (INFR-01)
 - [x] 01-02-PLAN.md — Fastify POST /leads with CORS, rate limiting, MongoDB (BACK-01, BACK-02, BACK-03)
-- [ ] 01-03-PLAN.md — R2 image pipeline, SEO meta, LocalBusiness schema, performance validation (INFR-02, INFR-03, INFR-04)
+- [x] 01-03-PLAN.md — R2 image pipeline, SEO meta, LocalBusiness schema, performance validation (INFR-02, INFR-03, INFR-04)
 
 ### Phase 2: Display Sections
 **Goal**: A visitor scrolling the full page sees a compelling, trust-building narrative — hero headline, expert credentials with real numbers, the 4-step method, testimonials with specific savings, price with value anchoring, and FAQ — all correctly styled and mobile-responsive.
