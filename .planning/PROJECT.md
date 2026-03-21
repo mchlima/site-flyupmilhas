@@ -12,7 +12,12 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 ### Validated
 
-(None yet — ship to validate)
+- ✓ SSR via Nuxt 4 para SEO e performance — Phase 1
+- ✓ Design tokens (paleta azul aviacao + fundo claro + CTA laranja/dourado) — Phase 1
+- ✓ Tipografia sans-serif moderna (Inter via @nuxt/fonts) — Phase 1
+- ✓ Performance mobile-first com carregamento ultra rapido (scaffold) — Phase 1
+- ✓ Integracao com backend Fastify para armazenamento de leads no MongoDB — Phase 1
+- ✓ Assets estaticos servidos via Cloudflare R2 — Phase 1
 
 ### Active
 
@@ -21,12 +26,6 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 - [ ] Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo)
 - [ ] Secao de prova social (depoimentos e prints de resultados)
 - [ ] Formulario de qualificacao de leads (nome, WhatsApp, gastos mensais, objetivo)
-- [ ] Design elegante com paleta azul aviacao + fundo claro + CTA laranja/dourado
-- [ ] Tipografia sans-serif moderna (Inter ou Geist)
-- [ ] Performance mobile-first com carregamento ultra rapido
-- [ ] SSR via Nuxt 3 para SEO e performance
-- [ ] Integracao com backend Fastify para armazenamento de leads no MongoDB
-- [ ] Assets estaticos servidos via Cloudflare R2
 
 ### Out of Scope
 
@@ -57,8 +56,8 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Nuxt 3 com SSR | Performance e SEO para LP de conversao | — Pending |
-| Nuxt UI como framework de componentes | Tailwind CSS integrado, componentes headless | — Pending |
+| Nuxt 4 com SSR (upgraded from Nuxt 3) | Nuxt 3 EOL July 2026, Nuxt 4 is current | ✓ Good |
+| Nuxt UI v4 como framework de componentes | Tailwind CSS v4 integrado, componentes headless | ✓ Good |
 | Formulario de qualificacao em vez de compra direta | Filtrar clientes ideais antes do contato | — Pending |
 
 ## Evolution
@@ -79,4 +78,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after initialization*
+*Last updated: 2026-03-21 after Phase 1 completion*
