@@ -50,7 +50,11 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   4. The fourth step in Como Funciona describes what the consultancy actually delivers (check-in support, route planning) rather than a generic "Voo" description
   5. SectionPrice contains the enriched "what is included" list (previously orphaned in SectionMethod), and that card is removed from SectionMethod
   6. A floating back-to-top button appears after scrolling down and returns the user to the top with a smooth transition
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 06-01-PLAN.md — Fix contrast (FAQ labels, form inputs) and update content (About heading, Method step 4)
+- [ ] 06-02-PLAN.md — Move offer block to SectionPrice and add back-to-top button
 
 ---
 
@@ -63,8 +67,8 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 3. Lead Form & Conversion | v1.0 | 1/1 | Complete | 2026-03-21 |
 | 4. Visual Overhaul & Navigation | v1.1 | 3/3 | Complete | 2026-03-21 |
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
-| 6. Content & Layout Polish | v1.2 | 0/? | Not started | - |
+| 6. Content & Layout Polish | v1.2 | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 — v1.2 milestone defined, phase 6 added*
+*Last updated: 2026-03-21 — phase 6 plans created (2 plans, 1 wave)*
