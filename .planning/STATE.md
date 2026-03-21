@@ -65,6 +65,9 @@ Plan: 3 of 3
 | useSeoMeta replaces useHead | SSR-safe, deduplicates meta tags, @nuxtjs/seo convention | Confirmed — implemented in 01-03 |
 | NuxtImg r2Base from runtimeConfig | Keeps CDN URL environment-agnostic, no hardcoded URLs in templates | Confirmed — implemented in 01-03 |
 | fetchpriority=high + loading=eager on LCP image | Mandatory for PageSpeed 90+ mobile target (INFR-04) | Confirmed — implemented in 01-03 |
+| Plain button over UButton for CTA | Achieves exact design token usage without Nuxt UI import complexity | Confirmed — implemented in 02-01 |
+| import.meta.client in useScroll (not process.client) | Nuxt 4 compatible SSR safety pattern; process.client deprecated | Confirmed — implemented in 02-01 |
+| No hero image in MVP | Strong typography + CTA contrast sufficient; avoids LCP complexity for text-primary sections | Confirmed — implemented in 02-01 |
 
 ### Critical Pre-Build Blockers
 
@@ -93,20 +96,21 @@ Plan: 3 of 3
 
 ## Session Continuity
 
-**Last action:** Completed 01-03-PLAN.md — SEO meta + R2 image pipeline (2026-03-21)
-**Next action:** Phase 01 complete — run `/gsd:transition` to move to Phase 02
+**Last action:** Completed 02-01-PLAN.md — useScroll composable, SectionHero, SectionExpert (2026-03-21)
+**Next action:** Execute 02-02-PLAN.md — SectionMethod (Como Funciona 4-step section)
 
 **Context for next session:**
 
 - 3 phases defined, 26/26 requirements mapped
 - Phase 1 all 3 plans complete: Nuxt 4 scaffold + Fastify backend + SEO meta + R2 image pipeline
-- Fastify server located at server/ — requires MONGODB_URI env var to start
-- CORS_STAGING_URL env var available for staging validation (no code change needed)
-- Honeypot field name `website` is now locked — frontend Phase 3 must use the same field name
-- R2 image upload still pending: test-placeholder.webp and og-image.jpg must be uploaded before staging validation
+- Phase 2 plan 01 complete: useScroll + SectionHero + SectionExpert built and committed
+- useScroll composable auto-imported by Nuxt — available in all subsequent section components
+- CTAs in SectionHero and SectionExpert scroll to `#formulario` — form section target for Phase 3
+- Placeholder photo path: `${r2Base}/marcio-placeholder.webp` — must upload to R2 before staging
+- Placeholder metrics (5M+, 12, R$80k+) and bio text marked with TODO — await content from Marcio
 - NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
-- Content from Marcio is the critical path — should begin collection in parallel with Phase 2 build
+- SectionPlaceholder.vue still in app.vue — will be replaced by real sections in final Phase 2 plan
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 after completing 01-03 (SEO meta + R2 image pipeline)*
+*Last updated: 2026-03-21 after completing 02-01 (useScroll + SectionHero + SectionExpert)*
