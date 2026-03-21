@@ -8,50 +8,47 @@ Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de cons
 
 Converter visitantes em clientes da consultoria VIP atraves de uma LP que transmita autoridade, confianca e resultados reais no mercado de milhas.
 
+## Current State
+
+Shipped v1.0 (MVP) and v1.1 (Refinamento Visual) on 2026-03-21.
+Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
+Codebase: ~940 LOC across 9 Vue components, 2 composables, 1 CSS file.
+Landing page is feature-complete with all sections, lead form, and visual polish.
+
+**Pre-launch blockers:**
+- Replace `55XXXXXXXXXXX` WhatsApp placeholder with Marcio's real number
+- Replace Agencia 201 URL placeholder with real URL
+- Upload real photos/assets to Cloudflare R2
+- Confirm Cloudflare plan supports Image Transformations
+
 ## Requirements
 
 ### Validated
 
-- ✓ SSR via Nuxt 4 para SEO e performance — Phase 1
-- ✓ Design tokens (paleta azul aviacao + fundo claro + CTA laranja/dourado) — Phase 1
-- ✓ Tipografia sans-serif moderna (Inter via @nuxt/fonts) — Phase 1
-- ✓ Performance mobile-first com carregamento ultra rapido (scaffold) — Phase 1
-- ✓ Integracao com backend Fastify para armazenamento de leads no MongoDB — Phase 1
-- ✓ Assets estaticos servidos via Cloudflare R2 — Phase 1
-- ✓ Hero section com copy de impacto e CTA para consultoria — Phase 2
-- ✓ Secao do especialista (bio do Marcio com resultados reais) — Phase 2
-- ✓ Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo) — Phase 2
-- ✓ Secao de prova social (depoimentos e prints de resultados) — Phase 2
-- ✓ Formulario de qualificacao de leads (nome, WhatsApp, gastos mensais, objetivo) — Phase 3
-
-- ✓ Background off-white limpo (#F9FAFB) sem tint amarelado — Phase 4
-- ✓ Header smart sticky com ancoras (Sobre, Como Funciona, Depoimentos, FAQ) e CTA destacado — Phase 4
-- ✓ Hamburger menu mobile com overlay fullscreen — Phase 4
-- ✓ Secao "Sobre a Fly Up Milhas" com bento grid e renda extra como valor distinto — Phase 4
-- ✓ Remocao do comprovante de resultado — Phase 4
-- ✓ Bento grid layout com cards arredondados em Method e About — Phase 4
-- ✓ Contraste FAQ texto #1a1a1a (WCAG AA) — Phase 4
-
-- ✓ Formulario em card navy com espacamento 24px e botao centralizado — Phase 5
-- ✓ Footer split layout com credito "Desenvolvido por Agencia 201" e WhatsApp — Phase 5
+- ✓ SSR via Nuxt 4 para SEO e performance — v1.0
+- ✓ Design tokens (paleta azul aviacao + fundo claro + CTA laranja/dourado) — v1.0
+- ✓ Tipografia sans-serif moderna (Inter via @nuxt/fonts) — v1.0
+- ✓ Performance mobile-first com carregamento ultra rapido — v1.0
+- ✓ Integracao com backend Fastify para armazenamento de leads no MongoDB — v1.0
+- ✓ Assets estaticos servidos via Cloudflare R2 — v1.0
+- ✓ Hero section com copy de impacto e CTA para consultoria — v1.0
+- ✓ Secao do especialista (bio do Marcio com resultados reais) — v1.0
+- ✓ Secao "Como Funciona" com 4 passos visuais — v1.0
+- ✓ Secao de prova social (depoimentos e prints de resultados) — v1.0
+- ✓ Formulario de qualificacao de leads (4 campos) — v1.0
+- ✓ Background off-white limpo (#F9FAFB) — v1.1
+- ✓ Header smart sticky com ancoras e CTA destacado — v1.1
+- ✓ Hamburger menu mobile com overlay fullscreen — v1.1
+- ✓ Secao "Sobre a Fly Up Milhas" com bento grid e renda extra — v1.1
+- ✓ Remocao do comprovante de resultado — v1.1
+- ✓ Bento grid layout com cards arredondados — v1.1
+- ✓ Contraste FAQ texto WCAG AA — v1.1
+- ✓ Formulario em card navy com espacamento e botao centralizado — v1.1
+- ✓ Footer split layout com credito Agencia 201 e WhatsApp — v1.1
 
 ### Active
 
-(No active requirements — v1.1 milestone complete)
-
-## Current Milestone: v1.1 Refinamento Visual
-
-**Goal:** Melhorias visuais e de UX na landing page — background, menu responsivo, bento layout, secao sobre a empresa, contraste FAQ, formulario e footer.
-
-**Target features:**
-- Corrigir background amarelado para off-white limpo
-- Menu responsivo com ancoras + CTA destacado
-- Secao "Sobre a Fly Up Milhas" (empresa, nao pessoa) incluindo renda extra
-- Remover comprovante de resultado
-- Bento grid layout com cards arredondados
-- Melhorar contraste do texto no FAQ
-- Melhorar layout do formulario e alinhamento do botao
-- Footer com credito "Desenvolvido por Agencia 201"
+(No active requirements — planning next milestone)
 
 ### Out of Scope
 
@@ -71,12 +68,12 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 ## Constraints
 
-- **Tech Stack**: Nuxt 3 (SSR) + Nuxt UI (Tailwind CSS) — definido no PRD
-- **Backend**: Fastify API ja existente — integrar, nao recriar
+- **Tech Stack**: Nuxt 4 (SSR) + Nuxt UI v4 (Tailwind CSS v4)
+- **Backend**: Fastify 5 API — integrar, nao recriar
 - **Database**: MongoDB — para leads e configuracoes
 - **Storage**: Cloudflare R2 — para imagens e assets estaticos
 - **Performance**: Mobile-first, carregamento ultra rapido
-- **Design**: Paleta azul aviacao, fundo branco gelo/cinza ultra claro, CTA laranja/dourado
+- **Design**: Paleta azul aviacao (#1a3a5c), fundo off-white (#F9FAFB), CTA laranja (#e67e22)
 
 ## Key Decisions
 
@@ -84,24 +81,12 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 |----------|-----------|---------|
 | Nuxt 4 com SSR (upgraded from Nuxt 3) | Nuxt 3 EOL July 2026, Nuxt 4 is current | ✓ Good |
 | Nuxt UI v4 como framework de componentes | Tailwind CSS v4 integrado, componentes headless | ✓ Good |
-| Formulario de qualificacao em vez de compra direta | Filtrar clientes ideais antes do contato | — Pending |
-
-## Evolution
-
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd:transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd:complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
+| Formulario de qualificacao em vez de compra direta | Filtrar clientes ideais antes do contato | ✓ Good |
+| Plain button over UButton for CTA | Exact design token usage, avoid Reka UI internal styling | ✓ Good |
+| SectionAbout replacing SectionExpert | Company-focused, not personal bio — renda extra as equal value prop | ✓ Good |
+| Bento grid card layout | Modern visual pattern, cards with rounded corners improve scannability | ✓ Good |
+| Smart sticky header (show on scroll-up) | Better UX than always-visible or always-hidden — saves screen space | ✓ Good |
+| Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
 ---
-*Last updated: 2026-03-21 after milestone v1.1 started*
+*Last updated: 2026-03-21 after v1.1 milestone complete*
