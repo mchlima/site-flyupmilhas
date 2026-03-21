@@ -100,7 +100,7 @@ Plans:
 
 Plans:
 - [ ] 04-01-PLAN.md — CSS token fix (#F9FAFB), scroll-margin-top, AppHeader smart sticky nav + mobile hamburger (VISL-01, NAV-01, NAV-02, NAV-03)
-- [ ] 04-02-PLAN.md — SectionAbout bento grid, SectionSocialProof comprovante removal, SectionFAQ contrast fix (CONT-01, CONT-02, CONT-03, VISL-03)
+- [x] 04-02-PLAN.md — SectionAbout bento grid, SectionSocialProof comprovante removal, SectionFAQ contrast fix (CONT-01, CONT-02, CONT-03, VISL-03)
 - [ ] 04-03-PLAN.md — SectionMethod bento grid refactor, app.vue wiring SectionAbout (VISL-02)
 
 ### Phase 5: Form Polish & Footer
