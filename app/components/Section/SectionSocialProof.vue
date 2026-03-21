@@ -1,7 +1,4 @@
 <script setup lang="ts">
-const config = useRuntimeConfig()
-const r2Base = config.public.r2BaseUrl
-
 // TODO: replace with real testimonials from Marcio
 const testimonials = [
   {
@@ -34,7 +31,7 @@ const testimonials = [
 
       <!-- Testimonial cards grid (D-16, D-17, D-19) -->
       <!-- TODO: replace with real testimonials from Marcio -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div
           v-for="t in testimonials"
           :key="t.name"
@@ -52,20 +49,6 @@ const testimonials = [
         </div>
       </div>
 
-      <!-- Result screenshot block (D-18, D-32) -->
-      <!-- TODO: replace with real screenshot from Marcio (WhatsApp conversa ou print de passagem) -->
-      <div class="text-center">
-        <p class="text-sm text-[var(--color-brand-text-muted)] mb-4 uppercase tracking-wide font-medium">
-          Comprovante de resultado
-        </p>
-        <NuxtImg
-          :src="`${r2Base}/resultado-placeholder.webp`"
-          width="800"
-          height="450"
-          alt="Print de passagem executiva emitida com milhas — resultado real de cliente Fly Up Milhas"
-          class="rounded-xl shadow-lg mx-auto max-w-2xl w-full"
-        />
-      </div>
     </div>
   </section>
 </template>
