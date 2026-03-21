@@ -37,7 +37,10 @@ const faqItems = [
         Tire suas dúvidas antes de decidir
       </p>
 
-      <UAccordion :items="faqItems">
+      <UAccordion :items="faqItems" :ui="{ trigger: 'group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-primary min-w-0 text-[var(--color-brand-text)]' }">
+        <template #default="{ item }">
+          <span class="text-[var(--color-brand-text)]">{{ item.label }}</span>
+        </template>
         <template #content="{ item }">
           <p class="text-[var(--color-brand-text)] leading-relaxed pb-4 px-4">
             {{ item.content }}

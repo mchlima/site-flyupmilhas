@@ -115,7 +115,8 @@ async function onSubmit() {
               v-model="state.nome"
               placeholder="Seu nome completo"
               autocomplete="name"
-              class="w-full"
+              class="w-full bg-white"
+              :ui="{ base: 'bg-white border border-gray-300' }"
             />
           </UFormField>
 
@@ -129,7 +130,8 @@ async function onSubmit() {
               inputmode="numeric"
               placeholder="(11) 99999-9999"
               autocomplete="tel"
-              class="w-full"
+              class="w-full bg-white"
+              :ui="{ base: 'bg-white border border-gray-300' }"
               @input="onWhatsappInput"
             />
           </UFormField>
@@ -143,7 +145,8 @@ async function onSubmit() {
               v-model="state.gastoMensal"
               inputmode="numeric"
               placeholder="Média mensal em cartão de crédito (R$)"
-              class="w-full"
+              class="w-full bg-white"
+              :ui="{ base: 'bg-white border border-gray-300' }"
             />
           </UFormField>
 
@@ -158,7 +161,8 @@ async function onSubmit() {
               value-key="value"
               label-key="label"
               placeholder="Selecione seu objetivo"
-              class="w-full"
+              class="w-full bg-white"
+              :ui="{ base: 'bg-white border border-gray-300' }"
             />
           </UFormField>
 
