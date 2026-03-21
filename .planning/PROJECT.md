@@ -2,7 +2,7 @@
 
 ## What This Is
 
-Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de consultoria personalizada (R$ 200) para otimizacao de acumulo de milhas e emissao estrategica de passagens aereas. O produto principal e uma consultoria VIP de 1 mes com 2 reunioes online, diagnostico de cartoes/programas e planejamento de rotas.
+Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de consultoria personalizada (R$ 200) para otimizacao de acumulo de milhas, emissao estrategica de passagens aereas e renda extra com milhas. O produto principal e uma consultoria VIP de 1 mes com 2 reunioes online, diagnostico de cartoes/programas e planejamento de rotas.
 
 ## Core Value
 
@@ -26,7 +26,19 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 ### Active
 
-(All v1 requirements validated — milestone complete)
+## Current Milestone: v1.1 Refinamento Visual
+
+**Goal:** Melhorias visuais e de UX na landing page — background, menu responsivo, bento layout, secao sobre a empresa, contraste FAQ, formulario e footer.
+
+**Target features:**
+- Corrigir background amarelado para off-white limpo
+- Menu responsivo com ancoras + CTA destacado
+- Secao "Sobre a Fly Up Milhas" (empresa, nao pessoa) incluindo renda extra
+- Remover comprovante de resultado
+- Bento grid layout com cards arredondados
+- Melhorar contraste do texto no FAQ
+- Melhorar layout do formulario e alinhamento do botao
+- Footer com credito "Desenvolvido por Agencia 201"
 
 ### Out of Scope
 
@@ -79,4 +91,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after Phase 3 completion (all phases complete)*
+*Last updated: 2026-03-21 after milestone v1.1 started*
