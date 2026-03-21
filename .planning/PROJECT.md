@@ -18,13 +18,13 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 - ✓ Performance mobile-first com carregamento ultra rapido (scaffold) — Phase 1
 - ✓ Integracao com backend Fastify para armazenamento de leads no MongoDB — Phase 1
 - ✓ Assets estaticos servidos via Cloudflare R2 — Phase 1
+- ✓ Hero section com copy de impacto e CTA para consultoria — Phase 2
+- ✓ Secao do especialista (bio do Marcio com resultados reais) — Phase 2
+- ✓ Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo) — Phase 2
+- ✓ Secao de prova social (depoimentos e prints de resultados) — Phase 2
 
 ### Active
 
-- [ ] Hero section com copy de impacto e CTA para consultoria
-- [ ] Secao do especialista (bio do Marcio com resultados reais)
-- [ ] Secao "Como Funciona" com 4 passos visuais (Diagnostico, Estrategia, Execucao, Voo)
-- [ ] Secao de prova social (depoimentos e prints de resultados)
 - [ ] Formulario de qualificacao de leads (nome, WhatsApp, gastos mensais, objetivo)
 
 ### Out of Scope
@@ -78,4 +78,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-21 after Phase 1 completion*
+*Last updated: 2026-03-21 after Phase 2 completion*
