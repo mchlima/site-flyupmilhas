@@ -15,13 +15,6 @@ export default defineNuxtConfig({
 
   ssr: true,
 
-  nitro: {
-    preset: 'cloudflare_pages',
-    prerender: {
-      autoSubfolderIndex: false,
-    },
-  },
-
   site: {
     url: 'https://flyupmilhas.com.br',
     name: 'Fly Up Milhas — Consultoria VIP em Milhas Aéreas',
