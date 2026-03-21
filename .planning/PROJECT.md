@@ -32,10 +32,12 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 - ✓ Bento grid layout com cards arredondados em Method e About — Phase 4
 - ✓ Contraste FAQ texto #1a1a1a (WCAG AA) — Phase 4
 
+- ✓ Formulario em card navy com espacamento 24px e botao centralizado — Phase 5
+- ✓ Footer split layout com credito "Desenvolvido por Agencia 201" e WhatsApp — Phase 5
+
 ### Active
 
-- Layout e alinhamento do formulario — Phase 5
-- Footer com credito Agencia 201 — Phase 5
+(No active requirements — v1.1 milestone complete)
 
 ## Current Milestone: v1.1 Refinamento Visual
 
