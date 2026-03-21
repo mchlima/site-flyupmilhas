@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: — MVP Launch
-status: unknown
-last_updated: "2026-03-21T08:23:08.286Z"
+milestone: v1.2
+milestone_name: Polimento de Conteudo e Layout
+status: in_progress
+last_updated: "2026-03-21T00:00:00.000Z"
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 7
-  completed_plans: 7
+  total_phases: 1
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # State: Fly Up Milhas
@@ -16,28 +16,33 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
-**Current Focus:** Phase 05 — form-polish-footer
+**Current Focus:** Phase 06 — content-layout-polish
 
 ---
 
 ## Current Position
 
-Phase: 05
+Phase: 06
 Plan: Not started
 
 ## Performance Metrics
 
 | Metric | Target | Current |
 |--------|--------|---------|
-| v1.1 requirements mapped | 12/12 | 12/12 |
-| v1.1 phases defined | 2 | 2 |
-| v1.1 plans complete | — | 0 |
-| Background tint | None (off-white) | Not verified |
-| FAQ contrast ratio | 4.5:1+ WCAG AA | Not measured |
-| Phase 04-visual-overhaul-navigation P02 | 6 | 3 tasks | 3 files |
-| Phase 04-visual-overhaul-navigation P01 | 1 | 2 tasks | 2 files |
-| Phase 04 P03 | 1 min | 2 tasks | 2 files |
-| Phase 05 P01 | 8 | 2 tasks | 3 files |
+| v1.2 requirements mapped | 6/6 | 6/6 |
+| v1.2 phases defined | 1 | 1 |
+| v1.2 plans complete | — | 0 |
+| FAQ contrast ratio | 4.5:1+ WCAG AA | Not verified |
+| Form legibility on navy | Inputs + labels readable | Not verified |
+
+### v1.1 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 04-visual-overhaul-navigation P01 | 1 min | 2 tasks | 2 files |
+| Phase 04-visual-overhaul-navigation P02 | 6 min | 3 tasks | 3 files |
+| Phase 04-visual-overhaul-navigation P03 | 1 min | 2 tasks | 2 files |
+| Phase 05-form-polish-footer P01 | 8 min | 2 tasks | 3 files |
 
 ### v1.0 History (all complete)
 
@@ -113,6 +118,7 @@ Plan: Not started
 5. Honeypot field name must be agreed between frontend and backend before Phase 3
 6. Hamburger menu (Phase 4): use `<ClientOnly>` or `import.meta.client` guard for any transition/animation state to avoid SSR hydration mismatch
 7. Bento grid (Phase 4): validate layout at 375px, 768px, and 1280px — CSS Grid areas can break at intermediate breakpoints
+8. Back-to-top button (Phase 6): use `import.meta.client` guard for scroll listener; test SSR build with `nuxt build && nuxt preview`
 
 ### Architecture Constraints
 
@@ -125,15 +131,14 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 05-01 complete — form navy card, spacing, centered button, footer redesign (2026-03-21)
-**Next action:** v1.1 milestone complete — awaiting client content and launch approval
+**Last action:** v1.2 roadmap defined — phase 6 created (2026-03-21)
+**Next action:** Plan phase 6 — content-layout-polish
 
 **Context for next session:**
 
-- v1.0 all complete (phases 1-3, 7 plans, 26/26 requirements)
-- Phase 4 all complete (3/3 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, app.vue assembly
-- Phase 5 complete (1/1 plan): form navy card, field spacing, centered button, footer with Agencia 201 credit
-- v1.1 milestone COMPLETE — all planned visual refinements shipped
+- v1.0 all complete (phases 1-3, 7 plans)
+- v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
+- v1.2 roadmap defined: phase 6 covers CTRST-01, CTRST-02, CONT-04, CONT-05, CONT-06, UX-01
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
 - Open: Agencia 201 URL confirmation (https://agencia201.com.br assumed)
@@ -141,4 +146,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 — v1.1 roadmap defined, phases 4-5 added*
+*Last updated: 2026-03-21 — v1.2 roadmap defined, phase 6 added*

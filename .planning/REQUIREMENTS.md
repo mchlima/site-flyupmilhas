@@ -32,18 +32,18 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CTRST-01 | TBD | Pending |
-| CTRST-02 | TBD | Pending |
-| CONT-04 | TBD | Pending |
-| CONT-05 | TBD | Pending |
-| CONT-06 | TBD | Pending |
-| UX-01 | TBD | Pending |
+| CTRST-01 | Phase 6 | Pending |
+| CTRST-02 | Phase 6 | Pending |
+| CONT-04 | Phase 6 | Pending |
+| CONT-05 | Phase 6 | Pending |
+| CONT-06 | Phase 6 | Pending |
+| UX-01 | Phase 6 | Pending |
 
 **Coverage:**
 - v1.2 requirements: 6 total
-- Mapped to phases: 0
-- Unmapped: 6
+- Mapped to phases: 6
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 after initial definition*
+*Last updated: 2026-03-21 — traceability updated after v1.2 roadmap creation*
