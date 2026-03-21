@@ -6,10 +6,10 @@ const { scrollTo } = useScroll()
   <section id="sobre" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
-        Sobre a Fly Up Milhas
+        Sua estratégia de milhas começa aqui
       </h2>
       <p class="text-[var(--color-brand-text-muted)] text-center mb-10">
-        Especialistas em transformar gastos do dia a dia em voos executivos e renda extra
+        Descubra como transformar seus gastos do dia a dia em viagens executivas e renda extra
       </p>
 
       <!-- Bento grid layout per D-22 -->

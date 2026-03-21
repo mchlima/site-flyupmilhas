@@ -19,10 +19,10 @@ const steps = [
     description: 'Você executa o plano com acompanhamento: dúvidas respondidas via WhatsApp e uma reunião de revisão ao final do primeiro mês.',
   },
   {
-    icon: 'i-heroicons-paper-airplane',
+    icon: 'i-heroicons-academic-cap',
     number: '04',
-    title: 'Voo',
-    description: 'Chegamos juntos ao momento da emissão. Selecionamos a disponibilidade, escolhemos a cabine e você embarca na executiva.',
+    title: 'Autonomia',
+    description: 'Após o plano, você tem autonomia para acumular e emitir milhas sozinho. O conhecimento fica com você para sempre.',
   },
 ]
 </script>
