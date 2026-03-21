@@ -64,15 +64,42 @@
 
 ---
 
+## Milestone: v1.2 — Polimento de Conteudo e Layout
+
+**Shipped:** 2026-03-21
+**Phases:** 1 | **Plans:** 2
+
+### What Was Built
+- FAQ accordion labels with WCAG AA contrast
+- Form inputs bg-white with visible borders on navy card
+- SectionAbout headline reframed as value proposition
+- Step 4 renamed to "Autonomia" with independence-focused copy
+- Offer block consolidated into SectionPrice (5 items)
+- Floating back-to-top button with SSR-safe scroll detection
+
+### What Worked
+- Skipping research and UI-SPEC for a pure polish phase saved significant time
+- Single phase with 2 parallel plans — fastest milestone yet
+- CONTEXT.md decisions were specific enough for zero-ambiguity execution
+
+### What Was Inefficient
+- Nothing notable — clean execution for a small scope
+
+### Key Lessons
+- Polish milestones with <8 requirements can safely be 1 phase
+- UAccordion label styling requires both `ui` prop AND slot override for reliability
+
+---
+
 ## Cross-Milestone Trends
 
-| Metric | v1.0 | v1.1 |
-|--------|------|------|
-| Phases | 3 | 2 |
-| Plans | 7 | 4 |
-| Avg tasks/plan | 2.0 | 1.75 |
-| Verification pass rate | 100% | 100% |
-| Revision loops | 0 | 1 (UI-SPEC typography) |
+| Metric | v1.0 | v1.1 | v1.2 |
+|--------|------|------|------|
+| Phases | 3 | 2 | 1 |
+| Plans | 7 | 4 | 2 |
+| Avg tasks/plan | 2.0 | 1.75 | 2.0 |
+| Verification pass rate | 100% | 100% | 100% |
+| Revision loops | 0 | 1 (UI-SPEC) | 0 |
 
 ---
 *Last updated: 2026-03-21*

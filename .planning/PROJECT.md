@@ -12,7 +12,7 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 Shipped v1.0 (MVP) and v1.1 (Refinamento Visual) on 2026-03-21.
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
-Codebase: ~940 LOC across 9 Vue components, 2 composables, 1 CSS file.
+Codebase: ~976 LOC across 10 Vue components, 2 composables, 1 CSS file.
 Landing page is feature-complete with all sections, lead form, and visual polish.
 
 **Pre-launch blockers:**
@@ -57,17 +57,7 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 (No active requirements — v1.2 milestone complete)
 
-## Current Milestone: v1.2 Polimento de Conteudo e Layout
-
-**Goal:** Polimento final de contraste, conteudo e UX — FAQ legivel, conteudo coerente com a oferta, formulario com cores corretas, e botao back-to-top.
-
-**Target features:**
-- Corrigir contraste dos titulos do FAQ accordion
-- Melhorar titulo da secao Sobre
-- Ajustar conteudo dos passos em Como Funciona
-- Mover "O que esta incluido" para SectionPrice e enriquecer
-- Corrigir paleta de cores do formulario
-- Adicionar botao flutuante back-to-top
+(No current milestone — planning next)
 
 ### Out of Scope
 
@@ -108,4 +98,4 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
 ---
-*Last updated: 2026-03-21 after v1.2 milestone started*
+*Last updated: 2026-03-21 after v1.2 milestone complete*

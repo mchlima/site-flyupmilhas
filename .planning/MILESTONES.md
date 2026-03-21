@@ -1,5 +1,22 @@
 # Milestones
 
+## v1.2 Polimento de Conteudo e Layout (Shipped: 2026-03-21)
+
+**Phases completed:** 1 phase (6), 2 plans, 4 tasks
+**Git range:** fix(06-01) → feat(06-02)
+**Files changed:** 7 files, +71 -35 lines
+
+**Key accomplishments:**
+
+- FAQ accordion labels forced to #1a1a1a for WCAG AA contrast
+- Form inputs rendered bg-white with visible borders on navy card
+- SectionAbout headline reframed: "Sua estratégia de milhas começa aqui"
+- Step 4 "Voo" renamed to "Autonomia" with post-consultancy independence copy
+- Offer block consolidated from SectionMethod into SectionPrice (5 enriched items)
+- Floating back-to-top button with SSR-safe scroll detection
+
+---
+
 ## v1.0 MVP Launch (Shipped: 2026-03-21)
 
 **Phases completed:** 3 phases (1-3), 7 plans, 14 tasks
