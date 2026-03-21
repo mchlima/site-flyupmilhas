@@ -93,38 +93,38 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HERO-01 | — | Pending |
-| HERO-02 | — | Pending |
-| HERO-03 | — | Pending |
-| HERO-04 | — | Pending |
-| HERO-05 | — | Pending |
-| AUTH-01 | — | Pending |
-| AUTH-02 | — | Pending |
-| METD-01 | — | Pending |
-| METD-02 | — | Pending |
-| SOCL-01 | — | Pending |
-| SOCL-02 | — | Pending |
-| LEAD-01 | — | Pending |
-| LEAD-02 | — | Pending |
-| LEAD-03 | — | Pending |
-| LEAD-04 | — | Pending |
-| LEAD-05 | — | Pending |
-| CTA-01 | — | Pending |
-| CTA-02 | — | Pending |
-| CTA-03 | — | Pending |
-| INFR-01 | — | Pending |
-| INFR-02 | — | Pending |
-| INFR-03 | — | Pending |
-| INFR-04 | — | Pending |
-| BACK-01 | — | Pending |
-| BACK-02 | — | Pending |
-| BACK-03 | — | Pending |
+| HERO-01 | Phase 2 | Pending |
+| HERO-02 | Phase 2 | Pending |
+| HERO-03 | Phase 2 | Pending |
+| HERO-04 | Phase 2 | Pending |
+| HERO-05 | Phase 2 | Pending |
+| AUTH-01 | Phase 2 | Pending |
+| AUTH-02 | Phase 2 | Pending |
+| METD-01 | Phase 2 | Pending |
+| METD-02 | Phase 2 | Pending |
+| SOCL-01 | Phase 2 | Pending |
+| SOCL-02 | Phase 2 | Pending |
+| LEAD-01 | Phase 3 | Pending |
+| LEAD-02 | Phase 3 | Pending |
+| LEAD-03 | Phase 3 | Pending |
+| LEAD-04 | Phase 3 | Pending |
+| LEAD-05 | Phase 3 | Pending |
+| CTA-01 | Phase 3 | Pending |
+| CTA-02 | Phase 2 | Pending |
+| CTA-03 | Phase 2 | Pending |
+| INFR-01 | Phase 1 | Pending |
+| INFR-02 | Phase 1 | Pending |
+| INFR-03 | Phase 1 | Pending |
+| INFR-04 | Phase 1 | Pending |
+| BACK-01 | Phase 1 | Pending |
+| BACK-02 | Phase 1 | Pending |
+| BACK-03 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 26 total
-- Mapped to phases: 0
-- Unmapped: 26 ⚠️
+- Mapped to phases: 26
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 after initial definition*
+*Last updated: 2026-03-21 after phase mapping*
