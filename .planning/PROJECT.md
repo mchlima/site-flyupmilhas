@@ -48,7 +48,24 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 ### Active
 
-(No active requirements — planning next milestone)
+- [ ] FAQ accordion labels com contraste adequado contra o fundo
+- [ ] Titulo da SectionAbout mais impactante
+- [ ] Conteudo dos passos em Como Funciona coerente com a oferta real
+- [ ] Remover card "O que esta incluido" de Como Funciona e enriquecer SectionPrice
+- [ ] Corrigir cores estranhas no formulario
+- [ ] Botao flutuante de voltar ao topo
+
+## Current Milestone: v1.2 Polimento de Conteudo e Layout
+
+**Goal:** Polimento final de contraste, conteudo e UX — FAQ legivel, conteudo coerente com a oferta, formulario com cores corretas, e botao back-to-top.
+
+**Target features:**
+- Corrigir contraste dos titulos do FAQ accordion
+- Melhorar titulo da secao Sobre
+- Ajustar conteudo dos passos em Como Funciona
+- Mover "O que esta incluido" para SectionPrice e enriquecer
+- Corrigir paleta de cores do formulario
+- Adicionar botao flutuante back-to-top
 
 ### Out of Scope
 
@@ -89,4 +106,4 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
 ---
-*Last updated: 2026-03-21 after v1.1 milestone complete*
+*Last updated: 2026-03-21 after v1.2 milestone started*
