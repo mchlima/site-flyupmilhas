@@ -39,8 +39,8 @@
 ### CTA & Conversao
 
 - [ ] **CTA-01**: WhatsApp como CTA primario com link wa.me/ e mensagem pre-preenchida
-- [ ] **CTA-02**: Preco visivel (R$200) com ancoragem de valor (economia media vs custo)
-- [ ] **CTA-03**: Secao FAQ com 5-7 perguntas que tratam objecoes de compra
+- [x] **CTA-02**: Preco visivel (R$200) com ancoragem de valor (economia media vs custo)
+- [x] **CTA-03**: Secao FAQ com 5-7 perguntas que tratam objecoes de compra
 
 ### Infraestrutura
 
@@ -110,8 +110,8 @@
 | LEAD-04 | Phase 3 | Pending |
 | LEAD-05 | Phase 3 | Pending |
 | CTA-01 | Phase 3 | Pending |
-| CTA-02 | Phase 2 | Pending |
-| CTA-03 | Phase 2 | Pending |
+| CTA-02 | Phase 2 | Complete |
+| CTA-03 | Phase 2 | Complete |
 | INFR-01 | Phase 1 | Complete |
 | INFR-02 | Phase 1 | Complete |
 | INFR-03 | Phase 1 | Complete |

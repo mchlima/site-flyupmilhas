@@ -50,7 +50,7 @@ Plans:
 Plans:
 - [x] 02-01-PLAN.md — useScroll composable, SectionHero, SectionExpert (HERO-01-05, AUTH-01-02)
 - [x] 02-02-PLAN.md — SectionMethod, SectionSocialProof (METD-01-02, SOCL-01-02)
-- [ ] 02-03-PLAN.md — SectionPrice, SectionFAQ, app.vue assembly (CTA-02, CTA-03)
+- [x] 02-03-PLAN.md — SectionPrice, SectionFAQ, app.vue assembly (CTA-02, CTA-03)
 
 ### Phase 3: Lead Form & Conversion
 **Goal**: A visitor can fill out the 4-field qualification form on mobile, submit it successfully, receive a confirmation message, and reach Marcio via WhatsApp — with every submission stored in MongoDB and protected from bots and spam.
