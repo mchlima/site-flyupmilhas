@@ -24,7 +24,18 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 - ✓ Secao de prova social (depoimentos e prints de resultados) — Phase 2
 - ✓ Formulario de qualificacao de leads (nome, WhatsApp, gastos mensais, objetivo) — Phase 3
 
+- ✓ Background off-white limpo (#F9FAFB) sem tint amarelado — Phase 4
+- ✓ Header smart sticky com ancoras (Sobre, Como Funciona, Depoimentos, FAQ) e CTA destacado — Phase 4
+- ✓ Hamburger menu mobile com overlay fullscreen — Phase 4
+- ✓ Secao "Sobre a Fly Up Milhas" com bento grid e renda extra como valor distinto — Phase 4
+- ✓ Remocao do comprovante de resultado — Phase 4
+- ✓ Bento grid layout com cards arredondados em Method e About — Phase 4
+- ✓ Contraste FAQ texto #1a1a1a (WCAG AA) — Phase 4
+
 ### Active
+
+- Layout e alinhamento do formulario — Phase 5
+- Footer com credito Agencia 201 — Phase 5
 
 ## Current Milestone: v1.1 Refinamento Visual
 
