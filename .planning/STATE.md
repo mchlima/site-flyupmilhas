@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: — MVP Launch
 status: unknown
-last_updated: "2026-03-21T07:47:42.820Z"
+last_updated: "2026-03-21T07:48:29.597Z"
 progress:
   total_phases: 3
   completed_phases: 3
@@ -23,7 +23,7 @@ progress:
 ## Current Position
 
 Phase: 04 (visual-overhaul-navigation) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 
 ## Performance Metrics
 
@@ -35,6 +35,7 @@ Plan: 2 of 3
 | Background tint | None (off-white) | Not verified |
 | FAQ contrast ratio | 4.5:1+ WCAG AA | Not measured |
 | Phase 04-visual-overhaul-navigation P02 | 6 | 3 tasks | 3 files |
+| Phase 04-visual-overhaul-navigation P01 | 1 | 2 tasks | 2 files |
 
 ### v1.0 History (all complete)
 
@@ -81,8 +82,11 @@ Plan: 2 of 3
 | USelect uses items prop (not options) with value-key/label-key | Nuxt UI v4 Select.vue source confirmed; options prop does not exist in v4 | Confirmed — implemented in 03-01 |
 | simple-icons @iconify-json not installed — inline SVG for WhatsApp CTA | Package absent; inline SVG path used in both CTA button instances | Confirmed — implemented in 03-01 |
 | WhatsApp CTA URL defined as constant with TODO marker | WHATSAPP_URL = wa.me/55XXXXXXXXXXX; Marcio's real number required before launch | Open — needs Marcio's number |
-| Bento grid replaces flat section layout (v1.1) | Modern visual pattern; cards with rounded corners improve perceived quality and scannability | Phase 4 — to implement |
-| SectionExpert replaced by SectionAbout (v1.1) | Milestone requirement: company story + renda extra value prop, not personal bio | Phase 4 — to implement |
+| Bento grid replaces flat section layout (v1.1) | Modern visual pattern; cards with rounded corners improve perceived quality and scannability | Confirmed — implemented in 04-01/04-02 |
+| SectionExpert replaced by SectionAbout (v1.1) | Milestone requirement: company story + renda extra value prop, not personal bio | Confirmed — implemented in 04-02 |
+| opacity/pointer-events overlay over v-if for mobile menu | SSR-safe (ref(false) identical on server+client), avoids DOM CLS on each toggle | Confirmed — implemented in 04-01 |
+| scroll-margin-top: 72px on section[id] | Prevents fixed 64px header overlapping anchored section content; 8px breathing room | Confirmed — implemented in 04-01 |
+| SCROLL_THRESHOLD=64 for smart-sticky | Matches header height; smart-sticky activates only after full header has been scrolled past | Confirmed — implemented in 04-01 |
 
 ### Critical Pre-Build Blockers
 
@@ -114,8 +118,8 @@ Plan: 2 of 3
 
 ## Session Continuity
 
-**Last action:** v1.1 roadmap created — phases 4 and 5 defined (2026-03-21)
-**Next action:** Plan Phase 4 — Visual Overhaul & Navigation
+**Last action:** Phase 04-01 complete — background token + AppHeader smart sticky nav (2026-03-21)
+**Next action:** Phase 04-03 — SectionMethod bento grid refactor (final plan in phase 4)
 
 **Context for next session:**
 

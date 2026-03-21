@@ -96,10 +96,10 @@ Plans:
   3. The main content sections use a bento grid card layout with rounded corners that is visually coherent on both 375px mobile and 1280px desktop
   4. FAQ text passes WCAG AA contrast ratio (4.5:1 minimum) for body text against its card background — verifiable via browser DevTools accessibility checker
   5. The "Sobre a Fly Up Milhas" section presents the company story and value proposition (including renda extra com milhas as a distinct benefit), with no specialist personal bio or comprovante de resultado screenshot visible on the page
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 
 Plans:
-- [ ] 04-01-PLAN.md — CSS token fix (#F9FAFB), scroll-margin-top, AppHeader smart sticky nav + mobile hamburger (VISL-01, NAV-01, NAV-02, NAV-03)
+- [x] 04-01-PLAN.md — CSS token fix (#F9FAFB), scroll-margin-top, AppHeader smart sticky nav + mobile hamburger (VISL-01, NAV-01, NAV-02, NAV-03)
 - [x] 04-02-PLAN.md — SectionAbout bento grid, SectionSocialProof comprovante removal, SectionFAQ contrast fix (CONT-01, CONT-02, CONT-03, VISL-03)
 - [ ] 04-03-PLAN.md — SectionMethod bento grid refactor, app.vue wiring SectionAbout (VISL-02)
 
@@ -122,7 +122,7 @@ Plans:
 | 1. Foundation & Infrastructure | 3/3 | Complete | 2026-03-21 |
 | 2. Display Sections | 3/3 | Complete | 2026-03-21 |
 | 3. Lead Form & Conversion | 1/1 | Complete | 2026-03-21 |
-| 4. Visual Overhaul & Navigation | 0/3 | Planned | - |
+| 4. Visual Overhaul & Navigation | 2/3 | In Progress|  |
 | 5. Form Polish & Footer | 0/? | Not started | - |
 
 ---
