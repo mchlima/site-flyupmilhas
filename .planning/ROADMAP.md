@@ -28,7 +28,12 @@
   3. A test POST to `/leads` from a browser on the staging URL returns 200 and creates a MongoDB document — no CORS error, no 500
   4. A test POST to `/leads` from the same IP beyond the rate limit returns 429
   5. The page scores 90+ on PageSpeed mobile in a `nuxt build && nuxt preview` run, and LCP is under 2.5s on a 3G throttled profile
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Nuxt 4 scaffold, dependencies, design tokens, app shell (INFR-01)
+- [ ] 01-02-PLAN.md — Fastify POST /leads with CORS, rate limiting, MongoDB (BACK-01, BACK-02, BACK-03)
+- [ ] 01-03-PLAN.md — R2 image pipeline, SEO meta, LocalBusiness schema, performance validation (INFR-02, INFR-03, INFR-04)
 
 ### Phase 2: Display Sections
 **Goal**: A visitor scrolling the full page sees a compelling, trust-building narrative — hero headline, expert credentials with real numbers, the 4-step method, testimonials with specific savings, price with value anchoring, and FAQ — all correctly styled and mobile-responsive.
@@ -60,7 +65,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Infrastructure | 0/? | Not started | - |
+| 1. Foundation & Infrastructure | 0/3 | Planned | - |
 | 2. Display Sections | 0/? | Not started | - |
 | 3. Lead Form & Conversion | 0/? | Not started | - |
 
@@ -101,4 +106,4 @@
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 after initial creation*
+*Last updated: 2026-03-21 after Phase 1 planning*
