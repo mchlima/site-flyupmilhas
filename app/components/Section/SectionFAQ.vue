@@ -37,7 +37,13 @@ const faqItems = [
         Tire suas dúvidas antes de decidir
       </p>
 
-      <UAccordion :items="faqItems" />
+      <UAccordion :items="faqItems">
+        <template #content="{ item }">
+          <p class="text-[var(--color-brand-text)] leading-relaxed pb-4 px-4">
+            {{ item.content }}
+          </p>
+        </template>
+      </UAccordion>
     </div>
   </section>
 </template>
