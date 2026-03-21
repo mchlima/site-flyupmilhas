@@ -60,7 +60,7 @@
 ### Visual & Layout
 
 - [x] **VISL-01**: Background da pagina corrigido para off-white limpo (remover tom amarelado)
-- [ ] **VISL-02**: Layout bento grid nas secoes principais com cards levemente arredondados, visual moderno e marcante
+- [x] **VISL-02**: Layout bento grid nas secoes principais com cards levemente arredondados, visual moderno e marcante
 - [x] **VISL-03**: Contraste do texto no FAQ melhorado para legibilidade adequada
 
 ### Navegacao
@@ -158,7 +158,7 @@
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | VISL-01 | Phase 4 | Complete |
-| VISL-02 | Phase 4 | Pending |
+| VISL-02 | Phase 4 | Complete |
 | VISL-03 | Phase 4 | Complete |
 | NAV-01 | Phase 4 | Complete |
 | NAV-02 | Phase 4 | Complete |

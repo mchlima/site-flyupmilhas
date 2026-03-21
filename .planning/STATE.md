@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: — MVP Launch
 status: unknown
-last_updated: "2026-03-21T07:48:29.597Z"
+last_updated: "2026-03-21T07:52:28.380Z"
 progress:
   total_phases: 3
   completed_phases: 3
@@ -22,8 +22,8 @@ progress:
 
 ## Current Position
 
-Phase: 04 (visual-overhaul-navigation) — EXECUTING
-Plan: 3 of 3
+Phase: 04 (visual-overhaul-navigation) — COMPLETE
+Plan: 3 of 3 (all done)
 
 ## Performance Metrics
 
@@ -36,6 +36,7 @@ Plan: 3 of 3
 | FAQ contrast ratio | 4.5:1+ WCAG AA | Not measured |
 | Phase 04-visual-overhaul-navigation P02 | 6 | 3 tasks | 3 files |
 | Phase 04-visual-overhaul-navigation P01 | 1 | 2 tasks | 2 files |
+| Phase 04 P03 | 1 min | 2 tasks | 2 files |
 
 ### v1.0 History (all complete)
 
@@ -82,8 +83,10 @@ Plan: 3 of 3
 | USelect uses items prop (not options) with value-key/label-key | Nuxt UI v4 Select.vue source confirmed; options prop does not exist in v4 | Confirmed — implemented in 03-01 |
 | simple-icons @iconify-json not installed — inline SVG for WhatsApp CTA | Package absent; inline SVG path used in both CTA button instances | Confirmed — implemented in 03-01 |
 | WhatsApp CTA URL defined as constant with TODO marker | WHATSAPP_URL = wa.me/55XXXXXXXXXXX; Marcio's real number required before launch | Open — needs Marcio's number |
-| Bento grid replaces flat section layout (v1.1) | Modern visual pattern; cards with rounded corners improve perceived quality and scannability | Confirmed — implemented in 04-01/04-02 |
-| SectionExpert replaced by SectionAbout (v1.1) | Milestone requirement: company story + renda extra value prop, not personal bio | Confirmed — implemented in 04-02 |
+| Bento grid replaces flat section layout (v1.1) | Modern visual pattern; cards with rounded corners improve perceived quality and scannability | Confirmed — implemented in 04-01/04-02/04-03 |
+| SectionExpert replaced by SectionAbout (v1.1) | Milestone requirement: company story + renda extra value prop, not personal bio | Confirmed — wired in app.vue in 04-03 |
+| :class conditional binding for bento step variant | Avoids duplicate markup; single v-for with conditional class for navy vs white card variants | Confirmed — implemented in 04-03 |
+| pt-16 on main#main-content | 64px offset prevents fixed header from overlapping SectionHero content | Confirmed — implemented in 04-03 |
 | opacity/pointer-events overlay over v-if for mobile menu | SSR-safe (ref(false) identical on server+client), avoids DOM CLS on each toggle | Confirmed — implemented in 04-01 |
 | scroll-margin-top: 72px on section[id] | Prevents fixed 64px header overlapping anchored section content; 8px breathing room | Confirmed — implemented in 04-01 |
 | SCROLL_THRESHOLD=64 for smart-sticky | Matches header height; smart-sticky activates only after full header has been scrolled past | Confirmed — implemented in 04-01 |
@@ -118,14 +121,14 @@ Plan: 3 of 3
 
 ## Session Continuity
 
-**Last action:** Phase 04-01 complete — background token + AppHeader smart sticky nav (2026-03-21)
-**Next action:** Phase 04-03 — SectionMethod bento grid refactor (final plan in phase 4)
+**Last action:** Phase 04-03 complete — SectionMethod bento grid + app.vue assembly (2026-03-21)
+**Next action:** Phase 05 — form improvements and footer
 
 **Context for next session:**
 
 - v1.0 all complete (phases 1-3, 7 plans, 26/26 requirements)
-- v1.1 roadmap ready: Phase 4 (9 requirements: VISL-01..03, NAV-01..03, CONT-01..03) and Phase 5 (3 requirements: FORM-01, FORM-02, FOOT-01)
-- Phase 4 is structural — touches header component (new), multiple existing section components (bento refactor), SectionExpert replacement, FAQ contrast fix, background token
+- Phase 4 all complete (3/3 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, app.vue assembly
+- v1.1 Phase 5 remaining: 3 plans (FORM-01, FORM-02, FOOT-01) — form improvements and footer
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
 - NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
