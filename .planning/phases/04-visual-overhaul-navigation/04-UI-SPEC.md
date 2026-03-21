@@ -63,7 +63,7 @@ Source: CONTEXT.md D-09, D-10; CLAUDE.md mobile-first constraint; existing Secti
 
 Font: Inter via `--font-family-sans` in `@theme {}`. Anti-aliasing: `-webkit-font-smoothing: antialiased` (already in main.css).
 
-Bento card headings: 20px / weight 600 (`text-xl font-semibold`) — bridges label and section heading without adding a 5th size level.
+Bento card headings use the Body role: `text-base font-bold` (16px, weight 700). No 5th size is introduced.
 
 Source: main.css `@theme` block; SectionHero.vue (`text-3xl md:text-5xl font-bold leading-tight`); SectionMethod.vue (`text-2xl md:text-3xl font-bold`); HERO-05 requirement.
 
@@ -83,6 +83,7 @@ Source: main.css `@theme` block; SectionHero.vue (`text-3xl md:text-5xl font-bol
 2. Step number labels in SectionMethod bento cards (already `opacity-30` treatment)
 3. Checkmark icons in the offer block (UIcon check-circle)
 4. No other elements — anchor links, bento card borders, and icons use `--color-brand-primary` (navy)
+5. Orange accent bento card — at most 1 per section, conversion emphasis only
 
 **Bento card backgrounds (D-06, D-07):**
 - White cards with shadow: `bg-white shadow-sm rounded-xl` — majority of cards
@@ -138,7 +139,7 @@ Components to MODIFY (refactor):
 **Mobile behavior (hamburger):**
 - Hamburger icon: `i-heroicons-bars-3` (open state), `i-heroicons-x-mark` (close state)
 - Tap opens fullscreen overlay: `fixed inset-0 bg-[var(--color-brand-primary)] z-40 flex flex-col items-center justify-center`
-- Links centered vertically and horizontally in white text at 20px / weight 600
+- Links centered vertically and horizontally in white text at 16px / weight 700 (`text-base font-bold`)
 - CTA button in overlay: same orange style, full-width on mobile (`w-full max-w-xs`)
 - Closes on: anchor link tap, X icon tap, Escape key
 - SSR safety: hamburger open state via `ref(false)`, guarded with `import.meta.client` for any transition listener
