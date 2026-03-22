@@ -57,7 +57,19 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 (No active requirements — v1.2 milestone complete)
 
-(No current milestone — planning next)
+## Current Milestone: v1.3 Alinhamento de Conteudo com Mentoria
+
+**Goal:** Alinhar todo o conteudo do site com o produto real (mentoria com 3 encontros quinzenais) usando o conteudo do site antigo como referencia.
+
+**Target features:**
+- Pain points integrados no hero
+- CTA "Quero dar o primeiro passo" em toda a LP
+- Nova secao de conteudo programatico (o que se aprende)
+- Nova secao "Para quem e" (qualificacao do publico)
+- Como Funciona mesclado com formato da mentoria (quinzenal, material, suporte)
+- SectionPrice sem valor, com formato/condicoes do site antigo
+- Copy de "consultoria" → "mentoria" em toda a LP
+- Formulario e WhatsApp ajustados para mentoria
 
 ### Out of Scope
 

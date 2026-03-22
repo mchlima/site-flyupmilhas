@@ -1,49 +1,54 @@
 # Requirements: Fly Up Milhas
 
 **Defined:** 2026-03-21
-**Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
+**Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas
 
-## v1.2 Requirements
+## v1.3 Requirements
 
-### Contraste & Visual
+### Conteudo & Copy
 
-- [x] **CTRST-01**: Titulos (labels) do accordion FAQ visiveis com contraste adequado contra o fundo — nao usar o estilo muted padrao do UAccordion
-- [x] **CTRST-02**: Cores do formulario corrigidas — inputs legiveis, labels visiveis, sem conflito visual no card navy
+- [ ] **COPY-01**: Todo texto "consultoria" substituido por "mentoria" em toda a LP (headings, body, CTAs, meta tags)
+- [ ] **COPY-02**: CTA principal alterado de "Quero minha Consultoria" para "Quero dar o primeiro passo" em todos os pontos (hero, about, price, header, form)
+- [ ] **COPY-03**: Hero integra pain points do site antigo ("Viajar de aviao e caro", "Milhas e complicado", etc.) como elementos visuais
+- [ ] **COPY-04**: Texto de confirmacao do formulario ajustado para mentoria (nao "consultoria VIP")
 
-### Conteudo & Secoes
+### Novas Secoes
 
-- [x] **CONT-04**: Titulo da SectionAbout mais impactante que "Sobre a Fly Up Milhas" — refletir proposta de valor
-- [x] **CONT-05**: Conteudo do quarto passo (Voo) em Como Funciona ajustado para refletir o que a consultoria realmente entrega
-- [x] **CONT-06**: Card "O que esta incluido" removido de SectionMethod e seu conteudo integrado/enriquecido na SectionPrice
+- [ ] **SEC-01**: Secao "Conteudo Programatico" com lista do que se aprende na pratica (8 itens do site antigo)
+- [ ] **SEC-02**: Secao "Para quem e" com lista de qualificacao do publico-alvo (sem desqualificacao)
 
-### UX & Navegacao
+### Secoes Existentes
 
-- [x] **UX-01**: Botao flutuante de voltar ao topo visivel apos scroll, com transicao suave
+- [ ] **EDIT-01**: SectionMethod (Como Funciona) mesclado com formato da mentoria: encontros quinzenais, material de apoio, suporte, acompanhamento
+- [ ] **EDIT-02**: SectionPrice sem valor R$200 — manter secao com formato (parcelamento, condicao especial a vista, agendamento apos confirmacao)
+- [ ] **EDIT-03**: SectionAbout ajustado para mentoria (copy sobre o que e a mentoria, nao consultoria)
 
 ## Out of Scope
 
 | Feature | Reason |
 |---------|--------|
-| Novos campos no formulario | Formulario locked em 4 campos desde v1.0 |
-| Animacoes de scroll | Deferred — complexidade desnecessaria para polimento |
-| Dark mode | Deferred — fora do escopo de polimento |
+| Secao de desqualificacao ("para quem NAO e") | Usuario decidiu nao incluir |
+| Preco visivel no site | Produto nao expoe valor — contato via formulario/WhatsApp |
+| Novos campos no formulario | Formulario locked em 4 campos |
 
 ## Traceability
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CTRST-01 | Phase 6 | Complete |
-| CTRST-02 | Phase 6 | Complete |
-| CONT-04 | Phase 6 | Complete |
-| CONT-05 | Phase 6 | Complete |
-| CONT-06 | Phase 6 | Complete |
-| UX-01 | Phase 6 | Complete |
+| COPY-01 | TBD | Pending |
+| COPY-02 | TBD | Pending |
+| COPY-03 | TBD | Pending |
+| COPY-04 | TBD | Pending |
+| SEC-01 | TBD | Pending |
+| SEC-02 | TBD | Pending |
+| EDIT-01 | TBD | Pending |
+| EDIT-02 | TBD | Pending |
+| EDIT-03 | TBD | Pending |
 
 **Coverage:**
-- v1.2 requirements: 6 total
-- Mapped to phases: 6
-- Unmapped: 0
+- v1.3 requirements: 9 total
+- Mapped to phases: 0
+- Unmapped: 9
 
 ---
 *Requirements defined: 2026-03-21*
-*Last updated: 2026-03-21 — traceability updated after v1.2 roadmap creation*
