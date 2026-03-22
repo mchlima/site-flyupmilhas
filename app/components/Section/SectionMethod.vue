@@ -1,28 +1,28 @@
 <script setup lang="ts">
 const steps = [
   {
-    icon: 'i-heroicons-magnifying-glass',
+    icon: 'i-heroicons-clipboard-document-check',
     number: '01',
-    title: 'Diagnóstico',
-    description: 'Analisamos seus cartões, gastos mensais e programas de fidelidade para identificar onde você está deixando milhas na mesa.',
+    title: 'Primeiro Encontro',
+    description: 'Diagnostico completo dos seus cartoes, programas e gastos. Inicio da sua estrategia personalizada de milhas.',
   },
   {
-    icon: 'i-heroicons-light-bulb',
+    icon: 'i-heroicons-chart-bar',
     number: '02',
-    title: 'Estratégia',
-    description: 'Montamos um plano personalizado: quais cartões usar, como transferir pontos e qual programa de milhas faz mais sentido para o seu perfil.',
+    title: 'Segundo Encontro',
+    description: 'Aprofundamento da estrategia com acompanhamento do seu progresso. Ajustes e novas oportunidades.',
   },
   {
-    icon: 'i-heroicons-rocket-launch',
+    icon: 'i-heroicons-arrow-path',
     number: '03',
-    title: 'Execução',
-    description: 'Você executa o plano com acompanhamento: dúvidas respondidas via WhatsApp e uma reunião de revisão ao final do primeiro mês.',
+    title: 'Terceiro Encontro',
+    description: 'Revisao dos resultados alcancados e ajustes finais para maximizar seus ganhos com milhas.',
   },
   {
     icon: 'i-heroicons-academic-cap',
     number: '04',
     title: 'Autonomia',
-    description: 'Após o plano, você tem autonomia para acumular e emitir milhas sozinho. O conhecimento fica com você para sempre.',
+    description: 'Voce se beneficia do que aprendeu, com conhecimento para acumular e emitir milhas sozinho.',
   },
 ]
 </script>
@@ -35,7 +35,7 @@ const steps = [
         Como Funciona
       </h2>
       <p class="text-[var(--color-brand-text-muted)] text-center mb-12">
-        4 passos para voar em executiva
+        Sua jornada na mentoria Fly Up Milhas
       </p>
 
       <!-- Steps bento grid: 1 col mobile, 2 col tablet, 4 col desktop -->
@@ -67,6 +67,10 @@ const steps = [
           >{{ step.description }}</p>
         </div>
       </div>
+
+      <p class="text-center text-sm text-[var(--color-brand-text-muted)] mt-8 max-w-2xl mx-auto">
+        Encontros quinzenais online via Google Meet, com suporte para duvidas via WhatsApp e material de apoio para aplicacao imediata.
+      </p>
 
     </div>
   </section>
