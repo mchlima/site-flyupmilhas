@@ -46,7 +46,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 
 ### Phases
 
-- [ ] **Phase 7: Content Overhaul** — Replace "consultoria" with "mentoria" across the LP, update CTAs, hero pain points, form confirmation, SectionMethod format, SectionPrice, and SectionAbout
+- [x] **Phase 7: Content Overhaul** — Replace "consultoria" with "mentoria" across the LP, update CTAs, hero pain points, form confirmation, SectionMethod format, SectionPrice, and SectionAbout (completed 2026-03-22)
 - [ ] **Phase 8: New Sections** — Create and integrate SectionProgramContent (8 learning items) and SectionForWhom (audience qualification)
 
 ### Phase Details
@@ -61,12 +61,12 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   3. The hero section displays pain point phrases ("Viajar de aviao e caro", "Milhas e complicado", etc.) as visual elements above or alongside the main headline
   4. SectionMethod describes the mentorship format: biweekly online sessions, support channel, reference materials, and practical application — not just 4 abstract steps
   5. SectionPrice shows payment options and scheduling flow without displaying the R$200 price, and SectionAbout copy describes the mentorship product (not "consultoria")
-**Plans:** 3 plans
+**Plans:** 3/3 plans complete
 
 Plans:
-- [ ] 07-01-PLAN.md — Hero pain points + Header/Footer/SEO mentoria migration
-- [ ] 07-02-PLAN.md — SectionMethod encounters + SectionPrice benefits + SectionAbout copy
-- [ ] 07-03-PLAN.md — SectionLeadForm + SocialProof + FAQ + legacy file cleanup
+- [x] 07-01-PLAN.md — Hero pain points + Header/Footer/SEO mentoria migration
+- [x] 07-02-PLAN.md — SectionMethod encounters + SectionPrice benefits + SectionAbout copy
+- [x] 07-03-PLAN.md — SectionLeadForm + SocialProof + FAQ + legacy file cleanup
 
 ### Phase 8: New Sections
 **Goal**: Visitors can see exactly what they will learn and whether the mentorship is the right fit for them, without leaving the page
@@ -91,7 +91,7 @@ Plans:
 | 4. Visual Overhaul & Navigation | v1.1 | 3/3 | Complete | 2026-03-21 |
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
 | 6. Content & Layout Polish | v1.2 | 2/2 | Complete | 2026-03-21 |
-| 7. Content Overhaul | v1.3 | 0/3 | Not started | - |
+| 7. Content Overhaul | v1.3 | 3/3 | Complete   | 2026-03-22 |
 | 8. New Sections | v1.3 | 0/? | Not started | - |
 
 ---

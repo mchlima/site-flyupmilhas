@@ -7,10 +7,10 @@
 
 ### Conteudo & Copy
 
-- [ ] **COPY-01**: Todo texto "consultoria" substituido por "mentoria" em toda a LP (headings, body, CTAs, meta tags)
-- [ ] **COPY-02**: CTA principal alterado de "Quero minha Consultoria" para "Quero dar o primeiro passo" em todos os pontos (hero, about, price, header, form)
-- [ ] **COPY-03**: Hero integra pain points do site antigo ("Viajar de aviao e caro", "Milhas e complicado", etc.) como elementos visuais
-- [ ] **COPY-04**: Texto de confirmacao do formulario ajustado para mentoria (nao "consultoria VIP")
+- [x] **COPY-01**: Todo texto "consultoria" substituido por "mentoria" em toda a LP (headings, body, CTAs, meta tags)
+- [x] **COPY-02**: CTA principal alterado de "Quero minha Consultoria" para "Quero dar o primeiro passo" em todos os pontos (hero, about, price, header, form)
+- [x] **COPY-03**: Hero integra pain points do site antigo ("Viajar de aviao e caro", "Milhas e complicado", etc.) como elementos visuais
+- [x] **COPY-04**: Texto de confirmacao do formulario ajustado para mentoria (nao "consultoria VIP")
 
 ### Novas Secoes
 
@@ -19,9 +19,9 @@
 
 ### Secoes Existentes
 
-- [ ] **EDIT-01**: SectionMethod (Como Funciona) mesclado com formato da mentoria: encontros quinzenais, material de apoio, suporte, acompanhamento
-- [ ] **EDIT-02**: SectionPrice sem valor R$200 — manter secao com formato (parcelamento, condicao especial a vista, agendamento apos confirmacao)
-- [ ] **EDIT-03**: SectionAbout ajustado para mentoria (copy sobre o que e a mentoria, nao consultoria)
+- [x] **EDIT-01**: SectionMethod (Como Funciona) mesclado com formato da mentoria: encontros quinzenais, material de apoio, suporte, acompanhamento
+- [x] **EDIT-02**: SectionPrice sem valor R$200 — manter secao com formato (parcelamento, condicao especial a vista, agendamento apos confirmacao)
+- [x] **EDIT-03**: SectionAbout ajustado para mentoria (copy sobre o que e a mentoria, nao consultoria)
 
 ## Out of Scope
 
@@ -35,13 +35,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COPY-01 | Phase 7 | Pending |
-| COPY-02 | Phase 7 | Pending |
-| COPY-03 | Phase 7 | Pending |
-| COPY-04 | Phase 7 | Pending |
-| EDIT-01 | Phase 7 | Pending |
-| EDIT-02 | Phase 7 | Pending |
-| EDIT-03 | Phase 7 | Pending |
+| COPY-01 | Phase 7 | Complete |
+| COPY-02 | Phase 7 | Complete |
+| COPY-03 | Phase 7 | Complete |
+| COPY-04 | Phase 7 | Complete |
+| EDIT-01 | Phase 7 | Complete |
+| EDIT-02 | Phase 7 | Complete |
+| EDIT-03 | Phase 7 | Complete |
 | SEC-01 | Phase 8 | Pending |
 | SEC-02 | Phase 8 | Pending |
 
