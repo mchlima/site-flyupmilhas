@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Alinhamento de Conteudo com Mentoria
 status: unknown
-last_updated: "2026-03-22T02:26:09.858Z"
+last_updated: "2026-03-22T02:28:36.280Z"
 progress:
   total_phases: 2
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 5
-  completed_plans: 4
+  completed_plans: 5
 ---
 
 # State: Fly Up Milhas
@@ -39,6 +39,7 @@ Plan: 2 of 2
 | Phase 07 P02 | 4 | 2 tasks | 3 files |
 | Phase 07 P03 | 2 | 2 tasks | 5 files |
 | Phase 08-new-sections P01 | 1 | 2 tasks | 2 files |
+| Phase 08-new-sections P02 | 2min | 2 tasks | 2 files |
 
 ### v1.2 History (all complete)
 
@@ -146,8 +147,8 @@ Plan: 2 of 2
 
 ## Session Continuity
 
-**Last action:** Phase 08-01 complete — SectionProgramContent and SectionForWhom created (2026-03-22)
-**Next action:** Phase 08-02 — wire both sections into app.vue and add AppHeader anchor nav entries
+**Last action:** Phase 08-02 complete — SectionProgramContent and SectionForWhom wired into app.vue; AppHeader nav updated (2026-03-22)
+**Next action:** Phase 08 fully complete — v1.3 milestone done
 
 **Context for next session:**
 
@@ -155,8 +156,10 @@ Plan: 2 of 2
 - v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
 - v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
 - v1.3 phase 7 complete: copy migration done (zero "consultoria", all CTAs updated)
-- v1.3 phase 8 plan 1 complete: SectionProgramContent (id=conteudo-programatico) and SectionForWhom (id=para-quem-e) created — NOT yet wired into app.vue
-- New sections use pattern: off-white / white alternating backgrounds; heroicons CTA orange for item icons
+- v1.3 phase 8 COMPLETE: SectionProgramContent and SectionForWhom created (08-01) and wired into app.vue (08-02)
+- Reading flow: Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
+- Nav links: Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
+- SEC-01 (SectionProgramContent) and SEC-02 (SectionForWhom) requirements: COMPLETE
 - Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
@@ -165,4 +168,4 @@ Plan: 2 of 2
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-22 — phase 08-01 complete, SEC-01 and SEC-02 done*
+*Last updated: 2026-03-22 — phase 08-02 complete, v1.3 milestone fully done*

@@ -47,7 +47,7 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 ### Phases
 
 - [x] **Phase 7: Content Overhaul** — Replace "consultoria" with "mentoria" across the LP, update CTAs, hero pain points, form confirmation, SectionMethod format, SectionPrice, and SectionAbout (completed 2026-03-22)
-- [ ] **Phase 8: New Sections** — Create and integrate SectionProgramContent (8 learning items) and SectionForWhom (audience qualification)
+- [x] **Phase 8: New Sections** — Create and integrate SectionProgramContent (8 learning items) and SectionForWhom (audience qualification) (completed 2026-03-22)
 
 ### Phase Details
 
@@ -77,11 +77,11 @@ Plans:
   2. A "Para quem e" section is visible on the page listing the 5 audience fit criteria (travel more for less, starting from zero, has points but doesn't know how to use them, wants to learn without scattered tips, seeks clarity and strategy)
   3. Both new sections render correctly on mobile (375px) and desktop (1280px) without layout breaks
   4. Both sections are reachable via the page's anchor navigation and appear in a logical position in the reading flow
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 
 Plans:
 - [x] 08-01-PLAN.md — Create SectionProgramContent and SectionForWhom components
-- [ ] 08-02-PLAN.md — Wire sections into app.vue and update AppHeader navigation
+- [x] 08-02-PLAN.md — Wire sections into app.vue and update AppHeader navigation
 
 ---
 
@@ -96,7 +96,7 @@ Plans:
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
 | 6. Content & Layout Polish | v1.2 | 2/2 | Complete | 2026-03-21 |
 | 7. Content Overhaul | v1.3 | 3/3 | Complete   | 2026-03-22 |
-| 8. New Sections | v1.3 | 1/2 | In Progress|  |
+| 8. New Sections | v1.3 | 2/2 | Complete   | 2026-03-22 |
 
 ---
 *Roadmap created: 2026-03-21*
