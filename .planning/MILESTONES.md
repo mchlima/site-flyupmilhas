@@ -1,5 +1,24 @@
 # Milestones
 
+## v1.3 Alinhamento de Conteudo com Mentoria (Shipped: 2026-03-22)
+
+**Phases completed:** 2 phases (7-8), 5 plans, 9 tasks
+**Git range:** feat(07-01) → feat(08-02)
+**Files changed:** 14 files, +151 -71 lines
+
+**Key accomplishments:**
+
+- Global copy migration: "consultoria" → "mentoria" com zero ocorrencias restantes
+- Pain point chips no hero ("Viajar é caro", "Milhas é complicado", "Não sei por onde começar")
+- CTA "Quero dar o primeiro passo" em todos os 7 pontos de conversão
+- SectionMethod reescrito com 3 encontros quinzenais + Autonomia + formato subtexto
+- SectionPrice sem preço, com 5 benefícios + "Condições especiais disponíveis"
+- SectionProgramContent com 8 itens do que se aprende (two-column layout)
+- SectionForWhom com 5 cards de qualificação do público
+- SEO meta tags e schema.org atualizados para mentoria
+
+---
+
 ## v1.2 Polimento de Conteudo e Layout (Shipped: 2026-03-21)
 
 **Phases completed:** 1 phase (6), 2 plans, 4 tasks

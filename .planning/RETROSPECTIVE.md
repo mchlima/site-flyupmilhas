@@ -91,15 +91,42 @@
 
 ---
 
+## Milestone: v1.3 — Alinhamento de Conteudo com Mentoria
+
+**Shipped:** 2026-03-22
+**Phases:** 2 | **Plans:** 5
+
+### What Was Built
+- Global consultoria→mentoria migration (zero occurrences remaining)
+- Pain point chips in hero, CTA "Quero dar o primeiro passo" everywhere
+- SectionMethod with 3 encontros quinzenais + Autonomia
+- SectionPrice with benefits list, no price
+- SectionProgramContent (8 learning items, two-column layout)
+- SectionForWhom (5 audience fit cards)
+
+### What Worked
+- `--auto` flag enabled seamless plan→execute→verify chain across both phases
+- 3 parallel agents in Phase 7 covered 14 files without conflicts (no shared files)
+- Old site content document (`docs/OLD_SITE_CONTENT.md`) was the perfect source of truth for copy
+
+### What Was Inefficient
+- Some SUMMARY.md one-liners were empty or generic — extraction tool needs improvement
+
+### Key Lessons
+- Having the old site content in a markdown file made copy migration deterministic
+- Content overhaul phases benefit from splitting by file ownership (no conflicts in parallel execution)
+
+---
+
 ## Cross-Milestone Trends
 
-| Metric | v1.0 | v1.1 | v1.2 |
-|--------|------|------|------|
-| Phases | 3 | 2 | 1 |
-| Plans | 7 | 4 | 2 |
-| Avg tasks/plan | 2.0 | 1.75 | 2.0 |
-| Verification pass rate | 100% | 100% | 100% |
-| Revision loops | 0 | 1 (UI-SPEC) | 0 |
+| Metric | v1.0 | v1.1 | v1.2 | v1.3 |
+|--------|------|------|------|------|
+| Phases | 3 | 2 | 1 | 2 |
+| Plans | 7 | 4 | 2 | 5 |
+| Avg tasks/plan | 2.0 | 1.75 | 2.0 | 1.8 |
+| Verification pass rate | 100% | 100% | 100% | 100% |
+| Revision loops | 0 | 1 (UI-SPEC) | 0 | 0 |
 
 ---
 *Last updated: 2026-03-21*

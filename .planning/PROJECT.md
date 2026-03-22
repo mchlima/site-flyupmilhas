@@ -12,7 +12,7 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 Shipped v1.0 (MVP) and v1.1 (Refinamento Visual) on 2026-03-21.
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
-Codebase: ~976 LOC across 10 Vue components, 2 composables, 1 CSS file.
+Codebase: ~1056 LOC across 12 Vue components, 2 composables, 1 CSS file.
 Landing page is feature-complete with all sections, lead form, and visual polish.
 
 **Pre-launch blockers:**
@@ -67,19 +67,7 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 (No active requirements — v1.2 milestone complete)
 
-## Current Milestone: v1.3 Alinhamento de Conteudo com Mentoria
-
-**Goal:** Alinhar todo o conteudo do site com o produto real (mentoria com 3 encontros quinzenais) usando o conteudo do site antigo como referencia.
-
-**Target features:**
-- Pain points integrados no hero
-- CTA "Quero dar o primeiro passo" em toda a LP
-- Nova secao de conteudo programatico (o que se aprende)
-- Nova secao "Para quem e" (qualificacao do publico)
-- Como Funciona mesclado com formato da mentoria (quinzenal, material, suporte)
-- SectionPrice sem valor, com formato/condicoes do site antigo
-- Copy de "consultoria" → "mentoria" em toda a LP
-- Formulario e WhatsApp ajustados para mentoria
+(No current milestone — planning next)
 
 ### Out of Scope
 
@@ -120,4 +108,4 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
 ---
-*Last updated: 2026-03-21 after v1.2 milestone complete*
+*Last updated: 2026-03-22 after v1.3 milestone complete*
