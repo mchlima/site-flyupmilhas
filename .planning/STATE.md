@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: Alinhamento de Conteudo com Mentoria
 status: unknown
-last_updated: "2026-03-22T02:13:17.984Z"
+last_updated: "2026-03-22T02:26:09.858Z"
 progress:
   total_phases: 2
   completed_phases: 1
-  total_plans: 3
-  completed_plans: 3
+  total_plans: 5
+  completed_plans: 4
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 07 — content-overhaul
+**Current Focus:** Phase 08 — new-sections
 
 ---
 
 ## Current Position
 
-Phase: 8
-Plan: Not started
+Phase: 08 (new-sections) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -38,6 +38,7 @@ Plan: Not started
 | Phase 07 P01 | 1 | 2 tasks | 4 files |
 | Phase 07 P02 | 4 | 2 tasks | 3 files |
 | Phase 07 P03 | 2 | 2 tasks | 5 files |
+| Phase 08-new-sections P01 | 1 | 2 tasks | 2 files |
 
 ### v1.2 History (all complete)
 
@@ -145,15 +146,17 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 07 complete — consultoria-to-mentoria migration done (2026-03-22)
-**Next action:** Phase 08 — security or next milestone
+**Last action:** Phase 08-01 complete — SectionProgramContent and SectionForWhom created (2026-03-22)
+**Next action:** Phase 08-02 — wire both sections into app.vue and add AppHeader anchor nav entries
 
 **Context for next session:**
 
 - v1.0 all complete (phases 1-3, 7 plans)
 - v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
 - v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
-- v1.3 roadmap defined: phase 7 covers COPY-01..04 + EDIT-01..03; phase 8 covers SEC-01..02
+- v1.3 phase 7 complete: copy migration done (zero "consultoria", all CTAs updated)
+- v1.3 phase 8 plan 1 complete: SectionProgramContent (id=conteudo-programatico) and SectionForWhom (id=para-quem-e) created — NOT yet wired into app.vue
+- New sections use pattern: off-white / white alternating backgrounds; heroicons CTA orange for item icons
 - Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
@@ -162,4 +165,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 — v1.3 roadmap defined, phases 7-8 added*
+*Last updated: 2026-03-22 — phase 08-01 complete, SEC-01 and SEC-02 done*

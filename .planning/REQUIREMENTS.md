@@ -14,8 +14,8 @@
 
 ### Novas Secoes
 
-- [ ] **SEC-01**: Secao "Conteudo Programatico" com lista do que se aprende na pratica (8 itens do site antigo)
-- [ ] **SEC-02**: Secao "Para quem e" com lista de qualificacao do publico-alvo (sem desqualificacao)
+- [x] **SEC-01**: Secao "Conteudo Programatico" com lista do que se aprende na pratica (8 itens do site antigo)
+- [x] **SEC-02**: Secao "Para quem e" com lista de qualificacao do publico-alvo (sem desqualificacao)
 
 ### Secoes Existentes
 
@@ -42,8 +42,8 @@
 | EDIT-01 | Phase 7 | Complete |
 | EDIT-02 | Phase 7 | Complete |
 | EDIT-03 | Phase 7 | Complete |
-| SEC-01 | Phase 8 | Pending |
-| SEC-02 | Phase 8 | Pending |
+| SEC-01 | Phase 8 | Complete |
+| SEC-02 | Phase 8 | Complete |
 
 **Coverage:**
 - v1.3 requirements: 9 total
