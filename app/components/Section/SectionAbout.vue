@@ -21,8 +21,7 @@ const { scrollTo } = useScroll()
             Viaje mais. Gaste menos. Ganhe com as suas milhas.
           </h3>
           <p class="text-white/80 leading-relaxed">
-            <!-- TODO: replace with final copy from Marcio -->
-            A Fly Up Milhas existe para transformar seus gastos do dia a dia em passagens executivas e renda extra. Trabalhamos com estratégias personalizadas para cada perfil — seja você um profissional que viaja a trabalho, uma família buscando economia, ou alguém interessado em gerar renda com milhas.
+            A Fly Up Milhas e uma mentoria criada para quem quer aprender do zero ou organizar o que ja faz e comecar a economizar de verdade em viagens, usando milhas, pontos e cartoes de forma correta. Aqui voce nao recebe promessas irreais. Voce aprende o que funciona, quando funciona e como aplicar na sua realidade.
           </p>
         </div>
 
@@ -61,7 +60,7 @@ const { scrollTo } = useScroll()
           class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
           @click="scrollTo('formulario')"
         >
-          Quero minha Consultoria
+          Quero dar o primeiro passo
         </button>
       </div>
     </div>

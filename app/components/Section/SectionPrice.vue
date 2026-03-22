@@ -1,5 +1,13 @@
 <script setup lang="ts">
 const { scrollTo } = useScroll()
+
+const benefits = [
+  '3 encontros durante o periodo da mentoria (inicio, meio e fim)',
+  'Suporte para duvidas via WhatsApp',
+  'Material de apoio',
+  'Aplicacao imediata',
+  'Plano personalizado',
+]
 </script>
 
 <template>
@@ -10,50 +18,26 @@ const { scrollTo } = useScroll()
     <div class="max-w-3xl mx-auto text-center">
       <!-- Pre-heading -->
       <p class="text-[var(--color-brand-cta)] text-sm font-semibold uppercase tracking-widest mb-4">
-        Investimento
+        Comece sua jornada
       </p>
 
-      <!-- Value anchor (D-21) -->
-      <p class="text-white/70 text-lg mb-2">
-        Passagens executivas que custam R$3.000+ emitidas por uma fração do preço
-      </p>
-
-      <!-- Price display (D-20) -->
-      <div class="flex items-end justify-center gap-1 mb-2">
-        <span class="text-2xl text-white/60 font-light">R$</span>
-        <span class="text-7xl md:text-8xl font-bold text-white leading-none">200</span>
-      </div>
-
-      <!-- Price clarification -->
-      <p class="text-white/60 text-sm mt-2 mb-8">
-        pagamento único — sem mensalidade, sem surpresas
-      </p>
-
-      <!-- What's included summary -->
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-10">
-        <div class="text-center text-white/80 text-sm">
-          2 reuniões online
-        </div>
-        <div class="text-center text-white/80 text-sm">
-          1 mês acompanhamento
-        </div>
-        <div class="text-center text-white/80 text-sm">
-          Plano personalizado
-        </div>
-        <div class="text-center text-white/80 text-sm">
-          Lista de cartões recomendados
-        </div>
-        <div class="text-center text-white/80 text-sm col-span-2 sm:col-span-1">
-          Suporte na primeira emissão
+      <!-- Benefits list with check icons -->
+      <div class="max-w-md mx-auto text-left space-y-4 mb-10">
+        <div v-for="benefit in benefits" :key="benefit" class="flex items-start gap-3">
+          <UIcon name="i-heroicons-check-circle" class="w-6 h-6 text-[var(--color-brand-cta)] shrink-0 mt-0.5" />
+          <span class="text-white/90 text-base">{{ benefit }}</span>
         </div>
       </div>
 
-      <!-- CTA Button (D-20, D-03, D-22) -->
+      <!-- Note below benefits -->
+      <p class="text-white/60 text-sm mb-8">Condicoes especiais disponiveis</p>
+
+      <!-- CTA Button -->
       <button
         class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-10 py-4 rounded-lg text-lg cursor-pointer transition-colors"
         @click="scrollTo('formulario')"
       >
-        Quero minha Consultoria
+        Quero dar o primeiro passo
       </button>
     </div>
   </section>
