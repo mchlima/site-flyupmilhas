@@ -15,7 +15,7 @@
 
 ### Formulario
 
-- [ ] **FORM-03**: Formulario redesenhado — remover card navy pesado, manter fundo azul da section, design mais leve e integrado
+- [x] **FORM-03**: Formulario redesenhado — remover card navy pesado, manter fundo azul da section, design mais leve e integrado
 
 ## Out of Scope
 
@@ -30,7 +30,7 @@
 |-------------|-------|--------|
 | BRAND-01 | Phase 9 | Pending |
 | TEXT-01 | Phase 9 | Pending |
-| FORM-03 | Phase 9 | Pending |
+| FORM-03 | Phase 9 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 3 total

@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.3
-milestone_name: Alinhamento de Conteudo com Mentoria
+milestone: v1.4
+milestone_name: Logo, Acentuacao e Form Design
 status: unknown
-last_updated: "2026-03-22T02:33:26.986Z"
+last_updated: "2026-03-22T02:48:40.030Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 5
-  completed_plans: 5
+  total_phases: 1
+  completed_phases: 0
+  total_plans: 2
+  completed_plans: 1
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 08 — new-sections
+**Current Focus:** Phase 09 — logo-accents-form
 
 ---
 
 ## Current Position
 
-Phase: 08
-Plan: Not started
+Phase: 09 (logo-accents-form) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -40,6 +40,7 @@ Plan: Not started
 | Phase 07 P03 | 2 | 2 tasks | 5 files |
 | Phase 08-new-sections P01 | 1 | 2 tasks | 2 files |
 | Phase 08-new-sections P02 | 2min | 2 tasks | 2 files |
+| Phase 09-logo-accents-form P02 | 1 | 1 tasks | 2 files |
 
 ### v1.2 History (all complete)
 
@@ -147,8 +148,12 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 08-02 complete — SectionProgramContent and SectionForWhom wired into app.vue; AppHeader nav updated (2026-03-22)
-**Next action:** Phase 08 fully complete — v1.3 milestone done
+**Last action:** Phase 09-02 complete — lead form card wrapper removed, section provides navy bg (2026-03-22)
+**Next action:** v1.4 milestone COMPLETE — phase 09 both plans done (logo 09-01, form redesign 09-02)
+
+**Key decisions from 09-02:**
+- Section provides navy background (bg-[var(--color-brand-primary)]) instead of inner card — lighter, more integrated form design
+- py-4 on outer max-w-xl div provides light vertical padding; horizontal padding from section px-6
 
 **Context for next session:**
 
@@ -157,9 +162,11 @@ Plan: Not started
 - v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
 - v1.3 phase 7 complete: copy migration done (zero "consultoria", all CTAs updated)
 - v1.3 phase 8 COMPLETE: SectionProgramContent and SectionForWhom created (08-01) and wired into app.vue (08-02)
+- v1.4 phase 9 COMPLETE: logo in header (09-01), form card wrapper removed (09-02)
 - Reading flow: Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
 - Nav links: Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
 - SEC-01 (SectionProgramContent) and SEC-02 (SectionForWhom) requirements: COMPLETE
+- FORM-03 requirement: COMPLETE
 - Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
@@ -168,4 +175,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-22 — phase 08-02 complete, v1.3 milestone fully done*
+*Last updated: 2026-03-22 — phase 09-02 complete, v1.4 milestone fully done*
