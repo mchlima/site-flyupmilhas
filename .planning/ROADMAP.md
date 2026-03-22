@@ -61,7 +61,12 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
   3. The hero section displays pain point phrases ("Viajar de aviao e caro", "Milhas e complicado", etc.) as visual elements above or alongside the main headline
   4. SectionMethod describes the mentorship format: biweekly online sessions, support channel, reference materials, and practical application — not just 4 abstract steps
   5. SectionPrice shows payment options and scheduling flow without displaying the R$200 price, and SectionAbout copy describes the mentorship product (not "consultoria")
-**Plans**: TBD
+**Plans:** 3 plans
+
+Plans:
+- [ ] 07-01-PLAN.md — Hero pain points + Header/Footer/SEO mentoria migration
+- [ ] 07-02-PLAN.md — SectionMethod encounters + SectionPrice benefits + SectionAbout copy
+- [ ] 07-03-PLAN.md — SectionLeadForm + SocialProof + FAQ + legacy file cleanup
 
 ### Phase 8: New Sections
 **Goal**: Visitors can see exactly what they will learn and whether the mentorship is the right fit for them, without leaving the page
@@ -86,9 +91,9 @@ Full details: `.planning/milestones/v1.2-ROADMAP.md`
 | 4. Visual Overhaul & Navigation | v1.1 | 3/3 | Complete | 2026-03-21 |
 | 5. Form Polish & Footer | v1.1 | 1/1 | Complete | 2026-03-21 |
 | 6. Content & Layout Polish | v1.2 | 2/2 | Complete | 2026-03-21 |
-| 7. Content Overhaul | v1.3 | 0/? | Not started | - |
+| 7. Content Overhaul | v1.3 | 0/3 | Not started | - |
 | 8. New Sections | v1.3 | 0/? | Not started | - |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-21 — v1.3 milestone added (phases 7-8)*
+*Last updated: 2026-03-21 — Phase 7 plans created (3 plans, wave 1)*
