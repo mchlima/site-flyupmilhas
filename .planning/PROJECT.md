@@ -12,7 +12,7 @@ Converter visitantes em clientes da consultoria VIP atraves de uma LP que transm
 
 Shipped v1.0 (MVP) and v1.1 (Refinamento Visual) on 2026-03-21.
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
-Codebase: ~1056 LOC across 12 Vue components, 2 composables, 1 CSS file.
+Codebase: ~1080 LOC across 12 Vue components, 2 composables, 1 CSS file.
 Landing page is feature-complete with all sections, lead form, and visual polish.
 
 **Pre-launch blockers:**
@@ -60,21 +60,19 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ SectionPrice sem preco, com 5 beneficios — v1.3
 - ✓ SectionAbout com copy de mentoria — v1.3
 - ✓ Secao Conteudo Programatico (8 itens) — v1.3
-- ✓ Secao Para quem e (5 cards qualificacao) — v1.3
+- ✓ Seção Para quem é (5 cards qualificação) — v1.3
 - ✓ SEO meta tags atualizadas para mentoria — v1.3
+- ✓ Logo PNG no header substituindo texto — v1.4
+- ✓ Acentuação corrigida em todos os componentes — v1.4
+- ✓ Formulário sem card, campos direto no fundo navy — v1.4
+- ✓ Instagram CTA block + link no footer — v1.4
+- ✓ Footer cor separada do formulário (#0f2039) — v1.4
 
 ### Active
 
 (No active requirements — v1.2 milestone complete)
 
-## Current Milestone: v1.4 Logo, Acentuacao e Form Design
-
-**Goal:** Adicionar logo no header, corrigir acentuacao em toda a LP, e melhorar design do formulario.
-
-**Target features:**
-- Logo PNG no header substituindo texto "Fly Up Milhas"
-- Correcao de acentuacao em todos os componentes Vue
-- Redesign do formulario: remover card pesado, manter fundo azul da section
+(No current milestone — planning next)
 
 ### Out of Scope
 
@@ -115,4 +113,4 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
 ---
-*Last updated: 2026-03-22 after v1.3 milestone complete*
+*Last updated: 2026-03-22 after v1.4 milestone complete*

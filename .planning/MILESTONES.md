@@ -1,5 +1,20 @@
 # Milestones
 
+## v1.4 Logo, Acentuação e Form Design (Shipped: 2026-03-22)
+
+**Phases completed:** 2 phases (9-10), 3 plans, 5 tasks
+**Git range:** feat(09-01) → feat(10-01)
+
+**Key accomplishments:**
+
+- Logo PNG adicionado ao header substituindo texto "Fly Up Milhas"
+- Acentuação corrigida em 7 componentes Vue (87+ palavras)
+- Formulário redesenhado: card navy removido, campos direto no fundo azul da section
+- Instagram CTA block + link no footer com ícone SVG
+- Footer com cor mais escura (#0f2039) separando visualmente do formulário
+
+---
+
 ## v1.3 Alinhamento de Conteudo com Mentoria (Shipped: 2026-03-22)
 
 **Phases completed:** 2 phases (7-8), 5 plans, 9 tasks
