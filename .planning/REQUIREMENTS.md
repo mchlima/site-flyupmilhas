@@ -7,11 +7,11 @@
 
 ### Branding
 
-- [ ] **BRAND-01**: Logo PNG (app/assets/img/logo-fly-up-milhas.png) exibido no header substituindo o texto "Fly Up Milhas"
+- [x] **BRAND-01**: Logo PNG (app/assets/img/logo-fly-up-milhas.png) exibido no header substituindo o texto "Fly Up Milhas"
 
 ### Texto
 
-- [ ] **TEXT-01**: Todos os textos da LP com acentuacao correta (ã, ç, é, ê, í, ó, ú, etc.) em todos os componentes Vue
+- [x] **TEXT-01**: Todos os textos da LP com acentuacao correta (ã, ç, é, ê, í, ó, ú, etc.) em todos os componentes Vue
 
 ### Formulario
 
@@ -28,8 +28,8 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| BRAND-01 | Phase 9 | Pending |
-| TEXT-01 | Phase 9 | Pending |
+| BRAND-01 | Phase 9 | Complete |
+| TEXT-01 | Phase 9 | Complete |
 | FORM-03 | Phase 9 | Complete |
 
 **Coverage:**

@@ -64,7 +64,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 **Requirements**: BRAND-01, TEXT-01, FORM-03
 **Plans:** 2 plans
 Plans:
-- [ ] 09-01-PLAN.md — Logo no header + correcao de acentos em todos os componentes
+- [x] 09-01-PLAN.md — Logo no header + correcao de acentos em todos os componentes
 - [x] 09-02-PLAN.md — Redesign do formulario (remover card, fundo navy na section)
 **Success Criteria** (what must be TRUE):
   1. O header exibe o logo PNG (logo-fly-up-milhas.png) no lugar do texto "Fly Up Milhas", visivel em mobile e desktop
