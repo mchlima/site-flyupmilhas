@@ -9,7 +9,7 @@ const faqItems = [
     content: 'Não. Trabalho com cartões de diferentes categorias. O objetivo é otimizar o que você já tem e, se fizer sentido, indicar upgrades que compensem financeiramente.',
   },
   {
-    label: 'E se eu não gostar da consultoria?',
+    label: 'E se eu não gostar da mentoria?',
     content: 'A primeira reunião é um diagnóstico detalhado. Se ao final dela você sentir que não foi o que esperava, conversamos — meu objetivo é que você saia com um plano claro e acionável.',
   },
   {

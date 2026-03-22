@@ -56,7 +56,7 @@ const { scrollTo } = useScroll()
             class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
             @click="scrollTo('formulario')"
           >
-            Quero minha Consultoria
+            Quero dar o primeiro passo
           </button>
         </div>
       </div>

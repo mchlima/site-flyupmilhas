@@ -23,7 +23,7 @@ const r2Base = config.public.r2BaseUrl
         Fly Up Milhas
       </h1>
       <p class="text-[var(--color-brand-text-muted)]">
-        Em breve — consultoria VIP em milhas aéreas
+        Em breve — mentoria em milhas aéreas
       </p>
     </div>
   </section>

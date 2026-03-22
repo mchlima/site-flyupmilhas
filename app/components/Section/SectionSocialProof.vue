@@ -4,7 +4,7 @@ const testimonials = [
   {
     name: 'Ana Paula',
     city: 'São Paulo, SP',
-    text: 'Com a consultoria do Márcio, consegui emitir dois bilhetes executivos para Lisboa por apenas 58.000 milhas cada. Pagaria mais de R$12.000 comprando direto. Valeu cada centavo da consultoria.',
+    text: 'Com a mentoria do Márcio, consegui emitir dois bilhetes executivos para Lisboa por apenas 58.000 milhas cada. Pagaria mais de R$12.000 comprando direto. Valeu cada centavo da mentoria.',
     metric: 'R$12.000 economizados',
     route: 'GRU → LIS, classe executiva',
   },
