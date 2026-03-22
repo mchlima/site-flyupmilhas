@@ -2,10 +2,10 @@
 const { scrollTo } = useScroll()
 
 const benefits = [
-  '3 encontros durante o periodo da mentoria (inicio, meio e fim)',
-  'Suporte para duvidas via WhatsApp',
+  '3 encontros durante o período da mentoria (início, meio e fim)',
+  'Suporte para dúvidas via WhatsApp',
   'Material de apoio',
-  'Aplicacao imediata',
+  'Aplicação imediata',
   'Plano personalizado',
 ]
 </script>
@@ -30,7 +30,7 @@ const benefits = [
       </div>
 
       <!-- Note below benefits -->
-      <p class="text-white/60 text-sm mb-8">Condicoes especiais disponiveis</p>
+      <p class="text-white/60 text-sm mb-8">Condições especiais disponíveis</p>
 
       <!-- CTA Button -->
       <button

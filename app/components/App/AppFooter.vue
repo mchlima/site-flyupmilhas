@@ -4,8 +4,8 @@
       <!-- Left: copyright + credit -->
       <div class="text-center md:text-left">
         <p class="text-white/60 text-sm">&copy; {{ new Date().getFullYear() }} Fly Up Milhas. Todos os direitos reservados.</p>
-        <!-- TODO: Confirm Agencia 201 URL -->
-        <p class="text-white/60 text-sm mt-1">Desenvolvido por <a href="https://agencia201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/80 underline underline-offset-2 transition-colors">Agencia 201</a></p>
+        <!-- TODO: Confirm Agência 201 URL -->
+        <p class="text-white/60 text-sm mt-1">Desenvolvido por <a href="https://agencia201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/80 underline underline-offset-2 transition-colors">Agência 201</a></p>
       </div>
       <!-- Right: WhatsApp contact link -->
       <!-- TODO: Replace 55XXXXXXXXXXX with Marcio's real WhatsApp number before launch -->

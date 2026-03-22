@@ -4,12 +4,12 @@ const { scrollTo } = useScroll()
 const items = [
   { text: 'Como funcionam os principais programas de milhas', icon: 'i-heroicons-light-bulb' },
   { text: 'Formas inteligentes de acumular pontos sem gastar mais', icon: 'i-heroicons-arrow-trending-up' },
-  { text: 'Quando vale (ou nao) transferir pontos', icon: 'i-heroicons-arrows-right-left' },
+  { text: 'Quando vale (ou não) transferir pontos', icon: 'i-heroicons-arrows-right-left' },
   { text: 'Como encontrar passagens com milhas pagando muito menos', icon: 'i-heroicons-ticket' },
   { text: 'Erros comuns que fazem as pessoas perderem milhas', icon: 'i-heroicons-exclamation-triangle' },
-  { text: 'Estrategias para viagens nacionais e internacionais', icon: 'i-heroicons-globe-americas' },
-  { text: 'Como usar o cartao de credito a seu favor', icon: 'i-heroicons-credit-card' },
-  { text: 'Organizacao e planejamento de viagens com antecedencia', icon: 'i-heroicons-calendar-days' },
+  { text: 'Estratégias para viagens nacionais e internacionais', icon: 'i-heroicons-globe-americas' },
+  { text: 'Como usar o cartão de crédito a seu favor', icon: 'i-heroicons-credit-card' },
+  { text: 'Organização e planejamento de viagens com antecedência', icon: 'i-heroicons-calendar-days' },
 ]
 </script>
 
@@ -20,10 +20,10 @@ const items = [
       <!-- Left block: title, description, CTA -->
       <div class="flex flex-col gap-6">
         <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)]">
-          O que voce vai aprender na pratica
+          O que você vai aprender na prática
         </h2>
         <p class="text-[var(--color-brand-text-muted)] leading-relaxed">
-          Aqui voce nao recebe promessas irreais. Voce aprende o que funciona, quando funciona e como aplicar na sua realidade.
+          Aqui você não recebe promessas irreais. Você aprende o que funciona, quando funciona e como aplicar na sua realidade.
         </p>
         <div>
           <button

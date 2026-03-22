@@ -4,25 +4,25 @@ const steps = [
     icon: 'i-heroicons-clipboard-document-check',
     number: '01',
     title: 'Primeiro Encontro',
-    description: 'Diagnostico completo dos seus cartoes, programas e gastos. Inicio da sua estrategia personalizada de milhas.',
+    description: 'Diagnóstico completo dos seus cartões, programas e gastos. Início da sua estratégia personalizada de milhas.',
   },
   {
     icon: 'i-heroicons-chart-bar',
     number: '02',
     title: 'Segundo Encontro',
-    description: 'Aprofundamento da estrategia com acompanhamento do seu progresso. Ajustes e novas oportunidades.',
+    description: 'Aprofundamento da estratégia com acompanhamento do seu progresso. Ajustes e novas oportunidades.',
   },
   {
     icon: 'i-heroicons-arrow-path',
     number: '03',
     title: 'Terceiro Encontro',
-    description: 'Revisao dos resultados alcancados e ajustes finais para maximizar seus ganhos com milhas.',
+    description: 'Revisão dos resultados alcançados e ajustes finais para maximizar seus ganhos com milhas.',
   },
   {
     icon: 'i-heroicons-academic-cap',
     number: '04',
     title: 'Autonomia',
-    description: 'Voce se beneficia do que aprendeu, com conhecimento para acumular e emitir milhas sozinho.',
+    description: 'Você se beneficia do que aprendeu, com conhecimento para acumular e emitir milhas sozinho.',
   },
 ]
 </script>
@@ -69,7 +69,7 @@ const steps = [
       </div>
 
       <p class="text-center text-sm text-[var(--color-brand-text-muted)] mt-8 max-w-2xl mx-auto">
-        Encontros quinzenais online via Google Meet, com suporte para duvidas via WhatsApp e material de apoio para aplicacao imediata.
+        Encontros quinzenais online via Google Meet, com suporte para dúvidas via WhatsApp e material de apoio para aplicação imediata.
       </p>
 
     </div>

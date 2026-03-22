@@ -21,7 +21,7 @@ const { scrollTo } = useScroll()
             Viaje mais. Gaste menos. Ganhe com as suas milhas.
           </h3>
           <p class="text-white/80 leading-relaxed">
-            A Fly Up Milhas e uma mentoria criada para quem quer aprender do zero ou organizar o que ja faz e comecar a economizar de verdade em viagens, usando milhas, pontos e cartoes de forma correta. Aqui voce nao recebe promessas irreais. Voce aprende o que funciona, quando funciona e como aplicar na sua realidade.
+            A Fly Up Milhas é uma mentoria criada para quem quer aprender do zero ou organizar o que já faz e começar a economizar de verdade em viagens, usando milhas, pontos e cartões de forma correta. Aqui você não recebe promessas irreais. Você aprende o que funciona, quando funciona e como aplicar na sua realidade.
           </p>
         </div>
 
