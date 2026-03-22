@@ -35,20 +35,21 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| COPY-01 | TBD | Pending |
-| COPY-02 | TBD | Pending |
-| COPY-03 | TBD | Pending |
-| COPY-04 | TBD | Pending |
-| SEC-01 | TBD | Pending |
-| SEC-02 | TBD | Pending |
-| EDIT-01 | TBD | Pending |
-| EDIT-02 | TBD | Pending |
-| EDIT-03 | TBD | Pending |
+| COPY-01 | Phase 7 | Pending |
+| COPY-02 | Phase 7 | Pending |
+| COPY-03 | Phase 7 | Pending |
+| COPY-04 | Phase 7 | Pending |
+| EDIT-01 | Phase 7 | Pending |
+| EDIT-02 | Phase 7 | Pending |
+| EDIT-03 | Phase 7 | Pending |
+| SEC-01 | Phase 8 | Pending |
+| SEC-02 | Phase 8 | Pending |
 
 **Coverage:**
 - v1.3 requirements: 9 total
-- Mapped to phases: 0
-- Unmapped: 9
+- Mapped to phases: 9
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-21*
+*Traceability updated: 2026-03-21 — v1.3 roadmap (phases 7-8)*

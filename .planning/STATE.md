@@ -1,41 +1,47 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.2
-milestone_name: Polimento de Conteudo e Layout
-status: unknown
-last_updated: "2026-03-21T19:57:45.493Z"
+milestone: v1.3
+milestone_name: Alinhamento de Conteudo com Mentoria
+status: not_started
+last_updated: "2026-03-21T00:00:00.000Z"
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_phases: 2
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # State: Fly Up Milhas
 
 ## Project Reference
 
-**Core Value:** Converter visitantes em clientes da consultoria VIP atraves de uma LP de alta conversao
-**Current Focus:** Phase 06 — content-layout-polish
+**Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
+**Current Focus:** Phase 07 — content-overhaul (v1.3 starting)
 
 ---
 
 ## Current Position
 
-Phase: 06
+Phase: 07
 Plan: Not started
 
 ## Performance Metrics
 
 | Metric | Target | Current |
 |--------|--------|---------|
-| v1.2 requirements mapped | 6/6 | 6/6 |
-| v1.2 phases defined | 1 | 1 |
-| v1.2 plans complete | — | 0 |
-| FAQ contrast ratio | 4.5:1+ WCAG AA | Not verified |
-| Form legibility on navy | Inputs + labels readable | Not verified |
-| Phase 06 P02 | 2 | 2 tasks | 4 files |
-| Phase 06 P01 | 3 | 2 tasks | 4 files |
+| v1.3 requirements mapped | 9/9 | 9/9 |
+| v1.3 phases defined | 2 | 2 |
+| v1.3 plans complete | — | 0 |
+| "consultoria" occurrences in visible copy | 0 | Not verified |
+| CTA buttons with correct label | All | Not verified |
+| New sections rendered on mobile | 2 | Not verified |
+
+### v1.2 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 06-content-layout-polish P01 | — | 3 tasks | 4 files |
+| Phase 06-content-layout-polish P02 | — | 2 tasks | 4 files |
 
 ### v1.1 History (all complete)
 
@@ -101,6 +107,8 @@ Plan: Not started
 | Plain button over UButton for form submit | UButton Reka UI internals fight explicit centering classes; native button with flex guarantees text alignment | Confirmed — implemented in 05-01 |
 | template #label slot on UFormField for white labels | UFormField label text not reachable via class on the component root; slot injection is the Nuxt UI v4 pattern | Confirmed — implemented in 05-01 |
 | Footer navy background as visual bookend | Header and footer both navy creates consistent page frame; off-white body sits between two navy anchors | Confirmed — implemented in 05-01 |
+| "consultoria" → "mentoria" migration (v1.3) | Product is a mentorship with biweekly sessions, not a one-time consultancy; copy must reflect reality | Pending — Phase 7 |
+| CTA label "Quero dar o primeiro passo" (v1.3) | Old site CTA confirmed; softer entry barrier than "Quero minha Consultoria" | Pending — Phase 7 |
 
 ### Critical Pre-Build Blockers
 
@@ -121,6 +129,7 @@ Plan: Not started
 6. Hamburger menu (Phase 4): use `<ClientOnly>` or `import.meta.client` guard for any transition/animation state to avoid SSR hydration mismatch
 7. Bento grid (Phase 4): validate layout at 375px, 768px, and 1280px — CSS Grid areas can break at intermediate breakpoints
 8. Back-to-top button (Phase 6): use `import.meta.client` guard for scroll listener; test SSR build with `nuxt build && nuxt preview`
+9. New sections (Phase 8): add section IDs and anchor nav entries in AppHeader so scroll-to works; test at 375px mobile width
 
 ### Architecture Constraints
 
@@ -133,14 +142,16 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** v1.2 roadmap defined — phase 6 created (2026-03-21)
-**Next action:** Plan phase 6 — content-layout-polish
+**Last action:** v1.3 roadmap defined — phases 7-8 created (2026-03-21)
+**Next action:** Plan phase 7 — content-overhaul
 
 **Context for next session:**
 
 - v1.0 all complete (phases 1-3, 7 plans)
 - v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
-- v1.2 roadmap defined: phase 6 covers CTRST-01, CTRST-02, CONT-04, CONT-05, CONT-06, UX-01
+- v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
+- v1.3 roadmap defined: phase 7 covers COPY-01..04 + EDIT-01..03; phase 8 covers SEC-01..02
+- Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
 - Open: Agencia 201 URL confirmation (https://agencia201.com.br assumed)
@@ -148,4 +159,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-21 — v1.2 roadmap defined, phase 6 added*
+*Last updated: 2026-03-21 — v1.3 roadmap defined, phases 7-8 added*
