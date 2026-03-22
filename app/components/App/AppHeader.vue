@@ -25,7 +25,7 @@ if (import.meta.client) {
 
 const navLinks = [
   { label: 'Sobre', anchor: 'sobre' },
-  { label: 'Conteudo', anchor: 'conteudo-programatico' },
+  { label: 'Conteúdo', anchor: 'conteudo-programatico' },
   { label: 'Como Funciona', anchor: 'como-funciona' },
   { label: 'Depoimentos', anchor: 'depoimentos' },
   { label: 'FAQ', anchor: 'faq' },
@@ -44,7 +44,13 @@ function navigate(anchor: string) {
   >
     <div class="max-w-5xl mx-auto flex items-center justify-between">
       <!-- Logo -->
-      <span class="font-semibold text-white text-lg">Fly Up Milhas</span>
+      <button class="cursor-pointer" @click="scrollTo('hero')">
+        <img
+          src="~/assets/img/logo-fly-up-milhas.png"
+          alt="Fly Up Milhas"
+          class="h-8 w-auto"
+        />
+      </button>
 
       <!-- Desktop nav -->
       <nav class="hidden md:flex items-center gap-6">
