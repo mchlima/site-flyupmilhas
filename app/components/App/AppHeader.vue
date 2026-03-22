@@ -59,7 +59,7 @@ function navigate(anchor: string) {
           class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-5 py-2 rounded-lg text-sm cursor-pointer transition-colors min-h-[44px]"
           @click="scrollTo('formulario')"
         >
-          Quero minha Consultoria
+          Quero dar o primeiro passo
         </button>
       </nav>
 
@@ -99,7 +99,7 @@ function navigate(anchor: string) {
         class="mt-4 bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors w-full max-w-xs"
         @click="navigate('formulario')"
       >
-        Quero minha Consultoria
+        Quero dar o primeiro passo
       </button>
     </nav>
   </div>

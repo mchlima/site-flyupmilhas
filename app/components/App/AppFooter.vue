@@ -10,7 +10,7 @@
       <!-- Right: WhatsApp contact link -->
       <!-- TODO: Replace 55XXXXXXXXXXX with Marcio's real WhatsApp number before launch -->
       <a
-        href="https://wa.me/55XXXXXXXXXXX?text=Ola%2C%20quero%20saber%20mais%20sobre%20a%20consultoria%20de%20milhas."
+        href="https://wa.me/55XXXXXXXXXXX?text=Ola%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas."
         target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
