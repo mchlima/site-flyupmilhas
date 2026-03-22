@@ -55,7 +55,7 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 ### Phases
 
 - [x] **Phase 9: Logo, Accents & Form Redesign** — Logo no header, acentuação corrigida, formulário mais leve (completed 2026-03-22)
-- [ ] **Phase 10: Footer & Instagram** — Instagram no rodapé com embed de posts, separação visual entre form e footer
+- [x] **Phase 10: Footer & Instagram** — Instagram no rodapé com embed de posts, separação visual entre form e footer (completed 2026-03-22)
 
 ### Phase Details
 
@@ -87,15 +87,15 @@ Plans:
 | 7. Content Overhaul | v1.3 | 3/3 | Complete | 2026-03-22 |
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
-| 10. Footer & Instagram | v1.4 | 0/1 | Not started | - |
+| 10. Footer & Instagram | v1.4 | 1/1 | Complete   | 2026-03-22 |
 
 ### Phase 10: Footer & Instagram
 **Goal**: O footer exibe link e embed do Instagram (@flyupmilhas), e há separação visual clara entre a section do formulário e o footer (cores diferentes).
 **Depends on**: Phase 9 (complete)
 **Requirements**: INSTA-01, INSTA-02, VISL-04
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
-- [ ] 10-01-PLAN.md — Instagram link + CTA block no footer, separação visual com cor mais escura
+- [x] 10-01-PLAN.md — Instagram link + CTA block no footer, separação visual com cor mais escura
 **Success Criteria** (what must be TRUE):
   1. O footer contém um link para https://www.instagram.com/flyupmilhas visível e clicável
   2. O footer exibe um embed/preview dos últimos posts do Instagram (ou fallback com link + ícone se embed não for viável sem API)

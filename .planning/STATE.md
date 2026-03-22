@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.4
 milestone_name: Logo, Acentuacao e Form Design
 status: unknown
-last_updated: "2026-03-22T02:53:32.075Z"
+last_updated: "2026-03-22T03:05:00.056Z"
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 2
-  completed_plans: 2
+  total_phases: 2
+  completed_phases: 2
+  total_plans: 3
+  completed_plans: 3
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 09 — logo-accents-form
+**Current Focus:** Phase 10 — footer-instagram
 
 ---
 
 ## Current Position
 
-Phase: 09
-Plan: Not started
+Phase: 10 (footer-instagram) — EXECUTING
+Plan: 1 of 1
 
 ## Performance Metrics
 
@@ -42,6 +42,7 @@ Plan: Not started
 | Phase 08-new-sections P02 | 2min | 2 tasks | 2 files |
 | Phase 09-logo-accents-form P02 | 1 | 1 tasks | 2 files |
 | Phase 09-logo-accents-form P01 | 2min | 2 tasks | 7 files |
+| Phase 10 P01 | 2 | 2 tasks | 2 files |
 
 ### v1.2 History (all complete)
 
@@ -149,13 +150,15 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 09-01 complete — logo PNG added to AppHeader, all Portuguese accents fixed across 7 components (2026-03-22)
-**Next action:** Phase 09-02 — SectionLeadForm redesign (remove heavy card wrapper, keep navy section bg)
+**Last action:** Phase 10-01 complete — footer Instagram CTA block + dark background + social links updated (2026-03-22)
+**Next action:** Phase 10 complete — v1.4 milestone footer task done; ready for verification or next milestone
 
-**Key decisions from 09-02:**
+**Key decisions from 10-01:**
 
-- Section provides navy background (bg-[var(--color-brand-primary)]) instead of inner card — lighter, more integrated form design
-- py-4 on outer max-w-xl div provides light vertical padding; horizontal padding from section px-6
+- --color-brand-footer: #0f2039 creates clear visual separation from form section navy (#1a3a5c)
+- Instagram CTA block (icon + headline + description + @flyupmilhas pill button) placed above bottom bar
+- border-t border-white/10 on footer element provides subtle boundary with form section above
+- Instagram icon as inline SVG (same pattern as WhatsApp — no extra packages needed)
 
 **Context for next session:**
 
@@ -165,10 +168,11 @@ Plan: Not started
 - v1.3 phase 7 complete: copy migration done (zero "consultoria", all CTAs updated)
 - v1.3 phase 8 COMPLETE: SectionProgramContent and SectionForWhom created (08-01) and wired into app.vue (08-02)
 - v1.4 phase 9 COMPLETE: logo in header (09-01), form card wrapper removed (09-02)
+- v1.4 phase 10 COMPLETE: footer Instagram CTA + dark background + visual separation (10-01)
 - Reading flow: Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
 - Nav links: Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
-- SEC-01 (SectionProgramContent) and SEC-02 (SectionForWhom) requirements: COMPLETE
-- FORM-03 requirement: COMPLETE
+- INSTA-01, INSTA-02, VISL-04 requirements: COMPLETE
+- SEC-01, SEC-02, FORM-03 requirements: COMPLETE
 - Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
 - Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 - Open: Real content (photo, metrics, testimonials) still needed for launch
@@ -177,4 +181,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-22 — phase 09-02 complete, v1.4 milestone fully done*
+*Last updated: 2026-03-22 — phase 10-01 complete, v1.4 footer Instagram task done*

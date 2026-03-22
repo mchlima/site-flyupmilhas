@@ -19,9 +19,9 @@
 
 ### Instagram & Footer
 
-- [ ] **INSTA-01**: Link do Instagram (https://www.instagram.com/flyupmilhas) visível no footer
-- [ ] **INSTA-02**: Embed ou preview dos últimos posts do Instagram no footer (fallback com ícone + link se embed não for viável)
-- [ ] **VISL-04**: Cor de fundo do footer visualmente distinta da section do formulário (não podem ser a mesma cor navy)
+- [x] **INSTA-01**: Link do Instagram (https://www.instagram.com/flyupmilhas) visível no footer
+- [x] **INSTA-02**: Embed ou preview dos últimos posts do Instagram no footer (fallback com ícone + link se embed não for viável)
+- [x] **VISL-04**: Cor de fundo do footer visualmente distinta da section do formulário (não podem ser a mesma cor navy)
 
 ## Out of Scope
 
@@ -37,9 +37,9 @@
 | BRAND-01 | Phase 9 | Complete |
 | TEXT-01 | Phase 9 | Complete |
 | FORM-03 | Phase 9 | Complete |
-| INSTA-01 | Phase 10 | Pending |
-| INSTA-02 | Phase 10 | Pending |
-| VISL-04 | Phase 10 | Pending |
+| INSTA-01 | Phase 10 | Complete |
+| INSTA-02 | Phase 10 | Complete |
+| VISL-04 | Phase 10 | Complete |
 
 **Coverage:**
 - v1.4 requirements: 6 total
