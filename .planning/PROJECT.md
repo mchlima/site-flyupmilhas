@@ -67,7 +67,14 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 (No active requirements — v1.2 milestone complete)
 
-(No current milestone — planning next)
+## Current Milestone: v1.4 Logo, Acentuacao e Form Design
+
+**Goal:** Adicionar logo no header, corrigir acentuacao em toda a LP, e melhorar design do formulario.
+
+**Target features:**
+- Logo PNG no header substituindo texto "Fly Up Milhas"
+- Correcao de acentuacao em todos os componentes Vue
+- Redesign do formulario: remover card pesado, manter fundo azul da section
 
 ### Out of Scope
 
