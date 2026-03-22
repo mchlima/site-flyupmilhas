@@ -39,6 +39,8 @@ useSchemaOrg([
     <main id="main-content" class="pt-16">
       <SectionHero />
       <SectionAbout />
+      <SectionProgramContent />
+      <SectionForWhom />
       <SectionMethod />
       <SectionSocialProof />
       <SectionPrice />

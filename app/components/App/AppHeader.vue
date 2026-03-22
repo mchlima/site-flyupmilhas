@@ -25,6 +25,7 @@ if (import.meta.client) {
 
 const navLinks = [
   { label: 'Sobre', anchor: 'sobre' },
+  { label: 'Conteudo', anchor: 'conteudo-programatico' },
   { label: 'Como Funciona', anchor: 'como-funciona' },
   { label: 'Depoimentos', anchor: 'depoimentos' },
   { label: 'FAQ', anchor: 'faq' },
