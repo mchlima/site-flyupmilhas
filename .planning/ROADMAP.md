@@ -87,7 +87,7 @@ Plans:
 | 7. Content Overhaul | v1.3 | 3/3 | Complete | 2026-03-22 |
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
-| 10. Footer & Instagram | v1.4 | 1/1 | Complete   | 2026-03-22 |
+| 10. Footer & Instagram | v1.4 | 1/1 | Complete    | 2026-03-22 |
 
 ### Phase 10: Footer & Instagram
 **Goal**: O footer exibe link e embed do Instagram (@flyupmilhas), e há separação visual clara entre a section do formulário e o footer (cores diferentes).
