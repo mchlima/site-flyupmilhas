@@ -2,7 +2,7 @@
 import { LeadFormSchema, useLeadForm } from '~/composables/useLeadForm'
 
 // WhatsApp CTA URL — TODO: Replace 55XXXXXXXXXXX with Marcio's real WhatsApp number before launch
-const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%20Marcio%2C%20quero%20saber%20mais%20sobre%20a%20consultoria%20VIP%20de%20milhas.'
+const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%20Marcio%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas.'
 
 const objetivoOptions = [
   { label: 'Viagem executiva', value: 'executiva' },
@@ -59,7 +59,7 @@ async function onSubmit() {
       <!-- Section heading (D-02) -->
       <div class="text-center mb-8">
         <h2 class="text-2xl font-bold text-white mb-2">
-          Quero minha Consultoria VIP
+          Comece sua mentoria agora
         </h2>
         <p class="text-white/80">
           Preencha e Marcio entra em contato em até 24h pelo WhatsApp.
@@ -73,7 +73,7 @@ async function onSubmit() {
           class="w-16 h-16 text-green-400 mx-auto mb-4"
         />
         <p class="text-xl font-semibold text-white mb-2">
-          Recebi! Marcio vai te chamar no WhatsApp em ate 24h.
+          Recebemos! Entraremos em contato pelo WhatsApp para agendar seu primeiro encontro.
         </p>
         <p class="text-white/80 mb-6">
           Fique de olho no WhatsApp — ou fale agora mesmo:
@@ -186,7 +186,7 @@ async function onSubmit() {
             class="w-full py-4 bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold rounded-lg text-base text-center flex items-center justify-center gap-2 disabled:opacity-50 transition-colors"
           >
             <span v-if="isLoading">Enviando...</span>
-            <span v-else>Quero minha Consultoria</span>
+            <span v-else>Quero dar o primeiro passo</span>
           </button>
         </UForm>
 
