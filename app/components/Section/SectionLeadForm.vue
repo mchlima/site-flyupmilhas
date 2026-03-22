@@ -52,10 +52,7 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div class="max-w-xl mx-auto">
-    <!-- Navy card wrapper (D-01) -->
-    <div class="bg-[var(--color-brand-primary)] rounded-xl p-8 sm:p-10">
-
+  <div class="max-w-xl mx-auto py-4">
       <!-- Section heading (D-02) -->
       <div class="text-center mb-8">
         <h2 class="text-2xl font-bold text-white mb-2">
@@ -205,7 +202,5 @@ async function onSubmit() {
           </a>
         </div>
       </div>
-
-    </div>
   </div>
 </template>
