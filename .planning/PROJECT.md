@@ -53,6 +53,16 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ Form inputs bg-white com bordas visiveis no card navy — v1.2
 - ✓ Botao flutuante back-to-top com scroll detection — v1.2
 
+- ✓ Copy "consultoria" → "mentoria" em toda a LP — v1.3
+- ✓ CTA "Quero dar o primeiro passo" em todos os pontos — v1.3
+- ✓ Pain points no hero (badges) — v1.3
+- ✓ SectionMethod com 3 encontros + Autonomia — v1.3
+- ✓ SectionPrice sem preco, com 5 beneficios — v1.3
+- ✓ SectionAbout com copy de mentoria — v1.3
+- ✓ Secao Conteudo Programatico (8 itens) — v1.3
+- ✓ Secao Para quem e (5 cards qualificacao) — v1.3
+- ✓ SEO meta tags atualizadas para mentoria — v1.3
+
 ### Active
 
 (No active requirements — v1.2 milestone complete)
