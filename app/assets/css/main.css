@@ -10,6 +10,7 @@
   --color-brand-cta-hover: #d35400;     /* CTA hover state */
   --color-brand-text: #1a1a1a;          /* body text */
   --color-brand-text-muted: #6b7280;    /* secondary text */
+  --color-brand-footer: #0f2039;        /* footer dark navy — darker than brand-primary for visual separation */
 
   /* Typography (per D-05) */
   --font-family-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
