@@ -54,19 +54,22 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 
 ### Phases
 
-- [ ] **Phase 9: Logo, Accents & Form Redesign** — Logo no header, acentuação corrigida, formulário mais leve
+- [ ] **Phase 9: Logo, Accents & Form Redesign** — Logo no header, acentuacao corrigida, formulario mais leve
 
 ### Phase Details
 
 ### Phase 9: Logo, Accents & Form Redesign
-**Goal**: O header exibe o logo da marca, todos os textos têm acentuação correta, e o formulário tem design leve integrado ao fundo azul da section (sem card pesado).
+**Goal**: O header exibe o logo da marca, todos os textos tem acentuacao correta, e o formulario tem design leve integrado ao fundo azul da section (sem card pesado).
 **Depends on**: Phase 8 (complete)
 **Requirements**: BRAND-01, TEXT-01, FORM-03
+**Plans:** 2 plans
+Plans:
+- [ ] 09-01-PLAN.md — Logo no header + correcao de acentos em todos os componentes
+- [ ] 09-02-PLAN.md — Redesign do formulario (remover card, fundo navy na section)
 **Success Criteria** (what must be TRUE):
-  1. O header exibe o logo PNG (logo-fly-up-milhas.png) no lugar do texto "Fly Up Milhas", visível em mobile e desktop
-  2. Nenhum texto visível na LP contém palavras sem acentuação onde acentos são necessários em português (verificável com busca por padrões como "voce", "nao", "estrategia", "aplicacao")
-  3. O formulário não usa card navy com rounded-xl — o fundo azul vem da section, e os campos/botão têm design limpo e leve
-**Plans**: TBD
+  1. O header exibe o logo PNG (logo-fly-up-milhas.png) no lugar do texto "Fly Up Milhas", visivel em mobile e desktop
+  2. Nenhum texto visivel na LP contem palavras sem acentuacao onde acentos sao necessarios em portugues (verificavel com busca por padroes como "voce", "nao", "estrategia", "aplicacao")
+  3. O formulario nao usa card navy com rounded-xl — o fundo azul vem da section, e os campos/botao tem design limpo e leve
 
 ---
 
@@ -82,8 +85,8 @@ Full details: `.planning/milestones/v1.3-ROADMAP.md`
 | 6. Content & Layout Polish | v1.2 | 2/2 | Complete | 2026-03-21 |
 | 7. Content Overhaul | v1.3 | 3/3 | Complete | 2026-03-22 |
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
-| 9. Logo, Accents & Form Redesign | v1.4 | 0/? | Not started | - |
+| 9. Logo, Accents & Form Redesign | v1.4 | 0/2 | Not started | - |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-22 — v1.4 milestone defined, phase 9 added*
+*Last updated: 2026-03-22 — phase 9 plans created (2 plans, wave 1)*
