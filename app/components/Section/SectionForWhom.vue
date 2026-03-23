@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import youngProfessionalImg from '~/assets/img/young-professional-planning.png'
 import familyPlanningImg from '~/assets/img/bazillian-family-planning.png'
 
 const cards = [
@@ -18,31 +17,26 @@ const cards = [
         Para quem é essa mentoria?
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-5xl mx-auto">
-        <!-- LEFT column: info cards -->
-        <div class="flex flex-col gap-4">
-          <div
-            v-for="card in cards"
-            :key="card.text"
-            class="rounded-xl bg-white shadow-sm border border-gray-100 p-6 flex items-start gap-4"
-          >
-            <UIcon :name="card.icon" class="w-8 h-8 text-[var(--color-brand-cta)] shrink-0" />
-            <p class="text-[var(--color-brand-text)] leading-relaxed">{{ card.text }}</p>
-          </div>
-        </div>
-
-        <!-- RIGHT column: lifestyle images -->
-        <div class="flex flex-col gap-6 items-center justify-center">
-          <img
-            :src="youngProfessionalImg"
-            alt="Jovem profissional planejando viagens com milhas"
-            class="rounded-2xl shadow-md w-full object-cover"
-          />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <!-- LEFT column: family image -->
+        <div>
           <img
             :src="familyPlanningImg"
             alt="Familia brasileira planejando viagem juntos"
-            class="rounded-2xl shadow-md w-full object-cover"
+            class="rounded-2xl shadow-lg w-full object-cover aspect-[4/5]"
           />
+        </div>
+
+        <!-- RIGHT column: info cards -->
+        <div class="flex flex-col gap-3">
+          <div
+            v-for="card in cards"
+            :key="card.text"
+            class="rounded-xl bg-white shadow-sm border border-gray-100 p-5 flex items-center gap-4"
+          >
+            <UIcon :name="card.icon" class="w-7 h-7 text-[var(--color-brand-cta)] shrink-0" />
+            <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
+          </div>
         </div>
       </div>
 
