@@ -152,13 +152,14 @@ Plan: Not started
 |---|-------------|------|--------|-----------|
 | 260323-me4 | Use bg-hero image as Hero section background with text contrast overlay | 2026-03-23 | a2ca962 | [260323-me4](./quick/260323-me4-use-bg-hero-image-as-hero-section-backgr/) |
 | 260323-mwb | Add planning images to ForWhom section (2-column layout) | 2026-03-23 | 7ca7811 | [260323-mwb](./quick/260323-mwb-add-planning-images-to-forwhom-section-2/) |
+| 260323-n1d | ForWhom: family image left, info cards right, harmonize layout | 2026-03-23 | 0025a18 | [260323-n1d](./quick/260323-n1d-forwhom-family-image-left-info-cards-rig/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Quick task 260323-mwb complete — SectionForWhom refactored to 2-column layout with lifestyle images (2026-03-23)
-**Next action:** Visual review of ForWhom section at desktop and mobile widths
+**Last action:** Quick task 260323-n1d — ForWhom layout: family image left, cards right (2026-03-23)
+**Next action:** Continue with site improvements
 
 **Key decisions from 10-01:**
 
@@ -188,4 +189,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-23 — quick task 260323-mwb: ForWhom 2-column layout with planning images*
+*Last updated: 2026-03-23 — quick task 260323-n1d: ForWhom family image left, cards right*
