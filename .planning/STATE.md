@@ -146,11 +146,17 @@ Plan: Not started
 - API base URL via `runtimeConfig.public.apiBase` from env var — never hardcoded
 - Form locked at exactly 4 fields: Nome, WhatsApp, gastos mensais, objetivo
 
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260323-me4 | Use bg-hero image as Hero section background with text contrast overlay | 2026-03-23 | a2ca962 | [260323-me4](./quick/260323-me4-use-bg-hero-image-as-hero-section-backgr/) |
+
 ---
 
 ## Session Continuity
 
-**Last action:** Phase 10-01 complete — footer Instagram CTA block + dark background + social links updated (2026-03-22)
+**Last action:** Quick task 260323-me4 complete — footer Instagram CTA block + dark background + social links updated (2026-03-22)
 **Next action:** Phase 10 complete — v1.4 milestone footer task done; ready for verification or next milestone
 
 **Key decisions from 10-01:**
@@ -181,4 +187,4 @@ Plan: Not started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-22 — phase 10-01 complete, v1.4 footer Instagram task done*
+*Last updated: 2026-03-23 — quick task 260323-me4: hero background image with dark overlay*
