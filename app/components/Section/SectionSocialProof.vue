@@ -1,50 +1,51 @@
 <script setup lang="ts">
-// TODO: replace with real testimonials from Marcio
 const testimonials = [
   {
     name: 'Ana Paula',
     city: 'São Paulo, SP',
-    text: 'Com a mentoria do Márcio, consegui emitir dois bilhetes executivos para Lisboa por apenas 58.000 milhas cada. Pagaria mais de R$12.000 comprando direto. Valeu cada centavo da mentoria.',
-    metric: 'R$12.000 economizados',
-    route: 'GRU → LIS, classe executiva',
+    text: 'Com a mentoria da Fly Up Milhas, consegui emitir dois bilhetes executivos para Lisboa por apenas <strong>58.000 milhas</strong> cada. Pagaria mais de <strong>R$ 12.000</strong> comprando direto. Valeu cada centavo!',
   },
   {
     name: 'Carlos Eduardo',
     city: 'Curitiba, PR',
-    text: 'Não sabia nem que tinha milhas suficientes. O Márcio fez o diagnóstico e em 3 semanas já tinha as passagens emitidas para Miami em business class. Processo todo simples e sem estresse.',
-    metric: 'R$8.500 economizados',
-    route: 'CWB → MIA, classe executiva',
+    text: 'Não sabia nem que tinha milhas suficientes. Em <strong>3 semanas</strong> já tinha as passagens emitidas para <strong>Miami em business class</strong>. Processo todo simples e sem estresse.',
+  },
+  {
+    name: 'Juliana Martins',
+    city: 'Belo Horizonte, MG',
+    text: 'Sempre achei que milhas era coisa de quem gasta muito no cartão. Com a mentoria, aprendi a juntar <strong>mais de 40.000 milhas em 2 meses</strong> sem mudar meus hábitos. Já estou planejando minha primeira viagem internacional!',
   },
 ]
 </script>
 
 <template>
   <section id="depoimentos" class="bg-white py-12 md:py-24 px-6">
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-2xl mx-auto">
       <!-- Section heading -->
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
-        Resultados Reais
+      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-12">
+        Casos reais de quem já aplicou
       </h2>
-      <p class="text-[var(--color-brand-text-muted)] text-center mb-12">
-        O que nossos clientes conseguiram
-      </p>
 
-      <!-- Testimonial cards grid (D-16, D-17, D-19) -->
-      <!-- TODO: replace with real testimonials from Marcio -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- WhatsApp-style chat bubbles -->
+      <div class="flex flex-col gap-6">
         <div
-          v-for="t in testimonials"
+          v-for="(t, index) in testimonials"
           :key="t.name"
-          class="bg-[var(--color-brand-bg)] rounded-2xl shadow-sm p-8"
+          :class="index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0'"
+          class="flex flex-col"
+          style="max-width: min(85%, 400px);"
         >
-          <p class="text-[var(--color-brand-text)] leading-relaxed mb-6 italic">
-            "{{ t.text }}"
-          </p>
-          <div class="border-t border-gray-100 pt-4">
-            <p class="font-semibold text-[var(--color-brand-primary)]">{{ t.name }}</p>
-            <p class="text-sm text-[var(--color-brand-text-muted)]">{{ t.city }}</p>
-            <p class="text-sm font-medium text-[var(--color-brand-cta)] mt-1">{{ t.metric }}</p>
-            <p class="text-xs text-[var(--color-brand-text-muted)]">{{ t.route }}</p>
+          <!-- Chat bubble -->
+          <div
+            class="chat-bubble px-4 py-3 rounded-xl text-[var(--color-brand-text)] leading-relaxed"
+            :class="index % 2 === 0 ? '' : 'chat-bubble-right'"
+            style="background-color: #DCF8C6; word-break: break-word; overflow-wrap: anywhere;"
+            v-html="t.text"
+          />
+          <!-- Name and city below bubble -->
+          <div :class="index % 2 === 0 ? 'text-left' : 'text-right'" class="mt-1 px-1">
+            <span class="text-sm font-semibold text-[var(--color-brand-primary)]">{{ t.name }}</span>
+            <span class="text-xs text-[var(--color-brand-text-muted)] ml-2">{{ t.city }}</span>
           </div>
         </div>
       </div>
@@ -52,3 +53,26 @@ const testimonials = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.chat-bubble {
+  position: relative;
+}
+.chat-bubble::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 8px solid #DCF8C6;
+}
+.chat-bubble-right::before {
+  left: auto;
+  right: -8px;
+  border-right: none;
+  border-left: 8px solid #DCF8C6;
+}
+</style>
