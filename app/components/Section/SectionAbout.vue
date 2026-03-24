@@ -9,7 +9,7 @@ const { scrollTo } = useScroll()
         Sua estratégia de milhas começa aqui
       </h2>
       <p class="text-[var(--color-brand-text-muted)] text-center mb-10">
-        Descubra como transformar seus gastos do dia a dia em viagens executivas e renda extra
+        Descubra como transformar seus gastos do dia a dia em viagens executivas
       </p>
 
       <!-- Bento grid layout per D-22 -->
@@ -40,15 +40,6 @@ const { scrollTo } = useScroll()
           <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Economia Familiar</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
             Transforme gastos do dia a dia em milhas e economize milhares de reais em passagens para toda a família.
-          </p>
-        </div>
-
-        <!-- Value prop 3: Renda Extra — 1x1 white card, SAME SIZE as other two per CONT-02, D-20 -->
-        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
-          <UIcon name="i-heroicons-banknotes" class="w-8 h-8 text-[var(--color-brand-cta)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Renda Extra com Milhas</h3>
-          <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
-            Aprenda a gerar renda extra comprando e vendendo milhas de forma estratégica e segura.
           </p>
         </div>
 
