@@ -69,7 +69,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 - [x] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal/objetivo fields, add email, purge renda-extra from codebase (completed 2026-03-24)
 - [x] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide (completed 2026-03-24)
 - [x] **Phase 13: Structural Template Changes** - WhatsApp-style testimonials, negative qualification cards, bold keywords, pricing + guarantee block (completed 2026-03-24)
-- [ ] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy
+- [x] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy (completed 2026-03-24)
 
 ---
 
@@ -134,7 +134,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 14-01-PLAN.md — Security badge + progressive CTA copy + submit button text
+- [x] 14-01-PLAN.md — Security badge + progressive CTA copy + submit button text
 
 ---
 
@@ -155,7 +155,7 @@ Plans:
 | 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete    | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete    | 2026-03-24 |
-| 14. Form Frontend & CTA Pass | v1.5 | 0/1 | Not started | — |
+| 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete   | 2026-03-24 |
 
 ---
 *Roadmap created: 2026-03-21*

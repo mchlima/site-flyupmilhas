@@ -51,15 +51,15 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 ### Formulário
 
 - [x] **FORM-01**: Remover campo "Gasto mensal no cartão" (gastoMensal) — frontend + backend Zod schema sync
-- [ ] **FORM-02**: Novas opções de objetivo: "Viajar pagando menos", "Viajar com mais conforto (classe executiva)", "Organizar e usar melhor meus pontos/milhas", "Ainda não sei / estou começando"
-- [ ] **FORM-03**: Texto "Preencha o formulário e entraremos em contato em até 24h pelo WhatsApp."
-- [ ] **FORM-04**: Badge "Seus dados estão seguros" abaixo do botão (fora do UForm)
+- [x] **FORM-02**: Novas opções de objetivo: "Viajar pagando menos", "Viajar com mais conforto (classe executiva)", "Organizar e usar melhor meus pontos/milhas", "Ainda não sei / estou começando"
+- [x] **FORM-03**: Texto "Preencha o formulário e entraremos em contato em até 24h pelo WhatsApp."
+- [x] **FORM-04**: Badge "Seus dados estão seguros" abaixo do botão (fora do UForm)
 
 ### CTAs
 
-- [ ] **CTA-01**: CTA topo (hero): "Quero começar agora"
-- [ ] **CTA-02**: CTA meio (method/social proof): "Quero entender melhor"
-- [ ] **CTA-03**: CTA final (price/form): "Quero entrar na mentoria"
+- [x] **CTA-01**: CTA topo (hero): "Quero começar agora"
+- [x] **CTA-02**: CTA meio (method/social proof): "Quero entender melhor"
+- [x] **CTA-03**: CTA final (price/form): "Quero entrar na mentoria"
 
 ### Identidade
 
@@ -113,12 +113,12 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | PRCE-02 | Phase 13 | Complete |
 | PRCE-03 | Phase 13 | Complete |
 | FORM-01 | Phase 11 | Complete |
-| FORM-02 | Phase 14 | Pending |
-| FORM-03 | Phase 14 | Pending |
-| FORM-04 | Phase 14 | Pending |
-| CTA-01 | Phase 14 | Pending |
-| CTA-02 | Phase 14 | Pending |
-| CTA-03 | Phase 14 | Pending |
+| FORM-02 | Phase 14 | Complete |
+| FORM-03 | Phase 14 | Complete |
+| FORM-04 | Phase 14 | Complete |
+| CTA-01 | Phase 14 | Complete |
+| CTA-02 | Phase 14 | Complete |
+| CTA-03 | Phase 14 | Complete |
 | IDEN-01 | Phase 12 | Complete |
 | IDEN-02 | Phase 11 | Complete |
 | FAQ-01 | Phase 12 | Complete |
