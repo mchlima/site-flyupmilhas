@@ -187,6 +187,7 @@ Plan: Not started
 | 260323-mwb | Add planning images to ForWhom section (2-column layout) | 2026-03-23 | 7ca7811 | [260323-mwb](./quick/260323-mwb-add-planning-images-to-forwhom-section-2/) |
 | 260323-n1d | ForWhom: family image left, info cards right, harmonize layout | 2026-03-23 | 0025a18 | [260323-n1d](./quick/260323-n1d-forwhom-family-image-left-info-cards-rig/) |
 | 260324-3z6 | Increase header logo height from h-8 to h-10 | 2026-03-24 | b9c730d | [260324-3z6](./quick/260324-3z6-o-logo-no-header-deve-ter-h-10/) |
+| 260324-bpx | Add CTA button at end of SectionMethod | 2026-03-24 | e05ea65 | [260324-bpx](./quick/260324-bpx-insira-um-cta-no-fim-da-sessao-como-func/) |
 
 ---
 
