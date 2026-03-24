@@ -4,20 +4,13 @@ import { LeadFormSchema, useLeadForm } from '~/composables/useLeadForm'
 // WhatsApp CTA URL — TODO: Replace 55XXXXXXXXXXX with Marcio's real WhatsApp number before launch
 const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%20Marcio%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas.'
 
-const objetivoOptions = [
-  { label: 'Viagem executiva', value: 'executiva' },
-  { label: 'Economia familiar', value: 'economia' },
-  { label: 'Renda extra com milhas', value: 'renda-extra' },
-]
-
 const { isLoading, isSuccess, error, submit } = useLeadForm()
 
-// Form reactive state — matches LeadFormData shape
+// Form reactive state — matches LeadFormData shape (nome, email, whatsapp, website)
 const state = reactive({
   nome: '',
+  email: '',
   whatsapp: '', // raw digits only — validated by Zod regex /^\d{10,11}$/
-  gastoMensal: '',
-  objetivo: undefined as 'executiva' | 'economia' | 'renda-extra' | undefined,
   website: '', // honeypot — empty for humans, bots fill it
 })
 
@@ -43,9 +36,8 @@ function onWhatsappInput(event: Event) {
 async function onSubmit() {
   await submit({
     nome: state.nome,
+    email: state.email,
     whatsapp: state.whatsapp,
-    gastoMensal: state.gastoMensal,
-    objetivo: state.objetivo!,
     website: state.website,
   })
 }
@@ -117,7 +109,22 @@ async function onSubmit() {
             />
           </UFormField>
 
-          <!-- WhatsApp with phone mask (field 2) — inputmode="numeric" for mobile keyboard -->
+          <!-- E-mail (field 2) -->
+          <UFormField name="email">
+            <template #label>
+              <span class="text-white">E-mail</span>
+            </template>
+            <UInput
+              v-model="state.email"
+              type="email"
+              placeholder="seu@email.com"
+              autocomplete="email"
+              class="w-full bg-white"
+              :ui="{ base: 'bg-white border border-gray-300' }"
+            />
+          </UFormField>
+
+          <!-- WhatsApp with phone mask (field 3) — inputmode="numeric" for mobile keyboard -->
           <UFormField name="whatsapp">
             <template #label>
               <span class="text-white">WhatsApp</span>
@@ -130,36 +137,6 @@ async function onSubmit() {
               class="w-full bg-white"
               :ui="{ base: 'bg-white border border-gray-300' }"
               @input="onWhatsappInput"
-            />
-          </UFormField>
-
-          <!-- Gasto mensal (field 3) — inputmode="numeric" for mobile keyboard -->
-          <UFormField name="gastoMensal">
-            <template #label>
-              <span class="text-white">Gasto mensal no cartão</span>
-            </template>
-            <UInput
-              v-model="state.gastoMensal"
-              inputmode="numeric"
-              placeholder="Média mensal em cartão de crédito (R$)"
-              class="w-full bg-white"
-              :ui="{ base: 'bg-white border border-gray-300' }"
-            />
-          </UFormField>
-
-          <!-- Objetivo (field 4) — value must match backend enum slugs -->
-          <UFormField name="objetivo">
-            <template #label>
-              <span class="text-white">Objetivo principal</span>
-            </template>
-            <USelect
-              v-model="state.objetivo"
-              :items="objetivoOptions"
-              value-key="value"
-              label-key="label"
-              placeholder="Selecione seu objetivo"
-              class="w-full bg-white"
-              :ui="{ base: 'bg-white border border-gray-300' }"
             />
           </UFormField>
 
