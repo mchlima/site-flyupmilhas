@@ -9,18 +9,18 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Hero
 
-- [ ] **HERO-01**: Hero exibe nova headline "Aprenda a viajar de classe executiva pagando até 80% menos, mesmo começando do zero."
-- [ ] **HERO-02**: Hero exibe nova subheadline "Um método simples e prático para transformar seus gastos do dia a dia em milhas e viajar mais, gastando menos."
-- [ ] **HERO-03**: CTA do hero exibe "Quero começar agora"
-- [ ] **HERO-04**: Microcopy abaixo do CTA do hero
+- [x] **HERO-01**: Hero exibe nova headline "Aprenda a viajar de classe executiva pagando até 80% menos, mesmo começando do zero."
+- [x] **HERO-02**: Hero exibe nova subheadline "Um método simples e prático para transformar seus gastos do dia a dia em milhas e viajar mais, gastando menos."
+- [x] **HERO-03**: CTA do hero exibe "Quero começar agora"
+- [x] **HERO-04**: Microcopy abaixo do CTA do hero
 
 ### About (Viaje mais. Gaste menos)
 
-- [ ] **ABOUT-01**: Título "Viaje mais. Gaste menos. Use milhas do jeito certo."
-- [ ] **ABOUT-02**: Texto com 3 funções: reforçar desejo, quebrar objeção, provar que funciona
-- [ ] **ABOUT-03**: Frase de prova social destacada ("Alunos já economizaram milhares de reais em passagens mesmo sem cartão black ou renda alta.")
-- [ ] **ABOUT-04**: 3 cards inferiores (conforto, economia, estratégia) com títulos e descrições do PDF
-- [ ] **ABOUT-05**: Remoção completa de "renda extra" da seção
+- [x] **ABOUT-01**: Título "Viaje mais. Gaste menos. Use milhas do jeito certo."
+- [x] **ABOUT-02**: Texto com 3 funções: reforçar desejo, quebrar objeção, provar que funciona
+- [x] **ABOUT-03**: Frase de prova social destacada ("Alunos já economizaram milhares de reais em passagens mesmo sem cartão black ou renda alta.")
+- [x] **ABOUT-04**: 3 cards inferiores (conforto, economia, estratégia) com títulos e descrições do PDF
+- [x] **ABOUT-05**: Remoção completa de "renda extra" da seção
 
 ### Conteúdo Programático
 
@@ -92,15 +92,15 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HERO-01 | Phase 12 | Pending |
-| HERO-02 | Phase 12 | Pending |
-| HERO-03 | Phase 12 | Pending |
-| HERO-04 | Phase 12 | Pending |
-| ABOUT-01 | Phase 12 | Pending |
-| ABOUT-02 | Phase 12 | Pending |
-| ABOUT-03 | Phase 12 | Pending |
-| ABOUT-04 | Phase 12 | Pending |
-| ABOUT-05 | Phase 12 | Pending |
+| HERO-01 | Phase 12 | Complete |
+| HERO-02 | Phase 12 | Complete |
+| HERO-03 | Phase 12 | Complete |
+| HERO-04 | Phase 12 | Complete |
+| ABOUT-01 | Phase 12 | Complete |
+| ABOUT-02 | Phase 12 | Complete |
+| ABOUT-03 | Phase 12 | Complete |
+| ABOUT-04 | Phase 12 | Complete |
+| ABOUT-05 | Phase 12 | Complete |
 | PROG-01 | Phase 13 | Pending |
 | PROG-02 | Phase 13 | Pending |
 | FORW-01 | Phase 13 | Pending |

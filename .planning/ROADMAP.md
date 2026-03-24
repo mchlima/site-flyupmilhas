@@ -67,7 +67,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 ### Phases
 
 - [x] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal/objetivo fields, add email, purge renda-extra from codebase (completed 2026-03-24)
-- [ ] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide
+- [x] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide (completed 2026-03-24)
 - [ ] **Phase 13: Structural Template Changes** - WhatsApp-style testimonials, negative qualification cards, bold keywords, pricing + guarantee block
 - [ ] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy
 
@@ -103,8 +103,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
-- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
+- [x] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
+- [x] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
 
 ### Phase 13: Structural Template Changes
 **Goal**: SectionSocialProof renders chat-bubble testimonials, SectionForWhom includes a "Para quem NAO e" block, ProgramContent items have bold keywords, and SectionPrice shows the real price and 7-day guarantee.
@@ -154,7 +154,7 @@ Plans:
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
 | 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
-| 12. Copy Rewrite & Identity Sweep | v1.5 | 0/2 | Not started | — |
+| 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete   | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
 
