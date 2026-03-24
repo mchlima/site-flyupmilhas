@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Refinamento de Copy e Conversao
 status: unknown
-last_updated: "2026-03-24T05:45:52.350Z"
+last_updated: "2026-03-24T05:47:54.771Z"
 progress:
   total_phases: 4
   completed_phases: 4
@@ -22,8 +22,8 @@ progress:
 
 ## Current Position
 
-Phase: 14 (form-frontend-cta-pass) — EXECUTING
-Plan: 1 of 1
+Phase: 14
+Plan: Not started
 
 ## Performance Metrics
 
