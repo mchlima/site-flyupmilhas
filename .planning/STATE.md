@@ -5,7 +5,7 @@ milestone_name: Refinamento de Copy e Conversao
 status: active
 last_updated: "2026-03-24T00:00:00.000Z"
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -16,35 +16,53 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Defining requirements for v1.5
+**Current Focus:** Phase 11 — Backend Schema Cleanup (first phase of v1.5)
 
 ---
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-03-24 — Milestone v1.5 started
+Phase: 11 — Backend Schema Cleanup
+Plan: Not started
+Status: Roadmap created, ready to plan Phase 11
+Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
+
+```
+[Phase 11] [Phase 12] [Phase 13] [Phase 14]
+[  TODO  ] [  TODO  ] [  TODO  ] [  TODO  ]
+  0%
+```
 
 ## Performance Metrics
 
 | Metric | Target | Current |
 |--------|--------|---------|
-| v1.3 requirements mapped | 9/9 | 9/9 |
-| v1.3 phases defined | 2 | 2 |
-| v1.3 plans complete | — | 0 |
-| "consultoria" occurrences in visible copy | 0 | 0 (verified 07-01) |
-| CTA buttons with correct label | All | All (verified 07-01) |
-| New sections rendered on mobile | 2 | Not verified |
+| v1.5 requirements mapped | 30/30 | 30/30 |
+| v1.5 phases defined | 4 | 4 |
+| v1.5 plans complete | — | 0 |
+| "renda-extra" occurrences in app/ server/ | 0 | Not verified |
+| "Marcio" occurrences in rendered copy | 0 | Not verified |
+| gastoMensal field in backend schema | removed | Not done |
+| Price display format | hard-coded strings | Not done |
+| WhatsApp bubble 375px test | pass | Not done |
+
+### v1.4 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
+| Phase 09-logo-accents-form P01 | 2min | 2 tasks | 7 files |
+| Phase 09-logo-accents-form P02 | 1 | 1 tasks | 2 files |
+| Phase 10 P01 | 2 | 2 tasks | 2 files |
+
+### v1.3 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
 | Phase 07 P01 | 1 | 2 tasks | 4 files |
 | Phase 07 P02 | 4 | 2 tasks | 3 files |
 | Phase 07 P03 | 2 | 2 tasks | 5 files |
 | Phase 08-new-sections P01 | 1 | 2 tasks | 2 files |
 | Phase 08-new-sections P02 | 2min | 2 tasks | 2 files |
-| Phase 09-logo-accents-form P02 | 1 | 1 tasks | 2 files |
-| Phase 09-logo-accents-form P01 | 2min | 2 tasks | 7 files |
-| Phase 10 P01 | 2 | 2 tasks | 2 files |
 
 ### v1.2 History (all complete)
 
@@ -119,34 +137,50 @@ Last activity: 2026-03-24 — Milestone v1.5 started
 | Footer navy background as visual bookend | Header and footer both navy creates consistent page frame; off-white body sits between two navy anchors | Confirmed — implemented in 05-01 |
 | "consultoria" → "mentoria" migration (v1.3) | Product is a mentorship with biweekly sessions, not a one-time consultancy; copy must reflect reality | Confirmed — Phase 7 complete (zero occurrences site-wide) |
 | CTA label "Quero dar o primeiro passo" (v1.3) | Old site CTA confirmed; softer entry barrier than "Quero minha Consultoria" | Confirmed — Phase 7 complete (7 CTA locations updated) |
+| gastoMensal field removed (v1.5) | Client feedback: simplify form to 3 fields; gastoMensal adds friction with no qualifying value | Pending — Phase 11 |
+| Price as hard-coded strings (v1.5) | JS arithmetic on 299.90 produces floating-point errors; Brazilian format uses comma separator | Pending — Phase 13 |
+| Security badge outside UForm (v1.5) | UForm expects UFormField children; badge inside causes unexpected spacing from Reka UI internals | Pending — Phase 14 |
+| Progressive CTA copy per position (v1.5) | 15-30% lift documented; hero/mid/final CTAs should match visitor intent at each scroll depth | Pending — Phase 14 |
 
 ### Critical Pre-Build Blockers
 
-- [ ] Confirm Nuxt 4 acceptable (changes directory structure vs Nuxt 3 reference in PROJECT.md)
 - [ ] Confirm Cloudflare plan includes Image Transformations (fallback: Squoosh/sharp pre-optimization only)
 - [ ] Confirm Fastify deployment topology — same domain subdomain or cross-origin? (determines CORS vs proxy strategy)
-- [ ] Collect content from Marcio before Phase 2: average client savings figure, monthly capacity, named testimonials with specific R$/route/cabin data, personal results story, WhatsApp number, professional photo
-- [ ] Confirm guarantee offer (Marcio must explicitly agree before including in copy)
-- [ ] Confirm copy for "Sobre a Fly Up Milhas" section — company founding story, renda extra framing, key differentiators
+- [ ] Collect WhatsApp testimonial screenshots from Marcio with LGPD consent (or use CSS bubble fallback with text he provides)
+- [ ] Confirm final copy sign-off from Marcio on new hero headline and subheadline
+- [ ] Confirm 3 negative qualification items for "Para quem NAO e" cards
+- [ ] Replace 55XXXXXXXXXXX WhatsApp placeholder with Marcio's real number before launch
+- [ ] Replace Agencia 201 URL placeholder with real URL before launch
 
-### Technical Pitfalls to Watch
+### v1.5 Copy Constants (single source of truth — define before editing any component)
 
-1. Cloudflare Image Transformations must be enabled in dashboard BEFORE uploading assets — cannot be applied retroactively
-2. CORS: form submissions are client-to-server and enforce CORS; SSR fetches bypass it — test from real browser on staging URL
-3. Hydration mismatch: wrap browser-only logic in `<ClientOnly>` or `if (import.meta.client)`; test with `nuxt build && nuxt preview` not `nuxt dev`
-4. Hero image: set `fetchpriority="high"` and `loading="eager"` — never lazy-load the LCP element
-5. Honeypot field name must be agreed between frontend and backend before Phase 3
-6. Hamburger menu (Phase 4): use `<ClientOnly>` or `import.meta.client` guard for any transition/animation state to avoid SSR hydration mismatch
-7. Bento grid (Phase 4): validate layout at 375px, 768px, and 1280px — CSS Grid areas can break at intermediate breakpoints
-8. Back-to-top button (Phase 6): use `import.meta.client` guard for scroll listener; test SSR build with `nuxt build && nuxt preview`
-9. New sections (Phase 8): add section IDs and anchor nav entries in AppHeader so scroll-to works; test at 375px mobile width
+| Constant | Value |
+|----------|-------|
+| Price PIX | R$ 299,90 |
+| Price installment | ate 10x de R$ 29,99 |
+| Duration | 30 dias |
+| Meetings | 3 encontros/mes |
+| Support | via WhatsApp |
+| Guarantee | 7 dias — 100% devolvido |
+| CTA hero | Quero comecar agora |
+| CTA mid | Quero entender melhor |
+| CTA final | Quero entrar na mentoria |
+
+### Technical Pitfalls to Watch (v1.5)
+
+1. Schema desync: update `server/leads/schema.ts` FIRST, then `useLeadForm.ts`, then `SectionLeadForm.vue` — never the other direction
+2. renda-extra enum: exists in `server/leads/schema.ts` AND `app/composables/useLeadForm.ts` — must be removed from both; run grep after to verify zero results
+3. Price strings: never compute price values in JS; hard-code "R$ 299,90" and "10x de R$ 29,99" as string literals
+4. WhatsApp bubble CSS: use `max-width: min(85%, 400px)` and `word-break: break-word; overflow-wrap: anywhere`; test at 375px, 390px, 412px
+5. Security badge: place OUTSIDE `<UForm>` tag in the parent container, directly below the submit button
+6. v-html in ProgramContent: only safe because content is developer-controlled hardcoded strings (not user input)
 
 ### Architecture Constraints
 
 - `app.vue` is the entire application shell — no `pages/` directory
 - All media > 20 KB on Cloudflare R2, never in `assets/images/`
 - API base URL via `runtimeConfig.public.apiBase` from env var — never hardcoded
-- Form locked at exactly 4 fields: Nome, WhatsApp, gastos mensais, objetivo
+- Form locked at exactly 3 fields after v1.5: nome, whatsapp, objetivo (gastoMensal removed)
 
 ### Quick Tasks Completed
 
@@ -160,35 +194,23 @@ Last activity: 2026-03-24 — Milestone v1.5 started
 
 ## Session Continuity
 
-**Last action:** Quick task 260323-n1d — ForWhom layout: family image left, cards right (2026-03-23)
-**Next action:** Continue with site improvements
+**Last action:** v1.5 roadmap created (phases 11-14, 30 requirements mapped) — 2026-03-24
+**Next action:** Plan Phase 11 — Backend Schema Cleanup
 
-**Key decisions from 10-01:**
-
-- --color-brand-footer: #0f2039 creates clear visual separation from form section navy (#1a3a5c)
-- Instagram CTA block (icon + headline + description + @flyupmilhas pill button) placed above bottom bar
-- border-t border-white/10 on footer element provides subtle boundary with form section above
-- Instagram icon as inline SVG (same pattern as WhatsApp — no extra packages needed)
-
-**Context for next session:**
-
+**Milestone status entering v1.5:**
 - v1.0 all complete (phases 1-3, 7 plans)
 - v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
 - v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
-- v1.3 phase 7 complete: copy migration done (zero "consultoria", all CTAs updated)
-- v1.3 phase 8 COMPLETE: SectionProgramContent and SectionForWhom created (08-01) and wired into app.vue (08-02)
-- v1.4 phase 9 COMPLETE: logo in header (09-01), form card wrapper removed (09-02)
-- v1.4 phase 10 COMPLETE: footer Instagram CTA + dark background + visual separation (10-01)
-- Reading flow: Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
-- Nav links: Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
-- INSTA-01, INSTA-02, VISL-04 requirements: COMPLETE
-- SEC-01, SEC-02, FORM-03 requirements: COMPLETE
-- Old site content source: `docs/OLD_SITE_CONTENT.md` — pain points, programmatic content (8 items), audience fit (5 items), methodology format, pricing conditions
-- Open: Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
-- Open: Real content (photo, metrics, testimonials) still needed for launch
-- Open: Agencia 201 URL confirmation (https://agencia201.com.br assumed)
-- NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
+- v1.3 all complete (phases 7-8): "consultoria" → "mentoria" migration, SectionProgramContent, SectionForWhom
+- v1.4 all complete (phases 9-10): logo in header, form card wrapper removed, footer Instagram CTA, footer dark background
+
+**Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
+**Nav links:** Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
+**Open:** Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
+**Open:** Real content (photo, metrics, testimonials) still needed for launch
+**Open:** Agencia 201 URL confirmation (https://agencia201.com.br assumed)
+**Open:** NUXT_PUBLIC_R2_BASE_URL=https://cdn.flyupmilhas.com.br must be set in .env for local preview
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-23 — quick task 260323-n1d: ForWhom family image left, cards right*
+*Last updated: 2026-03-24 — v1.5 roadmap created (phases 11-14)*

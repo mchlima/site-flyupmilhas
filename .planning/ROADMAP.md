@@ -60,6 +60,69 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 ---
 
+## v1.5 Refinamento de Copy e Conversao
+
+**Goal:** Apply client feedback (Marcio) to optimize copy, offer structure, and conversion across the entire LP
+
+### Phases
+
+- [ ] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal field and purge renda-extra enum from backend Zod schema
+- [ ] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide
+- [ ] **Phase 13: Structural Template Changes** - WhatsApp-style testimonials, negative qualification cards, bold keywords, pricing + guarantee block
+- [ ] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy
+
+---
+
+## Phase Details
+
+### Phase 11: Backend Schema Cleanup
+**Goal**: The backend Fastify schema accepts a 3-field lead payload without errors, and the string "renda-extra" does not exist anywhere in the server or app source.
+**Depends on**: Nothing (must execute first — all form frontend work depends on this)
+**Requirements**: FORM-01, IDEN-02
+**Success Criteria** (what must be TRUE):
+  1. POST /leads with `{ nome, whatsapp, objetivo }` returns 200 with no validation errors
+  2. POST /leads with a `gastoMensal` field included is either ignored or accepted gracefully (field no longer required)
+  3. `grep -r "renda.extra" app/ server/` returns zero results outside node_modules
+  4. The Zod schema in `server/leads/schema.ts` compiles without TypeScript errors after the field removal
+**Plans**: TBD
+
+### Phase 12: Copy Rewrite & Identity Sweep
+**Goal**: The LP presents the updated headline, subheadline, About section, Method details, and FAQ — with no occurrence of "Marcio" or "renda extra" anywhere in rendered text.
+**Depends on**: Nothing (pure template and data changes; independent of Phase 11)
+**Requirements**: HERO-01, HERO-02, HERO-03, HERO-04, ABOUT-01, ABOUT-02, ABOUT-03, ABOUT-04, ABOUT-05, METH-01, METH-02, FAQ-01, IDEN-01
+**Success Criteria** (what must be TRUE):
+  1. Hero displays the headline "Aprenda a viajar de classe executiva pagando ate 80% menos, mesmo comecando do zero" and the updated subheadline
+  2. Hero CTA reads "Quero comecar agora" with microcopy below the button
+  3. SectionAbout displays the title "Viaje mais. Gaste menos. Use milhas do jeito certo." with 3 cards (conforto, economia, estrategia) and no "renda extra" card or text
+  4. SectionMethod displays "30 dias", "3 encontros/mes" and "Suporte via WhatsApp" as visible information on the page
+  5. FAQ questions address beginner pain points (not existing power-users), and no occurrence of "Marcio" or "renda extra" is present in any rendered section
+**Plans**: TBD
+
+### Phase 13: Structural Template Changes
+**Goal**: SectionSocialProof renders chat-bubble testimonials, SectionForWhom includes a "Para quem NAO e" block, ProgramContent items have bold keywords, and SectionPrice shows the real price and 7-day guarantee.
+**Depends on**: Phase 12 (sections must be stable before visual layer is finalized; pricing depends on confirmed copy constants)
+**Requirements**: SOCL-01, SOCL-02, SOCL-03, FORW-01, PROG-01, PROG-02, PRCE-01, PRCE-02, PRCE-03
+**Success Criteria** (what must be TRUE):
+  1. SectionSocialProof renders testimony text inside WhatsApp-style chat bubbles and displays the title "Casos reais de quem ja aplicou"; bubbles render correctly at 375px, 390px, and 412px viewport widths
+  2. SectionForWhom shows a "Para quem NAO e" block with 3 negative qualification cards below the positive qualification cards
+  3. ProgramContent items display bold keywords (rendered via v-html with hardcoded strings) and the updated subtitle appears above the list
+  4. SectionPrice displays "R$ 299,90 no PIX" and "ate 10x no cartao" as hard-coded strings (never computed values), with a dedicated guarantee block reading "Garantia de 7 dias — 100% do valor devolvido"
+**Plans**: TBD
+
+### Phase 14: Form Frontend & CTA Pass
+**Goal**: The lead form collects 3 fields with updated objetivo options, displays the security badge outside UForm, and every CTA button on the page has distinct copy matching its position.
+**Depends on**: Phase 11 (backend schema must be updated before removing gastoMensal from the frontend), Phase 13 (sections must be stable before CTA text is finalized)
+**Requirements**: FORM-02, FORM-03, FORM-04, CTA-01, CTA-02, CTA-03
+**Success Criteria** (what must be TRUE):
+  1. The lead form renders exactly 3 visible fields (nome, whatsapp, objetivo) — the gastoMensal field is absent from the UI
+  2. The objetivo dropdown options are: "Viajar pagando menos", "Viajar com mais conforto (classe executiva)", "Organizar e usar melhor meus pontos/milhas", "Ainda nao sei / estou comecando"
+  3. The text "Preencha o formulario e entraremos em contato em ate 24h pelo WhatsApp" appears in the form section
+  4. A "Seus dados estao seguros" badge with a lock icon appears directly below the submit button, outside the UForm component
+  5. The hero CTA reads "Quero comecar agora", the mid-page CTA reads "Quero entender melhor", and the final CTA reads "Quero entrar na mentoria"
+**Plans**: TBD
+
+---
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -74,7 +137,11 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
+| 11. Backend Schema Cleanup | v1.5 | 0/? | Not started | — |
+| 12. Copy Rewrite & Identity Sweep | v1.5 | 0/? | Not started | — |
+| 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
+| 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-22 — v1.4 milestone complete*
+*Last updated: 2026-03-24 — v1.5 roadmap added (phases 11-14)*

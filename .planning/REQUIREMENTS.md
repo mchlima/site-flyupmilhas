@@ -92,42 +92,42 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HERO-01 | — | Pending |
-| HERO-02 | — | Pending |
-| HERO-03 | — | Pending |
-| HERO-04 | — | Pending |
-| ABOUT-01 | — | Pending |
-| ABOUT-02 | — | Pending |
-| ABOUT-03 | — | Pending |
-| ABOUT-04 | — | Pending |
-| ABOUT-05 | — | Pending |
-| PROG-01 | — | Pending |
-| PROG-02 | — | Pending |
-| FORW-01 | — | Pending |
-| METH-01 | — | Pending |
-| METH-02 | — | Pending |
-| SOCL-01 | — | Pending |
-| SOCL-02 | — | Pending |
-| SOCL-03 | — | Pending |
-| PRCE-01 | — | Pending |
-| PRCE-02 | — | Pending |
-| PRCE-03 | — | Pending |
-| FORM-01 | — | Pending |
-| FORM-02 | — | Pending |
-| FORM-03 | — | Pending |
-| FORM-04 | — | Pending |
-| CTA-01 | — | Pending |
-| CTA-02 | — | Pending |
-| CTA-03 | — | Pending |
-| IDEN-01 | — | Pending |
-| IDEN-02 | — | Pending |
-| FAQ-01 | — | Pending |
+| HERO-01 | Phase 12 | Pending |
+| HERO-02 | Phase 12 | Pending |
+| HERO-03 | Phase 12 | Pending |
+| HERO-04 | Phase 12 | Pending |
+| ABOUT-01 | Phase 12 | Pending |
+| ABOUT-02 | Phase 12 | Pending |
+| ABOUT-03 | Phase 12 | Pending |
+| ABOUT-04 | Phase 12 | Pending |
+| ABOUT-05 | Phase 12 | Pending |
+| PROG-01 | Phase 13 | Pending |
+| PROG-02 | Phase 13 | Pending |
+| FORW-01 | Phase 13 | Pending |
+| METH-01 | Phase 12 | Pending |
+| METH-02 | Phase 12 | Pending |
+| SOCL-01 | Phase 13 | Pending |
+| SOCL-02 | Phase 13 | Pending |
+| SOCL-03 | Phase 13 | Pending |
+| PRCE-01 | Phase 13 | Pending |
+| PRCE-02 | Phase 13 | Pending |
+| PRCE-03 | Phase 13 | Pending |
+| FORM-01 | Phase 11 | Pending |
+| FORM-02 | Phase 14 | Pending |
+| FORM-03 | Phase 14 | Pending |
+| FORM-04 | Phase 14 | Pending |
+| CTA-01 | Phase 14 | Pending |
+| CTA-02 | Phase 14 | Pending |
+| CTA-03 | Phase 14 | Pending |
+| IDEN-01 | Phase 12 | Pending |
+| IDEN-02 | Phase 11 | Pending |
+| FAQ-01 | Phase 12 | Pending |
 
 **Coverage:**
 - v1.5 requirements: 30 total
-- Mapped to phases: 0
-- Unmapped: 30 ⚠️
+- Mapped to phases: 30
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-03-24*
-*Last updated: 2026-03-24 after initial definition*
+*Last updated: 2026-03-24 — traceability complete, all 30 requirements mapped to phases 11-14*
