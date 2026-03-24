@@ -8,28 +8,12 @@ Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de cons
 
 Converter visitantes em clientes da consultoria VIP atraves de uma LP que transmita autoridade, confianca e resultados reais no mercado de milhas.
 
-## Current Milestone: v1.5 Refinamento de Copy e Conversao
-
-**Goal:** Aplicar feedback do cliente (Marcio) para otimizar copy, estrutura de oferta e conversao da LP
-
-**Target features:**
-- Reescrita completa do Hero (headline, subheadline, CTA, microcopy)
-- SectionAbout reescrita com 3 funcoes (desejo, objecao, prova) — remocao total de "renda extra"
-- Palavras-chave em negrito no Conteudo Programatico + novo subtitulo
-- "Para quem NAO e" integrado no SectionForWhom (cards negativos)
-- SectionMethod com duracao (30 dias), 3 encontros/mes, suporte WhatsApp
-- Depoimentos estilo prints WhatsApp + titulo "Casos reais de quem ja aplicou"
-- SectionPrice expandida com preco (R$ 299,90 PIX / 10x cartao) + garantia 7 dias
-- Formulario simplificado (3 campos) + badge "Seus dados estao seguros"
-- CTAs variados por posicao (topo/meio/final)
-- FAQ reformulado para dor de iniciantes em milhas
-
 ## Current State
 
-Shipped v1.0 (MVP) through v1.4 (Logo, Acentuacao e Form Design).
+Shipped v1.0 through v1.5 (Refinamento de Copy e Conversao) on 2026-03-24.
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
-Codebase: ~1080 LOC across 12 Vue components, 2 composables, 1 CSS file.
-Landing page is feature-complete with all sections, lead form, and visual polish.
+Codebase: ~1155 LOC across 12 Vue components, 2 composables, 1 CSS file.
+Landing page fully optimized with client-approved copy, real pricing (R$ 299,90), WhatsApp testimonials, and progressive CTAs.
 
 **Pre-launch blockers:**
 - Replace `55XXXXXXXXXXX` WhatsApp placeholder with Marcio's real number
@@ -119,7 +103,7 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - Garantia: 7 dias — 100% do valor devolvido se nao fizer sentido
 - Backend Fastify ja configurado
 - Storage via Cloudflare R2 ja planejado
-- Publico-alvo: pessoas que querem viajar de classe executiva gastando menos, familias buscando economia, interessados em renda extra com milhas
+- Publico-alvo: pessoas que querem viajar de classe executiva gastando menos, familias buscando economia, iniciantes em milhas
 
 ## Constraints
 
@@ -161,4 +145,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after Phase 14 complete — v1.5 milestone DONE*
+*Last updated: 2026-03-24 after v1.5 milestone complete*

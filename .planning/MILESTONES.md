@@ -1,5 +1,22 @@
 # Milestones
 
+## v1.5 Refinamento de Copy e Conversao (Shipped: 2026-03-24)
+
+**Phases completed:** 4 phases (11-14), 6 plans, 11 tasks
+**Git range:** feat(11-01) → feat(14-01)
+**Files changed:** 31 files, +2760 -259 lines
+
+**Key accomplishments:**
+
+- Schema migrado para 3 campos (nome, email, whatsapp) — gastoMensal e objetivo removidos, campo email adicionado
+- "Renda extra" e "Márcio" removidos de toda a LP (posicionamento empresa, não pessoa)
+- Hero reescrito com copy de conversão (headline 80% menos, CTA "Quero começar agora", microcopy)
+- SectionAbout reestruturado com 3 funções (desejo/objeção/prova) + 3 cards (conforto/economia/estratégia)
+- Depoimentos WhatsApp chat bubbles CSS + "Para quem NÃO é" cards vermelhos + negritos no ProgramContent
+- SectionPrice split layout com R$ 299,90 PIX / 10x + garantia 7 dias + badge segurança no form
+
+---
+
 ## v1.4 Logo, Acentuação e Form Design (Shipped: 2026-03-22)
 
 **Phases completed:** 2 phases (9-10), 3 plans, 5 tasks
