@@ -8,6 +8,12 @@ const cards = [
   { text: 'Quem quer aprender sem depender de dicas soltas', icon: 'i-heroicons-academic-cap' },
   { text: 'Quem busca clareza, segurança e estratégia', icon: 'i-heroicons-shield-check' },
 ]
+
+const negativeCards = [
+  { text: 'Não é pra quem quer dinheiro fácil', icon: 'i-heroicons-x-mark' },
+  { text: 'Não é pra quem não usa cartão', icon: 'i-heroicons-x-mark' },
+  { text: 'Não é pra quem não vai aplicar', icon: 'i-heroicons-x-mark' },
+]
 </script>
 
 <template>
@@ -37,6 +43,25 @@ const cards = [
             <UIcon :name="card.icon" class="w-7 h-7 text-[var(--color-brand-cta)] shrink-0" />
             <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
           </div>
+        </div>
+      </div>
+
+      <!-- Separator: negative qualification -->
+      <div class="mt-12 mb-6 text-center">
+        <p class="text-lg font-semibold text-[var(--color-brand-primary)]">
+          Essa mentoria não é para todos
+        </p>
+      </div>
+
+      <!-- Negative qualification cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div
+          v-for="card in negativeCards"
+          :key="card.text"
+          class="rounded-xl bg-red-50 border border-red-200 p-5 flex items-center gap-4"
+        >
+          <UIcon :name="card.icon" class="w-7 h-7 text-red-500 shrink-0" />
+          <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
         </div>
       </div>
 
