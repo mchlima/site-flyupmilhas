@@ -96,10 +96,12 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ "Para quem NAO e" 3 cards vermelhos integrados no ForWhom — v1.5 Phase 13
 - ✓ SectionPrice split layout com R$ 299,90 PIX / 10x + garantia 7 dias — v1.5 Phase 13
 
+- ✓ Badge "Seus dados estão seguros" com cadeado abaixo do form — v1.5 Phase 14
+- ✓ CTAs variados por posição (Hero/ProgramContent/Price/Form) — v1.5 Phase 14
+
 ### Active
 
-- [ ] Formulario badge seguranca + texto intro
-- [ ] CTAs variados por posicao na LP
+(No active requirements — v1.5 milestone complete)
 
 ### Out of Scope
 
@@ -159,4 +161,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after Phase 13 complete (structural template changes)*
+*Last updated: 2026-03-24 after Phase 14 complete — v1.5 milestone DONE*
