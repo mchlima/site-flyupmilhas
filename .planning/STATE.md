@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.4
-milestone_name: Logo, Acentuacao e Form Design
-status: unknown
-last_updated: "2026-03-22T13:49:08.682Z"
+milestone: v1.5
+milestone_name: Refinamento de Copy e Conversao
+status: active
+last_updated: "2026-03-24T00:00:00.000Z"
 progress:
-  total_phases: 2
-  completed_phases: 2
-  total_plans: 3
-  completed_plans: 3
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,16 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 10 — footer-instagram
+**Current Focus:** Defining requirements for v1.5
 
 ---
 
 ## Current Position
 
-Phase: 10
-Plan: Not started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-24 — Milestone v1.5 started
 
 ## Performance Metrics
 

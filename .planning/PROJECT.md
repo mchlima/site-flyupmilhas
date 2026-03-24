@@ -8,9 +8,25 @@ Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de cons
 
 Converter visitantes em clientes da consultoria VIP atraves de uma LP que transmita autoridade, confianca e resultados reais no mercado de milhas.
 
+## Current Milestone: v1.5 Refinamento de Copy e Conversao
+
+**Goal:** Aplicar feedback do cliente (Marcio) para otimizar copy, estrutura de oferta e conversao da LP
+
+**Target features:**
+- Reescrita completa do Hero (headline, subheadline, CTA, microcopy)
+- SectionAbout reescrita com 3 funcoes (desejo, objecao, prova) — remocao total de "renda extra"
+- Palavras-chave em negrito no Conteudo Programatico + novo subtitulo
+- "Para quem NAO e" integrado no SectionForWhom (cards negativos)
+- SectionMethod com duracao (30 dias), 3 encontros/mes, suporte WhatsApp
+- Depoimentos estilo prints WhatsApp + titulo "Casos reais de quem ja aplicou"
+- SectionPrice expandida com preco (R$ 299,90 PIX / 10x cartao) + garantia 7 dias
+- Formulario simplificado (3 campos) + badge "Seus dados estao seguros"
+- CTAs variados por posicao (topo/meio/final)
+- FAQ reformulado para dor de iniciantes em milhas
+
 ## Current State
 
-Shipped v1.0 (MVP) and v1.1 (Refinamento Visual) on 2026-03-21.
+Shipped v1.0 (MVP) through v1.4 (Logo, Acentuacao e Form Design).
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
 Codebase: ~1080 LOC across 12 Vue components, 2 composables, 1 CSS file.
 Landing page is feature-complete with all sections, lead form, and visual polish.
@@ -70,9 +86,16 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 
 ### Active
 
-(No active requirements — v1.2 milestone complete)
-
-(No current milestone — planning next)
+- [ ] Reescrita do Hero com copy otimizada para conversao
+- [ ] SectionAbout reescrita (remocao "renda extra", 3 funcoes conversao)
+- [ ] Conteudo Programatico com negritos e novo subtitulo
+- [ ] "Para quem NAO e" integrado no ForWhom
+- [ ] SectionMethod com detalhes de valor (duracao, encontros, suporte)
+- [ ] Depoimentos visuais estilo WhatsApp
+- [ ] SectionPrice com preco real + garantia 7 dias
+- [ ] Formulario 3 campos + badge seguranca
+- [ ] CTAs variados por posicao na LP
+- [ ] FAQ reformulado para iniciantes
 
 ### Out of Scope
 
@@ -80,12 +103,14 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - Area de login/dashboard do cliente — foco exclusivo na conversao
 - Blog ou secao de conteudo — LP unica sem navegacao complexa
 - Integracao com redes sociais — nao mencionado no escopo inicial
+- Renda extra com milhas — cliente removeu do posicionamento (atrai publico errado, gera frustracao)
 
 ## Context
 
 - Cliente: Marcio (Fly Up Milhas), especialista em milhas aereas
-- Oferta: Consultoria VIP por R$ 200 (pagamento unico), 1 mes de acompanhamento, 2 reunioes online
-- Entregaveis da consultoria: diagnostico de cartoes, planejamento de rotas/emissoes, suporte no check-in
+- Oferta: Mentoria VIP por R$ 299,90 (PIX) ou ate 10x no cartao, 30 dias de acompanhamento, 3 encontros/mes
+- Entregaveis da mentoria: diagnostico de cartoes, planejamento de rotas/emissoes, suporte via WhatsApp
+- Garantia: 7 dias — 100% do valor devolvido se nao fizer sentido
 - Backend Fastify ja configurado
 - Storage via Cloudflare R2 ja planejado
 - Publico-alvo: pessoas que querem viajar de classe executiva gastando menos, familias buscando economia, interessados em renda extra com milhas
@@ -112,5 +137,22 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 | Smart sticky header (show on scroll-up) | Better UX than always-visible or always-hidden — saves screen space | ✓ Good |
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
 
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd:transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
 ---
-*Last updated: 2026-03-22 after v1.4 milestone complete*
+*Last updated: 2026-03-24 after v1.5 milestone started*
