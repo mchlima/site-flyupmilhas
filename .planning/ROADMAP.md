@@ -122,20 +122,19 @@ Plans:
 - [x] 13-02-PLAN.md — ForWhom negative qualification cards + SectionPrice split layout with pricing and guarantee
 
 ### Phase 14: Form Frontend & CTA Pass
-**Goal**: The lead form collects 3 fields with updated objetivo options, displays the security badge outside UForm, and every CTA button on the page has distinct copy matching its position.
+**Goal**: The security badge appears below the form submit button, and every CTA button on the page has distinct progressive copy matching its scroll position.
 **Depends on**: Phase 11 (backend schema must be updated before removing gastoMensal from the frontend), Phase 13 (sections must be stable before CTA text is finalized)
 **Requirements**: FORM-02, FORM-03, FORM-04, CTA-01, CTA-02, CTA-03
 **Success Criteria** (what must be TRUE):
-  1. The lead form renders exactly 3 visible fields (nome, whatsapp, objetivo) — the gastoMensal field is absent from the UI
-  2. The objetivo dropdown options are: "Viajar pagando menos", "Viajar com mais conforto (classe executiva)", "Organizar e usar melhor meus pontos/milhas", "Ainda nao sei / estou comecando"
-  3. The text "Preencha o formulario e entraremos em contato em ate 24h pelo WhatsApp" appears in the form section
-  4. A "Seus dados estao seguros" badge with a lock icon appears directly below the submit button, outside the UForm component
-  5. The hero CTA reads "Quero comecar agora", the mid-page CTA reads "Quero entender melhor", and the final CTA reads "Quero entrar na mentoria"
-**Plans**: 2 plans
+  1. The lead form renders exactly 3 visible fields (nome, email, whatsapp)
+  2. The text "Preencha o formulario e entraremos em contato em ate 24h pelo WhatsApp" appears in the form section
+  3. A "Seus dados estao seguros" badge with a lock icon appears directly below the submit button, outside the UForm component
+  4. The hero CTA reads "Quero comecar agora", the mid-page CTA reads "Quero entender melhor", and the final CTA reads "Quero entrar na mentoria"
+  5. The form submit button reads "Quero comecar minha mentoria"
+**Plans**: 1 plan
 
 Plans:
-- [ ] 14-01-PLAN.md — Form 3-field sync + security badge
-- [ ] 14-02-PLAN.md — Progressive CTA copy per position
+- [ ] 14-01-PLAN.md — Security badge + progressive CTA copy + submit button text
 
 ---
 
@@ -156,8 +155,8 @@ Plans:
 | 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete    | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete    | 2026-03-24 |
-| 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
+| 14. Form Frontend & CTA Pass | v1.5 | 0/1 | Not started | — |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-24 — Phase 13 planned (2 plans)*
+*Last updated: 2026-03-24 — Phase 14 planned (1 plan)*
