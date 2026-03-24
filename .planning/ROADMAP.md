@@ -100,7 +100,11 @@ Plans:
   3. SectionAbout displays the title "Viaje mais. Gaste menos. Use milhas do jeito certo." with 3 cards (conforto, economia, estrategia) and no "renda extra" card or text
   4. SectionMethod displays "30 dias", "3 encontros/mes" and "Suporte via WhatsApp" as visible information on the page
   5. FAQ questions address beginner pain points (not existing power-users), and no occurrence of "Marcio" or "renda extra" is present in any rendered section
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
+- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
 
 ### Phase 13: Structural Template Changes
 **Goal**: SectionSocialProof renders chat-bubble testimonials, SectionForWhom includes a "Para quem NAO e" block, ProgramContent items have bold keywords, and SectionPrice shows the real price and 7-day guarantee.
@@ -111,7 +115,11 @@ Plans:
   2. SectionForWhom shows a "Para quem NAO e" block with 3 negative qualification cards below the positive qualification cards
   3. ProgramContent items display bold keywords (rendered via v-html with hardcoded strings) and the updated subtitle appears above the list
   4. SectionPrice displays "R$ 299,90 no PIX" and "ate 10x no cartao" as hard-coded strings (never computed values), with a dedicated guarantee block reading "Garantia de 7 dias — 100% do valor devolvido"
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
+- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
 
 ### Phase 14: Form Frontend & CTA Pass
 **Goal**: The lead form collects 3 fields with updated objetivo options, displays the security badge outside UForm, and every CTA button on the page has distinct copy matching its position.
@@ -123,7 +131,11 @@ Plans:
   3. The text "Preencha o formulario e entraremos em contato em ate 24h pelo WhatsApp" appears in the form section
   4. A "Seus dados estao seguros" badge with a lock icon appears directly below the submit button, outside the UForm component
   5. The hero CTA reads "Quero comecar agora", the mid-page CTA reads "Quero entender melhor", and the final CTA reads "Quero entrar na mentoria"
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
+- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
 
 ---
 
@@ -142,7 +154,7 @@ Plans:
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
 | 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
-| 12. Copy Rewrite & Identity Sweep | v1.5 | 0/? | Not started | — |
+| 12. Copy Rewrite & Identity Sweep | v1.5 | 0/2 | Not started | — |
 | 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
 
