@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { scrollTo } = useScroll()
+
 const steps = [
   {
     icon: 'i-heroicons-clipboard-document-check',
@@ -45,7 +47,7 @@ const steps = [
           <p class="text-sm text-[var(--color-brand-text-muted)]">Duração</p>
         </div>
         <div class="text-center">
-          <p class="text-lg font-bold text-[var(--color-brand-primary)]">3 encontros/mês</p>
+          <p class="text-lg font-bold text-[var(--color-brand-primary)]">3 encontros</p>
           <p class="text-sm text-[var(--color-brand-text-muted)]">Dias a combinar</p>
         </div>
         <div class="text-center">
@@ -87,6 +89,14 @@ const steps = [
       <p class="text-center text-sm text-[var(--color-brand-text-muted)] mt-8 max-w-2xl mx-auto">
         Encontros online via Google Meet, com suporte contínuo via WhatsApp e material de apoio para aplicação imediata.
       </p>
+
+      <div class="text-center mt-10">
+        <a
+          href="#formulario"
+          @click="scrollTo('formulario')"
+          class="inline-block bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold py-3 px-8 rounded-full text-lg transition-colors"
+        >Quero entender melhor</a>
+      </div>
 
     </div>
   </section>
