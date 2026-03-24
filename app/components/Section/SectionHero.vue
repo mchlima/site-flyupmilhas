@@ -28,13 +28,13 @@ const { scrollTo } = useScroll()
       <h1
         class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
       >
-        Sua próxima viagem de classe executiva custa menos que um jantar fora.
+        Aprenda a viajar de classe executiva pagando até 80% menos, mesmo começando do zero.
       </h1>
 
       <p
         class="text-lg md:text-xl text-white/80 mb-10 max-w-2xl mx-auto"
       >
-        Na mentoria Fly Up Milhas, você aprende a acumular e usar milhas com estratégia — do diagnóstico ao seu primeiro voo executivo.
+        Um método simples e prático para transformar seus gastos do dia a dia em milhas e viajar mais, gastando menos.
       </p>
 
       <div class="flex justify-center">
@@ -42,9 +42,10 @@ const { scrollTo } = useScroll()
           class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
           @click="scrollTo('formulario')"
         >
-          Quero dar o primeiro passo
+          Quero começar agora
         </button>
       </div>
+      <p class="text-sm text-white/60 text-center mt-3">Comece a economizar já no primeiro mês</p>
     </div>
   </section>
 </template>
