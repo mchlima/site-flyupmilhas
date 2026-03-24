@@ -2,14 +2,14 @@
 const { scrollTo } = useScroll()
 
 const items = [
-  { text: 'Como funcionam os principais programas de milhas', icon: 'i-heroicons-light-bulb' },
-  { text: 'Formas inteligentes de acumular pontos sem gastar mais', icon: 'i-heroicons-arrow-trending-up' },
-  { text: 'Quando vale (ou não) transferir pontos', icon: 'i-heroicons-arrows-right-left' },
-  { text: 'Como encontrar passagens com milhas pagando muito menos', icon: 'i-heroicons-ticket' },
-  { text: 'Erros comuns que fazem as pessoas perderem milhas', icon: 'i-heroicons-exclamation-triangle' },
-  { text: 'Estratégias para viagens nacionais e internacionais', icon: 'i-heroicons-globe-americas' },
-  { text: 'Como usar o cartão de crédito a seu favor', icon: 'i-heroicons-credit-card' },
-  { text: 'Organização e planejamento de viagens com antecedência', icon: 'i-heroicons-calendar-days' },
+  { text: 'Como funcionam os <strong>principais programas de milhas</strong>', icon: 'i-heroicons-light-bulb' },
+  { text: 'Formas inteligentes de <strong>acumular pontos</strong> sem gastar mais', icon: 'i-heroicons-arrow-trending-up' },
+  { text: 'Quando vale (ou não) <strong>transferir pontos</strong>', icon: 'i-heroicons-arrows-right-left' },
+  { text: 'Como encontrar <strong>passagens com milhas</strong> pagando muito menos', icon: 'i-heroicons-ticket' },
+  { text: '<strong>Erros comuns</strong> que fazem as pessoas perderem milhas', icon: 'i-heroicons-exclamation-triangle' },
+  { text: 'Estratégias para <strong>viagens nacionais e internacionais</strong>', icon: 'i-heroicons-globe-americas' },
+  { text: 'Como usar o <strong>cartão de crédito</strong> a seu favor', icon: 'i-heroicons-credit-card' },
+  { text: '<strong>Organização e planejamento</strong> de viagens com antecedência', icon: 'i-heroicons-calendar-days' },
 ]
 </script>
 
@@ -23,7 +23,7 @@ const items = [
           O que você vai aprender na prática
         </h2>
         <p class="text-[var(--color-brand-text-muted)] leading-relaxed">
-          Aqui você não recebe promessas irreais. Você aprende o que funciona, quando funciona e como aplicar na sua realidade.
+          Sem promessas milagrosas. Um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens.
         </p>
         <div>
           <button
@@ -43,7 +43,7 @@ const items = [
           class="flex items-start gap-3"
         >
           <UIcon :name="item.icon" class="w-6 h-6 text-[var(--color-brand-cta)] shrink-0 mt-0.5" />
-          <span class="text-[var(--color-brand-text)]">{{ item.text }}</span>
+          <span class="text-[var(--color-brand-text)]" v-html="item.text"></span>
         </div>
       </div>
 
