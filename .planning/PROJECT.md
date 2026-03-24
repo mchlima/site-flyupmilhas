@@ -91,14 +91,14 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ SectionMethod enriquecido (30 dias, 3 encontros, suporte WhatsApp, copy transformacao) — v1.5 Phase 12
 - ✓ FAQ reescrito para dor de iniciantes (6 perguntas) — v1.5 Phase 12
 - ✓ "Marcio" removido de componentes renderizados (form, WhatsApp URL) — v1.5 Phase 12
+- ✓ Depoimentos WhatsApp chat bubbles (3 testimonials, CSS green, mobile-safe) — v1.5 Phase 13
+- ✓ ProgramContent com negritos v-html + novo subtitulo — v1.5 Phase 13
+- ✓ "Para quem NAO e" 3 cards vermelhos integrados no ForWhom — v1.5 Phase 13
+- ✓ SectionPrice split layout com R$ 299,90 PIX / 10x + garantia 7 dias — v1.5 Phase 13
 
 ### Active
 
-- [ ] Conteudo Programatico com negritos e novo subtitulo
-- [ ] "Para quem NAO e" integrado no ForWhom
-- [ ] Depoimentos visuais estilo WhatsApp
-- [ ] SectionPrice com preco real + garantia 7 dias
-- [ ] Formulario 3 campos + badge seguranca
+- [ ] Formulario badge seguranca + texto intro
 - [ ] CTAs variados por posicao na LP
 
 ### Out of Scope
@@ -159,4 +159,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after Phase 12 complete (copy rewrite & identity sweep)*
+*Last updated: 2026-03-24 after Phase 13 complete (structural template changes)*
