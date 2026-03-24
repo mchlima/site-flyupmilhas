@@ -118,8 +118,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [x] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
-- [x] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
+- [ ] 13-01-PLAN.md — SocialProof WhatsApp chat bubbles + ProgramContent bold keywords and subtitle
+- [ ] 13-02-PLAN.md — ForWhom negative qualification cards + SectionPrice split layout with pricing and guarantee
 
 ### Phase 14: Form Frontend & CTA Pass
 **Goal**: The lead form collects 3 fields with updated objetivo options, displays the security badge outside UForm, and every CTA button on the page has distinct copy matching its position.
@@ -134,8 +134,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
-- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
+- [ ] 14-01-PLAN.md — Form 3-field sync + security badge
+- [ ] 14-02-PLAN.md — Progressive CTA copy per position
 
 ---
 
@@ -155,9 +155,9 @@ Plans:
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
 | 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete    | 2026-03-24 |
-| 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
+| 13. Structural Template Changes | v1.5 | 0/2 | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-24 — Phase 11 planned (1 plan)*
+*Last updated: 2026-03-24 — Phase 13 planned (2 plans)*
