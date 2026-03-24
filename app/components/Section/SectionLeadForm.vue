@@ -160,9 +160,15 @@ async function onSubmit() {
             class="w-full py-4 bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold rounded-lg text-base text-center flex items-center justify-center gap-2 disabled:opacity-50 transition-colors"
           >
             <span v-if="isLoading">Enviando...</span>
-            <span v-else>Quero dar o primeiro passo</span>
+            <span v-else>Quero comecar minha mentoria</span>
           </button>
         </UForm>
+
+        <!-- Security badge — outside UForm per D-03/D-05 -->
+        <div class="flex items-center justify-center gap-2 mt-4 text-white/60 text-sm">
+          <UIcon name="i-heroicons-lock-closed" class="w-4 h-4" />
+          <span>Seus dados estao seguros</span>
+        </div>
 
         <!-- WhatsApp CTA below form -->
         <div class="mt-4">
