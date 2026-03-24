@@ -1,26 +1,29 @@
 <script setup lang="ts">
 const faqItems = [
   {
-    label: 'Funciona para quem gasta pouco no cartão?',
-    content: 'Sim. Mesmo com R$1.500/mês em gastos, é possível acumular milhas suficientes para voos nacionais em menos de 1 ano. Na nossa reunião mapeamos seu perfil e definimos o ritmo ideal para o seu objetivo.',
+    label: 'Quanto custa a mentoria?',
+    content: 'O investimento é de R$ 299,90 no PIX ou até 10x no cartão. Você tem 3 encontros individuais ao longo de 30 dias, suporte via WhatsApp e material de apoio. E se não ficar satisfeito, tem garantia de 7 dias com reembolso total.',
   },
   {
-    label: 'Preciso ter cartão premium para participar?',
-    content: 'Não. Trabalho com cartões de diferentes categorias. O objetivo é otimizar o que você já tem e, se fizer sentido, indicar upgrades que compensem financeiramente.',
+    label: 'Funciona para quem está começando do zero?',
+    content: 'Sim, a mentoria foi criada exatamente para isso. Você não precisa entender de milhas, pontos ou programas de fidelidade. No primeiro encontro, mapeamos tudo o que você já tem e montamos sua estratégia do zero.',
   },
   {
-    label: 'E se eu não gostar da mentoria?',
-    content: 'A primeira reunião é um diagnóstico detalhado. Se ao final dela você sentir que não foi o que esperava, conversamos — meu objetivo é que você saia com um plano claro e acionável.',
-  },
-  {
-    label: 'Como funciona a reunião online?',
-    content: 'Fazemos via Google Meet ou WhatsApp Video. Dura em média 1 hora. Você compartilha sua tela para vermos os programas juntos, e eu monto sua estratégia em tempo real.',
+    label: 'Preciso ter cartão premium ou renda alta?',
+    content: 'Não. Trabalhamos com o que você já tem — qualquer cartão de crédito que acumule pontos já é um ponto de partida. A estratégia é adaptada à sua realidade financeira.',
   },
   {
     label: 'Quanto tempo leva para ver resultado?',
-    content: 'Depende do seu ritmo de gastos e objetivo. Resultados em milhas acumuladas aparecem no primeiro mês. Emissão de passagens executivas geralmente acontece entre 3 e 12 meses após a estratégia implementada.',
+    content: 'Você já sai do primeiro encontro com um plano claro. Resultados em milhas acumuladas aparecem no primeiro mês. Emissões de passagens com economia real acontecem entre 3 e 12 meses, dependendo do seu perfil de gastos e destino desejado.',
   },
-  // TODO: replace with real Q&A from Marcio — add 1-2 more as needed
+  {
+    label: 'E se eu não gostar? Tem garantia?',
+    content: 'Sim. Você tem 7 dias de garantia incondicional. Se sentir que a mentoria não é para você, devolvemos 100% do valor investido, sem burocracia.',
+  },
+  {
+    label: 'Como funciona o pagamento?',
+    content: 'Após preencher o formulário, nossa equipe entra em contato pelo WhatsApp em até 24h para agendar seu primeiro encontro. O pagamento é feito antes do início, via PIX ou cartão de crédito em até 10x.',
+  },
 ]
 </script>
 
