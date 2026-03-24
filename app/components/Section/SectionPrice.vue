@@ -46,7 +46,7 @@ const benefits = [
             class="w-full bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
             @click="scrollTo('formulario')"
           >
-            Quero dar o primeiro passo
+            Quero entrar na mentoria
           </button>
         </div>
 

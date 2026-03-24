@@ -30,7 +30,7 @@ const items = [
             class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg cursor-pointer transition-colors"
             @click="scrollTo('formulario')"
           >
-            Quero dar o primeiro passo
+            Quero entender melhor
           </button>
         </div>
       </div>
