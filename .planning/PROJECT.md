@@ -86,19 +86,20 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ Formulário 3 campos (nome, email, whatsapp) — gastoMensal e objetivo removidos — v1.5 Phase 11
 - ✓ "Renda extra" removido de todo o código e copy — v1.5 Phase 11
 - ✓ Campo email adicionado ao schema (frontend + backend) — v1.5 Phase 11
+- ✓ Hero reescrito (headline 80% menos, subheadline, CTA, microcopy) — v1.5 Phase 12
+- ✓ SectionAbout reescrito (titulo/texto/prova + 3 cards conforto/economia/estrategia) — v1.5 Phase 12
+- ✓ SectionMethod enriquecido (30 dias, 3 encontros, suporte WhatsApp, copy transformacao) — v1.5 Phase 12
+- ✓ FAQ reescrito para dor de iniciantes (6 perguntas) — v1.5 Phase 12
+- ✓ "Marcio" removido de componentes renderizados (form, WhatsApp URL) — v1.5 Phase 12
 
 ### Active
 
-- [ ] Reescrita do Hero com copy otimizada para conversao
-- [ ] SectionAbout reescrita (remocao "renda extra", 3 funcoes conversao)
 - [ ] Conteudo Programatico com negritos e novo subtitulo
 - [ ] "Para quem NAO e" integrado no ForWhom
-- [ ] SectionMethod com detalhes de valor (duracao, encontros, suporte)
 - [ ] Depoimentos visuais estilo WhatsApp
 - [ ] SectionPrice com preco real + garantia 7 dias
 - [ ] Formulario 3 campos + badge seguranca
 - [ ] CTAs variados por posicao na LP
-- [ ] FAQ reformulado para iniciantes
 
 ### Out of Scope
 
@@ -158,4 +159,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after Phase 11 complete (schema cleanup)*
+*Last updated: 2026-03-24 after Phase 12 complete (copy rewrite & identity sweep)*
