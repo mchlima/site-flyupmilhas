@@ -48,7 +48,7 @@ function navigate(anchor: string) {
         <img
           src="~/assets/img/logo-fly-up-milhas.png"
           alt="Fly Up Milhas"
-          class="h-8 w-auto"
+          class="h-10 w-auto"
         />
       </button>
 
