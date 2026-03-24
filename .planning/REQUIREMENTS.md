@@ -24,8 +24,8 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Conteúdo Programático
 
-- [ ] **PROG-01**: Palavras-chave em negrito nos 8 itens (via v-html)
-- [ ] **PROG-02**: Novo subtítulo "Sem promessas milagrosas. Um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens."
+- [x] **PROG-01**: Palavras-chave em negrito nos 8 itens (via v-html)
+- [x] **PROG-02**: Novo subtítulo "Sem promessas milagrosas. Um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens."
 
 ### Para Quem É
 
@@ -38,9 +38,9 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Social Proof (Resultados)
 
-- [ ] **SOCL-01**: Título "Casos reais de quem já aplicou"
-- [ ] **SOCL-02**: Depoimentos estilo chat WhatsApp (bolhas CSS) com dados mock realistas
-- [ ] **SOCL-03**: Números e valores destacados em negrito nos depoimentos
+- [x] **SOCL-01**: Título "Casos reais de quem já aplicou"
+- [x] **SOCL-02**: Depoimentos estilo chat WhatsApp (bolhas CSS) com dados mock realistas
+- [x] **SOCL-03**: Números e valores destacados em negrito nos depoimentos
 
 ### Preço + Garantia
 
@@ -101,14 +101,14 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | ABOUT-03 | Phase 12 | Complete |
 | ABOUT-04 | Phase 12 | Complete |
 | ABOUT-05 | Phase 12 | Complete |
-| PROG-01 | Phase 13 | Pending |
-| PROG-02 | Phase 13 | Pending |
+| PROG-01 | Phase 13 | Complete |
+| PROG-02 | Phase 13 | Complete |
 | FORW-01 | Phase 13 | Complete |
 | METH-01 | Phase 12 | Complete |
 | METH-02 | Phase 12 | Complete |
-| SOCL-01 | Phase 13 | Pending |
-| SOCL-02 | Phase 13 | Pending |
-| SOCL-03 | Phase 13 | Pending |
+| SOCL-01 | Phase 13 | Complete |
+| SOCL-02 | Phase 13 | Complete |
+| SOCL-03 | Phase 13 | Complete |
 | PRCE-01 | Phase 13 | Complete |
 | PRCE-02 | Phase 13 | Complete |
 | PRCE-03 | Phase 13 | Complete |
