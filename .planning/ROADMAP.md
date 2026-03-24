@@ -118,8 +118,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
-- [ ] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
+- [x] 12-01-PLAN.md — Hero + About copy rewrite (headline, subheadline, CTA, microcopy, About layout with 3 cards)
+- [x] 12-02-PLAN.md — Method + FAQ rewrite + identity sweep (enriched steps, beginner FAQ, remove Marcio references)
 
 ### Phase 14: Form Frontend & CTA Pass
 **Goal**: The lead form collects 3 fields with updated objetivo options, displays the security badge outside UForm, and every CTA button on the page has distinct copy matching its position.

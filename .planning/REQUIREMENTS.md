@@ -33,8 +33,8 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Como Funciona (Method)
 
-- [ ] **METH-01**: Adicionar duração (30 dias), quantidade de encontros (3/mês, dias a combinar), suporte (Sim, via WhatsApp)
-- [ ] **METH-02**: Copy focada em transformação e oportunidade, não simplicidade
+- [x] **METH-01**: Adicionar duração (30 dias), quantidade de encontros (3/mês, dias a combinar), suporte (Sim, via WhatsApp)
+- [x] **METH-02**: Copy focada em transformação e oportunidade, não simplicidade
 
 ### Social Proof (Resultados)
 
@@ -63,12 +63,12 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Identidade
 
-- [ ] **IDEN-01**: Remoção de qualquer referência ao nome "Márcio" em todo o site — usar "Fly Up Milhas" ou "nossa equipe"
+- [x] **IDEN-01**: Remoção de qualquer referência ao nome "Márcio" em todo o site — usar "Fly Up Milhas" ou "nossa equipe"
 - [x] **IDEN-02**: Remoção global de "renda extra com milhas" de toda a LP (copy, enums, meta tags)
 
 ### FAQ
 
-- [ ] **FAQ-01**: Reformulação de perguntas e respostas focadas na dor de quem não conhece milhas
+- [x] **FAQ-01**: Reformulação de perguntas e respostas focadas na dor de quem não conhece milhas
 
 ## Future Requirements
 
@@ -104,8 +104,8 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | PROG-01 | Phase 13 | Pending |
 | PROG-02 | Phase 13 | Pending |
 | FORW-01 | Phase 13 | Pending |
-| METH-01 | Phase 12 | Pending |
-| METH-02 | Phase 12 | Pending |
+| METH-01 | Phase 12 | Complete |
+| METH-02 | Phase 12 | Complete |
 | SOCL-01 | Phase 13 | Pending |
 | SOCL-02 | Phase 13 | Pending |
 | SOCL-03 | Phase 13 | Pending |
@@ -119,9 +119,9 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | CTA-01 | Phase 14 | Pending |
 | CTA-02 | Phase 14 | Pending |
 | CTA-03 | Phase 14 | Pending |
-| IDEN-01 | Phase 12 | Pending |
+| IDEN-01 | Phase 12 | Complete |
 | IDEN-02 | Phase 11 | Complete |
-| FAQ-01 | Phase 12 | Pending |
+| FAQ-01 | Phase 12 | Complete |
 
 **Coverage:**
 - v1.5 requirements: 30 total
