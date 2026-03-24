@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { LeadFormSchema, useLeadForm } from '~/composables/useLeadForm'
 
-// WhatsApp CTA URL — TODO: Replace 55XXXXXXXXXXX with Marcio's real WhatsApp number before launch
-const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%20Marcio%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas.'
+// WhatsApp CTA URL — TODO: Replace 55XXXXXXXXXXX with real WhatsApp number before launch
+const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas.'
 
 const { isLoading, isSuccess, error, submit } = useLeadForm()
 
@@ -51,7 +51,7 @@ async function onSubmit() {
           Comece sua mentoria agora
         </h2>
         <p class="text-white/80">
-          Preencha e Marcio entra em contato em até 24h pelo WhatsApp.
+          Preencha o formulário e entraremos em contato em até 24h pelo WhatsApp.
         </p>
       </div>
 
