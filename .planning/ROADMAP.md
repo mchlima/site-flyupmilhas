@@ -141,7 +141,7 @@ Plans:
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
-| 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete   | 2026-03-24 |
+| 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete    | 2026-03-24 |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 0/? | Not started | — |
 | 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
