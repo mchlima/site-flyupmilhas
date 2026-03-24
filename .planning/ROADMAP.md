@@ -66,7 +66,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 ### Phases
 
-- [ ] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal field and purge renda-extra enum from backend Zod schema
+- [ ] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal/objetivo fields, add email, purge renda-extra from codebase
 - [ ] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide
 - [ ] **Phase 13: Structural Template Changes** - WhatsApp-style testimonials, negative qualification cards, bold keywords, pricing + guarantee block
 - [ ] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy
@@ -76,15 +76,19 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 ## Phase Details
 
 ### Phase 11: Backend Schema Cleanup
-**Goal**: The backend Fastify schema accepts a 3-field lead payload without errors, and the string "renda-extra" does not exist anywhere in the server or app source.
+**Goal**: The backend Fastify schema accepts a 3-field lead payload (nome, email, whatsapp) without errors, and the strings "renda-extra", "gastoMensal", and "objetivo" do not exist anywhere in the server or app source.
 **Depends on**: Nothing (must execute first — all form frontend work depends on this)
 **Requirements**: FORM-01, IDEN-02
 **Success Criteria** (what must be TRUE):
-  1. POST /leads with `{ nome, whatsapp, objetivo }` returns 200 with no validation errors
-  2. POST /leads with a `gastoMensal` field included is either ignored or accepted gracefully (field no longer required)
-  3. `grep -r "renda.extra" app/ server/` returns zero results outside node_modules
-  4. The Zod schema in `server/leads/schema.ts` compiles without TypeScript errors after the field removal
-**Plans**: TBD
+  1. POST /leads with `{ nome, email, whatsapp }` returns 200 with no validation errors
+  2. POST /leads with a `gastoMensal` or `objetivo` field included is either ignored or accepted gracefully (fields no longer in schema)
+  3. `grep -ri "renda.extra" app/ server/` returns zero results outside node_modules
+  4. `grep -ri "gastoMensal\|objetivo" app/ server/` returns zero results outside node_modules
+  5. The Zod schema in `server/leads/schema.ts` contains `email: z.string().email()` and compiles without TypeScript errors
+**Plans**: 1 plan
+
+Plans:
+- [ ] 11-01-PLAN.md — Schema cleanup (remove gastoMensal/objetivo, add email) + renda-extra purge from SectionAbout
 
 ### Phase 12: Copy Rewrite & Identity Sweep
 **Goal**: The LP presents the updated headline, subheadline, About section, Method details, and FAQ — with no occurrence of "Marcio" or "renda extra" anywhere in rendered text.
@@ -137,11 +141,11 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
-| 11. Backend Schema Cleanup | v1.5 | 0/? | Not started | — |
+| 11. Backend Schema Cleanup | v1.5 | 0/1 | Planning complete | — |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 0/? | Not started | — |
 | 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-24 — v1.5 roadmap added (phases 11-14)*
+*Last updated: 2026-03-24 — Phase 11 planned (1 plan)*
