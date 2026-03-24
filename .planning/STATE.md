@@ -186,6 +186,7 @@ Plan: Not started
 | 260323-me4 | Use bg-hero image as Hero section background with text contrast overlay | 2026-03-23 | a2ca962 | [260323-me4](./quick/260323-me4-use-bg-hero-image-as-hero-section-backgr/) |
 | 260323-mwb | Add planning images to ForWhom section (2-column layout) | 2026-03-23 | 7ca7811 | [260323-mwb](./quick/260323-mwb-add-planning-images-to-forwhom-section-2/) |
 | 260323-n1d | ForWhom: family image left, info cards right, harmonize layout | 2026-03-23 | 0025a18 | [260323-n1d](./quick/260323-n1d-forwhom-family-image-left-info-cards-rig/) |
+| 260324-3z6 | Increase header logo height from h-8 to h-10 | 2026-03-24 | b9c730d | [260324-3z6](./quick/260324-3z6-o-logo-no-header-deve-ter-h-10/) |
 
 ---
 
