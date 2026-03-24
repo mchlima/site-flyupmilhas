@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import familyPlanningImg from '~/assets/img/bazillian-family-planning.png'
+import familyAirportImg from '~/assets/img/brazilian-family-walking-airport.png'
 
 const cards = [
   { text: 'Pessoas que querem viajar mais gastando menos', icon: 'i-heroicons-paper-airplane' },
@@ -27,9 +27,9 @@ const negativeCards = [
         <!-- LEFT column: family image -->
         <div>
           <img
-            :src="familyPlanningImg"
-            alt="Familia brasileira planejando viagem juntos"
-            class="rounded-2xl shadow-lg w-full object-cover aspect-[4/5]"
+            :src="familyAirportImg"
+            alt="Família brasileira caminhando no aeroporto com malas, avião ao fundo"
+            class="rounded-2xl shadow-lg w-full object-cover aspect-square"
           />
         </div>
 
