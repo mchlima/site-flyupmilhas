@@ -83,6 +83,9 @@ Landing page is feature-complete with all sections, lead form, and visual polish
 - ✓ Formulário sem card, campos direto no fundo navy — v1.4
 - ✓ Instagram CTA block + link no footer — v1.4
 - ✓ Footer cor separada do formulário (#0f2039) — v1.4
+- ✓ Formulário 3 campos (nome, email, whatsapp) — gastoMensal e objetivo removidos — v1.5 Phase 11
+- ✓ "Renda extra" removido de todo o código e copy — v1.5 Phase 11
+- ✓ Campo email adicionado ao schema (frontend + backend) — v1.5 Phase 11
 
 ### Active
 
@@ -155,4 +158,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after v1.5 milestone started*
+*Last updated: 2026-03-24 after Phase 11 complete (schema cleanup)*
