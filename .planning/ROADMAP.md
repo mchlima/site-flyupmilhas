@@ -66,7 +66,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 
 ### Phases
 
-- [ ] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal/objetivo fields, add email, purge renda-extra from codebase
+- [x] **Phase 11: Backend Schema Cleanup** - Remove gastoMensal/objetivo fields, add email, purge renda-extra from codebase (completed 2026-03-24)
 - [ ] **Phase 12: Copy Rewrite & Identity Sweep** - Rewrite Hero, About, Method, FAQ copy; remove all Marcio name references site-wide
 - [ ] **Phase 13: Structural Template Changes** - WhatsApp-style testimonials, negative qualification cards, bold keywords, pricing + guarantee block
 - [ ] **Phase 14: Form Frontend & CTA Pass** - Sync form to 3-field schema, add security badge, apply progressive CTA copy
@@ -88,7 +88,7 @@ Full details: `.planning/milestones/v1.4-ROADMAP.md`
 **Plans**: 1 plan
 
 Plans:
-- [ ] 11-01-PLAN.md — Schema cleanup (remove gastoMensal/objetivo, add email) + renda-extra purge from SectionAbout
+- [x] 11-01-PLAN.md — Schema cleanup (remove gastoMensal/objetivo, add email) + renda-extra purge from SectionAbout
 
 ### Phase 12: Copy Rewrite & Identity Sweep
 **Goal**: The LP presents the updated headline, subheadline, About section, Method details, and FAQ — with no occurrence of "Marcio" or "renda extra" anywhere in rendered text.
@@ -141,7 +141,7 @@ Plans:
 | 8. New Sections | v1.3 | 2/2 | Complete | 2026-03-22 |
 | 9. Logo, Accents & Form Redesign | v1.4 | 2/2 | Complete | 2026-03-22 |
 | 10. Footer & Instagram | v1.4 | 1/1 | Complete | 2026-03-22 |
-| 11. Backend Schema Cleanup | v1.5 | 0/1 | Planning complete | — |
+| 11. Backend Schema Cleanup | v1.5 | 1/1 | Complete   | 2026-03-24 |
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 0/? | Not started | — |
 | 13. Structural Template Changes | v1.5 | 0/? | Not started | — |
 | 14. Form Frontend & CTA Pass | v1.5 | 0/? | Not started | — |

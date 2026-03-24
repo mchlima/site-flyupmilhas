@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Refinamento de Copy e Conversao
-status: active
-last_updated: "2026-03-24T00:00:00.000Z"
+status: unknown
+last_updated: "2026-03-24T04:50:09.150Z"
 progress:
   total_phases: 4
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
+  completed_phases: 1
+  total_plans: 1
+  completed_plans: 1
 ---
 
 # State: Fly Up Milhas
@@ -16,22 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 11 — Backend Schema Cleanup (first phase of v1.5)
+**Current Focus:** Phase 12 — copy-rewrite-identity-sweep
 
 ---
 
 ## Current Position
 
-Phase: 11 — Backend Schema Cleanup
-Plan: Not started
-Status: Roadmap created, ready to plan Phase 11
-Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
-
-```
-[Phase 11] [Phase 12] [Phase 13] [Phase 14]
-[  TODO  ] [  TODO  ] [  TODO  ] [  TODO  ]
-  0%
-```
+Phase: 12 (copy-rewrite-identity-sweep) — NEXT
+Plan: 1 of 1 (Phase 11 complete)
 
 ## Performance Metrics
 
@@ -39,10 +31,10 @@ Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
 |--------|--------|---------|
 | v1.5 requirements mapped | 30/30 | 30/30 |
 | v1.5 phases defined | 4 | 4 |
-| v1.5 plans complete | — | 0 |
-| "renda-extra" occurrences in app/ server/ | 0 | Not verified |
+| v1.5 plans complete | — | 1 |
+| "renda-extra" occurrences in app/ server/ | 0 | 0 (verified Phase 11) |
 | "Marcio" occurrences in rendered copy | 0 | Not verified |
-| gastoMensal field in backend schema | removed | Not done |
+| gastoMensal field in backend schema | removed | Done — Phase 11 |
 | Price display format | hard-coded strings | Not done |
 | WhatsApp bubble 375px test | pass | Not done |
 
@@ -137,7 +129,7 @@ Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
 | Footer navy background as visual bookend | Header and footer both navy creates consistent page frame; off-white body sits between two navy anchors | Confirmed — implemented in 05-01 |
 | "consultoria" → "mentoria" migration (v1.3) | Product is a mentorship with biweekly sessions, not a one-time consultancy; copy must reflect reality | Confirmed — Phase 7 complete (zero occurrences site-wide) |
 | CTA label "Quero dar o primeiro passo" (v1.3) | Old site CTA confirmed; softer entry barrier than "Quero minha Consultoria" | Confirmed — Phase 7 complete (7 CTA locations updated) |
-| gastoMensal field removed (v1.5) | Client feedback: simplify form to 3 fields; gastoMensal adds friction with no qualifying value | Pending — Phase 11 |
+| gastoMensal field removed (v1.5) | Client feedback: simplify form to 3 fields; gastoMensal adds friction with no qualifying value | Confirmed — Phase 11 complete |
 | Price as hard-coded strings (v1.5) | JS arithmetic on 299.90 produces floating-point errors; Brazilian format uses comma separator | Pending — Phase 13 |
 | Security badge outside UForm (v1.5) | UForm expects UFormField children; badge inside causes unexpected spacing from Reka UI internals | Pending — Phase 14 |
 | Progressive CTA copy per position (v1.5) | 15-30% lift documented; hero/mid/final CTAs should match visitor intent at each scroll depth | Pending — Phase 14 |
@@ -180,7 +172,7 @@ Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
 - `app.vue` is the entire application shell — no `pages/` directory
 - All media > 20 KB on Cloudflare R2, never in `assets/images/`
 - API base URL via `runtimeConfig.public.apiBase` from env var — never hardcoded
-- Form locked at exactly 3 fields after v1.5: nome, whatsapp, objetivo (gastoMensal removed)
+- Form locked at exactly 3 fields after v1.5: nome, email, whatsapp (gastoMensal and objetivo removed — Phase 11)
 
 ### Quick Tasks Completed
 
@@ -194,10 +186,11 @@ Last activity: 2026-03-24 — v1.5 roadmap created (phases 11-14)
 
 ## Session Continuity
 
-**Last action:** v1.5 roadmap created (phases 11-14, 30 requirements mapped) — 2026-03-24
-**Next action:** Plan Phase 11 — Backend Schema Cleanup
+**Last action:** Phase 11 Plan 01 complete — 3-field schema (nome, email, whatsapp), renda-extra purged — 2026-03-24
+**Next action:** Phase 12 — Copy Rewrite & Identity Sweep
 
 **Milestone status entering v1.5:**
+
 - v1.0 all complete (phases 1-3, 7 plans)
 - v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
 - v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button

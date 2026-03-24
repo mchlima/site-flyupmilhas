@@ -50,7 +50,7 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Formulário
 
-- [ ] **FORM-01**: Remover campo "Gasto mensal no cartão" (gastoMensal) — frontend + backend Zod schema sync
+- [x] **FORM-01**: Remover campo "Gasto mensal no cartão" (gastoMensal) — frontend + backend Zod schema sync
 - [ ] **FORM-02**: Novas opções de objetivo: "Viajar pagando menos", "Viajar com mais conforto (classe executiva)", "Organizar e usar melhor meus pontos/milhas", "Ainda não sei / estou começando"
 - [ ] **FORM-03**: Texto "Preencha o formulário e entraremos em contato em até 24h pelo WhatsApp."
 - [ ] **FORM-04**: Badge "Seus dados estão seguros" abaixo do botão (fora do UForm)
@@ -64,7 +64,7 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 ### Identidade
 
 - [ ] **IDEN-01**: Remoção de qualquer referência ao nome "Márcio" em todo o site — usar "Fly Up Milhas" ou "nossa equipe"
-- [ ] **IDEN-02**: Remoção global de "renda extra com milhas" de toda a LP (copy, enums, meta tags)
+- [x] **IDEN-02**: Remoção global de "renda extra com milhas" de toda a LP (copy, enums, meta tags)
 
 ### FAQ
 
@@ -112,7 +112,7 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | PRCE-01 | Phase 13 | Pending |
 | PRCE-02 | Phase 13 | Pending |
 | PRCE-03 | Phase 13 | Pending |
-| FORM-01 | Phase 11 | Pending |
+| FORM-01 | Phase 11 | Complete |
 | FORM-02 | Phase 14 | Pending |
 | FORM-03 | Phase 14 | Pending |
 | FORM-04 | Phase 14 | Pending |
@@ -120,7 +120,7 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | CTA-02 | Phase 14 | Pending |
 | CTA-03 | Phase 14 | Pending |
 | IDEN-01 | Phase 12 | Pending |
-| IDEN-02 | Phase 11 | Pending |
+| IDEN-02 | Phase 11 | Complete |
 | FAQ-01 | Phase 12 | Pending |
 
 **Coverage:**
