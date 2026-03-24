@@ -29,7 +29,7 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Para Quem É
 
-- [ ] **FORW-01**: Cards negativos "Para quem NÃO é" integrados na mesma seção (3 itens: "Não é pra quem quer dinheiro fácil", "Não é pra quem não usa cartão", "Não é pra quem não vai aplicar")
+- [x] **FORW-01**: Cards negativos "Para quem NÃO é" integrados na mesma seção (3 itens: "Não é pra quem quer dinheiro fácil", "Não é pra quem não usa cartão", "Não é pra quem não vai aplicar")
 
 ### Como Funciona (Method)
 
@@ -44,9 +44,9 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 
 ### Preço + Garantia
 
-- [ ] **PRCE-01**: Preço visível: R$ 299,90 no PIX ou até 10x no cartão (strings hard-coded)
-- [ ] **PRCE-02**: Bloco de garantia dedicado: "Garantia de 7 dias — 100% do valor devolvido"
-- [ ] **PRCE-03**: Layout de oferta (não "lista comum") com CTA
+- [x] **PRCE-01**: Preço visível: R$ 299,90 no PIX ou até 10x no cartão (strings hard-coded)
+- [x] **PRCE-02**: Bloco de garantia dedicado: "Garantia de 7 dias — 100% do valor devolvido"
+- [x] **PRCE-03**: Layout de oferta (não "lista comum") com CTA
 
 ### Formulário
 
@@ -103,15 +103,15 @@ Requirements para milestone v1.5 — Refinamento de Copy e Conversao. Baseado no
 | ABOUT-05 | Phase 12 | Complete |
 | PROG-01 | Phase 13 | Pending |
 | PROG-02 | Phase 13 | Pending |
-| FORW-01 | Phase 13 | Pending |
+| FORW-01 | Phase 13 | Complete |
 | METH-01 | Phase 12 | Complete |
 | METH-02 | Phase 12 | Complete |
 | SOCL-01 | Phase 13 | Pending |
 | SOCL-02 | Phase 13 | Pending |
 | SOCL-03 | Phase 13 | Pending |
-| PRCE-01 | Phase 13 | Pending |
-| PRCE-02 | Phase 13 | Pending |
-| PRCE-03 | Phase 13 | Pending |
+| PRCE-01 | Phase 13 | Complete |
+| PRCE-02 | Phase 13 | Complete |
+| PRCE-03 | Phase 13 | Complete |
 | FORM-01 | Phase 11 | Complete |
 | FORM-02 | Phase 14 | Pending |
 | FORM-03 | Phase 14 | Pending |

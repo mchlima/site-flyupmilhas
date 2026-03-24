@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.5
 milestone_name: Refinamento de Copy e Conversao
 status: unknown
-last_updated: "2026-03-24T05:14:59.793Z"
+last_updated: "2026-03-24T05:30:26.098Z"
 progress:
   total_phases: 4
-  completed_phases: 2
-  total_plans: 3
-  completed_plans: 3
+  completed_phases: 3
+  total_plans: 5
+  completed_plans: 5
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 12 — copy-rewrite-identity-sweep
+**Current Focus:** Phase 13 — structural-template-changes
 
 ---
 
 ## Current Position
 
-Phase: 13
-Plan: Not started
+Phase: 13 (structural-template-changes) — EXECUTING
+Plan: 2 of 2
 
 ## Performance Metrics
 
@@ -39,6 +39,8 @@ Plan: Not started
 | WhatsApp bubble 375px test | pass | Not done |
 | Phase 12-copy-rewrite-identity-sweep P01 | 71s | 2 tasks | 2 files |
 | Phase 12 P02 | 2 | 3 tasks | 3 files |
+| Phase 13-structural-template-changes P02 | 3 | 2 tasks | 2 files |
+| Phase 13 P01 | 80s | 2 tasks | 2 files |
 
 ### v1.4 History (all complete)
 
