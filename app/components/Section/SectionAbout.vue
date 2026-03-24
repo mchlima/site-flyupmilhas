@@ -6,46 +6,51 @@ const { scrollTo } = useScroll()
   <section id="sobre" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
-        Sua estratégia de milhas começa aqui
+        Viaje mais. Gaste menos. Use milhas do jeito certo.
       </h2>
-      <p class="text-[var(--color-brand-text-muted)] text-center mb-10">
-        Descubra como transformar seus gastos do dia a dia em viagens executivas
+
+      <p class="text-[var(--color-brand-text-muted)] text-center max-w-3xl mx-auto mb-6">
+        A maioria das pessoas acumula milhas, mas não sabe como usar e acaba pagando caro em passagens. Na Fly Up Milhas, você aprende de forma simples, como transformar seus gastos do dia a dia em viagens reais, pagando muito menos.
       </p>
 
-      <!-- Bento grid layout per D-22 -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <!-- Social proof phrase — visually distinct -->
+      <p class="text-center text-base md:text-lg font-semibold text-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 rounded-lg py-4 px-6 max-w-3xl mx-auto mt-6 mb-10">
+        Alunos já economizaram milhares de reais em passagens mesmo sem cartão black ou renda alta.
+      </p>
 
-        <!-- Hero card: spans 2 cols on md+, navy background per D-06 -->
-        <div class="md:col-span-2 rounded-xl bg-[var(--color-brand-primary)] text-white p-8">
-          <h3 class="text-2xl md:text-3xl font-bold mb-4">
-            Viaje mais. Gaste menos. Ganhe com as suas milhas.
-          </h3>
-          <p class="text-white/80 leading-relaxed">
-            A Fly Up Milhas é uma mentoria criada para quem quer aprender do zero ou organizar o que já faz e começar a economizar de verdade em viagens, usando milhas, pontos e cartões de forma correta. Aqui você não recebe promessas irreais. Você aprende o que funciona, quando funciona e como aplicar na sua realidade.
-          </p>
-        </div>
+      <!-- 3 equal cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
-        <!-- Value prop 1: Viagens Executivas — 1x1 white card per D-07 -->
+        <!-- Card 1: Conforto -->
         <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
           <UIcon name="i-heroicons-paper-airplane" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Viagens Executivas</h3>
+          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Viaje com mais conforto pagando menos</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
-            Voe de classe executiva para Europa, Ásia e Américas pagando uma fração do preço de tabela.
+            Voe de classe executiva para Europa, Ásia e Américas pagando apenas uma fração do valor original.
           </p>
         </div>
 
-        <!-- Value prop 2: Economia Familiar — 1x1 white card -->
+        <!-- Card 2: Economia -->
         <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
           <UIcon name="i-heroicons-banknotes" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Economia Familiar</h3>
+          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Economize nas viagens do dia a dia</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
-            Transforme gastos do dia a dia em milhas e economize milhares de reais em passagens para toda a família.
+            Transforme seus gastos comuns em milhas e reduza drasticamente o custo das suas passagens.
+          </p>
+        </div>
+
+        <!-- Card 3: Estratégia -->
+        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
+          <UIcon name="i-heroicons-light-bulb" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
+          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Use suas milhas com estratégia</h3>
+          <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
+            Aprenda a acumular, organizar e usar seus pontos da forma certa para nunca mais perder oportunidades.
           </p>
         </div>
 
       </div>
 
-      <!-- CTA below grid -->
+      <!-- CTA below cards -->
       <div class="text-center mt-8">
         <button
           class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
