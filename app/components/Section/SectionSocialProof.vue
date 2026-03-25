@@ -1,18 +1,42 @@
 <script setup lang="ts">
+import anaPhoto from '~/assets/img/ana-paula-profile.png'
+import carlosPhoto from '~/assets/img/carlos-eduardo-profile.png'
+import julianaPhoto from '~/assets/img/juliana-martins-profile.png'
+
+const avatarColors = [
+  'bg-blue-600', 'bg-cyan-600', 'bg-slate-600',
+  'bg-blue-700', 'bg-cyan-700', 'bg-slate-700',
+]
+
+function getInitials(name: string): string {
+  return name.split(' ').map(w => w[0]).join('').toUpperCase().slice(0, 2)
+}
+
+function getAvatarColor(name: string): string {
+  let hash = 0
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash)
+  }
+  return avatarColors[Math.abs(hash) % avatarColors.length]
+}
+
 const testimonials = [
   {
     name: 'Ana Paula',
     city: 'São Paulo, SP',
+    avatar: anaPhoto,
     text: 'Com a mentoria da Fly Up Milhas, consegui emitir dois bilhetes executivos para Lisboa por apenas <strong>58.000 milhas</strong> cada. Pagaria mais de <strong>R$ 12.000</strong> comprando direto. Valeu cada centavo!',
   },
   {
     name: 'Carlos Eduardo',
     city: 'Curitiba, PR',
+    avatar: carlosPhoto,
     text: 'Não sabia nem que tinha milhas suficientes. Em <strong>3 semanas</strong> já tinha as passagens emitidas para <strong>Miami em business class</strong>. Processo todo simples e sem estresse.',
   },
   {
     name: 'Juliana Martins',
     city: 'Belo Horizonte, MG',
+    avatar: julianaPhoto,
     text: 'Sempre achei que milhas era coisa de quem gasta muito no cartão. Com a mentoria, aprendi a juntar <strong>mais de 40.000 milhas em 2 meses</strong> sem mudar meus hábitos. Já estou planejando minha primeira viagem internacional!',
   },
 ]
