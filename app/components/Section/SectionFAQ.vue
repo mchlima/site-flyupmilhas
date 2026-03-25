@@ -40,12 +40,12 @@ const faqItems = [
         Tire suas dúvidas antes de decidir
       </p>
 
-      <div class="space-y-3">
+      <div class="space-y-4">
         <UAccordion
           :items="faqItems"
           :ui="{
-            trigger: 'group flex-1 flex items-center gap-3 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-[var(--color-brand-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
-            content: 'bg-white rounded-b-xl border-x border-b border-gray-100 -mt-3 pt-0'
+            trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-[var(--color-brand-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
+            content: 'bg-white rounded-b-xl -mt-2 pt-0'
           }"
         >
           <template #default="{ item, index }">
@@ -55,6 +55,8 @@ const faqItems = [
             <span class="text-[var(--color-brand-text)] font-semibold text-base text-left">{{ item.label }}</span>
             <UIcon name="i-lucide-chevron-down" class="ml-auto shrink-0 size-5 text-[var(--color-brand-text-muted)] transition-transform duration-200 group-data-[state=open]:rotate-180" />
           </template>
+          <template #trailing />
+
           <template #content="{ item }">
             <p class="text-[var(--color-brand-text-muted)] text-sm leading-relaxed pb-4 px-5 pl-14">
               {{ item.content }}
