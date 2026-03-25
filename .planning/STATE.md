@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.6
 milestone_name: Upgrade de Identidade Visual
 status: unknown
-last_updated: "2026-03-25T02:27:58.114Z"
+last_updated: "2026-03-25T02:47:24.188Z"
 progress:
   total_phases: 5
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
+  completed_phases: 2
+  total_plans: 2
+  completed_plans: 2
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,14 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 15 — paleta-e-gradientes
+**Current Focus:** Phase 16 — tipografia
 
 ---
 
 ## Current Position
 
-Phase: 16
-Plan: Not started
+Phase: 16 (tipografia) — COMPLETE
+Plan: 1 of 1 — COMPLETE
 
 ## Performance Metrics
 
@@ -37,6 +37,8 @@ Plan: Not started
 | Gradient repaint (4x CPU throttle) | no red rects | Not verified |
 | FAQ keyboard nav | Tab/Enter/Space work | Not verified |
 | Phase 15 P01 | 207s | 2 tasks | 8 files |
+| Phase 16 P01 | 136s | 2 tasks | 12 files |
+| Phase 16-tipografia P01 | 136 | 2 tasks | 12 files |
 
 ### v1.5 History (all complete)
 
@@ -145,7 +147,9 @@ Plan: Not started
 | Progressive CTA copy per position (v1.5) | 15-30% lift documented; hero/mid/final CTAs should match visitor intent at each scroll depth | Confirmed — Phase 14 |
 | Token namespace must use --color-brand-* (v1.6) | --color-primary silently overwrites Nuxt UI semantic system; all focus rings and interactive states break | Pending — Phase 15 |
 | No tailwind.config.ts (v1.6) | Nuxt UI v4 manages Tailwind v4 via CSS-first path; a JS config file causes conflicts | Confirmed — architecture |
-| Font swap must update nuxt.config.ts AND @theme {} simultaneously (v1.6) | One without the other causes double-load or missing CLS fallback metrics | Pending — Phase 16 |
+| Font swap must update nuxt.config.ts AND @theme {} simultaneously (v1.6) | One without the other causes double-load or missing CLS fallback metrics | Confirmed — Phase 16 |
+| Plus Jakarta Sans weights 400/500/600/700 only (v1.6) | Weight 800 deferred; avoids extra 30-50KB download without committed use case | Confirmed — Phase 16 |
+| Heading hierarchy: h1=bold+tracking-tight, h2=semibold+tracking-[-0.015em], h3=medium (v1.6) | Visual differentiation across 3 heading levels; body text unchanged at weight 400 | Confirmed — Phase 16 |
 | CSS-only initials avatar as default for testimonials (v1.6) | NuxtImg photo path requires Cloudflare Image Transformations confirmation; initials work immediately | Pending — Phase 18 |
 
 ### Critical Pre-Build Blockers
@@ -216,8 +220,8 @@ Plan: Not started
 
 ## Session Continuity
 
-**Last action:** Phase 15 P01 complete — v1.6 palette (blue/cyan) + gradient utilities applied across all sections
-**Next action:** Phase 16 (typography)
+**Last action:** Phase 16 P01 complete — Plus Jakarta Sans font swap + h1/h2/h3 heading hierarchy applied across all 10 Section components
+**Next action:** Phase 17 (SectionGuarantia) or CLS exit gate verification (pnpm run build && pnpm run preview + Lighthouse)
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
 **v1.6 insert:** SectionGuarantee will be added between SectionPrice and SectionFAQ (Phase 17)

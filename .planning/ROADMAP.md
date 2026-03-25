@@ -79,7 +79,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 ### Phases
 
 - [x] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP (completed 2026-03-25)
-- [ ] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build
+- [x] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (completed 2026-03-25)
 - [ ] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao
 - [ ] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble
 - [ ] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada
@@ -109,7 +109,7 @@ Plans:
   3. Lighthouse CLS score e < 0.1 em `nuxt preview` (nao dev server) — sem layout shift visivelmente detectavel durante carregamento
 **Plans**: 1 plan
 Plans:
-- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
+- [x] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
 
 #### Phase 17: SectionGuarantee
 **Goal**: Uma secao dedicada de garantia 7 dias esta inserida entre SectionPrice e SectionFAQ, visivel no fluxo de decisao de compra
@@ -168,7 +168,7 @@ Plans:
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
 | 15. Paleta e Gradientes | v1.6 | 1/1 | Complete    | 2026-03-25 |
-| 16. Tipografia | v1.6 | 0/? | Not started | — |
+| 16. Tipografia | v1.6 | 1/1 | Complete   | 2026-03-25 |
 | 17. SectionGuarantee | v1.6 | 0/? | Not started | — |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
 | 19. FAQ Visual | v1.6 | 0/? | Not started | — |

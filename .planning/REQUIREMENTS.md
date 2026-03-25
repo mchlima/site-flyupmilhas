@@ -16,9 +16,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 ### Tipografia
 
-- [ ] **TIPO-01**: Plus Jakarta Sans substitui Inter como fonte principal em toda a LP
-- [ ] **TIPO-02**: Hierarquia tipografica aprimorada (pesos e tamanhos de heading mais impactantes)
-- [ ] **TIPO-03**: CLS < 0.1 apos troca de fonte (verificado via Lighthouse)
+- [x] **TIPO-01**: Plus Jakarta Sans substitui Inter como fonte principal em toda a LP
+- [x] **TIPO-02**: Hierarquia tipografica aprimorada (pesos e tamanhos de heading mais impactantes)
+- [x] **TIPO-03**: CLS < 0.1 apos troca de fonte (verificado via Lighthouse)
 
 ### Depoimentos
 
@@ -62,9 +62,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 | PAL-02 | Phase 15 | Complete |
 | PAL-03 | Phase 15 | Complete |
 | PAL-04 | Phase 15 | Complete |
-| TIPO-01 | Phase 16 | Pending |
-| TIPO-02 | Phase 16 | Pending |
-| TIPO-03 | Phase 16 | Pending |
+| TIPO-01 | Phase 16 | Complete |
+| TIPO-02 | Phase 16 | Complete |
+| TIPO-03 | Phase 16 | Complete |
 | GAR-01 | Phase 17 | Pending |
 | GAR-02 | Phase 17 | Pending |
 | GAR-03 | Phase 17 | Pending |
