@@ -104,8 +104,8 @@ async function onSubmit() {
               v-model="state.nome"
               placeholder="Seu nome completo"
               autocomplete="name"
-              class="w-full bg-white"
-              :ui="{ base: 'bg-white border border-gray-300' }"
+              class="w-full"
+              :ui="{ root: 'bg-white rounded-lg', base: 'bg-white text-brand-text placeholder-gray-400 rounded-lg border-0 ring-1 ring-gray-300 focus:ring-2 focus:ring-brand-primary py-3 px-4' }"
             />
           </UFormField>
 
@@ -119,8 +119,8 @@ async function onSubmit() {
               type="email"
               placeholder="seu@email.com"
               autocomplete="email"
-              class="w-full bg-white"
-              :ui="{ base: 'bg-white border border-gray-300' }"
+              class="w-full"
+              :ui="{ root: 'bg-white rounded-lg', base: 'bg-white text-brand-text placeholder-gray-400 rounded-lg border-0 ring-1 ring-gray-300 focus:ring-2 focus:ring-brand-primary py-3 px-4' }"
             />
           </UFormField>
 
@@ -134,8 +134,8 @@ async function onSubmit() {
               inputmode="numeric"
               placeholder="(11) 99999-9999"
               autocomplete="tel"
-              class="w-full bg-white"
-              :ui="{ base: 'bg-white border border-gray-300' }"
+              class="w-full"
+              :ui="{ root: 'bg-white rounded-lg', base: 'bg-white text-brand-text placeholder-gray-400 rounded-lg border-0 ring-1 ring-gray-300 focus:ring-2 focus:ring-brand-primary py-3 px-4' }"
               @input="onWhatsappInput"
             />
           </UFormField>
