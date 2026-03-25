@@ -67,6 +67,10 @@ const testimonials = [
             v-if="t.avatar"
             :src="t.avatar"
             :alt="t.name"
+            width="40"
+            height="40"
+            loading="lazy"
+            decoding="async"
             class="w-10 h-10 rounded-full object-cover shrink-0 mt-1"
           />
           <div

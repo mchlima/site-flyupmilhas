@@ -48,6 +48,10 @@ function navigate(anchor: string) {
         <img
           src="~/assets/img/logo-fly-up-milhas.webp"
           alt="Fly Up Milhas"
+          width="120"
+          height="40"
+          fetchpriority="high"
+          decoding="async"
           class="h-10 w-auto"
         />
       </button>

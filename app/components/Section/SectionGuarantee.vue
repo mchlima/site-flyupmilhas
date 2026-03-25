@@ -7,6 +7,10 @@
         <img
           src="~/assets/img/selo-garantia7-dias.webp"
           alt="Selo de garantia incondicional de 7 dias"
+          width="256"
+          height="256"
+          loading="lazy"
+          decoding="async"
           class="w-48 md:w-64"
         >
       </div>

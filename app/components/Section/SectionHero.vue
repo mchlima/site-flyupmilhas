@@ -9,10 +9,15 @@ const { scrollTo } = useScroll()
     id="hero"
     class="min-h-screen relative overflow-hidden flex flex-col justify-center"
   >
-    <!-- Background image -->
-    <div
-      class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-      :style="{ backgroundImage: `url(${bgHero})` }"
+    <!-- Background image — LCP element -->
+    <img
+      :src="bgHero"
+      alt=""
+      aria-hidden="true"
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="absolute inset-0 w-full h-full object-cover"
     />
     <!-- Dark overlay for text contrast -->
     <div class="absolute inset-0 gradient-hero opacity-90" />
