@@ -146,7 +146,7 @@ Plans:
   3. Navegacao por teclado funciona: Tab move o foco entre triggers, Enter/Space abre e fecha, cada trigger ativo exibe focus ring visivel
 **Plans**: 1 plan
 Plans:
-- [ ] 19-01-PLAN.md — [to be planned]
+- [ ] 19-01-PLAN.md — Numbered card redesign + visual hierarchy + focus ring accessibility
 
 ---
 
