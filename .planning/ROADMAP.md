@@ -171,7 +171,7 @@ Plans:
 | 15. Paleta e Gradientes | v1.6 | 1/1 | Complete | 2026-03-25 |
 | 16. Tipografia | v1.6 | 2/2 | Complete    | 2026-03-25 |
 | 17. SectionGuarantee | v1.6 | 1/1 | Complete    | 2026-03-25 |
-| 18. Avatares nos Depoimentos | v1.6 | 1/1 | Complete   | 2026-03-25 |
+| 18. Avatares nos Depoimentos | v1.6 | 1/1 | Complete    | 2026-03-25 |
 | 19. FAQ Visual | v1.6 | 0/? | Not started | — |
 
 ---
