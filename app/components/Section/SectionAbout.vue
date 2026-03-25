@@ -13,11 +13,6 @@ const { scrollTo } = useScroll()
         A maioria das pessoas acumula milhas, mas não sabe como usar e acaba pagando caro em passagens. Na Fly Up Milhas, você aprende de forma simples, como transformar seus gastos do dia a dia em viagens reais, pagando muito menos.
       </p>
 
-      <!-- Social proof phrase — visually distinct -->
-      <p class="text-center text-base md:text-lg font-semibold text-[var(--color-brand-primary)] bg-[var(--color-brand-primary)]/5 rounded-lg py-4 px-6 max-w-3xl mx-auto mt-6 mb-10">
-        Alunos já economizaram milhares de reais em passagens mesmo sem cartão black ou renda alta.
-      </p>
-
       <!-- 3 equal cards -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
