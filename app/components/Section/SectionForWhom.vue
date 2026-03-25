@@ -58,9 +58,9 @@ const negativeCards = [
         <div
           v-for="card in negativeCards"
           :key="card.text"
-          class="rounded-xl bg-red-50 border border-red-200 p-5 flex items-center gap-4"
+          class="rounded-xl bg-slate-50 border border-slate-200 p-5 flex items-center gap-4"
         >
-          <UIcon :name="card.icon" class="w-7 h-7 text-red-500 shrink-0" />
+          <UIcon :name="card.icon" class="w-7 h-7 text-brand-text-muted shrink-0" />
           <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
         </div>
       </div>
