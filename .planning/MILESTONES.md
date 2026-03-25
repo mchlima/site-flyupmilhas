@@ -1,5 +1,22 @@
 # Milestones
 
+## v1.6 Upgrade de Identidade Visual (Shipped: 2026-03-25)
+
+**Phases completed:** 5 phases (15-19), 6 plans, 10 tasks
+**Git range:** feat(15-01) → feat(19-01)
+**Files changed:** 16 files, +179 -63 lines
+
+**Key accomplishments:**
+
+- Paleta azul vibrante #1D4ED8 + CTA cyan #0891B2 + 5 gradientes diagonais 135deg substituindo navy #1a3a5c / laranja #e67e22
+- Dark backgrounds #0F172A (header/form) e #020617 (footer) com azul como destaque em hovers
+- Plus Jakarta Sans substituiu Inter com hierarquia tipografica (h1 bold+tight, h2 semibold, h3 medium)
+- SectionGuarantee dedicada com selo dourado PNG entre Price e FAQ (split layout, fundo dark)
+- Avatares circulares com fotos reais + fallback iniciais (hash deterministico) nos depoimentos WhatsApp
+- FAQ redesenhado com cards numerados (01-06), hierarquia visual e focus ring acessivel
+
+---
+
 ## v1.5 Refinamento de Copy e Conversao (Shipped: 2026-03-24)
 
 **Phases completed:** 4 phases (11-14), 6 plans, 11 tasks

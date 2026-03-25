@@ -2,37 +2,22 @@
 
 ## What This Is
 
-Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de consultoria personalizada (R$ 200) para otimizacao de acumulo de milhas, emissao estrategica de passagens aereas e renda extra com milhas. O produto principal e uma consultoria VIP de 1 mes com 2 reunioes online, diagnostico de cartoes/programas e planejamento de rotas.
+Uma landing page premium de alta conversao para a Fly Up Milhas, focada na venda de mentoria personalizada (R$ 299,90) para acumulo estrategico de milhas e emissao de passagens em classe executiva. Identidade visual sofisticada com paleta azul vibrante, tipografia Plus Jakarta Sans, gradientes de aviacao e componentes de confianca (garantia, depoimentos com fotos, FAQ numerado).
 
 ## Core Value
 
-Converter visitantes em clientes da consultoria VIP atraves de uma LP que transmita autoridade, confianca e resultados reais no mercado de milhas.
-
-## Current Milestone: v1.6 Upgrade de Identidade Visual
-
-**Goal:** Elevar a identidade visual da LP com paleta azul mais vibrante, tipografia moderna, gradientes sutis de aviacao, e componentes redesenhados para transmitir sofisticacao e confianca.
-
-**Target features:**
-- Paleta azul vibrante e sofisticada (substituir navy abafado #1a3a5c)
-- Cor de CTA mais adequada ao tema premium/viagens (substituir laranja #e67e22)
-- Tipografia moderna e impactante (substituir Inter)
-- Gradientes sutis e elementos visuais que remetam a viagens/aviacao
-- Depoimentos WhatsApp com foto circular ou avatar com iniciais
-- Secao dedicada de Garantia 7 dias com selo dourado
-- FAQ redesenhado com mais impacto visual
-- Mais impacto visual nas secoes (hierarquia, espacamento, contraste)
+Converter visitantes em clientes da mentoria VIP atraves de uma LP que transmita autoridade, sofisticacao e resultados reais no mercado de milhas.
 
 ## Current State
 
-Shipped v1.0 through v1.5 (Refinamento de Copy e Conversao) on 2026-03-24.
+Shipped v1.0 through v1.6 (Upgrade de Identidade Visual) on 2026-03-25.
 Tech stack: Nuxt 4 SSR + Nuxt UI v4 + Tailwind v4 + Fastify 5 + MongoDB.
-Codebase: ~1155 LOC across 12 Vue components, 2 composables, 1 CSS file.
-Landing page fully optimized with client-approved copy, real pricing (R$ 299,90), WhatsApp testimonials, and progressive CTAs.
+Codebase: 13 Vue components, 2 composables, 1 CSS file with 5 gradient utilities.
+Landing page com identidade visual premium: paleta azul #1D4ED8, tipografia Plus Jakarta Sans, gradientes diagonais, SectionGuarantee com selo dourado, avatares nos depoimentos, FAQ numerado.
 
 **Pre-launch blockers:**
 - Replace `55XXXXXXXXXXX` WhatsApp placeholder with Marcio's real number
 - Replace Agencia 201 URL placeholder with real URL
-- Upload real photos/assets to Cloudflare R2
 - Confirm Cloudflare plan supports Image Transformations
 
 ## Requirements
@@ -146,6 +131,11 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 | Bento grid card layout | Modern visual pattern, cards with rounded corners improve scannability | ✓ Good |
 | Smart sticky header (show on scroll-up) | Better UX than always-visible or always-hidden — saves screen space | ✓ Good |
 | Navy card for lead form | Conversion emphasis pattern — orange CTA on navy is highest contrast | ✓ Good |
+| Paleta #1D4ED8 + CTA #0891B2 (v1.6) | Vibrant blue WCAG AA + cyan CTA replacing navy/orange; inspired by Descobridor de Milhas | ✓ Good |
+| Dark bg #0F172A contraste forte (v1.6) | Azul brilha como destaque sobre fundo quase preto; selo dourado brilha | ✓ Good |
+| Plus Jakarta Sans replacing Inter (v1.6) | Geometrica moderna premium; atomic swap via @nuxt/fonts global:true | ✓ Good |
+| SectionGuarantee dedicada (v1.6) | Selo dourado entre Price e FAQ; standalone section outperforms inline mention | ✓ Good |
+| UAccordion #leading/#trailing slots (v1.6) | :ui replaces defaults; slots give proper flex layout control for numbered cards | ✓ Good |
 
 ## Evolution
 
@@ -165,4 +155,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 19 complete — v1.6 milestone done*
+*Last updated: 2026-03-25 after v1.6 milestone complete*
