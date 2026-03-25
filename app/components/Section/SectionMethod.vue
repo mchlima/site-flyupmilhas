@@ -30,7 +30,7 @@ const steps = [
 </script>
 
 <template>
-  <section id="como-funciona" class="bg-[var(--color-brand-bg)] py-12 md:py-24 px-6">
+  <section id="como-funciona" class="gradient-section-method py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
       <!-- Section heading -->
       <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
@@ -63,7 +63,7 @@ const steps = [
           :key="step.number"
           class="rounded-xl p-6"
           :class="step.number === '04'
-            ? 'bg-[var(--color-brand-primary)] text-white'
+            ? 'bg-brand-dark text-white'
             : 'bg-white shadow-sm'"
         >
           <span

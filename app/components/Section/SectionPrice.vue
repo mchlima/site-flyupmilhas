@@ -12,7 +12,7 @@ const benefits = [
 <template>
   <section
     id="preco"
-    class="bg-[var(--color-brand-primary)] py-12 md:py-24 px-6"
+    class="gradient-price py-12 md:py-24 px-6"
   >
     <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
 

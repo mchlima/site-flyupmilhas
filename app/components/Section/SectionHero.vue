@@ -15,7 +15,7 @@ const { scrollTo } = useScroll()
       :style="{ backgroundImage: `url(${bgHero})` }"
     />
     <!-- Dark overlay for text contrast -->
-    <div class="absolute inset-0 bg-black/60" />
+    <div class="absolute inset-0 gradient-hero opacity-90" />
 
     <div class="relative z-10 max-w-3xl mx-auto text-center px-6 py-12 md:py-24 flex flex-col justify-center min-h-screen">
       <!-- Pain point chips -->

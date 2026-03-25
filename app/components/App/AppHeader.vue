@@ -39,7 +39,7 @@ function navigate(anchor: string) {
 
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[var(--color-brand-primary)] transition-transform duration-300"
+    class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-brand-dark transition-transform duration-300"
     :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
   >
     <div class="max-w-5xl mx-auto flex items-center justify-between">
@@ -57,7 +57,7 @@ function navigate(anchor: string) {
         <button
           v-for="link in navLinks"
           :key="link.anchor"
-          class="text-white/80 hover:text-white text-sm font-medium transition-colors cursor-pointer"
+          class="text-white/80 hover:text-brand-primary text-sm font-medium transition-colors cursor-pointer"
           @click="navigate(link.anchor)"
         >
           {{ link.label }}
@@ -87,7 +87,7 @@ function navigate(anchor: string) {
 
   <!-- Mobile fullscreen overlay -->
   <div
-    class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-[var(--color-brand-primary)] transition-opacity duration-200"
+    class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-brand-dark transition-opacity duration-200"
     :class="isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
     role="dialog"
     aria-modal="true"

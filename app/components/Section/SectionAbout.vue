@@ -3,7 +3,7 @@ const { scrollTo } = useScroll()
 </script>
 
 <template>
-  <section id="sobre" class="bg-white py-12 md:py-24 px-6">
+  <section id="sobre" class="gradient-section-about py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
         Viaje mais. Gaste menos. Use milhas do jeito certo.
