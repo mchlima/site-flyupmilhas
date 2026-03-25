@@ -22,9 +22,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 ### Depoimentos
 
-- [ ] **DEP-01**: Cada depoimento WhatsApp exibe foto circular da pessoa que testemunhou
-- [ ] **DEP-02**: Fallback avatar circular com iniciais coloridas quando foto nao disponivel
-- [ ] **DEP-03**: Layout de chat bubble mantido com avatar integrado harmonicamente
+- [x] **DEP-01**: Cada depoimento WhatsApp exibe foto circular da pessoa que testemunhou
+- [x] **DEP-02**: Fallback avatar circular com iniciais coloridas quando foto nao disponivel
+- [x] **DEP-03**: Layout de chat bubble mantido com avatar integrado harmonicamente
 
 ### Garantia
 
@@ -68,9 +68,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 | GAR-01 | Phase 17 | Complete |
 | GAR-02 | Phase 17 | Complete |
 | GAR-03 | Phase 17 | Complete |
-| DEP-01 | Phase 18 | Pending |
-| DEP-02 | Phase 18 | Pending |
-| DEP-03 | Phase 18 | Pending |
+| DEP-01 | Phase 18 | Complete |
+| DEP-02 | Phase 18 | Complete |
+| DEP-03 | Phase 18 | Complete |
 | FAQ-01 | Phase 19 | Pending |
 | FAQ-02 | Phase 19 | Pending |
 | FAQ-03 | Phase 19 | Pending |

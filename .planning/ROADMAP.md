@@ -81,7 +81,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 - [x] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP (completed 2026-03-25)
 - [x] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (gap closure in progress) (completed 2026-03-25)
 - [x] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao (completed 2026-03-25)
-- [ ] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble
+- [x] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble (completed 2026-03-25)
 - [ ] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada
 
 ### Phase Details
@@ -134,7 +134,7 @@ Plans:
   3. O layout do chat bubble com avatar integrado e legivel e bem proporcionado em mobile 375px — o avatar nao empurra o texto para fora da area util
 **Plans**: 1 plan
 Plans:
-- [ ] 18-01-PLAN.md — Avatar data model + photo imports + chat bubble layout integration
+- [x] 18-01-PLAN.md — Avatar data model + photo imports + chat bubble layout integration
 
 #### Phase 19: FAQ Visual
 **Goal**: O FAQ exibe um design premium com cards numerados e hierarquia visual clara, mantendo navegacao por teclado funcional
@@ -171,7 +171,7 @@ Plans:
 | 15. Paleta e Gradientes | v1.6 | 1/1 | Complete | 2026-03-25 |
 | 16. Tipografia | v1.6 | 2/2 | Complete    | 2026-03-25 |
 | 17. SectionGuarantee | v1.6 | 1/1 | Complete    | 2026-03-25 |
-| 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
+| 18. Avatares nos Depoimentos | v1.6 | 1/1 | Complete   | 2026-03-25 |
 | 19. FAQ Visual | v1.6 | 0/? | Not started | — |
 
 ---
