@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.6
 milestone_name: Upgrade de Identidade Visual
 status: unknown
-last_updated: "2026-03-25T02:47:24.188Z"
+last_updated: "2026-03-25T03:06:41.277Z"
 progress:
   total_phases: 5
   completed_phases: 2
-  total_plans: 2
-  completed_plans: 2
+  total_plans: 3
+  completed_plans: 3
 ---
 
 # State: Fly Up Milhas
@@ -23,7 +23,7 @@ progress:
 ## Current Position
 
 Phase: 16 (tipografia) — COMPLETE
-Plan: 1 of 1 — COMPLETE
+Plan: 2 of 2 — COMPLETE
 
 ## Performance Metrics
 
@@ -39,6 +39,7 @@ Plan: 1 of 1 — COMPLETE
 | Phase 15 P01 | 207s | 2 tasks | 8 files |
 | Phase 16 P01 | 136s | 2 tasks | 12 files |
 | Phase 16-tipografia P01 | 136 | 2 tasks | 12 files |
+| Phase 16-tipografia P02 | 92 | 2 tasks | 1 files |
 
 ### v1.5 History (all complete)
 
@@ -148,6 +149,7 @@ Plan: 1 of 1 — COMPLETE
 | Token namespace must use --color-brand-* (v1.6) | --color-primary silently overwrites Nuxt UI semantic system; all focus rings and interactive states break | Pending — Phase 15 |
 | No tailwind.config.ts (v1.6) | Nuxt UI v4 manages Tailwind v4 via CSS-first path; a JS config file causes conflicts | Confirmed — architecture |
 | Font swap must update nuxt.config.ts AND @theme {} simultaneously (v1.6) | One without the other causes double-load or missing CLS fallback metrics | Confirmed — Phase 16 |
+| global:true on fonts.families entry (v1.6) | Proactive @font-face generation bypasses fragile CSS variable detection order; processCSSVariables:true enables fallback metric tracing | Confirmed — Phase 16 P02 |
 | Plus Jakarta Sans weights 400/500/600/700 only (v1.6) | Weight 800 deferred; avoids extra 30-50KB download without committed use case | Confirmed — Phase 16 |
 | Heading hierarchy: h1=bold+tracking-tight, h2=semibold+tracking-[-0.015em], h3=medium (v1.6) | Visual differentiation across 3 heading levels; body text unchanged at weight 400 | Confirmed — Phase 16 |
 | CSS-only initials avatar as default for testimonials (v1.6) | NuxtImg photo path requires Cloudflare Image Transformations confirmation; initials work immediately | Pending — Phase 18 |
@@ -220,8 +222,8 @@ Plan: 1 of 1 — COMPLETE
 
 ## Session Continuity
 
-**Last action:** Phase 16 P01 complete — Plus Jakarta Sans font swap + h1/h2/h3 heading hierarchy applied across all 10 Section components
-**Next action:** Phase 17 (SectionGuarantia) or CLS exit gate verification (pnpm run build && pnpm run preview + Lighthouse)
+**Last action:** Phase 16 P02 complete — Hardened fonts config with global:true and processCSSVariables:true; production build verified (zero Inter, 16 @font-face rules, 4 woff2 files)
+**Next action:** CLS exit gate verification (pnpm run preview + Lighthouse CLS < 0.1) then Phase 17 (SectionGuarantia)
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
 **v1.6 insert:** SectionGuarantee will be added between SectionPrice and SectionFAQ (Phase 17)
