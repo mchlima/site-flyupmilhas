@@ -44,6 +44,7 @@ const faqItems = [
         <UAccordion
           :items="faqItems"
           :ui="{
+            item: 'border-none mb-4 last:mb-0',
             trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl min-w-0 text-brand-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
             label: 'text-start break-words font-semibold text-base text-brand-text',
             content: 'bg-white rounded-b-xl -mt-2 pt-0'
