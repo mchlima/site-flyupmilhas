@@ -78,7 +78,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 
 ### Phases
 
-- [ ] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP
+- [x] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP (completed 2026-03-25)
 - [ ] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build
 - [ ] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao
 - [ ] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble
@@ -97,7 +97,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   4. Qualquer texto sobre fundo azul ou cyan passa WCAG AA (4.5:1 minimo para texto normal) verificado no WebAIM contrast checker
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
+- [x] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 #### Phase 16: Tipografia
 **Goal**: A LP exibe Plus Jakarta Sans em toda a hierarquia tipografica, com CLS < 0.1 confirmado em preview build
@@ -167,7 +167,7 @@ Plans:
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
-| 15. Paleta e Gradientes | v1.6 | 0/1 | Not started | — |
+| 15. Paleta e Gradientes | v1.6 | 1/1 | Complete   | 2026-03-25 |
 | 16. Tipografia | v1.6 | 0/? | Not started | — |
 | 17. SectionGuarantee | v1.6 | 0/? | Not started | — |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |

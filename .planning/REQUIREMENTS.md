@@ -9,10 +9,10 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 ### Paleta
 
-- [ ] **PAL-01**: Design tokens atualizados com azul vibrante #1D4ED8 como cor primaria em toda a LP
-- [ ] **PAL-02**: CTA cyan #06B6D4 substituindo laranja #e67e22 em todos os botoes de acao
-- [ ] **PAL-03**: Gradientes sutis azul-to-transparent aplicados em secoes chave (hero, price, guarantee)
-- [ ] **PAL-04**: Todos os componentes passam WCAG AA de contraste com a nova paleta
+- [x] **PAL-01**: Design tokens atualizados com azul vibrante #1D4ED8 como cor primaria em toda a LP
+- [x] **PAL-02**: CTA cyan #06B6D4 substituindo laranja #e67e22 em todos os botoes de acao
+- [x] **PAL-03**: Gradientes sutis azul-to-transparent aplicados em secoes chave (hero, price, guarantee)
+- [x] **PAL-04**: Todos os componentes passam WCAG AA de contraste com a nova paleta
 
 ### Tipografia
 
@@ -58,10 +58,10 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PAL-01 | Phase 15 | Pending |
-| PAL-02 | Phase 15 | Pending |
-| PAL-03 | Phase 15 | Pending |
-| PAL-04 | Phase 15 | Pending |
+| PAL-01 | Phase 15 | Complete |
+| PAL-02 | Phase 15 | Complete |
+| PAL-03 | Phase 15 | Complete |
+| PAL-04 | Phase 15 | Complete |
 | TIPO-01 | Phase 16 | Pending |
 | TIPO-02 | Phase 16 | Pending |
 | TIPO-03 | Phase 16 | Pending |
