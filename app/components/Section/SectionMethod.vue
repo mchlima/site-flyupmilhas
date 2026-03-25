@@ -68,8 +68,8 @@ const steps = [
         >
           <span
             aria-hidden="true"
-            class="text-4xl font-bold opacity-30 block mb-2"
-            :class="step.number === '04' ? 'text-white' : 'text-[var(--color-brand-cta)]'"
+            class="text-4xl font-bold block mb-2"
+            :class="step.number === '04' ? 'text-white/50' : 'text-brand-cta/50'"
           >{{ step.number }}</span>
           <UIcon
             :name="step.icon"
