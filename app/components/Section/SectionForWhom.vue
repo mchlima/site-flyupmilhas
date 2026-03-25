@@ -19,7 +19,7 @@ const negativeCards = [
 <template>
   <section id="para-quem-e" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-10">
         Para quem é essa mentoria?
       </h2>
 

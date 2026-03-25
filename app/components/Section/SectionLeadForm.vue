@@ -47,7 +47,7 @@ async function onSubmit() {
   <div class="max-w-xl mx-auto py-4">
       <!-- Section heading (D-02) -->
       <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold text-white mb-2">
+        <h2 class="text-2xl font-semibold tracking-[-0.015em] text-white mb-2">
           Comece sua mentoria agora
         </h2>
         <p class="text-white/80">

@@ -22,7 +22,7 @@ const testimonials = [
   <section id="depoimentos" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-2xl mx-auto">
       <!-- Section heading -->
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
         Casos reais de quem já aplicou
       </h2>
       <p class="text-center text-[var(--color-brand-text-muted)] mb-12 max-w-lg mx-auto">

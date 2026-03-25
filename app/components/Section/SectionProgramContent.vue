@@ -19,7 +19,7 @@ const items = [
 
       <!-- Left block: title, description, CTA -->
       <div class="flex flex-col gap-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)]">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)]">
           O que você vai aprender na prática
         </h2>
         <p class="text-[var(--color-brand-text-muted)] leading-relaxed">

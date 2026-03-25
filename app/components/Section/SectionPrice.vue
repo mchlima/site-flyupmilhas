@@ -18,7 +18,7 @@ const benefits = [
 
       <!-- LEFT column: benefits list -->
       <div class="flex flex-col gap-6">
-        <h2 class="text-2xl md:text-3xl font-bold text-white">
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-white">
           Tudo o que você recebe na mentoria
         </h2>
         <div class="space-y-4">

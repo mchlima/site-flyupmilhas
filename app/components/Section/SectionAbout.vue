@@ -5,7 +5,7 @@ const { scrollTo } = useScroll()
 <template>
   <section id="sobre" class="gradient-section-about py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
         Viaje mais. Gaste menos. Use milhas do jeito certo.
       </h2>
 
@@ -24,7 +24,7 @@ const { scrollTo } = useScroll()
         <!-- Card 1: Conforto -->
         <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
           <UIcon name="i-heroicons-paper-airplane" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Viaje com mais conforto pagando menos</h3>
+          <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Viaje com mais conforto pagando menos</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
             Voe de classe executiva para Europa, Ásia e Américas pagando apenas uma fração do valor original.
           </p>
@@ -33,7 +33,7 @@ const { scrollTo } = useScroll()
         <!-- Card 2: Economia -->
         <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
           <UIcon name="i-heroicons-banknotes" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Economize nas viagens do dia a dia</h3>
+          <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Economize nas viagens do dia a dia</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
             Transforme seus gastos comuns em milhas e reduza drasticamente o custo das suas passagens.
           </p>
@@ -42,7 +42,7 @@ const { scrollTo } = useScroll()
         <!-- Card 3: Estratégia -->
         <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
           <UIcon name="i-heroicons-light-bulb" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
-          <h3 class="text-base font-bold text-[var(--color-brand-primary)] mb-2">Use suas milhas com estratégia</h3>
+          <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Use suas milhas com estratégia</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
             Aprenda a acumular, organizar e usar seus pontos da forma certa para nunca mais perder oportunidades.
           </p>

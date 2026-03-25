@@ -33,7 +33,7 @@ const faqItems = [
     class="bg-[var(--color-brand-bg)] py-12 md:py-24 px-6"
   >
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
         Perguntas Frequentes
       </h2>
       <p class="text-[var(--color-brand-text-muted)] text-center mb-12">

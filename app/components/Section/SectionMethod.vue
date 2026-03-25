@@ -33,7 +33,7 @@ const steps = [
   <section id="como-funciona" class="gradient-section-method py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
       <!-- Section heading -->
-      <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
         Como Funciona
       </h2>
       <p class="text-[var(--color-brand-text-muted)] text-center mb-8">
@@ -76,7 +76,7 @@ const steps = [
             :class="step.number === '04' ? 'text-white/70' : 'text-[var(--color-brand-primary)]'"
           />
           <h3
-            class="text-lg font-semibold mb-2"
+            class="text-lg font-medium mb-2"
             :class="step.number === '04' ? 'text-white' : 'text-[var(--color-brand-primary)]'"
           >{{ step.title }}</h3>
           <p

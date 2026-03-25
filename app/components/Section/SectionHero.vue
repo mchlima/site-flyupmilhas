@@ -26,7 +26,7 @@ const { scrollTo } = useScroll()
       </div>
 
       <h1
-        class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6"
+        class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6"
       >
         Aprenda a viajar de classe executiva pagando até 80% menos, mesmo começando do zero.
       </h1>

@@ -25,7 +25,7 @@ const { scrollTo } = useScroll()
 
         <!-- Content column (right on desktop) -->
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-[var(--color-brand-primary)] mb-4">
+          <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] mb-4">
             Quem é o Márcio
           </h2>
 
