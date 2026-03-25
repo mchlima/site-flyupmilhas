@@ -220,6 +220,7 @@ Plan: Not started
 | 260324-3z6 | Increase header logo height from h-8 to h-10 | 2026-03-24 | b9c730d | [260324-3z6](./quick/260324-3z6-o-logo-no-header-deve-ter-h-10/) |
 | 260324-bpx | Add CTA button at end of SectionMethod | 2026-03-24 | e05ea65 | [260324-bpx](./quick/260324-bpx-insira-um-cta-no-fim-da-sessao-como-func/) |
 | 260324-cpx | Add subtitle copy to SectionSocialProof | 2026-03-24 | 8884d11 | — |
+| 260325-1na | Fix FAQ spacing, duplicate arrow, separator line | 2026-03-25 | 0583a9b | [260325-1na](./quick/260325-1na-fix-sectionfaq-spacing-duplicate-arrow-s/) |
 
 ---
 
