@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import bgHero from '~/assets/img/bg-hero.png'
+import bgHero from '~/assets/img/bg-hero.webp'
 
 const { scrollTo } = useScroll()
 </script>

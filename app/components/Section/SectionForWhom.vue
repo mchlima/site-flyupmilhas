@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import familyAirportImg from '~/assets/img/brazilian-family-walking-airport.png'
+import familyAirportImg from '~/assets/img/brazilian-family-walking-airport.webp'
 
 const { scrollTo } = useScroll()
 

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import anaPhoto from '~/assets/img/ana-paula-profile.png'
-import carlosPhoto from '~/assets/img/carlos-eduardo-profile.png'
-import julianaPhoto from '~/assets/img/juliana-martins-profile.png'
+import anaPhoto from '~/assets/img/ana-paula-profile.webp'
+import carlosPhoto from '~/assets/img/carlos-eduardo-profile.webp'
+import julianaPhoto from '~/assets/img/juliana-martins-profile.webp'
 
 const avatarColors = [
   'bg-blue-600', 'bg-cyan-600', 'bg-slate-600',

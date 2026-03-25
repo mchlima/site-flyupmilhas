@@ -5,7 +5,7 @@
       <!-- Left column: Golden seal -->
       <div class="shrink-0 flex justify-center">
         <img
-          src="~/assets/img/selo-garantia7-dias.png"
+          src="~/assets/img/selo-garantia7-dias.webp"
           alt="Selo de garantia incondicional de 7 dias"
           class="w-48 md:w-64"
         >
