@@ -37,6 +37,10 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  experimental: {
+    inlineSSRStyles: true,
+  },
+
   image: {
     quality: 85,
     format: ['webp'],
