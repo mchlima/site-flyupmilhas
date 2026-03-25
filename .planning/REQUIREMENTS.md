@@ -1,0 +1,85 @@
+# Requirements: Fly Up Milhas
+
+**Defined:** 2026-03-24
+**Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
+
+## v1.6 Requirements
+
+Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to roadmap phases.
+
+### Paleta
+
+- [ ] **PAL-01**: Design tokens atualizados com azul vibrante #1D4ED8 como cor primaria em toda a LP
+- [ ] **PAL-02**: CTA cyan #06B6D4 substituindo laranja #e67e22 em todos os botoes de acao
+- [ ] **PAL-03**: Gradientes sutis azul-to-transparent aplicados em secoes chave (hero, price, guarantee)
+- [ ] **PAL-04**: Todos os componentes passam WCAG AA de contraste com a nova paleta
+
+### Tipografia
+
+- [ ] **TIPO-01**: Plus Jakarta Sans substitui Inter como fonte principal em toda a LP
+- [ ] **TIPO-02**: Hierarquia tipografica aprimorada (pesos e tamanhos de heading mais impactantes)
+- [ ] **TIPO-03**: CLS < 0.1 apos troca de fonte (verificado via Lighthouse)
+
+### Depoimentos
+
+- [ ] **DEP-01**: Cada depoimento WhatsApp exibe foto circular da pessoa que testemunhou
+- [ ] **DEP-02**: Fallback avatar circular com iniciais coloridas quando foto nao disponivel
+- [ ] **DEP-03**: Layout de chat bubble mantido com avatar integrado harmonicamente
+
+### Garantia
+
+- [ ] **GAR-01**: Nova secao dedicada SectionGuarantee com selo dourado (PNG existente)
+- [ ] **GAR-02**: Copy de confianca enfatizando garantia de 7 dias sem risco
+- [ ] **GAR-03**: Posicionamento estrategico da secao proximo ao preco/formulario
+
+### FAQ
+
+- [ ] **FAQ-01**: FAQ redesenhado com mais impacto visual (cards, icones, ou numeracao)
+- [ ] **FAQ-02**: Hierarquia visual clara entre pergunta e resposta
+- [ ] **FAQ-03**: Acessibilidade preservada (keyboard navigation, focus ring, ARIA)
+
+## Future Requirements
+
+### Alternativa CTA
+
+- **CTA-ALT-01**: Testar variante de botao branco com borda azul como alternativa ao cyan
+
+## Out of Scope
+
+| Feature | Reason |
+|---------|--------|
+| Mudanca de copy/texto | Copy aprovado no v1.5, milestone e visual apenas |
+| Mudanca de layout/ordem de secoes | Estrutura aprovada, foco na identidade visual |
+| Novas funcionalidades (pagamento, login) | Fora do escopo desde v1.0 |
+| Dark mode completo | Estilo Descobridor de Milhas descartado; manter fundo claro |
+| Fonte serif nos titulos (Playfair Display) | Pode ser explorado futuramente; v1.6 usa Plus Jakarta Sans uniforme |
+
+## Traceability
+
+| Requirement | Phase | Status |
+|-------------|-------|--------|
+| PAL-01 | — | Pending |
+| PAL-02 | — | Pending |
+| PAL-03 | — | Pending |
+| PAL-04 | — | Pending |
+| TIPO-01 | — | Pending |
+| TIPO-02 | — | Pending |
+| TIPO-03 | — | Pending |
+| DEP-01 | — | Pending |
+| DEP-02 | — | Pending |
+| DEP-03 | — | Pending |
+| GAR-01 | — | Pending |
+| GAR-02 | — | Pending |
+| GAR-03 | — | Pending |
+| FAQ-01 | — | Pending |
+| FAQ-02 | — | Pending |
+| FAQ-03 | — | Pending |
+
+**Coverage:**
+- v1.6 requirements: 16 total
+- Mapped to phases: 0
+- Unmapped: 16 (pending roadmap creation)
+
+---
+*Requirements defined: 2026-03-24*
+*Last updated: 2026-03-24 after initial definition*
