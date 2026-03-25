@@ -35,4 +35,15 @@ export default defineNuxtConfig({
     quality: 85,
     format: ['webp'],
   },
+
+  fonts: {
+    families: [
+      {
+        name: 'Plus Jakarta Sans',
+        provider: 'google',
+        weights: [400, 500, 600, 700],
+        styles: ['normal'],
+      }
+    ]
+  },
 })
