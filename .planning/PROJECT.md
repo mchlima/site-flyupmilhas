@@ -101,11 +101,11 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 - ✓ Plus Jakarta Sans substituiu Inter + hierarquia tipografica (bold/semibold/medium + tracking) — v1.6 Phase 16
 - ✓ SectionGuarantee dedicada com selo dourado + copy acolhedor entre Price e FAQ — v1.6 Phase 17
 - ✓ Avatares circulares com fotos reais + fallback iniciais nos depoimentos WhatsApp — v1.6 Phase 18
+- ✓ FAQ redesenhado com cards numerados, hierarquia visual e focus ring — v1.6 Phase 19
 
 ### Active
 
-- [ ] FAQ redesenhado com mais impacto
-- [ ] Hierarquia visual e espacamento aprimorados
+(No active requirements — v1.6 milestone complete)
 
 ### Out of Scope
 
@@ -165,4 +165,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 18 complete*
+*Last updated: 2026-03-25 after Phase 19 complete — v1.6 milestone done*
