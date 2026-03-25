@@ -40,16 +40,28 @@ const faqItems = [
         Tire suas dúvidas antes de decidir
       </p>
 
-      <UAccordion :items="faqItems" :ui="{ trigger: 'group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-primary min-w-0 text-[var(--color-brand-text)]' }">
-        <template #default="{ item }">
-          <span class="text-[var(--color-brand-text)]">{{ item.label }}</span>
-        </template>
-        <template #content="{ item }">
-          <p class="text-[var(--color-brand-text)] leading-relaxed pb-4 px-4">
-            {{ item.content }}
-          </p>
-        </template>
-      </UAccordion>
+      <div class="space-y-3">
+        <UAccordion
+          :items="faqItems"
+          :ui="{
+            trigger: 'group flex-1 flex items-center gap-3 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-[var(--color-brand-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
+            content: 'bg-white rounded-b-xl border-x border-b border-gray-100 -mt-3 pt-0'
+          }"
+        >
+          <template #default="{ item, index }">
+            <span class="text-lg font-bold text-[var(--color-brand-primary)] tabular-nums shrink-0">
+              {{ String(index + 1).padStart(2, '0') }}
+            </span>
+            <span class="text-[var(--color-brand-text)] font-semibold text-base text-left">{{ item.label }}</span>
+            <UIcon name="i-lucide-chevron-down" class="ml-auto shrink-0 size-5 text-[var(--color-brand-text-muted)] transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          </template>
+          <template #content="{ item }">
+            <p class="text-[var(--color-brand-text-muted)] text-sm leading-relaxed pb-4 px-5 pl-14">
+              {{ item.content }}
+            </p>
+          </template>
+        </UAccordion>
+      </div>
     </div>
   </section>
 </template>
