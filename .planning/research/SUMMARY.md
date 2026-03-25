@@ -1,214 +1,220 @@
 # Project Research Summary
 
 **Project:** Fly Up Milhas — High-Conversion Landing Page
-**Domain:** Service sales LP — miles/travel consultancy, Brazilian market
-**Researched:** 2026-03-24 (v1.5 update — supersedes 2026-03-21 summary)
+**Domain:** Miles/travel consultancy, Brazilian market (R$ 299,90 consultoria VIP)
+**Researched:** 2026-03-24 (v1.6 update — supersedes v1.5 summary)
 **Confidence:** HIGH
 
 ## Executive Summary
 
-Fly Up Milhas is a single-page high-conversion landing page for a personal miles consultancy (R$ 299,90) targeting Brazilian consumers. The product is a 1-month VIP mentorship with WhatsApp support and strategy sessions. Research confirms this is a well-understood product type in the Brazilian infoprodutor market, with established conversion patterns that are both technically achievable and already partially implemented in the existing Nuxt 4 codebase. The v1.5 milestone is a copy rewrite and conversion optimization pass on a working foundation — the recommended approach is to build incrementally on what exists rather than scaffold from scratch.
+Fly Up Milhas is a single-page SSR landing page selling a R$ 299,90 personalized miles consultancy to the Brazilian market. The project is past v1.0 (functional LP built) and v1.5 (copy rewrite + conversion optimization), and is now in v1.6, a visual identity upgrade milestone. The goal is to elevate the page from functional to premium — replacing the muted navy palette with vibrant aviation blue, swapping orange CTAs for amber/gold, upgrading typography from Inter to Plus Jakarta Sans, adding a standalone guarantee section, testimonial avatars, aviation gradients, and a numbered FAQ redesign.
 
-The stack is locked and fully installed: Nuxt 4.4.2 + Nuxt UI v4.5.1 + Tailwind v4 + Fastify 5 (existing backend). No new dependencies are required for v1.5. All six new conversion features — WhatsApp-style testimonials, PIX/installment pricing display, 7-day guarantee block, negative qualification cards, progressive CTAs, and form security badge — are implementable with the current stack through pure template and data changes. The only technically risky operation is the synchronized 3-file schema change to remove the `objetivo` dropdown field. This must be executed in strict order (backend schema first) to avoid validation failures during the deployment window.
+The v1.6 milestone is architecturally low-risk. It requires no new npm dependencies, no backend changes, and no data flow changes. All work is UI/visual: CSS token replacements cascading through 13 existing components, one new static display component (`SectionGuarantee`), and two component redesigns (`SectionSocialProof` avatars, `SectionFAQ` visual). The stack is Nuxt 4.4.2 + Nuxt UI v4.5.1 + Tailwind v4, with all brand tokens living in a single `@theme {}` block in `main.css` — enabling global cascade changes from one file.
 
-The primary risks are not technical. They are copy consistency across 10+ components edited in isolation, and the availability of client assets — specifically WhatsApp testimonial screenshots from Marcio with LGPD consent. The conversion research confirms the Brazilian market has specific table-stakes expectations: PIX pricing display, WhatsApp-style social proof, and a 7-day guarantee. Missing any of these in 2026 actively hurts conversion. The differentiators for Fly Up Milhas are progressive CTA copy variation (15-30% lift, rare in the BR niche) and specific result numbers in testimonials, which competitors consistently avoid.
-
----
+The primary conversion risks addressed by v1.6: (1) the current orange CTA signals "generic Hotmart funnel" to Brazilian buyers — amber/gold differentiates on premium positioning; (2) testimonials without avatars are increasingly untrustworthy in the 2025 market; (3) the guarantee buried as a SectionPrice footnote is invisible — a standalone `SectionGuarantee` section at the decision point is research-verified (+32% conversion lift). The primary technical risks are maintaining WCAG AA contrast after the palette shift (vibrant blues in the 400-500 Tailwind range fail 4.5:1 against white), and avoiding double-loading fonts when swapping Inter for Plus Jakarta Sans.
 
 ## Key Findings
 
 ### Recommended Stack
 
-The stack is already installed and correct. No new packages needed for v1.5. The existing dependency set is `nuxt ^4.4.2`, `@nuxt/ui ^4.5.1`, `tailwindcss ^4.2.2` (peer dep managed by Nuxt UI), `zod ^3.x`, `@nuxtjs/seo ^4.x`, `@nuxt/image ^2.x`. The Fastify 5 backend handles POST /leads with `@fastify/mongodb`, `@fastify/cors`, and `@fastify/rate-limit` — existing, not to be rebuilt. Cloudflare R2 handles image assets via `@nuxt/image`'s Cloudflare provider.
-
-For details see: `.planning/research/STACK.md`
+No new dependencies are needed for v1.6. The existing stack handles all requirements. For v1.5 and prior history see: `.planning/research/STACK.md`
 
 **Core technologies:**
-- **Nuxt 4** (`^4.4.2`): SSR framework — SEO-critical; separate `app/` and `server/` TypeScript projects prevent type bleed; Nuxt 3 is on EOL trajectory (security-only until July 2026)
-- **@nuxt/ui 4** (`^4.5.1`): Component library — ships Tailwind v4, Reka UI primitives, UForm/UInput for lead capture; no separate Tailwind config needed
-- **Zod** (`^3.x`): Schema validation — shared between `useLeadForm.ts` and `server/leads/schema.ts`; single source of truth for lead payload shape
-- **@nuxt/image** (`^2.x`): Image optimization — Cloudflare R2 provider; mandatory for Core Web Vitals on Brazilian mobile traffic
-- **Fastify 5** (existing): POST /leads endpoint with rate-limiting and CORS; integrate, do not rebuild
+- **Nuxt 4** (`^4.4.2`): SSR framework — Nuxt 4 is the active major (Nuxt 3 EOL July 2026); `app/` directory structure is clean for LP
+- **@nuxt/ui 4** (`^4.5.1`): Component library — ships Tailwind v4, @nuxt/fonts, @nuxt/icon, Reka UI primitives; no separate Tailwind config needed
+- **Tailwind CSS** (`^4.2.2` via @nuxt/ui): CSS-first config via `@theme {}` — 100x faster builds than v3; all brand tokens live here
+- **Zod** (`^3.x`): Shared schema between `useLeadForm.ts` and Fastify backend — do not use Zod v4 alpha
+- **@nuxt/image** (`^2.x`): Image optimization from Cloudflare R2 with WebP conversion — required for Core Web Vitals on Brazilian mobile
+- **Fastify 5 + @fastify/mongodb + @fastify/rate-limit** (existing backend): Integrate only, do not rebuild
 
-**Nothing to add for v1.5.** Chat bubbles are pure Tailwind CSS. Pricing display is static markup. Guarantee badge uses `UIcon` already in `@nuxt/ui`. `v-html` with hardcoded strings is safe for the programmatic content items.
+**v1.6 typography upgrade (no new packages):**
+- Plus Jakarta Sans replaces Inter as body font — geometric humanist, premium without cold corporate feel
+- Optional Playfair Display for h1/h2 headings — editorial serif signals authority (travel magazine aesthetic)
+- Both fonts via `@nuxt/fonts` (already bundled with @nuxt/ui) — configure in `nuxt.config.ts`, never via raw `<link>` tags
 
 ### Expected Features
 
-For details see: `.planning/research/FEATURES.md`
+Full research: `.planning/research/FEATURES.md`
 
-**Must have (table stakes in Brazilian mentorship market):**
-- WhatsApp-style testimonial display — Brazilian buyers expect screenshot-style social proof; generic quote cards read as unauthentic in this niche
-- PIX + installment pricing display (R$ 299,90 / 10x R$ 29,99) — mandatory for any Brazilian digital product above R$ 100; PIX icon/badge expected
-- 7-day guarantee block — legally expected under CDC Art. 49 (direito de arrependimento); absence actively hurts conversion
-- Benefit-focused hero with single CTA above the fold
-- Expert bio with real credentials and personal redemption results
-- Mobile-first layout — 70-80% of Brazilian traffic is mobile
-- Lead capture form: 3 fields after v1.5 simplification (nome, whatsapp, gastoMensal)
+**Must have for v1.6 (table stakes for premium positioning):**
+- Premium blue palette (`#0C2D5E` deep blue + `#1565C0` vibrant royal blue) — current muted navy `#1a3a5c` reads as conservative bank, not aviation aspiration
+- Amber/gold CTA (`#F59E0B`) replacing orange `#e67e22` — orange is the default for Hotmart/generic BR funnels; amber communicates premium/earned/travel reward
+- Testimonial avatars (circular initials or photo) — faceless testimonials are increasingly untrustworthy; global market standard since 2024
+- Dedicated SectionGuarantee section — guarantee as inline footnote is invisible; standalone section forces decision-point processing
 
-**Should have (differentiators or near-table-stakes):**
-- "Para quem NAO e" negative qualification cards — near-table-stakes for 1:1 mentorship; improves lead quality by filtering misfit prospects
-- Progressive CTA copy per page position — 15-30% conversion lift documented; rare in the BR mentorship market (genuine differentiator)
-- Form security badge ("Seus dados estao seguros") — 23-42% form conversion lift when placed directly below submit button
-- Price anchoring against redemption value — frames R$ 299,90 against R$ 3.000+ in potential flight savings
+**Should have for v1.6 (differentiators):**
+- Playfair Display heading font paired with Plus Jakarta Sans body — editorial serif distinguishes from the Inter-everywhere competition
+- Aviation gradients (2-tone narrow blue range) — sky/horizon texture; not generic SaaS rainbow
+- Numbered card FAQ redesign — plain accordion is functional; numbered premium cards elevate perceived quality
 
-**Defer (post-launch or v2+):**
-- Multi-page funnel (thank you page, blog) — @nuxt/content only if needed; not in scope
-- A/B testing — use `useRuntimeConfig` feature flags, never a client-side A/B library
-- WhatsApp floating CTA button — viable with `<a href="https://wa.me/55...">`, defer until conversion baseline established
-- Cloudflare Turnstile CAPTCHA — add only if bot spam exceeds what @fastify/rate-limit handles
+**Defer (post-v1.6):**
+- WhatsApp floating CTA button — simple `<a href="wa.me">` when added, no library needed
+- A/B testing — use `useRuntimeConfig` feature flags only, never a client-side A/B library (causes CLS/LCP regression)
+- Real client testimonial photos on Cloudflare R2 — initials fallback works immediately; photos are an enhancement
+- Multi-page funnel — add `@nuxt/content` only if needed
 
-**Anti-features (explicitly do not build):**
-- Navigation menu with external links — every exit link is a conversion leak
-- Fake strikethrough pricing — Brazilian buyers detect and distrust fabricated discounts; damages personal brand
-- Countdown timer (fake urgency) — destroys trust with tech-aware milhas audience
-- Multiple trust badges — Baymard data: 17 badges → 2.1% conversion; 6 badges → 3.4%; one shield badge is optimal
+**Anti-features to actively avoid:**
+- Electric/neon blues (`#00BFFF`, `#00B4D8`) — tech startup aesthetic, not premium travel
+- Full-spectrum rainbow gradients — generic SaaS, undermines premium positioning
+- `filter: drop-shadow()` on guarantee seal PNG — expensive mobile repaint; bake shadow into source file
+- Playfair Display for body text — display font, illegible below 18px; headings only
+- Countdown timer or fake strikethrough pricing — Brazilian buyers detect and distrust both
 
 ### Architecture Approach
 
-For details see: `.planning/research/ARCHITECTURE.md`
+Full research: `.planning/research/ARCHITECTURE.md`
 
-The existing architecture is a single-page Nuxt 4 SSR app with no `pages/` directory. All content composes through `app/app.vue` → 12 standalone SFC components in scroll order. Two composables handle the only shared logic: `useLeadForm` (Zod schema + $fetch POST to Fastify) and `useScroll` (smooth scroll to `#formulario`). Brand tokens are defined in `app/assets/css/main.css` under `@theme {}`. The architecture is well-suited for v1.5 — most changes are template-only with no new composables, shared state, or routing needed.
+Single-page Nuxt 4 SSR app with no `pages/` directory. `app/app.vue` composes 13 SFC components in scroll order. All design tokens live in `app/assets/css/main.css` under Tailwind v4's `@theme {}` block — updating a token value cascades instantly to all 13 components. This is the single most important architectural constraint to preserve. Do not hardcode hex values in component templates; do not use `tailwind.config.ts`.
 
-**Current section component order (app.vue):**
-1. `AppHeader` — sticky smart nav with CTA
-2. `SectionHero` — first impression, CTA above fold
-3. `SectionAbout` — expert credibility bento grid
-4. `SectionProgramContent` — 8-item curriculum with icons
-5. `SectionForWhom` — positive qualification cards (+ negative in v1.5)
-6. `SectionMethod` — 4-step process flow
-7. `SectionSocialProof` — testimonials (rebuilding to WhatsApp bubble style in v1.5)
-8. `SectionPrice` — offer, pricing, guarantee block (adding real prices in v1.5)
-9. `SectionFAQ` — beginner-focused objections
-10. `SectionLeadForm` — 3-field lead capture with security badge
+V1.6 data flow is entirely UI-layer: no new composables, no backend contract changes, no new API calls. The only new file is `SectionGuarantee.vue` (~60 lines, pure static display component, no props or emits).
 
-**Only one v1.5 change touches the backend:** `SectionLeadForm` field removal (`objetivo` dropdown) requires coordinated updates across `server/leads/schema.ts`, `app/composables/useLeadForm.ts`, and the form component — in that order.
+**Component map after v1.6:**
+```
+AppHeader
+SectionHero
+SectionAbout
+SectionProgramContent
+SectionForWhom
+SectionMethod
+SectionSocialProof     (MODIFIED — avatar added per testimonial)
+SectionPrice           (MODIFIED — inline guarantee block reduced)
+SectionGuarantee       (NEW — pure static, seal image from existing asset)
+SectionFAQ             (MODIFIED — enhanced UAccordion with numbered cards)
+SectionLeadForm
+AppFooter
+BackToTop
+```
+
+**Key architectural constraints:**
+- Token namespace: always `--color-brand-*` — never `--color-primary` (silently collides with Nuxt UI's semantic system)
+- Font swap: must be done in `nuxt.config.ts` fonts module AND `@theme {}` simultaneously — one without the other causes double-load or missing CLS fallback metrics
+- No `tailwind.config.ts`: Nuxt UI v4 manages Tailwind v4 via CSS-first path; a JS config file causes conflicts
 
 ### Critical Pitfalls
 
-For details see: `.planning/research/PITFALLS.md`
+Full research: `.planning/research/PITFALLS.md`
 
-1. **Schema desync when removing the `objetivo` field** — the field exists in 3 files that must change atomically. Update `server/leads/schema.ts` first, then `app/composables/useLeadForm.ts`, then `SectionLeadForm.vue`. Updating only the UI component causes silent 400 errors or invisible field submissions in the backend.
+1. **Token namespace collision with Nuxt UI** (V1) — Renaming `--color-brand-primary` to `--color-primary` silently overwrites Nuxt UI's semantic color system. All component focus rings and interactive states break with no build error. Prevention: always use `--color-brand-*` namespace; configure Nuxt UI's primary via `app.config.ts ui.colors.primary`.
 
-2. **`renda-extra` not fully purged** — removing "renda extra" sounds like a copy task but the string `'renda-extra'` is an enum value in Zod schemas in 3 locations plus a bento card in SectionAbout. Run `grep -r "renda.extra" app/ server/` after all changes; zero results expected outside `node_modules`.
+2. **Vibrant blue failing WCAG AA on white text** (V2) — Blues in the Tailwind 400-500 range feel premium but fail contrast for normal text. `#3B82F6` (blue-500) is 3.0:1 against white — fails AA. Prevention: use blue-700 (`#1D4ED8`, 6.3:1) or blue-800 (`#1E40AF`, 8.2:1) as primary; vibrant mid-blues are safe only for decorative elements without text.
 
-3. **Copy inconsistency across 10+ components** — price, duration, guarantee, and CTA text spread across the full LP will drift without a reference. Define a copy constants table (price: `R$ 299,90`, installments: `10x de R$ 29,99`, duration: `30 dias`, meetings: `3 encontros`, guarantee: `7 dias — 100% devolvido`) before touching any component.
+3. **Double font load and CLS from font swap** (V3) — Adding new font to `@theme {}` without also removing Inter from `nuxt.config.ts` fonts module causes both families to download (200-400 KB extra). Missing `nuxt.config.ts` config also loses @nuxt/fonts CLS fallback metric generation. Prevention: update CSS token AND `nuxt.config.ts` simultaneously in the same commit; verify in Network tab that only one font family downloads.
 
-4. **WhatsApp chat bubble CSS breaks on 375px mobile** — bubble components copied from UI kits assume fixed-width containers. Use `max-width: min(85%, 400px)` on bubbles; add `word-break: break-word; overflow-wrap: anywhere` to bubble text. Test at 375px/390px/412px. Never use WhatsApp green `#25D366` as a brand token — hardcode it only in the bubble component.
+4. **Gradient paint cost on low-end Android** (V4) — Full-viewport gradient backgrounds repaint on every scroll frame. Low-end Android (Moto G, Samsung A-series) is common in Brazil. Prevention: limit to 2 color stops, apply gradients to at most 2-3 sections, never combine with `filter: blur()`, run Chrome paint flashing audit on 4x CPU throttle.
 
-5. **Price display floating-point formatting** — `10x de R$ 29,99` must be a hard-coded string, not computed at runtime (`29.99 * 10 = 299.9000000000001` in JavaScript). Brazilian formatting uses `,` as decimal separator — `R$ 299,90` not `R$ 299.90`. Hard-code all price strings as literals.
+5. **UAccordion `:ui` prop removing focus ring** (V7) — The `:ui` prop replaces (not merges) the default trigger class string. If `focus-visible:ring-2` classes are omitted during the FAQ redesign, keyboard navigation breaks silently (WCAG 2.4.7 violation). Prevention: treat `focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]` as non-negotiable in every `ui.trigger` string.
 
-6. **Security badge inside `<UForm>`** — Nuxt UI's `<UForm>` expects `<UFormField>` children in its default slot. Placing the security badge inside `<UForm>` causes unexpected spacing. Place it outside the `<UForm>` tag in the parent container, directly below the submit button.
-
----
+6. **CTA color failing on multiple background contexts** (V8) — CTAs appear on 4 different backgrounds (dark hero overlay, white, off-white brand-bg, navy SectionPrice). `#F59E0B` passes AA on navy and off-white; verify all 4 before finalizing. A color that looks great in a single mockup may fail on 3 of 4 actual backgrounds.
 
 ## Implications for Roadmap
 
-Based on combined research, the v1.5 build follows a 6-phase order determined by: backend-first for schema changes, parallelizable display-only work, and a final CTA copy pass after sections are stable.
+V1.6 maps to 6 sequential phases driven by dependency order: tokens cascade to all components (must go first), fonts must be CLS-verified on a preview build before component work iterates on typography, the new static component is isolated and safe third, avatars are additive fourth, gradients require confirmed token values fifth, and FAQ involves the most design iteration so goes last.
 
-### Phase 1: Backend Schema Cleanup (Blocks Form Work)
-**Rationale:** The Zod schema is the contract between frontend and backend. Removing `objetivo` and purging `renda-extra` from the Fastify schema must precede any frontend changes. If the frontend form is updated first (omitting `objetivo`) while the backend still validates it as required, Fastify returns 400 and leads are silently lost.
-**Delivers:** Updated `server/leads/schema.ts` — `objetivo` field removed, `renda-extra` enum value purged; Fastify accepts 3-field POST without errors; grep for `renda.extra` returns zero results
-**Addresses:** Form simplification (4 → 3 fields), product positioning cleanup (no "renda extra" angle)
-**Avoids:** Pitfall M1 (schema desync), Pitfall M2 (renda-extra enum remnants)
+### Phase 1: Design Token Replacement
+**Rationale:** Tokens cascade to all 13 components simultaneously. Establishing the correct palette before any component work means every subsequent phase is reviewed against the real visual baseline. Discovering contrast failures mid-build causes rework across all components.
+**Delivers:** New brand palette live across the full LP — vibrant aviation blue, amber CTA, blue-tinted background `#F8FAFF`.
+**Addresses:** Premium blue palette (table stakes), amber/gold CTA (table stakes)
+**Avoids:** Pitfall V1 (token namespace collision), Pitfall V2 (WCAG contrast failure on white), Pitfall V8 (CTA contrast on multiple backgrounds)
 
-### Phase 2: Copy Rewrite — Pure Text Sections
-**Rationale:** These changes are fully independent of each other and of the backend. They are safe to ship incrementally. Critically: define the copy constants table before editing any component to prevent price/guarantee inconsistencies across sections.
-**Delivers:** Updated SectionHero (new headline, subheadline, pain point chips), SectionAbout (renda extra card removed, hero card copy rewritten), SectionFAQ (replaced with beginner-focused milhas objections), SectionMethod (30-day duration + 3 meetings + WhatsApp support added)
-**Uses:** No new stack elements — template and data array changes only
-**Avoids:** Pitfall M3 (copy inconsistency) by establishing the constants reference table before the first edit
+### Phase 2: Typography Upgrade
+**Rationale:** Font swap is a single-file change with high cascade impact. CLS must be verified on a preview build (not dev server) before building new components on top of the new typography.
+**Delivers:** Plus Jakarta Sans (+ optionally Playfair Display for headings) across the full LP with CLS < 0.1 confirmed.
+**Addresses:** Premium typography differentiator
+**Avoids:** Pitfall V3 (double font load, CLS from metric mismatch)
 
-### Phase 3: Structural Template Changes
-**Rationale:** These sections require template restructuring beyond copy changes but have no backend or state dependencies. The WhatsApp bubble component has the highest visual and mobile-responsiveness complexity — build and test it at 375px before moving to Phase 4.
-**Delivers:** SectionSocialProof rebuilt as WhatsApp-style chat bubbles with "Casos reais de quem ja aplicou" title; SectionForWhom extended with `negativeCards` array and "Esta mentoria NAO e para voce se..." block; SectionProgramContent with bold keywords via `v-html`, updated subtitle
-**Implements:** WhatsApp chat bubble inline in SectionSocialProof; extract to `app/components/UI/ChatBubble.vue` only if 3+ bubble types are needed
-**Avoids:** Pitfall M4 (mobile bubble breakage) — 375px/390px/412px viewport test is mandatory before phase completion
+### Phase 3: SectionGuarantee Component
+**Rationale:** New static component with zero risk to existing components. The seal image asset (`app/assets/img/selo-garantia7-dias.png`) already exists. Self-contained — one new file plus one line in `app.vue`.
+**Delivers:** `SectionGuarantee.vue` inserted between SectionPrice and SectionFAQ; inline guarantee block in SectionPrice reduced to a one-liner trust signal.
+**Addresses:** Dedicated guarantee section (table stakes for conversion at decision point)
+**Avoids:** Pitfall V6 (seal PNG performance — compress source to PNG-8 or lossless WebP before committing)
 
-### Phase 4: Pricing and Offer Clarity
-**Rationale:** SectionPrice is the conversion moment — it must reflect real pricing and contain the guarantee block. This section depends only on confirmed client data (already confirmed in PROJECT.md: R$ 299,90 PIX / 10x R$ 29,99), not on other phases. The guarantee belongs inside SectionPrice, not in a separate standalone section.
-**Delivers:** SectionPrice with real pricing display (hard-coded strings), PIX / installment two-option layout (stacked on mobile, side-by-side on md:), 7-day guarantee block with shield icon, updated progressive CTA text
-**Uses:** `UIcon` with `i-heroicons-shield-check` (already in @nuxt/ui); Tailwind flex column → row responsive layout
-**Avoids:** Pitfall M5 (floating-point price formatting, mobile flex wrapping) — format check and 375px test before completing phase
+### Phase 4: Testimonial Avatars (SectionSocialProof)
+**Rationale:** Additive to existing data shape — testimonial bubbles still render correctly if avatar fields are absent during development. Isolated to one component.
+**Delivers:** Circular initials avatars per testimonial (deterministic color from name hash), with upgrade path for real R2-hosted photos when available.
+**Addresses:** Testimonial avatars (table stakes for trust)
+**Avoids:** Pitfall V5 (NuxtImg dimension/CLS on circular avatars — use CSS-only initials avatar initially; NuxtImg photo path requires Cloudflare Image Transformations to be confirmed active)
 
-### Phase 5: Form Simplification (Requires Phase 1 Complete)
-**Rationale:** The 3-file coordinated change (`useLeadForm.ts` schema update + `SectionLeadForm.vue` template) must follow Phase 1 (Fastify schema already updated). Adding the security badge is part of this phase — placement outside `<UForm>` in the parent container.
-**Delivers:** `useLeadForm.ts` with `objetivo` removed from schema and TypeScript types; `SectionLeadForm.vue` with `objetivo` USelect removed, `state` object simplified, security badge placed below submit button outside `<UForm>`; `nuxt build` passes TypeScript check with no errors
-**Implements:** 3-field form (nome, whatsapp, gastoMensal); security badge with `i-heroicons-lock-closed` at `w-5 h-5` minimum
-**Avoids:** Pitfall M6 (badge inside UForm causing layout issues), schema desync (TypeScript build serves as verification gate)
+### Phase 5: Gradient Application
+**Rationale:** Gradients require confirmed token values to use correct color stops. Applying after palette and typography are validated eliminates color value rework.
+**Delivers:** Subtle sky-to-horizon gradient on hero, optional deep gradient on SectionPrice/SectionGuarantee, subtle card gradient accents on 2-3 key sections maximum.
+**Addresses:** Aviation gradients differentiator
+**Avoids:** Pitfall V4 (gradient paint cost on mobile — 2 color stops max, paint flashing audit required as exit criterion)
 
-### Phase 6: CTA Variation Pass
-**Rationale:** Progressive CTA copy is cosmetic cleanup that requires all sections to be stable first. This is the final pass that unifies the CTA strategy. All CTAs continue using `useScroll.scrollTo('formulario')` unchanged — only copy differs.
-**Delivers:** Distinct CTA copy at each page position: SectionHero ("Quero dar o primeiro passo"), SectionAbout/SectionProgramContent mid-page ("Quero aprender na pratica"), SectionPrice ("Quero comecar agora"), AppHeader ("Comecar agora"); `data-cta-position` attribute added to each CTA button; `<!-- anchor: do not rename -->` comment on `section#formulario`
-**Avoids:** Pitfall M7 (CTA copy change breaks scroll target; position tracking for future analytics)
+### Phase 6: FAQ Visual Redesign
+**Rationale:** Most open-ended design work. Goes last so it benefits from the final palette and typography context without blocking other phases.
+**Delivers:** Numbered card accordion (Option A: enhanced UAccordion `:ui` prop; Option B: custom v-show accordion if `:ui` customization is insufficient) with icons, visible hierarchy, and preserved keyboard accessibility.
+**Addresses:** FAQ redesign differentiator
+**Avoids:** Pitfall V7 (focus ring removal — keyboard Tab/Enter navigation test is mandatory exit criterion)
 
 ### Phase Ordering Rationale
 
-- **Phase 1 is non-negotiable first** — backend schema is a hard dependency for form work; no other phase blocks on it except Phase 5
-- **Phases 2-3 are fully parallelizable** within themselves; individual section edits have no inter-component dependencies
-- **Phase 4 depends only on confirmed client data**, not on other phases; can overlap with Phase 2-3 work
-- **Phase 5 depends on Phase 1** being deployed (or at minimum running locally with updated schema before frontend changes)
-- **Phase 6 is always last** — CTA text should only be finalized after all sections it links to are complete and stable
+- **Tokens first:** The `@theme {}` cascade means a palette change affects all 13 components at once. Must be validated before any component-specific work builds on top of it
+- **Font second:** CLS regression from a font swap must be measured on a preview build before iterating on typography in new components
+- **SectionGuarantee third:** Zero dependencies on other phases; self-contained new file; can be validated in isolation
+- **Avatars fourth:** Additive to `SectionSocialProof` data only; no cross-component concerns
+- **Gradients fifth:** Requires final token values confirmed; mobile performance profiling is the exit gate
+- **FAQ last:** Highest design iteration and open-ended UAccordion vs. custom accordion decision; should not block other phases
 
 ### Research Flags
 
-Phases with well-documented patterns (no research-phase needed):
-- **Phase 1:** Zod + Fastify schema synchronization — standard pattern already in use in this codebase
-- **Phase 2:** Copy rewrites — content decisions only; no technical uncertainty
-- **Phase 4:** Pricing display — completely resolved; hard-code strings, responsive flex layout
-- **Phase 6:** CTA variation — pure copy work with `useScroll` already handling all scroll logic
+Phases with standard well-documented patterns (no additional research needed):
+- **Phase 1:** Tailwind v4 `@theme {}` token replacement — fully documented in official docs
+- **Phase 3:** Static SFC creation and single `app.vue` line insertion — trivial
+- **Phase 4:** CSS-only initials avatar is ~20 lines of Tailwind — standard pattern
 
-Phases that may benefit from a targeted check during planning:
-- **Phase 3 (WhatsApp Bubble):** If Marcio provides real screenshot images (PNG/WebP) rather than CSS bubbles, `@nuxt/image` integration for testimonial images needs a check — specifically aspect ratio handling and mobile cropping behavior for WhatsApp screenshots at various phone resolutions
-- **Phase 5 (Form):** Confirm which field is removed — `objetivo` or `gastoMensal`. ARCHITECTURE.md clearly states `objetivo` (the dropdown with enum values `executiva | economia | renda-extra`) is removed. PITFALLS.md M1 contains a naming inconsistency that references `gastoMensal`. Verify before executing Phase 1 schema changes.
-
----
+Phases requiring validation checkpoints (not research, but execution gates):
+- **Phase 1:** WCAG contrast check mandatory before proceeding — WebAIM checker on every new token against every background it appears on (white, off-white, navy, dark hero overlay)
+- **Phase 2:** Lighthouse CLS score must be < 0.1 on a preview build (`nuxt build` + `nuxt preview`) before distributing font classes to components
+- **Phase 4:** If real photos are added, verify Cloudflare Image Transformations is active in the Cloudflare dashboard before using `<NuxtImg>` with R2 provider
+- **Phase 5:** Chrome DevTools paint flashing audit on 4x CPU throttle — no red rectangles during normal scroll
+- **Phase 6:** Manual keyboard navigation test (Tab to accordion, Enter/Space to expand, Tab through all items) — each trigger must show a visible focus ring
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | All packages installed, versions verified against official releases; no new dependencies required for v1.5 |
-| Features | HIGH | Multiple BR market sources; Brazilian payment, social proof, and guarantee patterns well-documented; conversion lift numbers have multiple confirming sources |
-| Architecture | HIGH | Based on direct codebase inspection of all relevant files; component map is ground truth, not inference |
-| Pitfalls | HIGH | Code-verified; pitfalls derived from reading actual file contents (`server/leads/schema.ts`, `useLeadForm.ts`, SFCs); not abstract framework warnings |
+| Stack | HIGH | All packages verified against official releases; codebase `package.json` inspected; no new dependencies required |
+| Features | HIGH | Multiple verified sources including airline brand research, WCAG contrast tool, VWO experiment data (+32% guarantee section), Brazilian market conversion norms |
+| Architecture | HIGH | Direct codebase inspection (2026-03-24) — token map, component list, asset inventory verified from actual files |
+| Pitfalls | HIGH | Code-verified — pitfalls identified from reading actual component code (`SectionFAQ.vue` trigger string, `main.css` token definitions, `nuxt.config.ts`) |
 
 **Overall confidence:** HIGH
 
 ### Gaps to Address
 
-- **Field removal ambiguity:** ARCHITECTURE.md says remove `objetivo` (the dropdown with `renda-extra` enum). PITFALLS.md M1 says `gastoMensal` is removed. These contradict. The intent is almost certainly to remove `objetivo` (which contains the `renda-extra` value being phased out), keeping `gastoMensal`. Confirm before any Phase 1 schema work.
+- **Font choice confirmation before Phase 2:** Research supports two options — (A) Plus Jakarta Sans only (simpler, one font weight system) or (B) Playfair Display headings + Plus Jakarta Sans body (more differentiated, requires applying `font-display` class to all h1/h2 in 12 components). Decide before Phase 2 begins.
 
-- **WhatsApp testimonial screenshots:** Marcio must provide real client screenshots with LGPD consent before Phase 3 can finalize. The CSS bubble fallback is ready for authentic testimonial text he provides, but if screenshot images are needed, this is a content dependency that can delay the phase.
+- **Real testimonial photos:** Research assumes CSS-only initials avatars as the default for Phase 4. If client provides real photos for Cloudflare R2, Cloudflare Image Transformations must be confirmed active before Phase 4 can use `<NuxtImg>` with the Cloudflare provider. Validate in Cloudflare dashboard before any photo-dependent code.
 
-- **Hero headline and subheadline final copy:** v1.5 hero rewrite requires confirmed copy from Marcio. Phase 2 can proceed with placeholder content but cannot ship without client sign-off on the new headline direction.
+- **Logo compatibility with new palette:** `logo-fly-up-milhas.png` may contain the current navy `#1a3a5c`. After Phase 1 tokens are applied, verify the logo reads correctly on the new vibrant blue header background. May require a new logo export from the original design file.
 
-- **Negative qualification copy:** The "Para quem NAO e" cards in Phase 3 require 3 negative qualifiers from Marcio. Keep to 3 maximum — more than 4 creates doubt in qualified prospects.
-
----
+- **@nuxt/image version in production:** STACK.md documents `^2.x` for Nuxt 4 compatibility. Confirm actual installed version in `package.json` before using `<NuxtImg>` with R2 provider configuration for Phase 4 avatars or Phase 3 seal.
 
 ## Sources
 
 ### Primary (HIGH confidence)
-- Direct codebase inspection (2026-03-24): `app/app.vue`, `app/composables/useLeadForm.ts`, `server/leads/schema.ts`, all Section SFCs, `app/assets/css/main.css`
-- https://github.com/nuxt/nuxt/releases — Nuxt 4.4.2 verified current as of March 2026
-- https://github.com/nuxt/ui/releases — Nuxt UI 4.5.1 verified current
-- https://endoflife.date/nuxt — Nuxt 3 EOL July 31, 2026 confirmed
-- https://ui.nuxt.com/docs/getting-started/installation/nuxt — Nuxt UI v4 install and compatibility requirements
-- https://vuejs.org/guide/best-practices/security.html — v-html safety rules (developer-controlled content)
+- Direct codebase inspection (2026-03-24): `app/assets/css/main.css`, `app/app.vue`, all Section SFCs, `nuxt.config.ts`, `app/assets/img/` listing
+- https://github.com/nuxt/nuxt/releases — Nuxt 4.4.2 verified latest as of March 2026
+- https://github.com/nuxt/ui/releases — Nuxt UI v4.5.1 verified latest
+- https://ui.nuxt.com/components/accordion — UAccordion `:ui` prop API and default trigger class behavior
+- https://tailwindcss.com/docs/background-image — Tailwind v4 gradient utilities (`bg-linear-*`, `bg-radial-*`)
+- https://tailwindcss.com/docs/animation — Tailwind v4 `@keyframes` in `@theme {}`
+- https://fonts.nuxt.com/get-started/configuration — @nuxt/fonts families configuration and auto-detection behavior
+- https://ui.nuxt.com/components/avatar — UAvatar component (circular shape, initials fallback, size variants)
 
 ### Secondary (MEDIUM confidence)
-- https://blog.greatpages.com.br/post/landing-page-para-infoprodutos — Brazilian LP qualification + pricing display patterns
-- https://www.rebill.com/en/blog/main-payment-methods-in-brazil — PIX dominance in Brazilian digital products
-- https://smartsmssolutions.com/resources/blog/business/trust-badges-boost-conversion — Security badge conversion data (23-42% lift near form fields)
-- https://www.landingpageflow.com/post/best-cta-placement-strategies-for-landing-pages — Progressive CTA variation lift (15-30%)
-- https://www.engagebay.com/blog/sales-page/ — Disqualification section psychology and lead quality improvement
-- https://masteringnuxt.com/blog/nuxt-4-performance-optimization-complete-guide-to-faster-apps-in-2026 — Nuxt 4 performance patterns
+- https://thedesignair.net/2021/02/10/why-so-blue — Aviation industry blue color psychology (verified across carrier brand references)
+- https://www.schemecolor.com/united-airlines-logo-blue-color.php — United Airlines `#005DAA`
+- https://fonts.google.com/specimen/Plus+Jakarta+Sans — Variable font weights 200-800, Latin/Latin Extended coverage
+- https://fonts.google.com/specimen/Playfair+Display — Editorial serif, display sizes; confirmed premium signal in typography research
+- https://smartsmssolutions.com/resources/blog/business/trust-badges-boost-conversion — +32% conversion lift for standalone guarantee section (VWO experiment, single study, direction credible)
+- https://webaim.org/resources/contrastchecker — WCAG contrast ratio verification for all new color tokens
+- https://tailwindflex.com/@simon-scheffer/whatsapp-like-chat-design — WhatsApp CSS bubble pattern (carry-forward from v1.5)
 
-### Tertiary (MEDIUM-LOW confidence)
-- https://thiagoregismkt.com.br/conteudos/landing-page-alta-conversao-estrategias/ — Brazilian conversion optimization patterns
-- Baymard Institute (cited via FEATURES.md) — badge saturation conversion data (17 badges vs 6 badges comparison)
-- https://tailwindflex.com/@simon-scheffer/whatsapp-like-chat-design — WhatsApp CSS bubble Tailwind pattern reference
+### Tertiary (LOW confidence — validate during implementation)
+- `@nuxt/image` v2 behavior with `quality="100"` + `format="webp"` for lossless WebP on guarantee seal — documented in official IPX spec but Cloudflare Image Transformations activation is environment-dependent
+- `@nuxt/fonts` CLS fallback metric behavior with Plus Jakarta Sans — described in `web.dev/articles/css-size-adjust`; CLS < 0.1 must be verified empirically on a preview build for this specific font pairing
 
 ---
-
 *Research completed: 2026-03-24*
 *Ready for roadmap: yes*

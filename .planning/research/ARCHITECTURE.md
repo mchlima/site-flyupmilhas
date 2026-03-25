@@ -1,464 +1,689 @@
-# Architecture Research — v1.5 Integration Map
+# Architecture Research — v1.6 Visual Identity Upgrade
 
 **Domain:** High-conversion landing page — miles/travel mentorship (Brazilian market)
 **Researched:** 2026-03-24
-**Confidence:** HIGH (based on direct codebase inspection)
-**Focus:** Integration of v1.5 features into the existing single-page Nuxt 4 architecture
+**Confidence:** HIGH (direct codebase inspection, cross-referenced with Tailwind v4 and Nuxt UI v4 official docs)
+**Focus:** Integration of v1.6 visual features into the existing Nuxt 4 single-page architecture
 
 ---
 
-## Existing Architecture — Ground Truth
+## Existing Architecture — Ground Truth (post-v1.5)
 
-The codebase (as of v1.4) is a single-page Nuxt 4 SSR app with no `pages/` directory. All content
-lives in `app/app.vue`, which composes 12 standalone SFC components. Two composables handle the only
-shared logic.
+Single-page Nuxt 4 SSR app. No `pages/` directory. `app/app.vue` composes 13 SFC components.
+Design tokens live exclusively in `app/assets/css/main.css` under Tailwind v4's `@theme {}` block.
 
-### Current Component Map (app/app.vue order)
+### Current Component Map
 
 ```
 UApp
 ├── AppHeader             (sticky smart nav, mobile overlay, CTA → #formulario)
 └── main#main-content
-    ├── SectionHero           id="hero"               bg: dark image overlay
-    ├── SectionAbout          id="sobre"               bg: white
+    ├── SectionHero           id="hero"                 bg: dark image overlay
+    ├── SectionAbout          id="sobre"                bg: white
     ├── SectionProgramContent id="conteudo-programatico" bg: brand-bg (#F9FAFB)
-    ├── SectionForWhom        id="para-quem-e"         bg: white
-    ├── SectionMethod         id="como-funciona"       bg: brand-bg
-    ├── SectionSocialProof    id="depoimentos"         bg: white
-    ├── SectionPrice          id="preco"               bg: brand-primary (navy)
-    ├── SectionFAQ            id="faq"                 bg: brand-bg
+    ├── SectionForWhom        id="para-quem-e"          bg: white
+    ├── SectionMethod         id="como-funciona"        bg: brand-bg
+    ├── SectionSocialProof    id="depoimentos"          bg: white
+    ├── SectionPrice          id="preco"                bg: brand-primary (navy)
+    ├── SectionFAQ            id="faq"                  bg: brand-bg
     └── section#formulario    bg: brand-primary (navy)
-        └── SectionLeadForm   (standalone, wraps form inside navy section)
+        └── SectionLeadForm
 AppFooter
 BackToTop
 ```
 
-### Composables
+### Current Design Token Definitions (app/assets/css/main.css)
 
-| Composable | State | Purpose |
-|-----------|-------|---------|
-| `useLeadForm` | `isLoading`, `isSuccess`, `error` | Zod schema + $fetch POST to Fastify `/leads` |
-| `useScroll` | none | `scrollTo(id)` smooth-scroll helper for all CTA buttons |
+```css
+@theme {
+  --color-brand-primary:    #1a3a5c;   /* navy — headings, header, price section bg */
+  --color-brand-bg:         #F9FAFB;   /* off-white — alternating section bg */
+  --color-brand-cta:        #e67e22;   /* orange — all CTA buttons */
+  --color-brand-cta-hover:  #d35400;
+  --color-brand-text:       #1a1a1a;
+  --color-brand-text-muted: #6b7280;
+  --color-brand-footer:     #0f2039;   /* dark navy — footer only */
 
-### Backend Contract (Fastify `/leads`)
-
-Current schema — `server/leads/schema.ts`:
+  --font-family-sans: 'Inter', system-ui, ...;
+}
 ```
-{ nome, whatsapp, gastoMensal, objetivo: enum('executiva'|'economia'|'renda-extra'), website? }
-```
 
-### Design Token Boundaries
+### Current Token Usage Across Components
 
-All brand tokens live in `app/assets/css/main.css` under `@theme {}`:
-```
---color-brand-primary:    #1a3a5c   (navy — headings, header, price section bg)
---color-brand-bg:         #F9FAFB   (off-white — alternating section bg)
---color-brand-cta:        #e67e22   (orange — all CTA buttons)
---color-brand-cta-hover:  #d35400
---color-brand-text:       #1a1a1a
---color-brand-text-muted: #6b7280
---color-brand-footer:     #0f2039   (dark navy — footer only)
-```
+| Token | Used In | Usage Pattern |
+|-------|---------|---------------|
+| `--color-brand-primary` | All 13 components | `text-[var(...)]`, `bg-[var(...)]`, section backgrounds |
+| `--color-brand-cta` | 8 components | All CTA buttons (plain `<button>`), icons in cards |
+| `--color-brand-cta-hover` | 8 components | Hover state on same buttons |
+| `--color-brand-bg` | 4 sections | Section background alternation |
+| `--color-brand-text` | All components | Body text, FAQ answers |
+| `--color-brand-text-muted` | All components | Subtitles, descriptions, card body text |
+| `--color-brand-footer` | AppFooter | Footer bg only |
+| `--font-family-sans` | `html {}` base | Applied to entire page via CSS `html {}` rule |
 
 ---
 
-## v1.5 Features: New vs Modified
+## v1.6 Features: New vs Modified Components
 
-### NEW Components to Create
+### NEW Component to Create
 
-| Component | Type | Location |
-|-----------|------|----------|
-| `SectionTestimonialsWhatsApp` | New SFC | `app/components/Section/` |
-| `SectionGuarantee` | New SFC | `app/components/Section/` |
-
-Neither component requires new composables, shared state, or backend changes. Both are pure display.
+| Component | Type | Location | Purpose |
+|-----------|------|----------|---------|
+| `SectionGuarantee` | New SFC | `app/components/Section/` | Standalone 7-day guarantee section with golden seal |
 
 ### MODIFIED Components
 
-| Component | What Changes | Impact |
-|-----------|-------------|--------|
-| `SectionSocialProof` | Replace quote-card pattern with WhatsApp bubble UI | Template-only, no logic change |
-| `SectionPrice` | Add real pricing (R$ 299,90 PIX / 10x), guarantee block, expand benefits | Template + data array expansion |
-| `SectionForWhom` | Add "Para quem NAO e" negative cards below existing positive cards | Add `negativeCards` array, extend template |
-| `SectionProgramContent` | Add `<strong>` tags to key phrases in 8 content items; update subtitle text | Template only — text swap |
-| `SectionMethod` | Add duration (30 dias), 3 encontros/mes, suporte WhatsApp into step descriptions | Data array update only |
-| `SectionLeadForm` | Drop `objetivo` field (4 → 3 fields), add security badge, update Zod schema | Schema + state + template changes; **backend contract changes** |
-| `SectionHero` | Rewrite copy: headline, subheadline, pain point chips | Template only — text swap |
-| `SectionAbout` | Remove "renda extra" value prop card; rewrite hero card copy | Data + template (remove one card) |
-| `SectionFAQ` | Replace 5 existing items with beginner-focused pain-point Q&A | Data array swap only |
-| `SectionHero` / `SectionAbout` / `SectionProgramContent` | Update CTA label per position (topo/meio/final) | Text changes per component |
-| `AppHeader` | CTA text may change per position strategy | Text change only |
+| Component | What Changes | Change Type |
+|-----------|-------------|-------------|
+| `app/assets/css/main.css` | Replace all token values + add gradient utilities | **Token swap — cascades to ALL components automatically** |
+| `SectionSocialProof` | Add avatar (circular photo or initials) per testimonial | Template extension + data shape change |
+| `SectionFAQ` | Visual redesign — richer layout, icons, visual hierarchy | Template + optional data shape |
+| `app/app.vue` | Insert `<SectionGuarantee />` into composition order | One-line addition |
+| `@nuxt/fonts` config | Swap font family from Inter to new choice | `nuxt.config.ts` + CSS token update |
+
+### NOT Modified (benefit automatically from token swap)
+
+All other components — `AppHeader`, `SectionHero`, `SectionAbout`, `SectionProgramContent`,
+`SectionForWhom`, `SectionMethod`, `SectionPrice`, `SectionLeadForm`, `AppFooter`, `BackToTop`
+— will inherit the new palette and typography the moment the CSS tokens are updated. No per-component
+edits are needed for the color and font migration.
 
 ---
 
-## WhatsApp Chat Bubble Component
+## Integration Point 1: Design Tokens in Tailwind v4 CSS-first Config
 
-### Integration Point: SectionSocialProof
+### How Tailwind v4 `@theme {}` Works
 
-**Current state:** `SectionSocialProof` renders generic quote cards in a 2-column grid using a
-`testimonials` array. The array has placeholder data.
+Tailwind v4 uses a CSS-first configuration system. Custom tokens defined inside `@theme {}` in
+`main.css` are:
+1. Registered as CSS custom properties (accessible via `var(--...)` anywhere in CSS)
+2. Automatically mapped to Tailwind utility classes (e.g., `--color-brand-primary` → `bg-brand-primary`, `text-brand-primary`)
 
-**Target state:** Replace card pattern with WhatsApp-style chat bubbles. Title changes to
-"Casos reais de quem ja aplicou."
+This project uses both forms: `text-[var(--color-brand-primary)]` (arbitrary value syntax) and
+occasional direct `var()` in inline styles. Both continue to work after a token value swap.
 
-**Implementation approach — pure template refactor:**
+### Token Replacement Strategy
 
+All v1.6 palette and font changes are a **single-file edit** to `app/assets/css/main.css`:
+
+```css
+@theme {
+  /* Replace these values: */
+  --color-brand-primary:    [NEW_BLUE];     /* vibrant aviation blue */
+  --color-brand-cta:        [NEW_CTA];      /* premium CTA color */
+  --color-brand-cta-hover:  [NEW_CTA_HOVER];
+
+  /* Optionally add: */
+  --color-brand-primary-dark: [DARKER_SHADE];  /* for gradient end stops */
+  --color-brand-accent:       [ACCENT];        /* secondary accent if needed */
+
+  /* Font swap: */
+  --font-family-sans: '[NEW_FONT]', system-ui, ...;
+}
 ```
-SectionSocialProof.vue
-├── <script setup> — replace testimonials array shape:
-│   Add: senderName, messageText, timestamp, type ('sent'|'received'), optionalImage?
-│   Remove: metric, route fields (or keep as optional)
-└── <template> — replace card divs with bubble layout:
-    ├── WhatsApp-style container (light green/white bg matching wa.me aesthetic)
-    ├── Per bubble: rounded tail, sender name header, message text, timestamp
-    └── Optional: message "delivered/read" double-checkmark icon
+
+**Cascade effect:** Because every component references the token via `var(--color-brand-primary)`,
+updating the token value in `@theme {}` instantly updates all 13 components with zero per-component
+edits. This is the entire point of the token architecture.
+
+### Adding Gradient Utilities
+
+Tailwind v4 supports adding custom CSS utilities directly in `main.css` using `@utility`:
+
+```css
+@utility gradient-sky-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-primary) 0%,
+    var(--color-brand-primary-dark) 100%
+  );
+}
+
+@utility gradient-section-subtle {
+  background: linear-gradient(
+    180deg,
+    white 0%,
+    var(--color-brand-bg) 100%
+  );
+}
 ```
 
-**No new component file needed** unless the bubble markup grows complex enough to warrant extraction
-into `app/components/UI/ChatBubble.vue`. Recommendation: keep inline in SectionSocialProof until
-there are 3+ bubble types. At that point extract.
+These become first-class Tailwind classes: `<div class="gradient-sky-hero">`.
 
-**Assets:** Real WhatsApp screenshots go to Cloudflare R2. For the bubble recreation style (built
-in HTML/CSS, not screenshot embeds), no asset dependency.
+Alternatively, gradients can be applied as inline `style` attributes using the CSS vars directly,
+which requires no Tailwind utility registration and is appropriate for one-off uses:
 
-**Design token alignment:**
-- Chat container bg: `#ECE5DD` (WhatsApp canonical light bg) — acceptable to hardcode, not a brand token
-- Received bubble bg: white
-- Sent bubble bg: `#DCF8C6` (WhatsApp canonical green) — hardcode, not brand
-- Timestamp text: reuse `var(--color-brand-text-muted)`
+```html
+<div :style="{ background: 'linear-gradient(135deg, var(--color-brand-primary), #0a1f3c)' }" />
+```
+
+**Recommendation:** Register gradients as `@utility` if used on 2+ components. Use inline style for
+one-off cases (e.g., SectionHero's dark overlay stays as `bg-black/60`).
+
+### Where NOT to Define Tokens
+
+Do not use `tailwind.config.ts`. Tailwind v4 deprecated the JS config file for CSS-first
+projects. The `@nuxt/ui` module manages Tailwind v4 entirely through `main.css`. Adding a
+`tailwind.config.ts` alongside `@nuxt/ui` can cause conflicts with Nuxt UI's own Tailwind
+integration layer.
 
 ---
 
-## Expanded Pricing + Guarantee Section
+## Integration Point 2: Font Swap via @nuxt/fonts
 
-### Integration Point: SectionPrice
+### How @nuxt/fonts Works in This Project
 
-**Current state:** `SectionPrice` is a navy-bg section with a benefits list and a single CTA button.
-No price is shown ("Condições especiais disponíveis").
+`@nuxt/fonts` is included as a dependency of `@nuxt/ui v4` — it is active without explicit
+`nuxt.config.ts` module registration. It works by:
+1. Scanning CSS for `font-family` references in `@theme {}` and `html {}` base styles
+2. Auto-injecting optimized `<link rel="preload">` tags and `@font-face` declarations in `<head>`
+3. Serving fonts via a local proxy by default (avoids external font domain, improves privacy + CWV)
 
-**Target state:** Add real pricing display + 7-day guarantee block.
+### Font Swap Steps
 
-**Implementation — extend existing SectionPrice.vue:**
+**Step 1 — Update the CSS token in main.css:**
 
-```
-SectionPrice.vue additions:
-├── Price block (above benefits list):
-│   ├── Anchor price (strikethrough optional, if client provides)
-│   ├── PIX price: "R$ 299,90" (prominent, large text)
-│   └── Installment: "ou 10x no cartão"
-├── Benefits list (existing — keep, possibly expand)
-└── Guarantee block (below benefits, above CTA):
-    ├── Shield icon (i-heroicons-shield-check or similar)
-    ├── "Garantia de 7 dias"
-    └── "100% do valor devolvido se não fizer sentido"
+```css
+@theme {
+  --font-family-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
 ```
 
-**No new component needed.** Guarantee block is 4-6 lines of template added inside SectionPrice.
-If a standalone `SectionGuarantee` is desired for a separate section slot in `app.vue`, that is
-also viable — but requires adding it to the component sequence in `app.vue`. Decision: keep inline
-in SectionPrice unless designer wants it visually separated.
+`@nuxt/fonts` automatically detects the new name and downloads + serves it. No `nuxt.config.ts`
+change is needed for Google Fonts or Bunny Fonts sources.
+
+**Step 2 — Verify the `html {}` base rule still references the token:**
+
+```css
+html {
+  font-family: var(--font-family-sans);   /* already in place — no change needed */
+}
+```
+
+Because the `html {}` rule references the token (not the font name directly), updating the token
+in `@theme {}` is sufficient. The font propagates to all elements via CSS inheritance.
+
+**Step 3 — Check Nuxt UI component typography:**
+
+Nuxt UI v4 components (UAccordion, UForm, UInput, UIcon) inherit `font-family` from the HTML
+root via CSS cascade. No per-component font override is needed.
+
+### Font Recommendations for Premium/Travel Context
+
+Recommended fonts for this brand context (aviation, premium, Brazilian market):
+
+| Font | Weight Range | Character | Use If |
+|------|-------------|-----------|--------|
+| Plus Jakarta Sans | 300-800 | Modern, warm, geometric | Primary recommendation — excellent legibility at all sizes, premium feel without being cold |
+| DM Sans | 300-700 | Clean, slightly rounded | Secondary option — similar to Inter but more personality |
+| Outfit | 100-900 | Geometric, forward-looking | Good for bold hero headlines — pair with DM Sans for body |
+| Sora | 300-800 | Techy, premium | Strong for headlines, weaker for long text |
+
+**Recommendation:** Plus Jakarta Sans. Single font family, 300–800 weights cover all use cases
+(body at 400, headlines at 700/800, badges at 500), and it has strong Portuguese glyph coverage.
+
+### CLS Prevention
+
+`@nuxt/fonts` prevents Cumulative Layout Shift automatically by:
+- Injecting `font-display: swap` or `optional` depending on configuration
+- Preloading the most-used weight (400) in `<head>` before render
+- Using `size-adjust` and `ascent-override` CSS descriptors to match the fallback font metrics
+
+No manual CLS mitigation is required.
 
 ---
 
-## "Para quem NAO e" Negative Cards
+## Integration Point 3: SectionGuarantee — New Component
 
-### Integration Point: SectionForWhom
+### Rationale for Standalone Component
 
-**Current state:** `SectionForWhom` has a 2-column layout: family image left, 5 positive qualifier
-cards right.
+SectionPrice currently has an inline guarantee block (a shield icon + 2 lines of text). The v1.6
+milestone upgrades this to a visually dedicated section with a golden seal. A standalone
+`SectionGuarantee` section provides:
+- Clear visual separation from the pricing section
+- Opportunity for a larger seal/badge image
+- A dedicated `id` anchor for potential deep-linking or analytics
 
-**Target state:** Add a "Para quem NAO e" block with negative disqualifier cards. These can appear
-below the existing 2-column layout OR in a second distinct visual block.
+### Component Responsibility
 
-**Implementation approach:**
+`SectionGuarantee` is a pure display component. It has no props, no emits, no composables, and
+no backend connection. All content is hardcoded within the component.
+
+### Structure
 
 ```
-SectionForWhom.vue additions:
-├── <script setup>: add negativeCards array:
-│   [{ text: 'Quem quer resultado sem esforço', icon: 'i-heroicons-x-circle' }, ...]
-└── <template>: below existing 2-col grid:
-    ├── Separator / new subtitle: "Esta mentoria NÃO é para você se..."
-    └── New card grid (same card style but with red/muted icon instead of orange)
-        └── Each card: x-circle icon (muted color) + text
+SectionGuarantee.vue
+├── <script setup> — no imports needed (pure static)
+└── <template>
+    └── <section id="garantia">
+        ├── Optional: gradient or brand-primary bg
+        ├── Seal/badge element
+        │   ├── Option A: <img> from Cloudflare R2 (selo-garantia7-dias.png already exists)
+        │   └── Option B: CSS/SVG golden circle with "7" numeral (no asset dependency)
+        ├── Headline: "Garantia Incondicional de 7 Dias"
+        ├── Body: "Se em 7 dias você não sentir que a mentoria vale cada centavo..."
+        └── Trust signals: shield icon + "Reembolso sem burocracia"
 ```
 
-**Icon color guidance:** Use `text-red-400` or `var(--color-brand-text-muted)` for the negative
-cards — not orange CTA, which is reserved for positive affordances.
+### Asset Dependency
 
-**No new component needed.** All logic stays in SectionForWhom.
+`app/assets/img/selo-garantia7-dias.png` already exists in the project. Use it:
 
----
+```html
+<img
+  src="~/assets/img/selo-garantia7-dias.png"
+  alt="Selo de garantia de 7 dias"
+  class="w-24 h-24 mx-auto"
+/>
+```
 
-## Simplified Lead Form (4 → 3 Fields)
+This removes the need for a CSS-constructed seal and leverages an asset the client has already
+approved.
 
-### Integration Point: SectionLeadForm + useLeadForm + server/leads/schema.ts
+### Placement in app.vue
 
-This is the only v1.5 change that touches the backend contract. It requires coordinated updates
-across three files.
+Insert between `SectionPrice` and `SectionFAQ` — this maintains the persuasion sequence:
+offer → guarantee → objection handling (FAQ).
 
-**What changes:**
+```html
+<!-- app.vue addition -->
+<SectionPrice />
+<SectionGuarantee />    <!-- NEW — insert here -->
+<SectionFAQ />
+```
 
-The `objetivo` field (the USelect dropdown with 3 enum values) is removed. This simplifies the
-form from 4 fields to 3: `nome`, `whatsapp`, `gastoMensal`.
+### Inline Guarantee Block in SectionPrice
 
-**Files to update in sequence:**
-
-1. `server/leads/schema.ts` — Remove `objetivo` field from Zod schema:
-   ```typescript
-   // Before
-   objetivo: z.enum(['executiva', 'economia', 'renda-extra'])
-   // After: delete entirely
-   ```
-
-2. `app/composables/useLeadForm.ts` — Sync frontend schema with backend:
-   ```typescript
-   // Remove objetivo from LeadFormSchema
-   // Remove objetivo from LeadFormData type
-   ```
-
-3. `app/components/Section/SectionLeadForm.vue` — Remove USelect field:
-   - Remove `objetivoOptions` array
-   - Remove `objetivo` from `state` reactive object
-   - Remove `<UFormField name="objetivo">` block from template
-   - Add security badge below submit button:
-     ```html
-     <div class="flex items-center justify-center gap-2 mt-3 text-white/60 text-xs">
-       <UIcon name="i-heroicons-lock-closed" class="w-4 h-4" />
-       <span>Seus dados estão seguros</span>
-     </div>
-     ```
-
-**Backend note:** The Fastify server validates with `LeadSchema.safeParse()`. Removing `objetivo`
-from the schema means the field becomes optional-by-absence. If old leads in MongoDB have `objetivo`
-set, that is fine — MongoDB is schema-less. No migration needed.
-
-**Risk:** If the backend Fastify process is deployed separately and not updated in sync with the
-frontend, removing `objetivo` from the frontend while the backend still expects it would cause
-validation failures. This is mitigated because `objetivo` is not marked `.required()` at the HTTP
-transport layer — Fastify uses Zod `safeParse` which returns success/error, and the `objetivo` field
-was optional in that it wasn't strictly required for a 200 response (Fastify returns 400 if Zod
-fails). Update the Fastify schema first, then the frontend.
+After `SectionGuarantee` is added as a dedicated section, remove or reduce the inline guarantee
+block in `SectionPrice.vue` to avoid redundancy. Keep only the one-liner trust signal in
+`SectionPrice` (e.g., the shield icon + "Garantia de 7 dias") and let `SectionGuarantee` carry
+the full explanation.
 
 ---
 
-## Progressive CTAs by Position
+## Integration Point 4: Avatar Pattern in SectionSocialProof
 
-### Integration Points: SectionHero, SectionAbout, SectionProgramContent, AppHeader
+### Current State
 
-**Current state:** All CTA buttons use the same text: "Quero dar o primeiro passo". All call
-`scrollTo('formulario')`.
+`SectionSocialProof` renders 3 WhatsApp-style chat bubbles. Each testimonial has `name`, `city`,
+and `text`. Name and city appear below the bubble. No photo or avatar is rendered.
 
-**Target state:** Different copy per section position (topo/meio/final).
+### Target State
 
-**Implementation:** Pure text changes in each component's template. No logic change. The
-`useScroll.scrollTo('formulario')` call stays identical everywhere.
+Each testimonial gets either:
+- A circular photo (`<img>` from Cloudflare R2), or
+- A generated initials avatar (CSS circle + text, no asset dependency)
 
-Suggested copy variants:
-- `SectionHero` (topo): "Quero dar o primeiro passo" (keep — strongest opening)
-- `SectionAbout` / `SectionProgramContent` (meio): "Quero aprender na prática"
-- `SectionPrice` (decisao): "Quero começar agora"
-- `AppHeader` (sempre visível): "Começar agora" (short — fits nav bar)
+The initials fallback is strongly preferred for launch because it requires zero new assets and
+works immediately regardless of whether real photos are available.
 
----
+### Implementation — Initials Avatar
 
-## Bold Text in Conteudo Programatico Items
-
-### Integration Point: SectionProgramContent
-
-**Current state:** `items` array has plain strings. Rendered as `{{ item.text }}` in `<span>`.
-
-**Target state:** Key phrases within each item bolded.
-
-**Implementation:** Replace plain string with HTML string containing `<strong>` tags. Change
-rendering from interpolation to `v-html`:
+Add a computed color per testimonial (deterministic, based on name):
 
 ```typescript
-// Before (plain string)
-{ text: 'Como funcionam os principais programas de milhas', icon: '...' }
+const testimonials = [
+  {
+    name: 'Ana Paula',
+    city: 'São Paulo, SP',
+    text: '...',
+    initials: 'AP',
+    avatarColor: '#2563EB',   // or derive from index for variety
+  },
+  ...
+]
+```
 
-// After (HTML string)
-{ text: '<strong>Como funcionam</strong> os principais programas de milhas', icon: '...' }
+Avatar markup (inline in SectionSocialProof, no new component needed for 3 items):
+
+```html
+<div
+  class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm font-bold shrink-0"
+  :style="{ backgroundColor: t.avatarColor }"
+>
+  {{ t.initials }}
+</div>
+```
+
+### Layout Adjustment
+
+Current layout: bubble → name/city below bubble.
+New layout: avatar beside name/city, then bubble below:
+
+```
+[AP] Ana Paula · São Paulo, SP
++---------------------------+
+| WhatsApp bubble text...   |
++---------------------------+
+```
+
+Or: avatar floats to the left of the bubble (left-aligned testimonials) / right (right-aligned):
+
+```
+[AP]  +---------------------------+
+      | bubble text               |
+      +---------------------------+
+```
+
+The second layout (avatar beside bubble) more closely mirrors how WhatsApp renders group chat
+messages and requires minimal CSS change — add `flex flex-row items-start gap-2` to the outer
+container per testimonial.
+
+### Photo Upgrade Path
+
+When real photos are available on Cloudflare R2:
+
+```typescript
+{
+  name: 'Ana Paula',
+  avatarSrc: 'https://cdn.flyupmilhas.com.br/testimonials/ana-paula.webp',
+  initials: 'AP',   // fallback if src fails
+}
 ```
 
 ```html
-<!-- Before -->
-<span class="text-[var(--color-brand-text)]">{{ item.text }}</span>
-
-<!-- After -->
-<span class="text-[var(--color-brand-text)]" v-html="item.text" />
+<img
+  v-if="t.avatarSrc"
+  :src="t.avatarSrc"
+  :alt="t.name"
+  class="w-9 h-9 rounded-full object-cover shrink-0"
+/>
+<div v-else ...>{{ t.initials }}</div>
 ```
 
-**XSS note:** The `items` array is hardcoded in the component — not user input, not CMS content.
-Using `v-html` here is safe. Add a comment to document this assumption.
+This pattern avoids a broken image state and works without `@nuxt/image` (R2 URLs are direct).
 
 ---
 
-## Data Flow Changes in v1.5
+## Integration Point 5: FAQ Visual Redesign
 
-### Form Submission Flow (simplified)
+### Current State
 
+`SectionFAQ` uses `UAccordion` from Nuxt UI with minimal `ui` prop customization. Layout is a
+single-column list on a `--color-brand-bg` background. Visual weight is low.
+
+### Target State Options
+
+Two valid approaches — choose one:
+
+#### Option A: Enhanced UAccordion (lower effort)
+
+Keep `UAccordion` but add visual richness through the `:ui` prop and surrounding markup:
+
+- Add a numbered badge or icon per FAQ item
+- Change section background from `brand-bg` to brand-primary (navy) for contrast
+- Make accordion item borders more visible
+- Use larger font sizes for questions
+
+```html
+<UAccordion
+  :items="faqItems"
+  :ui="{
+    item: 'border-b border-white/10',
+    trigger: 'group flex items-center gap-3 py-5 font-semibold text-base text-white focus-visible:outline-primary',
+    content: 'text-white/80 pb-5 px-0 leading-relaxed'
+  }"
+>
+  <template #default="{ item, index }">
+    <span class="w-6 h-6 rounded-full bg-white/10 text-white text-xs font-bold flex items-center justify-center shrink-0">
+      {{ index + 1 }}
+    </span>
+    <span>{{ item.label }}</span>
+  </template>
+</UAccordion>
 ```
-User fills 3 fields (SectionLeadForm.vue)
-    ↓
-useLeadForm.submit() with { nome, whatsapp, gastoMensal, website }
-    ↓
-$fetch POST → Fastify /leads
-    ↓
-Fastify validates with updated LeadSchema (no objetivo)
-    ↓
-MongoDB insert with 3 fields + createdAt + source
-    ↓
-200 { success: true, id: ... }
-    ↓
-isSuccess.value = true → show success + WhatsApp CTA
+
+This requires no changes to the `faqItems` data array and no new components.
+
+#### Option B: Custom Accordion (higher effort, full design control)
+
+Replace `UAccordion` with a hand-rolled Vue accordion using `<details>/<summary>` or a
+`v-show` + transition pattern. Use when the Nuxt UI accordion's internal DOM structure
+prevents the desired visual outcome.
+
+```typescript
+// faqItems gets an `isOpen` boolean per item
+const faqItems = ref([
+  { label: '...', content: '...', isOpen: false },
+  ...
+])
 ```
 
-### Everything Else (no data flow changes)
+```html
+<div v-for="item in faqItems" :key="item.label" class="border-b ...">
+  <button @click="item.isOpen = !item.isOpen" class="...">
+    {{ item.label }}
+  </button>
+  <Transition name="faq">
+    <p v-show="item.isOpen" class="...">{{ item.content }}</p>
+  </Transition>
+</div>
+```
 
-All other v1.5 features are pure UI/copy changes. They do not alter:
-- The `useScroll` composable
-- The SSR rendering flow
-- The CTA scroll targets (all still `#formulario`)
-- The `useLeadForm` error handling logic
-- The AppHeader scroll detection
-- The BackToTop component
+**Recommendation:** Start with Option A. The `UAccordion` `:ui` prop is highly flexible and
+covers most visual redesign needs without the risk of breaking accessibility (UAccordion uses
+Reka UI primitives with correct ARIA). Switch to Option B only if the required visual design
+cannot be achieved through `:ui` customization after a genuine attempt.
 
 ---
 
-## Component Boundaries After v1.5
+## Architectural Patterns for v1.6
 
-| Component | Status | Change Type | Backend Touch |
-|-----------|--------|-------------|---------------|
-| `AppHeader` | Modified | CTA text update | No |
-| `SectionHero` | Modified | Copy rewrite (template only) | No |
-| `SectionAbout` | Modified | Remove renda extra card, rewrite copy | No |
-| `SectionProgramContent` | Modified | Bold phrases via v-html, subtitle text | No |
-| `SectionForWhom` | Modified | Add negative cards block | No |
-| `SectionMethod` | Modified | Expand step descriptions, add duration | No |
-| `SectionSocialProof` | Modified | Replace card UI with WhatsApp bubbles | No |
-| `SectionPrice` | Modified | Add pricing, guarantee block | No |
-| `SectionFAQ` | Modified | Replace Q&A content array | No |
-| `SectionLeadForm` | Modified | Drop objetivo field, add security badge | YES — schema sync |
-| `useLeadForm.ts` | Modified | Remove objetivo from schema + types | YES — schema sync |
-| `server/leads/schema.ts` | Modified | Remove objetivo field | YES — update first |
-| `SectionGuarantee` | Optional new | Standalone only if visual separation required | No |
+### Pattern 1: CSS Token Cascade (Single-Source Design System)
+
+**What:** All visual values (color, typography) live as CSS custom properties in `@theme {}`.
+Components reference tokens via `var()`, never hardcoded hex values.
+
+**When to use:** Always, for brand colors and typography. Exception: externally defined values
+that belong to a specific library's canonical system (e.g., WhatsApp's `#DCF8C6` bubble green,
+Tailwind's `red-50` for negative qualification cards) — these are acceptable hardcodes.
+
+**Implementation example:**
+```css
+/* main.css @theme {} — the only place brand colors are defined */
+--color-brand-primary: #1e56a0;   /* new vibrant blue */
+--color-brand-cta:     #f59e0b;   /* amber — premium travel feel */
+```
+
+```html
+<!-- Component — references token, never hardcodes -->
+<h2 class="text-[var(--color-brand-primary)]">...</h2>
+<button class="bg-[var(--color-brand-cta)]">...</button>
+```
+
+### Pattern 2: Pure Display Components for New Sections
+
+**What:** New visual-only sections (SectionGuarantee) have no props, no emits, no composables.
+All content is hardcoded within the SFC. The component is a rendering unit, not a data container.
+
+**When to use:** Any section where content is not dynamic, not user-controlled, and not shared
+across multiple places.
+
+**Trade-off:** Content edits require touching the Vue file. Acceptable for a client LP where
+copy changes go through a developer anyway.
+
+### Pattern 3: Data-Shape Extension (not component extraction) for Avatar
+
+**What:** Add new fields (`initials`, `avatarColor`, `avatarSrc`) to the existing `testimonials`
+array inside `SectionSocialProof`. Extend the template to render the new fields. Do not extract
+a `TestimonialCard` component.
+
+**When to use:** When adding visual complexity to existing static data that is used in only one
+place. Extraction to a sub-component adds a file boundary with no reuse benefit.
+
+**Extraction trigger:** Create a sub-component only if (a) the same testimonial card structure
+appears in 2+ places, or (b) the per-item template grows beyond ~25 lines.
 
 ---
 
-## Suggested Build Order for v1.5
+## Data Flow Changes in v1.6
 
-Order is determined by: (a) backend contract first, (b) independent display components freely
-parallelizable, (c) form changes last (requires schema coordination).
+All v1.6 features are pure UI/visual changes. No data flow changes:
 
-### Phase 1: Backend Contract First (blocks form work)
+- No new composables
+- No backend contract changes
+- No changes to `useLeadForm` or `useScroll`
+- No new API calls
+- No `app.vue` data logic changes (only one new `<SectionGuarantee />` line in the template)
 
-1. Update `server/leads/schema.ts` — remove `objetivo` field
-   - Deploy or restart Fastify before frontend form changes land in production
+### v1.6 Data Flow Summary
 
-### Phase 2: Pure Copy/Display Changes (fully independent, any order)
+```
+@theme {} token values → CSS custom properties → all component class bindings
+@nuxt/fonts CSS scan  → font preload + @font-face → html { font-family } → all text
+SectionSocialProof    → testimonials[].initials/avatarColor → avatar divs (no external data)
+SectionGuarantee      → hardcoded template → rendered section (no data source)
+SectionFAQ            → faqItems[] (existing) → redesigned accordion (same data, new template)
+```
 
-2. `SectionHero` — rewrite headline, subheadline, pain point chips, CTA text
-3. `SectionAbout` — remove renda extra card, rewrite hero card copy, remove from bento grid
-4. `SectionFAQ` — replace Q&A items array with beginner-focused content
-5. `SectionMethod` — update step descriptions, add 30-day duration and WhatsApp support copy
+---
 
-### Phase 3: Structural Template Changes (independent from each other)
+## Suggested Build Order for v1.6
 
-6. `SectionProgramContent` — add bold markup via v-html, update subtitle
-7. `SectionForWhom` — add negativeCards array and "Para quem NAO e" block below existing grid
-8. `SectionSocialProof` — rebuild testimonial cards as WhatsApp-style chat bubbles, update section title
+Order is determined by: (a) tokens first — they cascade, (b) font immediately after tokens,
+(c) new components before section redesigns, (d) FAQ last (most open-ended design work).
 
-### Phase 4: Pricing and Offer Clarity
+### Phase 1: Design Token Replacement (MUST be first — blocks all visual work)
 
-9. `SectionPrice` — add real pricing (R$ 299,90 / 10x), expand guarantee block, update CTA text
+1. Update `app/assets/css/main.css` — replace `--color-brand-primary`, `--color-brand-cta`,
+   `--color-brand-cta-hover` values with new palette
+2. Add `--color-brand-primary-dark` and any gradient utility tokens if using `@utility` approach
+3. Visual check: load the page — all sections instantly reflect new palette
 
-### Phase 5: Form Simplification (requires Phase 1 complete)
+**Dependency:** Nothing depends on this being "done" before Phase 2, but visual validation of
+the new palette is only possible after this step. Do it first so all subsequent work is reviewed
+against the real palette.
 
-10. `app/composables/useLeadForm.ts` — remove objetivo from schema and type
-11. `app/components/Section/SectionLeadForm.vue` — remove objetivo field, add security badge
+### Phase 2: Font Swap (immediately after tokens)
 
-### Phase 6: CTA Copy Pass (final, after all sections settled)
+4. Update `--font-family-sans` in `@theme {}` with new font name
+5. Verify `@nuxt/fonts` auto-picks up the new font (check `<head>` in browser DevTools for
+   `<link rel="preload">` with new font filename)
+6. Visual check: scan all sections for line-height and spacing regressions (new font metrics
+   may shift layout slightly — address with `leading-*` adjustments per component)
 
-12. `AppHeader`, `SectionAbout`, `SectionProgramContent` — update CTA text per position strategy
+### Phase 3: New SectionGuarantee Component
+
+7. Create `app/components/Section/SectionGuarantee.vue` — static content, golden seal image
+8. Add `<SectionGuarantee />` to `app/app.vue` between `SectionPrice` and `SectionFAQ`
+9. Remove or reduce the redundant inline guarantee block in `SectionPrice.vue`
+
+### Phase 4: Avatar in SectionSocialProof
+
+10. Extend `testimonials` array in `SectionSocialProof.vue` with `initials` and `avatarColor` fields
+11. Update template: add avatar element (initials circle) alongside existing bubble layout
+
+### Phase 5: Gradient Application
+
+12. Apply gradient utilities or inline gradient styles to target sections
+    - SectionHero: already uses dark overlay — add gradient to the overlay or hero bg
+    - SectionPrice / SectionGuarantee: gradient bg on navy sections for depth
+    - SectionAbout or SectionMethod: optional subtle gradient dividers
+
+### Phase 6: FAQ Visual Redesign (last — most design iteration expected)
+
+13. Attempt Option A (enhanced UAccordion `:ui` prop)
+14. If blocked by UAccordion internal structure: switch to Option B (custom accordion with `v-show`)
 
 **Rationale for this order:**
-- Phases 2-3 are safe to ship incrementally; they have no backend dependencies
-- Phase 4 (SectionPrice) depends only on confirmed pricing from client — no code dependency
-- Phase 5 must follow Phase 1; shipping the frontend form change before backend schema update
-  will not break existing submissions (Fastify silently ignores unknown fields if objetivo
-  is removed from validation), but the reverse (removing backend antes of frontend) could
-  cause Zod 400 errors if objetivo is still sent by the old frontend
-- Phase 6 is cosmetic cleanup that can be done anytime after sections are stable
+- Phase 1-2 are pure token/font changes — they cannot break component logic, only visual output
+- Phase 3 is self-contained (new file, one app.vue line) — zero risk to existing components
+- Phase 4 is additive to existing data shape — testimonial bubbles still render if avatar fields are absent
+- Phase 5 (gradients) depends on the final token values being confirmed — do after Phase 1-2
+- Phase 6 (FAQ) involves the most design iteration; keep it last so it doesn't hold up other phases
 
 ---
 
-## New Component: WhatsApp Testimonial (if extracted)
+## Anti-Patterns to Avoid in v1.6
 
-If the bubble rendering grows complex (multiple message types, timestamps, read receipts, avatar
-images), extract to `app/components/UI/ChatBubble.vue`:
+### Do Not Hardcode New Color Values in Component Templates
 
-```
-ChatBubble.vue
-Props:
-  - type: 'sent' | 'received'
-  - senderName?: string (shown for received only)
-  - message: string
-  - timestamp: string
-  - isRead?: boolean
+**What people do:** Apply new colors directly in templates: `class="bg-[#1e56a0]"`.
 
-Used by: SectionSocialProof (3–5 instances)
-```
+**Why it's wrong:** Bypasses the token system. Future palette changes again require hunting
+through all 13 components. The v1.6 work proves the value of the token system — do not
+undermine it by adding new hardcodes.
 
-This is optional. Inline markup in SectionSocialProof is fine for 2–4 fixed testimonials.
+**Do this instead:** Define new values in `@theme {}`. Use `var(--color-brand-primary)` in
+template classes.
+
+### Do Not Swap Fonts by Modifying html {} Directly
+
+**What people do:** Change `html { font-family: 'Plus Jakarta Sans', ... }` without updating
+`--font-family-sans` in `@theme {}`.
+
+**Why it's wrong:** The CSS token and the `html {}` rule become inconsistent. If any component
+uses `font-[var(--font-family-sans)]` directly, it still gets the old font. The token is the
+source of truth.
+
+**Do this instead:** Update only `--font-family-sans` in `@theme {}`. The `html {}` rule already
+uses `font-family: var(--font-family-sans)` — it picks up the new value automatically.
+
+### Do Not Create SectionGuaranteeModal or Composable for Guarantee State
+
+**What people do:** Add `isGuaranteeExpanded`, a `useGuarantee` composable, or a modal for
+guarantee details.
+
+**Why it's wrong:** The guarantee section is a static trust signal. Users read it; they do not
+interact with it. Adding stateful behavior adds complexity with no conversion benefit.
+
+**Do this instead:** Render the full guarantee text inline. If the copy is long, truncate visually
+with a CSS approach — but do not add JavaScript state for this.
+
+### Do Not Use Tailwind v4 `tailwind.config.ts` for New Tokens
+
+**What people do:** Create a `tailwind.config.ts` extending the theme with `colors.brand`.
+
+**Why it's wrong:** Nuxt UI v4 manages Tailwind v4 via the CSS-first path. A JS config file
+can conflict with Nuxt UI's Tailwind integration and may generate utility class collisions.
+
+**Do this instead:** Add all new tokens to `@theme {}` in `main.css`.
+
+### Do Not Use @nuxt/image for Initials Avatars
+
+**What people do:** Wrap the initials avatar `<div>` in a `<NuxtImg>` component.
+
+**Why it's wrong:** Initials avatars are CSS elements, not images. `<NuxtImg>` is for raster
+image optimization (WebP conversion, lazy loading, responsive sizing). Using it on a `<div>`
+is invalid.
+
+**Do this instead:** Keep initials avatars as plain `<div>` elements. Use `<NuxtImg>` only
+when rendering actual photos from Cloudflare R2.
 
 ---
 
-## Anti-Patterns to Avoid in v1.5
+## Component Boundaries After v1.6
 
-### Do Not Create a New Composable for Pricing Data
-
-`SectionPrice` prices and `SectionGuarantee` text are static — they don't change per user,
-don't need reactive state, and don't interact with the API. Keep them as hardcoded template
-values or script-level constants inside the component. A composable or Pinia store would be
-gross over-engineering.
-
-### Do Not Extract "Para quem NAO e" to a New Component
-
-The negative cards are 3–5 static items that belong semantically to the `SectionForWhom` section.
-Extracting them to `SectionForWhomNot.vue` would split a single conceptual section into two files
-with no benefit. Keep in `SectionForWhom.vue`.
-
-### Do Not Use v-html for CTA Button Text
-
-CTA button copy variants are plain text without markup. Swap the string in the template directly.
-`v-html` should only be used where `<strong>` or similar inline HTML is genuinely needed
-(i.e., `SectionProgramContent` items only).
-
-### Do Not Update the Frontend Form Before the Backend Schema
-
-Order matters: remove `objetivo` from `server/leads/schema.ts` and redeploy Fastify first.
-Then update the composable and form component. This prevents a window where the frontend omits
-`objetivo` but the backend still validates its presence.
+| Component | Status | Change Type | New File |
+|-----------|--------|-------------|---------|
+| `app/assets/css/main.css` | Modified | Token value replacement + gradient utilities | No |
+| `SectionGuarantee` | New | Pure display component, static content | YES |
+| `SectionSocialProof` | Modified | Data shape extension (avatars) + template update | No |
+| `SectionFAQ` | Modified | Template redesign (enhanced UAccordion or custom) | No |
+| `SectionPrice` | Modified | Remove/reduce inline guarantee block | No |
+| `app/app.vue` | Modified | Insert `<SectionGuarantee />` in composition order | No |
+| All other components | Unchanged | Inherit new palette + font via CSS token cascade | No |
 
 ---
 
 ## Sources
 
 - Direct codebase inspection (HIGH confidence — files read 2026-03-24):
-  - `/app/app.vue` — component composition order and section IDs
-  - `/app/composables/useLeadForm.ts` — current Zod schema and $fetch pattern
-  - `/app/components/Section/SectionLeadForm.vue` — 4-field form implementation
-  - `/app/components/Section/SectionSocialProof.vue` — current testimonial card pattern
-  - `/app/components/Section/SectionPrice.vue` — current benefits list and CTA
-  - `/app/components/Section/SectionForWhom.vue` — 2-col layout with positive cards
-  - `/app/components/Section/SectionProgramContent.vue` — 8-item list with icon + text
-  - `/app/assets/css/main.css` — design token definitions
-  - `/server/leads/schema.ts` — Fastify backend Zod schema
-  - `/server/leads/index.ts` — POST /leads route handler
-- `v-html` XSS guidance: https://vuejs.org/guide/essentials/template-syntax#raw-html (HIGH)
-- WhatsApp web color palette: documented in community (MEDIUM — visual inspection of wa.me)
+  - `app/assets/css/main.css` — token definitions and `@theme {}` scope
+  - `app/app.vue` — component composition order
+  - `app/components/Section/SectionSocialProof.vue` — current testimonial data shape
+  - `app/components/Section/SectionFAQ.vue` — UAccordion usage and `:ui` prop
+  - `app/components/Section/SectionPrice.vue` — existing inline guarantee block
+  - `app/assets/img/` listing — confirms `selo-garantia7-dias.png` exists
+  - `nuxt.config.ts` — module list, confirms `@nuxt/ui` and `@nuxt/fonts` active
+- Tailwind v4 CSS-first configuration: https://tailwindcss.com/docs/v4-upgrade (HIGH)
+- Tailwind v4 `@theme` block and custom utilities: https://tailwindcss.com/blog/tailwindcss-v4 (HIGH)
+- Nuxt UI v4 accordion `:ui` prop customization: https://ui.nuxt.com/components/accordion (HIGH)
+- @nuxt/fonts auto-detection behavior: https://fonts.nuxt.com (MEDIUM — docs consistent with observed behavior)
+- Plus Jakarta Sans font metrics and glyph coverage: https://fonts.google.com/specimen/Plus+Jakarta+Sans (MEDIUM)
+- CSS `size-adjust` for font CLS prevention: https://web.dev/articles/css-size-adjust (HIGH)
 
 ---
 
-*Architecture research for: Fly Up Milhas v1.5 — copy and conversion optimization milestone*
+*Architecture research for: Fly Up Milhas v1.6 — visual identity upgrade milestone*
 *Researched: 2026-03-24*

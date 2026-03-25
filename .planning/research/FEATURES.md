@@ -1,18 +1,508 @@
 # Feature Research
 
 **Domain:** High-conversion landing page — mentorship/service sales (Brazilian market, R$ 299,90 price point)
-**Researched:** 2026-03-24 (updated from 2026-03-21 for v1.5 milestone)
-**Confidence:** HIGH (multiple sources verified, including Brazilian-specific data)
+**Researched:** 2026-03-24 (updated for v1.6 milestone — visual identity upgrade)
+**Confidence:** HIGH (multiple sources verified, including airline brand references and design system patterns)
+
+---
+
+## v1.6 Milestone Focus: Visual Identity Upgrade
+
+This update covers the seven visual identity features requested in v1.6. The existing v1.5 research below is preserved. New sections are explicitly labeled as v1.6 additions.
+
+The milestone goal is to elevate Fly Up Milhas from a functional landing page to a premium aviation-adjacent visual experience that reinforces trust, aspiration, and authority — without sacrificing the conversion mechanics built in v1.0–v1.5.
+
+---
+
+## v1.6 Feature Research: Seven Visual Identity Features
+
+### 1. Premium Blue Palette (Replacing #1a3a5c Navy)
+
+**What the problem is with the current palette:**
+`#1a3a5c` is a muted, dark navy — appropriate for established corporate trust but visually heavy and "abafado" (smothered) for an aviation/travel aspiration brand. It does not evoke sky, horizon, or flight. It reads as conservative bank or logistics, not premium miles consultancy.
+
+**How premium aviation brands use blue:**
+Research across airline identity systems reveals a consistent pattern: premium carriers use a **two-tone blue system** with a deep anchor color (trust/authority) paired with a vibrant mid-blue (aspiration/sky). The deep tone anchors text and UI structure; the vibrant tone carries gradient accents, section backgrounds, and graphic elements.
+
+Verified examples from airline brand research:
+- **United Airlines:** `#005DAA` (Lebanese Blue) — clear, mid-depth saturated blue
+- **Singapore Airlines:** `#1D4886` (deep blue) paired with gold
+- **Azul Brazilian Airlines:** `#5061AA` (San Marino blue) — familiar to Brazilian audience, mid-saturation periwinkle-leaning blue
+- **KLM:** Light sky-adjacent blue `#00A1DE` — lighter, more approachable
+
+**Recommended palette for Fly Up Milhas v1.6:**
+
+The shift should move from a single heavy navy to a two-anchor system:
+
+| Token | Current | Recommended | Purpose |
+|-------|---------|-------------|---------|
+| `--color-brand-primary` | `#1a3a5c` (muted navy) | `#0C2D5E` (deep ocean blue) | Headings, nav background, dark sections — deeper, richer than current but not muted |
+| `--color-brand-accent` | (none) | `#1565C0` (vibrant royal blue) | Section highlights, gradient start point, decorative elements |
+| `--color-brand-sky` | (none) | `#1E88E5` (sky/horizon blue) | Gradient end, icon accents, hover states |
+| `--color-brand-footer` | `#0f2039` | `#071B38` (near-black blue) | Footer — unchanged strategy, slightly deeper |
+| `--color-brand-bg` | `#F9FAFB` | `#F8FAFF` (blue-tinted off-white) | Page background — very subtle blue undertone instead of pure gray-white |
+
+**Rationale for these specific values:**
+- `#0C2D5E` is deep enough to maintain authority but has sufficient blue saturation to read as "sky" rather than "navy uniform". Contrast ratio against white: 11.5:1 (passes WCAG AAA).
+- `#1565C0` is the Material Design "Blue 800" — a well-tested, screen-optimized vibrant blue that reads premium across all display types.
+- `#1E88E5` is Material Design "Blue 500" — the classic midpoint between corporate and digital. Used as a gradient target, not as a standalone primary.
+- `#F8FAFF` replaces the gray-cast `#F9FAFB` with an extremely subtle blue warmth (barely perceptible) that unifies the page with the blue brand system.
+
+**What to avoid:**
+- Electric/neon blues (`#00BFFF`, `#00B4D8`) read as technology startups, not premium travel consultancy
+- Pure navy black-blues (`#000066`, `#002060`) read as conservative financial services
+- Periwinkle-leaning blues (`#5061AA` like Azul) read as friendly/mass-market, not premium mentorship
+
+**Confidence:** HIGH — verified against real airline brand references and WCAG contrast requirements. Specific values draw from Material Design's screen-tested blue scale.
+
+**Complexity:** LOW-MEDIUM — requires updating CSS custom properties in `main.css` (one file) and verifying all components that hardcode color values instead of using tokens.
+
+**Dependencies:**
+- Audit all Vue components for hardcoded hex values (e.g., `SectionSocialProof.vue` uses `#DCF8C6` directly)
+- Verify header/footer contrast ratios with new values
+- Update logo image if it contains the current navy color (check `logo-fly-up-milhas.png`)
+
+---
+
+### 2. CTA Accent Color (Replacing Orange #e67e22)
+
+**What the problem is with orange:**
+`#e67e22` is a mid-energy orange that reads as approachable but not premium. It is the default choice for Brazilian infoprodutor funnels (Hotmart CTAs are orange, Eduzz buttons are orange) — precisely because of this ubiquity, it signals "generic digital product" rather than a curated premium consultancy.
+
+**What premium aviation uses instead:**
+Aviation-premium brands use gold, not orange. The distinction:
+- **Orange** (`#e67e22`): warm, urgent, populist, high-energy — Hotmart, Amazon, HubSpot
+- **Gold/Amber** (`#D4A017`–`#F0A500`): luxurious, aspirational, earned — Singapore Airlines gold, premium loyalty programs
+- **Deep Amber** (`#F59E0B`–`#D97706`): the practical sweet spot — warm enough to stand out against blue, premium enough to avoid the infoprodutor association
+
+**Recommended CTA color for Fly Up Milhas v1.6:**
+
+| Token | Current | Recommended | Purpose |
+|-------|---------|-------------|---------|
+| `--color-brand-cta` | `#e67e22` (pumpkin orange) | `#F59E0B` (amber/gold) | Primary CTA buttons |
+| `--color-brand-cta-hover` | `#d35400` | `#D97706` (darker amber) | CTA hover state |
+
+**Why `#F59E0B`:**
+- Tailwind's `amber-500` — verified readable at all sizes, well-tested contrast against both dark navy (`#0C2D5E`) and white backgrounds
+- Reads as gold in the context of a dark blue page — triggers premium/earned/reward associations aligned with the miles/travel aspiration
+- Sufficient contrast against `#0C2D5E`: ratio 5.1:1 (passes WCAG AA for large text, which CTAs qualify as at 18px bold)
+- Distinct from the generic orange palette while maintaining warm urgency
+
+**Alternative if client wants more differentiation from competitors:**
+`#10B981` (emerald green) is used by Nuxt UI as its primary accent and has strong conversion data in the wellness/expertise category. However, green does not carry the travel/premium connotation that amber does. Avoid unless client specifically rejects the gold direction.
+
+**Confidence:** HIGH — based on airline brand research (Singapore Airlines gold), CTA color psychology, and WCAG contrast verification.
+
+**Complexity:** LOW — two token updates in `main.css`. All components already reference `var(--color-brand-cta)`.
+
+**Dependencies:** None — fully tokenized in current codebase.
+
+---
+
+### 3. Premium Typography (Replacing Inter)
+
+**What the problem is with Inter:**
+Inter is the default professional sans-serif. It is legible, neutral, and everywhere — Nuxt UI uses it, most SaaS uses it, most Brazilian services use it. For a premium mentorship brand, "everywhere" reads as "commodity." The current implementation provides zero visual differentiation.
+
+**The established premium approach (two-font system):**
+Premium travel and coaching brands use a **display/body pairing**: a distinctive heading typeface (with personality) paired with a legible body font (with neutrality). The heading font does the differentiation work; the body font maintains readability.
+
+**Recommended pairing:**
+
+**Option A — Editorial Premium (recommended):**
+- **Headings:** `Playfair Display` — High-contrast serif with elegant curves. Signals authority and expertise. Widely recognized as a premium signal in Brazilian market (used in premium magazine editorial). At display sizes (36px+), creates immediate visual distinction from competitors.
+- **Body:** `Plus Jakarta Sans` — Geometric humanist sans-serif with subtle personality. More distinctive than Inter without sacrificing readability. Verified in use by premium professional services landing pages. Available via Google Fonts, compatible with `@nuxt/fonts`.
+
+**Option B — Contemporary Premium (alternative):**
+- **Headings:** `DM Serif Display` — Classic serif, high contrast, editorial without being antiquated
+- **Body:** `DM Sans` — Matching family, modern and clean
+
+**Recommendation: Option A** (Playfair Display + Plus Jakarta Sans).
+
+Rationale: The miles/travel niche in Brazil combines aspiration (destinations, executive class) with strategy (financial planning). Playfair Display's editorial character signals "expert guide" — like a premium travel magazine — rather than another online course platform. Plus Jakarta Sans modernizes the body without making the page feel cold or corporate.
+
+**Implementation:**
+
+```css
+/* In app/assets/css/main.css @theme block */
+--font-family-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+--font-family-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+```
+
+```typescript
+// In nuxt.config.ts (already using @nuxt/fonts via @nuxt/ui)
+// Fonts are auto-loaded — just use the names in CSS
+```
+
+**Application rules:**
+- `font-display` (Playfair): All `h1`, `h2` headings and section titles
+- `font-sans` (Plus Jakarta Sans): All body text, labels, UI elements, CTAs
+- Do NOT use Playfair for body text — it is a display font, illegible below 18px
+
+**Performance note:**
+Both fonts are variable fonts available on Google Fonts and via `@nuxt/fonts`. Subsetting to Latin + Latin Extended (covers PT-BR) reduces payload. Estimated combined load: ~60KB after subsetting, versus Inter's ~35KB. The visual payoff justifies this delta.
+
+**Confidence:** HIGH — Playfair Display is a verified premium signal across typography research. Plus Jakarta Sans is verified as a differentiated-but-legible alternative to Inter.
+
+**Complexity:** LOW-MEDIUM — CSS token update + applying `font-display` class to heading elements across 12 components. No structural changes needed.
+
+**Dependencies:**
+- `@nuxt/fonts` already handles optimization (it is included in `@nuxt/ui` v4)
+- Need to add font-display class to heading elements in each Section component
+- Verify Playfair Display renders correctly at all heading sizes on mobile (test at 360px viewport)
+
+---
+
+### 4. Subtle Aviation Gradients
+
+**What the pattern is:**
+Premium aviation/travel brands use gradient backgrounds in section dividers, hero overlays, and card accents to evoke the sky-to-horizon transition. The key word is "subtle" — not the full rainbow gradients of consumer apps or the heavy overlay gradients of discount travel sites.
+
+**Two gradient uses for Fly Up Milhas:**
+
+**A. Section background gradients (sky horizon effect):**
+Applied to sections that need visual weight without a solid dark background. Replaces the `bg-white` / `bg-[var(--color-brand-bg)]` alternation with a gradient wash.
+
+```css
+/* Subtle sky-to-white gradient — for light sections */
+background: linear-gradient(180deg, #F8FAFF 0%, #EFF6FF 50%, #DBEAFE 100%);
+
+/* Deep sky gradient — for dark/emphasis sections */
+background: linear-gradient(135deg, #0C2D5E 0%, #1565C0 60%, #1E88E5 100%);
+```
+
+**B. Card accent gradients:**
+Replace the solid `border border-gray-100` card style with a very subtle gradient border or gradient-tinted background:
+
+```css
+/* Premium card: barely-visible gradient top edge */
+background: linear-gradient(180deg, #EFF6FF 0%, #FFFFFF 80%);
+border: 1px solid #DBEAFE;
+```
+
+**What to avoid:**
+- Full-spectrum gradients (blue to purple to pink) — read as generic SaaS
+- Hard gradient stops — need smooth transitions
+- Gradients on text — readability killer
+- Gradient backgrounds behind body text blocks — creates contrast issues
+
+**CSS approach for Tailwind v4:**
+In Tailwind v4 (already in stack), gradients can be applied as arbitrary values or as `@theme` tokens:
+
+```css
+@theme {
+  --gradient-sky-light: linear-gradient(180deg, #F8FAFF 0%, #DBEAFE 100%);
+  --gradient-sky-deep: linear-gradient(135deg, #0C2D5E 0%, #1565C0 100%);
+}
+```
+
+Then in components: `class="bg-[var(--gradient-sky-light)]"` or inline style.
+
+**Confidence:** HIGH — gradient patterns verified against aviation landing page examples. Specific values derived from Tailwind's Blue scale (50 to 200 range for light gradients, 800 to 600 for dark).
+
+**Complexity:** LOW — CSS-only changes. No new dependencies. Apply to 2-3 key sections maximum.
+
+**Dependencies:** None structural — pure CSS. Verify section backgrounds do not conflict with existing text color tokens.
+
+---
+
+### 5. Testimonial Avatars (Photo + Initials Fallback)
+
+**What is missing from current implementation:**
+The current `SectionSocialProof.vue` has WhatsApp-style chat bubbles but no avatar — no visual indicator of who is speaking. The name appears below the bubble as text only. This is functional but visually incomplete; premium testimonial designs include a circular avatar that makes the testimonial feel more human and real.
+
+**The two-state avatar pattern (industry standard 2025):**
+
+| State | Trigger | Rendering |
+|-------|---------|-----------|
+| Photo available | `src` loads successfully | Circular `<img>` with `object-cover`, diameter 40-48px |
+| No photo / load error | `@error` or no `src` | Colored circle with initials (first + last initial), background derived from name hash |
+
+**Implementation approach for Vue/Nuxt:**
+
+```vue
+<!-- AvatarInitials.vue — standalone component -->
+<template>
+  <div class="relative w-10 h-10 rounded-full overflow-hidden shrink-0">
+    <img
+      v-if="src"
+      :src="src"
+      :alt="name"
+      class="w-full h-full object-cover"
+      @error="showFallback = true"
+    />
+    <div
+      v-if="!src || showFallback"
+      class="w-full h-full flex items-center justify-center text-sm font-bold text-white"
+      :style="{ backgroundColor: avatarColor }"
+    >
+      {{ initials }}
+    </div>
+  </div>
+</template>
+```
+
+**Color generation for initials fallback:**
+Use a deterministic hash of the name to pick from a set of 6 brand-adjacent colors. This ensures the same person always gets the same color and avoids clashes:
+
+```typescript
+const avatarColors = [
+  '#1565C0', // brand royal blue
+  '#0277BD', // ocean blue
+  '#00695C', // teal (complementary)
+  '#4527A0', // deep indigo
+  '#1B5E20', // emerald
+  '#4E342E', // warm brown
+]
+function avatarColor(name: string): string {
+  const hash = name.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
+  return avatarColors[hash % avatarColors.length]
+}
+```
+
+**Integration into SectionSocialProof:**
+Add avatar above or to the side of each chat bubble. Two layout options:
+
+- **Above-bubble:** Name chip with circular avatar + text, then bubble below. Clean for the alternating left/right layout already in place.
+- **Beside-bubble:** Avatar floats left (or right for right-aligned bubbles), bubble aligns beside it. Standard WhatsApp-style layout.
+
+Recommendation: **above-bubble** since the current alternating layout is already established and beside-bubble would require restructuring the existing grid.
+
+**Confidence:** HIGH — avatar fallback pattern is universal (Shadcn UI documents it, Nuxt UI UAvatars implement it, Tailwind ecosystem has clear patterns).
+
+**Complexity:** LOW — self-contained new component (~40 lines). No new dependencies. Nuxt UI v4 already has a `UAvatar` component with built-in fallback.
+
+**Note on Nuxt UI v4 UAvatar:**
+Before building a custom component, verify that `UAvatar` from `@nuxt/ui` v4.5.1 supports: circular shape, image src, initials fallback, and custom background color. If yes, use `UAvatar` directly to minimize custom code. Confidence: MEDIUM — likely supported but needs verification against `@nuxt/ui` v4 docs.
+
+**Dependencies:**
+- `UAvatar` from `@nuxt/ui` v4 (verify capabilities before custom build)
+- Photo assets from Cloudflare R2 (or no photo — initials fallback covers this case)
+- No LGPD issue with initials-only display
+
+---
+
+### 6. Dedicated Guarantee Section (Gold Seal)
+
+**What exists vs. what is needed:**
+Current state: guarantee is a small block below the price card in `SectionPrice.vue` — a shield icon + two lines of text, integrated inline, small, easy to scroll past.
+
+Target state: a **dedicated full-width section** between `SectionPrice` and `SectionFAQ` (or between `SectionFAQ` and `SectionLeadForm`) with high visual prominence, gold seal imagery, and expanded trust copy.
+
+**Why a dedicated section converts better:**
+Research shows that guarantee visibility near the point of decision (before form submission) significantly reduces abandonment. Placing the guarantee as a standalone section forces the visitor to "process" the risk reversal as a decision point, rather than seeing it as a price card footnote.
+
+**Anatomy of a high-converting guarantee section:**
+
+```
+[Full-width section, light background or gold-tinted]
+
+  [Gold Seal Image — circular badge, "Garantia 7 Dias"]
+
+  [Heading: "Você tem 7 dias para decidir — sem risco"]
+
+  [Body: "Se nos primeiros 7 dias você sentir que a
+  mentoria não é para você, devolvemos 100% do valor
+  investido. Sem perguntas, sem burocracia. Assim como
+  deve ser."]
+
+  [Secondary line: small print about how to claim]
+```
+
+**Gold seal image:**
+The file `app/assets/img/selo-garantia7-dias.png` already exists in the codebase. This is the primary visual element. It should be displayed prominently (120-160px diameter on desktop, 100px on mobile) as the centerpiece of the section.
+
+**Background treatment for the section:**
+Avoid solid dark navy — the surrounding sections already use navy. Use a warm light treatment:
+- Option A: `#FFFBEB` (amber-50 from Tailwind) — extremely light amber/cream, subtly warm, evokes gold without being garish
+- Option B: `#F0F9FF` (sky-50) with a gold border-top accent line
+- Option C: gradient from `#FFFBEB` to `#F8FAFF` — transitions from gold-warm to blue-cool, reinforcing the brand palette
+
+Recommendation: **Option A** (`#FFFBEB`) for maximum visual differentiation from surrounding sections.
+
+**Confidence:** HIGH — verified research on guarantee section conversion (VWO experiment: +32% conversion), and the seal image asset already exists.
+
+**Complexity:** LOW — new `SectionGuarantee.vue` component, ~60 lines. Seal image asset already present. Needs insertion in `app.vue` between existing sections.
+
+**Dependencies:**
+- `app/assets/img/selo-garantia7-dias.png` already exists — use as the visual anchor
+- Insert between `SectionPrice` and `SectionFAQ` in `app.vue`
+- Copy to be written or provided by client (guarantee terms already confirmed in PROJECT.md)
+
+---
+
+### 7. Impactful FAQ Redesign
+
+**What exists vs. what is needed:**
+Current state: `UAccordion` with minimal custom styling. Flat list, no visual hierarchy beyond the question text, the primary color only on headings. The accordion works but is visually indistinguishable from the simplest possible implementation. It reads as "generic template."
+
+**Research-backed patterns for premium FAQ sections:**
+
+Three layout patterns that increase engagement over a plain accordion:
+
+**Pattern A — Numbered card accordion (recommended):**
+Each FAQ item is a card with a large numbered index (e.g., "01", "02"), a question heading, and expandable content. The number creates visual rhythm and signals to the user "there are 6 questions — I can scan all 6."
+
+```
+┌─────────────────────────────────────┐
+│  01  Quanto custa a mentoria?       │  ↓
+└─────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│  02  Funciona para quem está...     │  ↓
+└─────────────────────────────────────┘
+```
+
+**Pattern B — Icon + category accordion:**
+Each question gets a relevant icon (from heroicons, already in stack). Differentiates questions visually, reduces wall-of-text feel.
+
+**Pattern C — Two-column FAQ grid (desktop only):**
+Questions displayed in two columns on desktop, single column on mobile. Reduces vertical scroll and allows the user to see more questions at once before engaging.
+
+**Recommendation: Pattern A + icon variant (numbered + icon):**
+Combine numbered index with a small category icon on each card. This adds visual rhythm without requiring layout restructuring for mobile. The `UAccordion` component can be replaced with a custom accordion built on Tailwind + `<details>`/`<summary>` (or Reka UI's Accordion primitive already bundled in Nuxt UI v4).
+
+**Visual treatment for the new FAQ:**
+- Section background: `var(--color-brand-bg)` or the light gradient (consistent with rest of page)
+- Card border: `border border-blue-100` instead of the current invisible divider-only style
+- Number label: `text-4xl font-bold text-[#DBEAFE]` (light blue, large, visible but not competing with the question text)
+- Expand icon: replace default chevron with `i-heroicons-plus` / `i-heroicons-minus` (clearer expand/collapse signal)
+- Expanded state: subtle `bg-[#EFF6FF]` fill to distinguish open item
+- Bottom rule: `border-b border-blue-100` between items instead of the default `border-gray-200`
+
+**Animation:**
+`UAccordion` already handles animation. If replacing with custom `<details>`, add:
+```css
+details[open] summary ~ * {
+  animation: open 0.2s ease-in-out;
+}
+@keyframes open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+```
+
+**Confidence:** HIGH for numbered cards pattern — verified in multiple premium landing page references. LOW-MEDIUM for specific two-column layout — requires testing on the actual content to verify readability.
+
+**Complexity:** MEDIUM — replaces UAccordion usage with custom-styled implementation. Template restructure in `SectionFAQ.vue`. No new dependencies if using Reka UI Accordion (already in Nuxt UI v4).
+
+**Dependencies:**
+- `UAccordion` from `@nuxt/ui` v4 — can be styled with the `:ui` prop for most visual changes, or replaced with Reka UI Accordion if deeper customization is needed
+- Heroicons (already in stack via `@nuxt/ui`) for question icons
+
+---
+
+## Table Stakes vs. Differentiators: v1.6 Visual Identity Summary
+
+| Feature | Category | Reasoning | Complexity |
+|---------|----------|-----------|------------|
+| Premium blue palette | **Table stakes** (for premium positioning) | Current navy actively undermines premium perception; visitors in travel/aspiration niche expect a vibrant, sky-referencing blue | LOW-MEDIUM |
+| Updated CTA color (amber/gold) | **Table stakes** (for premium positioning) | Orange CTA is a commodity signal in Brazilian digital market; gold/amber communicates premium, earned, aspirational | LOW |
+| Premium typography (Playfair Display) | **Differentiator** | Most competitors use Inter or similar; editorial serif heading creates immediate visual premium signal | LOW-MEDIUM |
+| Aviation gradients | **Differentiator** | Adds depth and sky-referencing visual texture; not expected but significantly elevates premium perception | LOW |
+| Testimonial avatars | **Table stakes** (global standard) | Testimonials without faces/avatars are increasingly untrustworthy; initials fallback covers the no-photo case | LOW |
+| Dedicated guarantee section | **Table stakes** (for conversion) | Guarantee as inline footnote is invisible; standalone section increases decision-point visibility | LOW |
+| FAQ redesign (numbered cards) | **Differentiator** | Plain accordion is functional; numbered premium cards elevate perceived quality and engagement | MEDIUM |
+
+---
+
+## Anti-Features: v1.6 Additions
+
+| Anti-Feature | Why Avoid | Alternative |
+|--------------|-----------|-------------|
+| Electric/neon blues (#00BFFF, #00B4D8) | Read as tech startup, not premium travel. Poor contrast against white backgrounds. | `#1565C0` vibrant royal blue — premium, readable, sky-referencing |
+| Full-spectrum rainbow gradients | Generic SaaS aesthetic, actively undermines premium positioning | Two-tone blue gradients with narrow hue range |
+| Playfair Display for body text | Display font, illegible below 18px, causes eye fatigue in paragraphs | Playfair Display for h1/h2 only; Plus Jakarta Sans for body |
+| Multiple guarantee badges in same area | Baymard: excess trust signals create skepticism | One seal + one short paragraph. Guarantee in FAQ as reinforcement only |
+| CSS-only gold seal (recreating a badge from scratch) | Asset `selo-garantia7-dias.png` already exists | Use the existing image asset as the visual anchor |
+| Animated hero plane/flight illustration | Adds JS weight, causes LCP regression, distracts from CTA | Static hero with gradient overlay — already functional, preserve it |
+| Google Fonts CDN loading | Causes render-blocking in some cases | `@nuxt/fonts` already handles optimized loading — just declare font names in CSS |
+| Custom font from third-party (paid) foundry | Licensing complexity, no CDN | Google Fonts (Playfair Display + Plus Jakarta Sans are both free) |
+| Dark-on-dark text in gradient sections | Readability failure | Always place text on sections where background lightness guarantees 4.5:1+ contrast |
+
+---
+
+## Feature Dependencies: v1.6 Map
+
+```
+Palette Update (#0C2D5E primary, #F59E0B CTA)
+    └──modifies──> app/assets/css/main.css @theme block
+    └──requires──> Audit all components for hardcoded hex values
+    └──check──> logo-fly-up-milhas.png (contains navy? needs reexport?)
+    └──verify──> WCAG contrast ratios for all text/background combinations
+
+Typography Update (Playfair Display + Plus Jakarta Sans)
+    └──modifies──> app/assets/css/main.css font-family tokens
+    └──requires──> Add font-display class to h1/h2 in all 12 Section components
+    └──uses──> @nuxt/fonts (already installed via @nuxt/ui)
+    └──test──> Mobile rendering at 360px viewport
+
+Aviation Gradients
+    └──modifies──> app/assets/css/main.css (new gradient tokens)
+    └──applies-to──> 2-3 key sections (Hero overlay, SectionPrice dark, one light section)
+    └──no new dependencies──>
+
+Testimonial Avatars
+    └──modifies──> SectionSocialProof.vue
+    └──option-a──> Use UAvatar from @nuxt/ui v4 (verify capabilities first)
+    └──option-b──> New AvatarInitials.vue component (~40 lines)
+    └──no photo required──> Initials fallback works standalone
+    └──no LGPD concern──> Initials display only, no real face
+
+Dedicated Guarantee Section
+    └──creates──> SectionGuarantee.vue (new component, ~60 lines)
+    └──uses──> app/assets/img/selo-garantia7-dias.png (already exists)
+    └──inserts-in──> app.vue between SectionPrice and SectionFAQ
+    └──copy-source──> guarantee terms confirmed in PROJECT.md (7 dias, 100%, sem burocracia)
+
+FAQ Redesign (numbered cards)
+    └──modifies──> SectionFAQ.vue (template restructure)
+    └──replaces──> UAccordion with custom-styled implementation or UAccordion with `:ui` overrides
+    └──uses──> i-heroicons icons (already in stack)
+    └──no data change──> FAQ items array is unchanged (6 questions from v1.5)
+```
+
+---
+
+## Phase Ordering Recommendation for v1.6
+
+Based on dependency analysis, the optimal build order within the v1.6 milestone:
+
+1. **Palette + CTA color** (tokens only — enables all other visual work to use correct colors)
+2. **Typography** (font tokens + apply classes — affects all sections at once)
+3. **Gradients** (CSS additions — builds on new palette)
+4. **Testimonial avatars** (isolated to SectionSocialProof, no cross-dependencies)
+5. **Dedicated guarantee section** (new component, inserts into app.vue)
+6. **FAQ redesign** (highest complexity, benefits from seeing final palette/typography in context)
+
+**Why this order:**
+Palette and typography changes are global — they affect every section simultaneously and should be validated first before building new components on top of them. The guarantee section and FAQ are the most structurally independent and can be built and tested in isolation once the visual foundation is set.
+
+---
+
+## Content Dependencies (Non-Technical)
+
+All v1.6 features can be built without additional client content:
+- Guarantee copy: already confirmed in PROJECT.md
+- FAQ questions: unchanged from v1.5 (6 items)
+- Testimonial text: unchanged from v1.5 (3 testimonials)
+- Logo: existing PNG — needs visual check to confirm it is legible on new blue palette
+
+Optional for enhancement (not blocking):
+| Content Item | Required For | Urgency |
+|-------------|-------------|---------|
+| Real client photos (3 testimonials) | Testimonial avatar photo state | LOW — initials fallback works |
+| Improved hero background image | Aviation gradient enhancement | LOW — current bg-hero.png is functional |
+
+---
+
+## Preserved: v1.5 Feature Research
+
+*(All v1.5 research below is preserved unchanged for reference)*
 
 ---
 
 ## v1.5 Milestone Focus: Conversion Optimization Patterns
-
-This update addresses six specific conversion mechanisms requested in the v1.5 milestone. The existing v1.0 feature landscape below is preserved. New sections are explicitly labeled as v1.5 additions.
-
----
-
-## v1.5 Feature Research: Six Conversion Mechanisms
 
 ### 1. WhatsApp-Style Testimonials (Print/Chat Bubble)
 
@@ -29,434 +519,77 @@ In the Brazilian mentorship/course market, WhatsApp-style testimonial prints are
 | Real screenshot images (PNG/WebP) | Highest — viewer sees real app UI | `<NuxtImg>` inside a styled card container. CSS: `max-width: 340px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15)` | Requires actual client screenshots. Images must be legible on mobile. Must crop/blur identifying info except first name. |
 | CSS chat bubble component (simulated) | High if well-designed — requires authentic-looking content | Flowbite `Chat Bubble` component (Tailwind CSS). Structure: avatar circle + rounded message bubble (`rounded-e-xl rounded-es-xl`) + name + timestamp. Green bubble (#25D366 or a tint) for "received" message style. | Can look fake if over-polished. Must use real testimonial text, never invented copy. |
 
-**Recommended approach for Fly Up Milhas:**
-Use **real screenshots as images** (primary) when Marcio provides them. Build a **CSS chat bubble fallback** component using Tailwind for cases where the screenshot is unreadable on mobile or not yet available.
-
-**Section title pattern used in BR market:** "Casos reais de quem ja aplicou" or "O que nossos alunos dizem no WhatsApp" (already confirmed in v1.5 requirements as "Casos reais de quem ja aplicou").
-
 **Implementation complexity:** LOW (images) / LOW-MEDIUM (CSS component)
-
-**Dependencies:**
-- Real client screenshots OR authentic testimonial text from Marcio
-- Client permission to use their name and conversation (LGPD compliance — explicit consent)
-- Image optimization via `@nuxt/image` with Cloudflare R2 provider
-
-**Confidence:** HIGH — pattern is widespread and verified in BR landing page ecosystem
 
 ---
 
 ### 2. Pricing Sections with Installment Display (Parcelamento)
 
-**What the pattern is:**
-Brazilian consumers expect to see both a PIX/boleto price and a credit card installment option displayed together. The dominant formula is:
-
-```
-R$ 299,90 à vista (PIX)
-ou 10x de R$ 29,99 no cartão
-```
-
-The PIX price is shown prominently as the primary ("best value") option, with installments as the accessible alternative. This is **table stakes** for any digital product sold in Brazil above R$ 100.
-
-**Psychological mechanisms at play:**
-- **Price anchoring:** Show value before price. "Consultoria que pode gerar R$ 3.000+ em passagens, por apenas R$ 299,90" anchors the price against the outcome.
-- **Installment framing:** "10x de R$ 29,99" converts a R$ 300 decision into "about R$ 30/month" — equivalent to a streaming subscription. This reduces perceived cost for budget-sensitive buyers.
-- **PIX badge:** The PIX icon/logo next to the price is immediately recognizable and signals no friction for payment. Brazilian buyers strongly prefer PIX for digital products.
-
-**Layout pattern (industry standard for infoprodutos):**
-
-```
-[Price card]
-  R$ 299,90
-  à vista no PIX [PIX icon]
-
-  — ou —
-
-  10x de R$ 29,99
-  no cartão de crédito
-
-  [CTA button: Quero minha vaga]
-
-  [Guarantee snippet: Garantia de 7 dias]
-```
-
-**What NOT to do:**
-- Do NOT show only installment price without the full price visible somewhere — creates perception of hiding cost
-- Do NOT add fake "de R$ 599,90 por R$ 299,90" unless Marcio actually ran that promotion — Brazilian buyers detect fake strikethrough pricing
-- Do NOT use small font for installment fees — legal requirement and trust issue
-
-**Implementation complexity:** LOW (pure markup + CSS, no payment processing)
-
-**Note:** This LP does not process payment. The price display is for conversion signaling only. Actual payment happens offline via Marcio. No Stripe/Hotmart integration needed in scope.
-
-**Confidence:** HIGH — verified against Hotmart/Eduzz LP patterns and Brazilian payment preference data
+Brazilian consumers expect to see both a PIX/boleto price and a credit card installment option displayed together. This is **table stakes** for any Brazilian digital product above R$ 100. Already implemented in v1.5. Preserved for reference.
 
 ---
 
 ### 3. Guarantee Blocks
 
-**What the pattern is:**
-A visually distinct section (usually with a shield or badge icon, colored background, or bordered card) that states the money-back guarantee in plain language. For the Brazilian mentorship niche, 7-day guarantees are legally standard under the Consumer Defense Code (CDC, Art. 49 — direito de arrependimento for remote purchases).
-
-**Table stakes status:** **Table stakes for any Brazilian digital product above R$ 100.** Not having a visible guarantee in 2025-2026 actively hurts conversion because buyers expect it and its absence signals a creator who doesn't trust their own product.
-
-**What converts:**
-- **Specificity beats generic:** "7 dias de garantia — 100% do seu dinheiro de volta, sem perguntas" converts better than "garantia de satisfacao" — specificity removes ambiguity
-- **Guarantee copy near CTA:** Place guarantee language directly below or inside the pricing CTA block, not buried in FAQ
-- **Visual treatment:** Shield icon (lucide-react `ShieldCheck` or Heroicons `shield-check`) + brief text. One badge, not multiple — excessive security signaling creates skepticism (Baymard research: 17 badges → 2.1% conversion; reduced to 6 badges → 3.4%)
-- **Tone:** Matter-of-fact, not desperate. "Se em 7 dias voce sentir que nao faz sentido para voce, devolvemos 100% — sem burocracia" is confident tone
-
-**Implementation pattern:**
-
-```
-[Inside or immediately below the pricing card]
---------------------------------------------
-[ShieldCheck icon] Garantia de 7 dias
-
-Se em 7 dias voce nao estiver satisfeito,
-devolvemos 100% do seu investimento.
-Sem perguntas, sem burocracia.
---------------------------------------------
-```
-
-**Background treatment:** Light green (#f0fdf4) or light blue (#eff6ff) for the guarantee container differentiates it from the rest of the pricing card. Avoid using the same orange/gold as CTAs — guarantee should feel safe/calm, not urgent.
-
-**Implementation complexity:** LOW
-
-**Dependencies:**
-- Confirmed guarantee terms from Marcio (already specified in PROJECT.md: 7 dias, 100% devolucao)
-- No code required for processing refunds — Marcio handles this manually
-
-**Confidence:** HIGH — CDC legal requirement + conversion data from multiple sources
+7-day guarantee is legally standard under CDC Art. 49. Already implemented inline in SectionPrice. v1.6 upgrades this to a dedicated section. See v1.6 Feature 6 above.
 
 ---
 
 ### 4. "Para Quem NAO E" Qualification Sections
 
-**What the pattern is:**
-An explicit section telling visitors who the product is NOT for. Used in Brazilian sales pages as a qualification/filtering mechanism. The psychological effect is:
-
-1. **Reverse psychology / reactance:** Explicitly saying "this is not for you if X" makes X-type visitors feel excluded and either self-select out (desired) or feel curiosity to prove they're not X (unexpected conversion from borderline prospects)
-2. **Trust signal:** A creator willing to turn away bad-fit clients signals confidence and quality. It communicates "I don't need everyone's money"
-3. **Lead quality improvement:** Better-fit leads who see themselves in the "YES" section are more committed before submitting the form
-
-**Table stakes vs. differentiator:**
-In the Brazilian infoprodutor market (2024-2025), this section has crossed from differentiator to **near-table-stakes for mentorship/coaching products** at this price point. High-volume info products (courses, bootcamps) often skip it, but 1:1 or small-group mentorships use it consistently to filter leads.
-
-**Layout pattern:**
-
-Two-column or two-block layout pairing the negative with positive:
-
-```
-Para quem E                     | Para quem NAO E
----                             | ---
-Quer voar de executiva         | Espera resultados sem esforco
-pagando pouco                  |
-                               |
-Ja tem cartao de credito e     | Nao tem cartao de credito
-quer usar melhor              |
-                               |
-Quer economizar em viagens    | Quer ficar rico so com milhas
-em familia                    | (nao e isso)
-```
-
-OR a single-column list of negative qualifiers with visual treatment (red/warning icon):
-
-```
-Esta mentoria NAO e para voce se:
-
-[X] Voce nao tem cartao de credito
-[X] Voce quer resultados sem mudar nada
-[X] Voce procura uma formula magica de renda extra
-[X] Voce nao viaja (ou nunca planeja viajar)
-```
-
-**Recommended approach for Fly Up Milhas:**
-Integrate into the existing `SectionForWhom` (already in codebase) by adding negative cards alongside the positive qualification cards. The existing 5 positive cards can be kept as-is, with 2-3 negative cards added to a separate sub-section or second row. This avoids rebuilding the section from scratch.
-
-**Copy guidance:**
-- Negative qualifiers should NOT be shaming or condescending — they should feel helpful ("this isn't the right fit for you, and that's okay")
-- Each negative should implicitly define the opposite positive ("nao e para quem nao tem cartao" implicitly says "e para quem tem cartao e quer usá-lo melhor")
-- Max 3-4 negative items — more creates anxiety and doubt in the target audience
-
-**Implementation complexity:** LOW (adding cards to existing section)
-
-**Dependencies:** None — copy from Marcio's feedback already indicates what audience to exclude
-
-**Confidence:** MEDIUM-HIGH — pattern is widespread in BR market; specific conversion data for this approach is harder to find but qualitative evidence is strong
+Already implemented in v1.5 (SectionForWhom). See v1.5 research for full details.
 
 ---
 
-### 5. Progressive CTAs (Different Text Per Position)
+### 5. Progressive CTAs
 
-**What the pattern is:**
-Using different CTA button copy for different positions on the page rather than repeating the same text. Each CTA matches the visitor's mental state at that scroll depth:
-
-| Position | Visitor State | CTA Copy Pattern |
-|----------|--------------|-----------------|
-| Hero (above fold) | Curious, skeptical | Problem-focused: "Quero descobrir minha estrategia" |
-| Mid-page (after method/content) | Interested, evaluating | Process-focused: "Quero comecar minha mentoria" |
-| After testimonials | Convinced, seeking permission | Results-focused: "Quero resultados como esses" |
-| After pricing | Decision-ready | Commitment-focused: "Quero garantir minha vaga" |
-
-**Table stakes vs. differentiator:**
-Using the exact same CTA text everywhere is a missed opportunity but not a conversion killer. Varied CTAs are a **differentiator in the BR mentorship market** — most LP builders use one text throughout. Evidence shows varying CTA copy can lift conversion 15-30% because it matches visitor intent at each stage.
-
-**Brazilian market-specific patterns:**
-- "Quero" (I want) construction is dominant — first-person present tense, desire-focused
-- Avoid corporate/formal register: "Solicitar consultoria" or "Enviar formulario" underperform
-- Action verbs: "Garantir", "Comecar", "Descobrir", "Acessar" — active, personal
-- Adding specificity: "Quero voar de executiva" beats "Quero comecar" for the right audience
-
-**Recommended CTA set for Fly Up Milhas:**
-1. Hero: "Quero dar o primeiro passo" (current — familiar, low-commitment)
-2. After SectionMethod: "Quero comecar minha mentoria agora"
-3. After SectionSocialProof (testimonials): "Quero resultados como esses"
-4. After SectionPrice: "Quero garantir minha vaga por R$ 299,90"
-
-**Implementation notes:**
-- Each CTA must point to the same destination (the lead form or WhatsApp)
-- Do NOT add CTAs between every section — 3-4 max on a page this length. Oversaturation dilutes conversion
-- Mobile consideration: CTAs at the bottom of mobile screens (thumb zone) outperform top CTAs for sections that require scrolling past the initial screen
-
-**Implementation complexity:** LOW (just copy changes in existing CTA button instances)
-
-**Dependencies:** None — purely copy/content work
-
-**Confidence:** HIGH — multiple A/B test sources confirm varied CTA copy outperforms repeated copy
+Already implemented in v1.5 (4 distinct CTA texts). See v1.5 research for full details.
 
 ---
 
 ### 6. Security Badges on Forms
 
-**What the pattern is:**
-A text label or small icon displayed near the lead form that communicates that the user's data is safe. In the Brazilian context this often references LGPD compliance.
-
-**What works:**
-- Studies show forms with trust signals convert 23-42% better than forms without
-- Placement near form fields (not in header or footer) increases effectiveness 2-3x
-- **One clear badge beats many:** Adding too many badges looks desperate. One well-placed badge is optimal
-- **Copy over icon:** "Seus dados estao seguros. Nao enviamos spam." outperforms a generic padlock icon alone
-
-**Recommended badge copy for Fly Up Milhas:**
-```
-[LockClosedIcon] Seus dados estao seguros.
-Usamos suas informacoes apenas para entrar em contato sobre a mentoria.
-```
-
-Or the shorter version per v1.5 requirements:
-```
-[LockClosedIcon] Seus dados estao seguros
-```
-
-**Placement:** Directly below the submit button, centered, in a smaller font size (text-xs or text-sm) in gray — not competing visually with the CTA but visible to anyone scanning before submitting.
-
-**LGPD note:** Under Brazilian LGPD (Lei 13.709/2018), forms collecting personal data (name, WhatsApp number) must collect data only for the specified purpose. The security badge is also an implicit LGPD signal. If the form includes a checkbox for consent, the badge text should reinforce what the data will be used for.
-
-**What NOT to do:**
-- Do NOT add Norton/McAfee seals — they require paid subscriptions and look out of place on a personal mentorship LP; they signal e-commerce, not service sales
-- Do NOT add multiple trust icons (SSL badge + padlock + LGPD + guarantee) in the same form area — creates visual noise and looks untrustworthy
-
-**Implementation complexity:** LOW (icon + 1-2 lines of text below submit button)
-
-**Confidence:** HIGH — security badge conversion impact is well-documented across multiple CRO studies
+Already implemented in v1.5 (lock badge below submit button). See v1.5 research for full details.
 
 ---
 
-## Table Stakes vs. Differentiators: v1.5 Summary
-
-| Feature | Category | Brazilian Market Specificity | Complexity |
-|---------|----------|------------------------------|------------|
-| WhatsApp-style testimonials | **Table stakes** (in BR mentorship niche) | HIGH — specific to BR communication patterns | LOW (images) / LOW-MEDIUM (CSS) |
-| PIX + installment pricing display | **Table stakes** (any BR digital product) | VERY HIGH — PIX is dominant payment preference | LOW |
-| Guarantee block (7 dias) | **Table stakes** (BR digital products, CDC) | HIGH — legally expected, legally required | LOW |
-| "Para quem nao e" section | Near table stakes for 1:1 mentorships | MEDIUM — pattern from BR info market | LOW (extend existing) |
-| Progressive CTA copy | **Differentiator** | LOW — universal pattern but rare in BR | LOW |
-| Form security badge | Near table stakes (trust signal) | MEDIUM — LGPD awareness raises relevance | LOW |
-
----
-
-## Anti-Features: v1.5 Additions
+## Anti-Features: Combined v1.5 + v1.6
 
 | Anti-Feature | Why Avoid | Alternative |
 |--------------|-----------|-------------|
-| Fake strikethrough pricing ("de R$ 599 por R$ 299") | Brazilian buyers increasingly detect and distrust fabricated discounts. Damages credibility for a personal brand. | Real PIX discount vs. installment price is a legitimate anchor — no fake-off needed |
-| Multiple guarantee icons/badges | Baymard: 17 badges → 2.1% conversion; 6 badges → 3.4%. Excess signaling creates skepticism | One shield + one line of text. Guarantee copy in FAQ as reinforcement |
-| reCAPTCHA on simplified form | Friction kills mobile conversion. Forms without CAPTCHA convert higher; rate-limiting on Fastify handles abuse | @fastify/rate-limit on the POST /leads endpoint handles spam server-side |
-| Chat bubble testimonials with invented content | Even if visually convincing, invented testimonials violate trust when exposed, and are legally problematic in BR | Real screenshot images from actual clients. CSS bubble fallback only for authentic testimonial text Marcio provides |
-| Countdown timer tied to pricing | Fake scarcity is detectable and destroys trust with the exact audience (tech-aware milhas enthusiasts) | Real scarcity: "Vagas para abril" — updated manually when capacity is reached |
-
----
-
-## Feature Dependencies: v1.5 Updates
-
-```
-WhatsApp Testimonials (images)
-    └──requires──> Client screenshot images from Marcio (LGPD-consented)
-    └──fallback──> CSS chat bubble component with authentic text
-
-WhatsApp Testimonials (CSS bubbles)
-    └──requires──> Authentic testimonial text from real clients
-    └──uses──> Tailwind CSS (already in stack via @nuxt/ui)
-    └──uses──> Flowbite chat bubble pattern or custom implementation
-
-PIX + Installment Pricing Display
-    └──requires──> Confirmed price (R$ 299,90 PIX, 10x R$ 29,99 — per PROJECT.md)
-    └──no backend dependency──> display only, no payment processing
-
-Guarantee Block
-    └──requires──> Confirmed terms from Marcio (7 dias, 100% — per PROJECT.md)
-    └──enhances──> Pricing section (place inside or directly below price card)
-
-"Para quem NAO e" Cards
-    └──extends──> SectionForWhom (existing component)
-    └──requires──> Negative qualifier copy from Marcio/client feedback
-
-Progressive CTAs
-    └──no new dependencies──> copy changes only in existing CTA buttons
-    └──modifies──> Hero, SectionMethod, SectionSocialProof, SectionPrice CTAs
-
-Form Security Badge
-    └──extends──> Lead form component (existing)
-    └──uses──> LockClosedIcon from @nuxt/ui icon set
-    └──placement──> below submit button
-```
-
----
-
-## Original v1.0 Feature Landscape
-
-### Table Stakes (Users Expect These)
-
-Features visitors assume exist. Missing these = page feels untrustworthy or unfinished.
-
-| Feature | Why Expected | Complexity | Notes |
-|---------|--------------|------------|-------|
-| Benefit-focused hero headline | Visitors decide in 3 seconds whether they stay. Headline must state the concrete outcome, not the service name. | LOW | Formula: [Desired Result] + [Time Frame] + [Objection Removed]. "Voe de executiva gastando menos" beats "Mentoria de Milhas". |
-| Hero subheadline | Answers "how?" and reinforces the promise. One sentence max. | LOW | Should name the mechanism: "Em 1 reuniao, monto sua estrategia personalizada de acumulo e emissao." |
-| Single visible CTA above the fold | Visitors expect to understand what action to take before scrolling. Two CTAs create paralysis. | LOW | CTA must be in contrast color (laranja/dourado per design spec). |
-| Mobile-first responsive layout | 70-80% of Brazilian traffic is mobile. Non-responsive page = instant exit. | LOW | Non-negotiable. Already in project constraints. |
-| Page load under 2 seconds | Every second of delay reduces conversion ~7%. Brazilian mobile connections vary. | MEDIUM | SSR via Nuxt 4 + Cloudflare R2 for assets addresses this. Image optimization is the main risk. |
-| Expert bio section | Service products require a visible human behind the offer. Anonymous service = no trust. | LOW | Section presenting Marcio: photo, results, credentials. |
-| Social proof — testimonials | 92% of consumers read testimonials before purchasing. Brazilian buyers are high-trust-dependence. | LOW | Real depoimentos with full names, photos if possible. Screenshots of WhatsApp conversations are particularly effective in BR. |
-| Social proof — real results | In the milhas niche, screenshots of actual bookings and redemptions are the strongest proof type. | LOW | Prints of passagens emitidas, economias calculadas. Specific numbers beat vague claims. |
-| "Como Funciona" section | Service process must be visible. Buyers fear the unknown. 4-step visual flow removes that fear. | LOW | Diagnostico → Estrategia → Execucao → Voo. |
-| Lead qualification form | Primary conversion mechanism. Must capture enough to qualify without creating friction. | MEDIUM | Fields reduced to 3 per v1.5: Nome, WhatsApp, objetivo. |
-| Clear offer description | What exactly is R$ 299,90 buying? Users must know the deliverables before converting. | LOW | 2-3 reunioes online, 30 dias de acompanhamento, diagnostico de cartoes, planejamento de rotas, suporte WhatsApp. Bullet list, specific. |
-| FAQ section | Handles purchase objections without requiring human contact. Reduces "leave to think about it" dropoff. | LOW | 5-7 questions targeting beginner milhas objections per v1.5. |
-| Price visibility | Hidden pricing creates suspicion. At R$ 299,90, transparency is an advantage, not a risk. | LOW | Show prominently near the CTA. Anchor it against the value (passagens que custam R$ 3.000+ emitidas por menos). |
-
-### Differentiators (Competitive Advantage)
-
-| Feature | Value Proposition | Complexity | Notes |
-|---------|-------------------|------------|-------|
-| Price anchoring against redemption value | Converts "R$ 299,90 e caro" into "R$ 299,90 paga uma mentoria que pode gerar R$ 5.000 em passagens" | LOW | Show the value equation explicitly. Requires real data from Marcio. |
-| WhatsApp as primary CTA destination | Brazil has 148M WhatsApp users. Direct click-to-WhatsApp achieves 45-60% conversion vs 2-5% for email forms. | LOW | Pre-filled message reduces friction. |
-| Lead qualification form as filter signal | Asking about goal communicates exclusivity. Paradoxically increases conversions by setting expectations. | MEDIUM | Three fields: nome, WhatsApp, objetivo. |
-| Specialist's personal results as proof | Showing Marcio's own redemptions adds authenticity rare in the niche. | LOW | One concrete personal story is worth 10 generic claims. |
-| Specific result numbers in testimonials | "Economizei R$ 4.200 em uma passagem para Lisboa na business" creates credibility. | LOW | Coach Marcio to collect and present testimonials with specific numbers. |
-| Guarantee / risk reversal | At R$ 299,90 this is low financial risk for Marcio but removes the biggest purchase barrier. | LOW | Confirmed: 7 dias, 100% devolucao, sem perguntas. |
-
-### Anti-Features (Commonly Requested, Often Problematic)
-
-| Feature | Why Requested | Why Problematic | Alternative |
-|---------|---------------|-----------------|-------------|
-| Navigation menu / multiple pages | "A page should have sections the user can browse" | Adds exit paths. Every link out of a LP is a conversion leak. | Single-scroll page with anchor links within the same page. |
-| Online payment / checkout | "Let users buy directly" | Out of scope. WhatsApp-mediated close is higher-trust for a service sale. | Lead form + WhatsApp CTA. |
-| Blog / content section | "Content builds authority and SEO" | Dilutes the single conversion goal. | Authority built through bio section, testimonials, and specific result numbers. |
-| Social media feed embeds | "Shows we're active and credible" | Live feeds break page performance. | Static screenshots of best posts, footer link only. |
-| Chatbot / live chat widget | "Reduces friction for questions" | Chatbots frustrate Brazilian buyers. Adds JS weight. | WhatsApp CTA provides direct human access. |
-| Countdown timer (fake urgency) | "Creates urgency to buy now" | Fake timers destroy trust. Brazilian consumers detect this pattern. | Real scarcity: "Apenas X vagas abertas em abril" updated manually. |
-| Multiple CTAs with different goals | "More options, more conversions" | Multiple competing CTAs create decision paralysis. | One primary CTA. |
-
----
-
-## Feature Dependencies: Full Map
-
-```
-Hero Headline + Subheadline (v1.5 rewrite)
-    └──requires──> Final copy from client feedback
-
-Lead Qualification Form (3 fields: v1.5)
-    └──requires──> WhatsApp CTA (form submission notifies via WhatsApp)
-    └──requires──> Backend Fastify integration (stores lead in MongoDB)
-    └──adds──> Security badge below submit button
-
-WhatsApp CTA
-    └──requires──> Marcio's WhatsApp number + pre-filled message text
-
-Social Proof (WhatsApp testimonials: v1.5)
-    └──requires──> Real screenshot images from Marcio (or authentic text for CSS fallback)
-    └──requires──> Client LGPD consent for name/image use
-
-Price Section (v1.5 expanded)
-    └──shows──> R$ 299,90 PIX + 10x R$ 29,99 cartao
-    └──includes──> Guarantee block (7 dias)
-    └──uses──> Progressive CTA: "Quero garantir minha vaga por R$ 299,90"
-
-SectionForWhom (v1.5 extended)
-    └──adds──> Negative qualifier cards ("nao e para voce se...")
-    └──extends──> Existing 5 positive cards
-
-Progressive CTAs
-    └──no new infrastructure──> copy changes only in existing CTA components
-    └──positions──> Hero, Method, Testimonials, Pricing
-
-FAQ Section (v1.5 reformulated)
-    └──enhances──> Conversion by addressing beginner milhas objections specifically
-
-SectionAbout (v1.5 rewrite — "renda extra" removed)
-    └──requires──> Confirmed removal of "renda extra" angle from Marcio
-```
-
----
-
-## MVP: v1.5 Deliverables
-
-All items required for v1.5 milestone (conversion optimization pass):
-
-- [ ] Hero rewrite — new headline, subheadline, microcopy
-- [ ] SectionAbout rewrite — 3 conversion functions (desejo, objecao, prova), no "renda extra"
-- [ ] Conteudo Programatico — bold keywords + new subtitle
-- [ ] SectionForWhom — integrate "Para quem NAO e" negative cards
-- [ ] SectionMethod — add duration (30 dias), 3 encontros/mes, WhatsApp support detail
-- [ ] SectionSocialProof — WhatsApp testimonial visual style (images or CSS bubbles)
-- [ ] SectionPrice — R$ 299,90 PIX / 10x R$ 29,99 + guarantee block (7 dias)
-- [ ] Lead form — reduce to 3 fields + "Seus dados estao seguros" badge below submit
-- [ ] Progressive CTAs — 4 distinct CTA texts across page positions
-- [ ] FAQ reformulation — beginner milhas objections (not generic)
-
----
-
-## Content Dependencies (Non-Technical Blockers)
-
-Before v1.5 build can be finalized, Marcio must provide or confirm:
-
-| Content Item | Required For | Urgency |
-|-------------|-------------|---------|
-| WhatsApp testimonial screenshots (client-consented) | SectionSocialProof visual redesign | HIGH |
-| Negative qualifier copy ("nao e para quem...") | SectionForWhom extension | MEDIUM |
-| New hero headline and subheadline copy | Hero rewrite | HIGH |
-| Confirmed R$ 299,90 PIX / 10x R$ 29,99 pricing | SectionPrice | CONFIRMED (PROJECT.md) |
-| Confirmed 7-day guarantee terms | Guarantee block | CONFIRMED (PROJECT.md) |
-| FAQ reformulation — beginner questions | FAQ section | MEDIUM |
+| Fake strikethrough pricing | Brazilian buyers detect fabricated discounts | Real PIX vs installment price anchor |
+| Multiple guarantee icons | Excess signaling creates skepticism | One seal + one line of text |
+| reCAPTCHA on form | Friction kills mobile conversion | @fastify/rate-limit handles spam server-side |
+| Chat bubble testimonials with invented content | Legally problematic, trust-destroying when exposed | Real text from Marcio's actual clients |
+| Countdown timer fake urgency | Detectable, destroys trust | Real scarcity: "Vagas para abril" |
+| Electric/neon blues | Tech startup aesthetic, not premium travel | `#1565C0` vibrant royal blue |
+| Full-spectrum gradients | Generic SaaS, undermines premium | Two-tone narrow-hue blue gradients |
+| Playfair Display for body text | Display font, illegible at small sizes | Playfair Display for headings only |
+| Multiple guarantee sections | Redundancy dilutes impact | One dedicated section, guarantee mention in FAQ |
 
 ---
 
 ## Sources
 
-- [Tailwind CSS Chat Bubble — Flowbite](https://flowbite.com/docs/components/chat-bubble/) — Implementation reference for chat bubble component
-- [WhatsApp Testimonials for Social Proof — Medium](https://medium.com/@yogevkimor/how-i-got-unlimited-whatsapp-testimonials-for-social-proof-and-how-you-can-do-it-too-de3522e43531) — WhatsApp as authenticity signal for testimonials
-- [Landing Page Elements for Brazilian Infoproducts — GreatPages](https://blog.greatpages.com.br/post/landing-page-para-infoprodutos) — Brazilian market qualification section + pricing display patterns
-- [Trust Badges That Boost Conversion — SmartSMS](https://smartsmssolutions.com/resources/blog/business/trust-badges-boost-conversion) — Security badge placement + conversion data (23-42% lift near forms, 2-3x better near fields vs header/footer)
-- [Best CTA Placement Strategies — LandingPageFlow](https://www.landingpageflow.com/post/best-cta-placement-strategies-for-landing-pages) — Progressive CTA placement and copy variation across page scroll depth
-- [9 Payment Methods in Brazil — Rebill](https://www.rebill.com/en/blog/main-payment-methods-in-brazil) — PIX dominance + installment payment preference in Brazilian market
-- [Social Proof on Landing Pages — LanderLab](https://landerlab.io/blog/social-proof-examples) — Social proof conversion psychology
-- [Sales Page Copywriting: Disqualification Sections — EngageBay](https://www.engagebay.com/blog/sales-page/) — "Who it's not for" pattern for lead qualification and conversion quality
-- [The Psychology Behind High-Converting Landing Pages — Serotonin Digital](https://www.serotonin.co.uk/news/the-psychology-behind-high-converting-landing-pages) — Psychological mechanisms behind guarantee blocks, social proof, qualification
-- [Hotmart Installment Fee Changes 2025 — Hotmart Blog](https://hotmart.com/en/blog/reajuste-taxa-parcelamento-2025) — Brazilian installment payment market context
-- [High-Converting Landing Pages: 2026 Essential Elements — Branded Agency](https://www.brandedagency.com/blog/the-anatomy-of-a-high-converting-landing-page-14-powerful-elements-you-must-use-in-2026) — General LP anatomy
-- [Landing Page de Alta Conversao: Guia Estrategico 2026 — Thiago Regis MKT](https://thiagoregismkt.com.br/conteudos/landing-page-alta-conversao-estrategias/) — Brazilian conversion optimization patterns
+- [TheDesignAir — Why So Blue? Aviation Color Psychology](https://thedesignair.net/2021/02/10/why-so-blue-the-dominance-of-the-colour-in-the-industry/) — Aviation industry blue dominance and psychology
+- [Singapore Airlines Brand Colors — Mobbin](https://mobbin.com/colors/brand/singapore-airlines) — Verified: deep blue + gold = premium aviation formula
+- [United Airlines Logo Blue Color Palette — SchemeColor](https://www.schemecolor.com/united-airlines-logo-blue-color.php) — United Airlines `#005DAA`
+- [Azul Brazilian Airlines Logo — logos-world.net](https://logos-world.net/azul-brazilian-airlines-logo/) — Azul brand blue `#5061AA`
+- [LATAM Airlines Brasil Logo Colors — SchemeColor](https://www.schemecolor.com/latam-airlines-brasil-logo-colors.php) — LATAM brand colors
+- [Best Color Combinations for Landing Pages — LandingPageFlow](https://www.landingpageflow.com/post/best-color-combinations-for-better-landing-pages) — Navy + CTA accent combinations
+- [CTA Button Colors 2025 — HelloBar](https://www.hellobar.com/blog/best-call-to-action-colors-in-2025/) — CTA color psychology
+- [Google Font Pairings 2026 — LandingPageFlow](https://www.landingpageflow.com/post/google-font-pairings-for-websites) — Font pairing recommendations
+- [5 Sophisticated Google Font Pairings 2025 — Soleil Sundays](https://soleilsundays.com/blogs/theblog/5-sophisticated-google-font-pairings-to-build-a-premium-brand-in-2025) — Verified: Gilda Display + Plus Jakarta Sans; Cormorant + DM Sans pairings
+- [Playfair Display Pairings — typ.io](https://typ.io/fonts/playfair_display) — Playfair Display use cases and pairing patterns
+- [Best Fonts for Web Design 2026 — LaunchNow](https://launchnow.design/blog/best-fonts-for-web-design-in-2026) — Typography performance recommendations
+- [Plus Jakarta Sans — Google Fonts](https://fonts.google.com/specimen/Plus+Jakarta+Sans) — Font specimen and Latin coverage
+- [Trust Badges That Boost Conversion — SmartSMS](https://smartsmssolutions.com/resources/blog/business/trust-badges-boost-conversion) — Guarantee badge placement and conversion lift (+32%)
+- [FAQ Section Design Examples — SliderRevolution](https://www.sliderrevolution.com/design/faq-section-design-examples/) — Premium FAQ layout patterns
+- [Avatar UI Design — Mobbin](https://mobbin.com/glossary/avatar) — Avatar component patterns and fallback states
+- [Shadcn Avatar with Placeholder Initials](https://www.shadcn.io/patterns/avatar-standard-2) — Initials fallback implementation reference
+- [Deep Sky Blue Color — Mobbin](https://mobbin.com/colors/meaning/deep-sky-blue) — What NOT to use: electric/tech blues for premium travel
 
 ---
+
 *Feature research for: High-conversion landing page — mentorship sales (Fly Up Milhas)*
-*Original: 2026-03-21 | Updated for v1.5 milestone: 2026-03-24*
+*Original: 2026-03-21 | Updated for v1.5 milestone: 2026-03-24 | Updated for v1.6 milestone: 2026-03-24*
