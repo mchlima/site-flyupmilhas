@@ -20,10 +20,10 @@ const items = [
       <!-- Left block: title, description, CTA -->
       <div class="flex flex-col gap-6">
         <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)]">
-          O que você vai aprender na prática
+          Sem promessas milagrosas
         </h2>
         <p class="text-[var(--color-brand-text-muted)] leading-relaxed">
-          Sem promessas milagrosas. Um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens.
+          O que você vai aprender na prática: um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens.
         </p>
         <div>
           <button
