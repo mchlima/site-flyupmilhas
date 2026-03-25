@@ -34,9 +34,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 ### FAQ
 
-- [ ] **FAQ-01**: FAQ redesenhado com mais impacto visual (cards, icones, ou numeracao)
-- [ ] **FAQ-02**: Hierarquia visual clara entre pergunta e resposta
-- [ ] **FAQ-03**: Acessibilidade preservada (keyboard navigation, focus ring, ARIA)
+- [x] **FAQ-01**: FAQ redesenhado com mais impacto visual (cards, icones, ou numeracao)
+- [x] **FAQ-02**: Hierarquia visual clara entre pergunta e resposta
+- [x] **FAQ-03**: Acessibilidade preservada (keyboard navigation, focus ring, ARIA)
 
 ## Future Requirements
 
@@ -71,9 +71,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 | DEP-01 | Phase 18 | Complete |
 | DEP-02 | Phase 18 | Complete |
 | DEP-03 | Phase 18 | Complete |
-| FAQ-01 | Phase 19 | Pending |
-| FAQ-02 | Phase 19 | Pending |
-| FAQ-03 | Phase 19 | Pending |
+| FAQ-01 | Phase 19 | Complete |
+| FAQ-02 | Phase 19 | Complete |
+| FAQ-03 | Phase 19 | Complete |
 
 **Coverage:**
 - v1.6 requirements: 16 total

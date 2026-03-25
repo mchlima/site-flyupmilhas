@@ -82,7 +82,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 - [x] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (gap closure in progress) (completed 2026-03-25)
 - [x] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao (completed 2026-03-25)
 - [x] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble (completed 2026-03-25)
-- [ ] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada
+- [x] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada (completed 2026-03-25)
 
 ### Phase Details
 
@@ -146,7 +146,7 @@ Plans:
   3. Navegacao por teclado funciona: Tab move o foco entre triggers, Enter/Space abre e fecha, cada trigger ativo exibe focus ring visivel
 **Plans**: 1 plan
 Plans:
-- [ ] 19-01-PLAN.md — Numbered card redesign + visual hierarchy + focus ring accessibility
+- [x] 19-01-PLAN.md — Numbered card redesign + visual hierarchy + focus ring accessibility
 
 ---
 
@@ -172,7 +172,7 @@ Plans:
 | 16. Tipografia | v1.6 | 2/2 | Complete    | 2026-03-25 |
 | 17. SectionGuarantee | v1.6 | 1/1 | Complete    | 2026-03-25 |
 | 18. Avatares nos Depoimentos | v1.6 | 1/1 | Complete    | 2026-03-25 |
-| 19. FAQ Visual | v1.6 | 0/? | Not started | — |
+| 19. FAQ Visual | v1.6 | 1/1 | Complete   | 2026-03-25 |
 
 ---
 *Roadmap created: 2026-03-21*
