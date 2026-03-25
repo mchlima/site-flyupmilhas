@@ -37,10 +37,12 @@ export default defineNuxtConfig({
   },
 
   fonts: {
+    processCSSVariables: true,
     families: [
       {
         name: 'Plus Jakarta Sans',
         provider: 'google',
+        global: true,
         weights: [400, 500, 600, 700],
         styles: ['normal'],
       }
