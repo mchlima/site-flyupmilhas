@@ -95,7 +95,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   2. Todos os botoes de CTA exibem a cor cyan #06B6D4 (ou equivalente aprovado) — o laranja #e67e22 nao aparece em nenhum botao
   3. Hero, SectionPrice e SectionGuarantee exibem gradientes sutis em tons de azul — sem cores genericas arco-iris
   4. Qualquer texto sobre fundo azul ou cyan passa WCAG AA (4.5:1 minimo para texto normal) verificado no WebAIM contrast checker
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 #### Phase 16: Tipografia
 **Goal**: A LP exibe Plus Jakarta Sans em toda a hierarquia tipografica, com CLS < 0.1 confirmado em preview build
@@ -105,7 +107,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. A fonte carregada no browser para headings e body text e Plus Jakarta Sans — Inter nao aparece no painel Network como download ativo
   2. Headings (h1, h2, h3) usam peso e tamanho visivelmente mais impactantes que o layout anterior — a hierarquia e legivel sem esforco em mobile
   3. Lighthouse CLS score e < 0.1 em `nuxt preview` (nao dev server) — sem layout shift visivelmente detectavel durante carregamento
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 #### Phase 17: SectionGuarantee
 **Goal**: Uma secao dedicada de garantia 7 dias esta inserida entre SectionPrice e SectionFAQ, visivel no fluxo de decisao de compra
@@ -115,7 +119,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. Ao scrollar a pagina, o visitante encontra uma secao com o selo dourado (PNG existente) antes de chegar ao FAQ — a garantia nao e apenas um footnote no preco
   2. O copy da secao comunica claramente "7 dias, 100% do valor devolvido" sem ambiguidade
   3. A secao esta posicionada imediatamente apos SectionPrice (acima do FAQ) confirmado pela ordem em `app.vue`
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 #### Phase 18: Avatares nos Depoimentos
 **Goal**: Cada depoimento WhatsApp exibe uma foto circular ou avatar com iniciais, tornando os testimonials visivelmente mais credíveis
@@ -125,7 +131,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. Cada chat bubble de depoimento tem um avatar circular visivel — um circulo com iniciais coloridas ou foto real da pessoa
   2. Quando nenhuma foto esta disponivel, o avatar exibe as iniciais do nome com cor de fundo deterministica — nao exibe broken image ou espaco vazio
   3. O layout do chat bubble com avatar integrado e legivel e bem proporcionado em mobile 375px — o avatar nao empurra o texto para fora da area util
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 #### Phase 19: FAQ Visual
 **Goal**: O FAQ exibe um design premium com cards numerados e hierarquia visual clara, mantendo navegacao por teclado funcional
@@ -135,7 +143,9 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
   1. Cada item do FAQ e visualmente distinguivel como um card individual — numeracao ou icone identifica a ordem; o design nao parece um accordion generico
   2. A pergunta e a resposta tem hierarquia visual clara — a pergunta e mais proeminente (peso, tamanho ou cor) que o texto da resposta
   3. Navegacao por teclado funciona: Tab move o foco entre triggers, Enter/Space abre e fecha, cada trigger ativo exibe focus ring visivel
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
 
 ---
 
@@ -157,7 +167,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
-| 15. Paleta e Gradientes | v1.6 | 0/? | Not started | — |
+| 15. Paleta e Gradientes | v1.6 | 0/1 | Not started | — |
 | 16. Tipografia | v1.6 | 0/? | Not started | — |
 | 17. SectionGuarantee | v1.6 | 0/? | Not started | — |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
