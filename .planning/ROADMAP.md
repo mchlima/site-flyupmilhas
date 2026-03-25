@@ -79,7 +79,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 ### Phases
 
 - [x] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP (completed 2026-03-25)
-- [x] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (completed 2026-03-25)
+- [ ] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (gap closure in progress)
 - [ ] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao
 - [ ] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble
 - [ ] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada
@@ -107,9 +107,10 @@ Plans:
   1. A fonte carregada no browser para headings e body text e Plus Jakarta Sans — Inter nao aparece no painel Network como download ativo
   2. Headings (h1, h2, h3) usam peso e tamanho visivelmente mais impactantes que o layout anterior — a hierarquia e legivel sem esforco em mobile
   3. Lighthouse CLS score e < 0.1 em `nuxt preview` (nao dev server) — sem layout shift visivelmente detectavel durante carregamento
-**Plans**: 1 plan
+**Plans**: 2 plans
 Plans:
 - [x] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
+- [ ] 16-02-PLAN.md — Gap closure: harden font config (global:true, processCSSVariables:true) + build verification
 
 #### Phase 17: SectionGuarantee
 **Goal**: Uma secao dedicada de garantia 7 dias esta inserida entre SectionPrice e SectionFAQ, visivel no fluxo de decisao de compra
@@ -121,7 +122,7 @@ Plans:
   3. A secao esta posicionada imediatamente apos SectionPrice (acima do FAQ) confirmado pela ordem em `app.vue`
 **Plans**: 1 plan
 Plans:
-- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
+- [ ] 17-01-PLAN.md — [to be planned]
 
 #### Phase 18: Avatares nos Depoimentos
 **Goal**: Cada depoimento WhatsApp exibe uma foto circular ou avatar com iniciais, tornando os testimonials visivelmente mais credíveis
@@ -133,7 +134,7 @@ Plans:
   3. O layout do chat bubble com avatar integrado e legivel e bem proporcionado em mobile 375px — o avatar nao empurra o texto para fora da area util
 **Plans**: 1 plan
 Plans:
-- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
+- [ ] 18-01-PLAN.md — [to be planned]
 
 #### Phase 19: FAQ Visual
 **Goal**: O FAQ exibe um design premium com cards numerados e hierarquia visual clara, mantendo navegacao por teclado funcional
@@ -145,7 +146,7 @@ Plans:
   3. Navegacao por teclado funciona: Tab move o foco entre triggers, Enter/Space abre e fecha, cada trigger ativo exibe focus ring visivel
 **Plans**: 1 plan
 Plans:
-- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
+- [ ] 19-01-PLAN.md — [to be planned]
 
 ---
 
@@ -167,12 +168,12 @@ Plans:
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
-| 15. Paleta e Gradientes | v1.6 | 1/1 | Complete    | 2026-03-25 |
-| 16. Tipografia | v1.6 | 1/1 | Complete   | 2026-03-25 |
+| 15. Paleta e Gradientes | v1.6 | 1/1 | Complete | 2026-03-25 |
+| 16. Tipografia | v1.6 | 1/2 | Gap closure | — |
 | 17. SectionGuarantee | v1.6 | 0/? | Not started | — |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
 | 19. FAQ Visual | v1.6 | 0/? | Not started | — |
 
 ---
 *Roadmap created: 2026-03-21*
-*Last updated: 2026-03-24 — v1.6 roadmap added (phases 15-19)*
+*Last updated: 2026-03-25 — Phase 16 gap closure plan added (16-02)*
