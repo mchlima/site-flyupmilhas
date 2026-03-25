@@ -15,15 +15,20 @@ const items = [
 
 <template>
   <section id="conteudo-programatico" class="bg-[var(--color-brand-bg)] py-12 md:py-24 px-6">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-10">
+        Sem promessas milagrosas
+      </h2>
 
-      <!-- Left block: title, description, CTA -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+
+      <!-- Left block: subtitle, description, CTA -->
       <div class="flex flex-col gap-6">
-        <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)]">
-          Sem promessas milagrosas
-        </h2>
+        <h3 class="text-xl md:text-2xl font-medium text-brand-primary">
+          O que você vai aprender na prática
+        </h3>
         <p class="text-[var(--color-brand-text-muted)] leading-relaxed">
-          O que você vai aprender na prática: um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens.
+          Um método simples e prático para você usar milhas do jeito certo e realmente economizar em viagens.
         </p>
         <div>
           <button
@@ -47,6 +52,7 @@ const items = [
         </div>
       </div>
 
+      </div>
     </div>
   </section>
 </template>
