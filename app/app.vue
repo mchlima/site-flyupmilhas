@@ -44,6 +44,7 @@ useSchemaOrg([
       <SectionMethod />
       <SectionSocialProof />
       <SectionPrice />
+      <SectionGuarantee />
       <SectionFAQ />
       <section id="formulario" aria-label="Formulário de mentoria" class="gradient-form py-16 px-6">
         <SectionLeadForm />

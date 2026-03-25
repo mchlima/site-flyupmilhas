@@ -50,13 +50,10 @@ const benefits = [
           </button>
         </div>
 
-        <!-- Guarantee block -->
+        <!-- Guarantee block (one-liner — full copy in SectionGuarantee) -->
         <div class="mt-6 flex items-center gap-3 text-white/80">
-          <UIcon name="i-heroicons-shield-check" class="w-8 h-8 text-[var(--color-brand-cta)] shrink-0" />
-          <div>
-            <p class="font-semibold text-white">Garantia de 7 dias</p>
-            <p class="text-sm text-white/70">Se não fizer sentido pra você, devolvemos 100% do valor.</p>
-          </div>
+          <UIcon name="i-heroicons-shield-check" class="w-6 h-6 text-[var(--color-brand-cta)] shrink-0" />
+          <p class="font-medium text-white text-sm">Garantia incondicional de 7 dias</p>
         </div>
       </div>
 
