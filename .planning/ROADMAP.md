@@ -167,7 +167,7 @@ Plans:
 | 12. Copy Rewrite & Identity Sweep | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 13. Structural Template Changes | v1.5 | 2/2 | Complete | 2026-03-24 |
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
-| 15. Paleta e Gradientes | v1.6 | 1/1 | Complete   | 2026-03-25 |
+| 15. Paleta e Gradientes | v1.6 | 1/1 | Complete    | 2026-03-25 |
 | 16. Tipografia | v1.6 | 0/? | Not started | — |
 | 17. SectionGuarantee | v1.6 | 0/? | Not started | — |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
