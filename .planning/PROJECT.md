@@ -96,11 +96,11 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 
 - ✓ Badge "Seus dados estão seguros" com cadeado abaixo do form — v1.5 Phase 14
 - ✓ CTAs variados por posição (Hero/ProgramContent/Price/Form) — v1.5 Phase 14
+- ✓ Paleta azul vibrante #1D4ED8 + CTA cyan #0891B2 + gradientes diagonais — v1.6 Phase 15
+- ✓ Dark backgrounds #0F172A (header/form) e #020617 (footer) — v1.6 Phase 15
 
 ### Active
 
-- [ ] Paleta azul vibrante e sofisticada para toda a LP
-- [ ] Cor de CTA premium substituindo laranja
 - [ ] Tipografia moderna (substituir Inter)
 - [ ] Gradientes sutis de aviacao/viagens
 - [ ] Depoimentos com foto circular ou avatar iniciais
@@ -133,7 +133,7 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 - **Database**: MongoDB — para leads e configuracoes
 - **Storage**: Cloudflare R2 — para imagens e assets estaticos
 - **Performance**: Mobile-first, carregamento ultra rapido
-- **Design**: Paleta azul aviacao (#1a3a5c), fundo off-white (#F9FAFB), CTA laranja (#e67e22)
+- **Design**: Paleta azul vibrante (#1D4ED8), dark bg (#0F172A), fundo off-white (#F9FAFB), CTA cyan (#0891B2)
 
 ## Key Decisions
 
@@ -166,4 +166,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after v1.6 milestone started*
+*Last updated: 2026-03-25 after Phase 15 complete*
