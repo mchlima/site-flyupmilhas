@@ -9,7 +9,7 @@ const { scrollTo } = useScroll()
         Viaje mais. Gaste menos. Use milhas do jeito certo.
       </h2>
 
-      <div class="relative bg-brand-dark rounded-xl p-6 md:p-8 max-w-3xl mx-auto mb-8 overflow-hidden">
+      <div class="relative bg-brand-dark rounded-xl p-6 md:p-8 max-w-3xl mx-auto my-10 overflow-hidden">
         <UIcon name="i-heroicons-paper-airplane" class="absolute right-4 top-1/2 -translate-y-1/2 size-24 md:size-32 text-white/5 rotate-[-15deg] pointer-events-none" />
         <p class="relative text-white/90 text-center text-base md:text-lg leading-relaxed">
           A maioria das pessoas acumula milhas, mas não sabe como usar e acaba pagando caro em passagens. Na Fly Up Milhas, você aprende de forma simples, como transformar seus gastos do dia a dia em viagens reais, pagando muito menos.
