@@ -50,13 +50,13 @@ const faqItems = [
           }"
         >
           <template #leading="{ index }">
+            <UIcon name="i-lucide-chevron-down" class="shrink-0 size-5 text-brand-text-muted transition-transform duration-200 group-data-[state=open]:rotate-180" />
             <span class="text-lg font-bold text-brand-primary tabular-nums shrink-0">
               {{ String(index + 1).padStart(2, '0') }}
             </span>
           </template>
-          <template #trailing="{ open }">
-            <UIcon name="i-lucide-chevron-down" class="shrink-0 size-5 text-brand-text-muted transition-transform duration-200 group-data-[state=open]:rotate-180" />
-          </template>
+          <template #trailing />
+
           <template #content="{ item }">
             <p class="text-brand-text-muted text-sm leading-relaxed pb-4 px-5 pl-14">
               {{ item.content }}
