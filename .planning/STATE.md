@@ -5,7 +5,7 @@ milestone_name: Upgrade de Identidade Visual
 status: active
 last_updated: "2026-03-24T12:00:00.000Z"
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -16,29 +16,43 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Defining requirements for v1.6
+**Current Focus:** Phase 15 — Paleta e Gradientes (first phase of v1.6)
 
 ---
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 15 — Paleta e Gradientes
 Plan: —
-Status: Defining requirements
-Last activity: 2026-03-24 — Milestone v1.6 started
+Status: Not started
+Last activity: 2026-03-24 — v1.6 roadmap created (phases 15-19)
+
+```
+[15: Paleta e Gradientes  ] [ ] Not started
+[16: Tipografia           ] [ ] Not started
+[17: SectionGuarantee     ] [ ] Not started
+[18: Avatares Depoimentos ] [ ] Not started
+[19: FAQ Visual           ] [ ] Not started
+```
+
+Progress: 0/5 phases complete
 
 ## Performance Metrics
 
 | Metric | Target | Current |
 |--------|--------|---------|
-| v1.5 requirements mapped | 30/30 | 30/30 |
-| v1.5 phases defined | 4 | 4 |
-| v1.5 plans complete | — | 1 |
-| "renda-extra" occurrences in app/ server/ | 0 | 0 (verified Phase 11) |
-| "Marcio" occurrences in rendered copy | 0 | Not verified |
-| gastoMensal field in backend schema | removed | Done — Phase 11 |
-| Price display format | hard-coded strings | Not done |
-| WhatsApp bubble 375px test | pass | Not done |
+| v1.6 requirements mapped | 16/16 | 16/16 |
+| v1.6 phases defined | 5 | 5 |
+| v1.6 plans complete | — | 0 |
+| WCAG AA contrast (new palette) | all pass | Not verified |
+| CLS after font swap | < 0.1 | Not verified |
+| Gradient repaint (4x CPU throttle) | no red rects | Not verified |
+| FAQ keyboard nav | Tab/Enter/Space work | Not verified |
+
+### v1.5 History (all complete)
+
+| Plan | Duration | Tasks | Files |
+|------|----------|-------|-------|
 | Phase 12-copy-rewrite-identity-sweep P01 | 71s | 2 tasks | 2 files |
 | Phase 12 P02 | 2 | 3 tasks | 3 files |
 | Phase 13-structural-template-changes P02 | 3 | 2 tasks | 2 files |
@@ -137,21 +151,36 @@ Last activity: 2026-03-24 — Milestone v1.6 started
 | "consultoria" → "mentoria" migration (v1.3) | Product is a mentorship with biweekly sessions, not a one-time consultancy; copy must reflect reality | Confirmed — Phase 7 complete (zero occurrences site-wide) |
 | CTA label "Quero dar o primeiro passo" (v1.3) | Old site CTA confirmed; softer entry barrier than "Quero minha Consultoria" | Confirmed — Phase 7 complete (7 CTA locations updated) |
 | gastoMensal field removed (v1.5) | Client feedback: simplify form to 3 fields; gastoMensal adds friction with no qualifying value | Confirmed — Phase 11 complete |
-| Price as hard-coded strings (v1.5) | JS arithmetic on 299.90 produces floating-point errors; Brazilian format uses comma separator | Pending — Phase 13 |
-| Security badge outside UForm (v1.5) | UForm expects UFormField children; badge inside causes unexpected spacing from Reka UI internals | Pending — Phase 14 |
-| Progressive CTA copy per position (v1.5) | 15-30% lift documented; hero/mid/final CTAs should match visitor intent at each scroll depth | Pending — Phase 14 |
+| Price as hard-coded strings (v1.5) | JS arithmetic on 299.90 produces floating-point errors; Brazilian format uses comma separator | Confirmed — Phase 13 |
+| Security badge outside UForm (v1.5) | UForm expects UFormField children; badge inside causes unexpected spacing from Reka UI internals | Confirmed — Phase 14 |
+| Progressive CTA copy per position (v1.5) | 15-30% lift documented; hero/mid/final CTAs should match visitor intent at each scroll depth | Confirmed — Phase 14 |
+| Token namespace must use --color-brand-* (v1.6) | --color-primary silently overwrites Nuxt UI semantic system; all focus rings and interactive states break | Pending — Phase 15 |
+| No tailwind.config.ts (v1.6) | Nuxt UI v4 manages Tailwind v4 via CSS-first path; a JS config file causes conflicts | Confirmed — architecture |
+| Font swap must update nuxt.config.ts AND @theme {} simultaneously (v1.6) | One without the other causes double-load or missing CLS fallback metrics | Pending — Phase 16 |
+| CSS-only initials avatar as default for testimonials (v1.6) | NuxtImg photo path requires Cloudflare Image Transformations confirmation; initials work immediately | Pending — Phase 18 |
 
 ### Critical Pre-Build Blockers
 
 - [ ] Confirm Cloudflare plan includes Image Transformations (fallback: Squoosh/sharp pre-optimization only)
 - [ ] Confirm Fastify deployment topology — same domain subdomain or cross-origin? (determines CORS vs proxy strategy)
 - [ ] Collect WhatsApp testimonial screenshots from Marcio with LGPD consent (or use CSS bubble fallback with text he provides)
-- [ ] Confirm final copy sign-off from Marcio on new hero headline and subheadline
-- [ ] Confirm 3 negative qualification items for "Para quem NAO e" cards
 - [ ] Replace 55XXXXXXXXXXX WhatsApp placeholder with Marcio's real number before launch
 - [ ] Replace Agencia 201 URL placeholder with real URL before launch
+- [ ] Verify logo-fly-up-milhas.png reads correctly on new vibrant blue header background after Phase 15
 
-### v1.5 Copy Constants (single source of truth — define before editing any component)
+### v1.6 Execution Notes
+
+| Note | Detail |
+|------|--------|
+| Phase 15 exit gate | WCAG contrast check mandatory: every new token against every background (white, off-white, navy, dark hero overlay) |
+| Phase 16 exit gate | Lighthouse CLS < 0.1 on `nuxt preview` (NOT dev server) |
+| Phase 18 exit gate | If real photos added: verify Cloudflare Image Transformations active before using NuxtImg |
+| Phase 19 exit gate | Manual keyboard Tab/Enter/Space navigation test through all FAQ items |
+| Gradient limit | Max 2 color stops, max 3 sections — more causes mobile repaint cost on low-end Android |
+| No neon blues | Avoid #00BFFF / #00B4D8 — tech startup, not premium travel |
+| UAccordion :ui prop | Replaces (not merges) default class string — focus-visible:ring-2 must be explicitly included |
+
+### v1.5 Copy Constants (single source of truth)
 
 | Constant | Value |
 |----------|-------|
@@ -165,21 +194,23 @@ Last activity: 2026-03-24 — Milestone v1.6 started
 | CTA mid | Quero entender melhor |
 | CTA final | Quero entrar na mentoria |
 
-### Technical Pitfalls to Watch (v1.5)
+### Technical Pitfalls to Watch (v1.6)
 
-1. Schema desync: update `server/leads/schema.ts` FIRST, then `useLeadForm.ts`, then `SectionLeadForm.vue` — never the other direction
-2. renda-extra enum: exists in `server/leads/schema.ts` AND `app/composables/useLeadForm.ts` — must be removed from both; run grep after to verify zero results
-3. Price strings: never compute price values in JS; hard-code "R$ 299,90" and "10x de R$ 29,99" as string literals
-4. WhatsApp bubble CSS: use `max-width: min(85%, 400px)` and `word-break: break-word; overflow-wrap: anywhere`; test at 375px, 390px, 412px
-5. Security badge: place OUTSIDE `<UForm>` tag in the parent container, directly below the submit button
-6. v-html in ProgramContent: only safe because content is developer-controlled hardcoded strings (not user input)
+1. Token namespace collision: never use `--color-primary`; always `--color-brand-*`
+2. Vibrant blue WCAG: `#3B82F6` (blue-500) is 3.0:1 against white — fails AA; use blue-700 `#1D4ED8` (6.3:1) for primary
+3. Font double-load: update `nuxt.config.ts` fonts.families AND `@theme {}` in the same commit
+4. Gradient paint cost: max 2 color stops; never combine with `filter: blur()`; run Chrome paint flashing audit
+5. UAccordion focus ring: `:ui` prop replaces default class; always include `focus-visible:ring-2 focus-visible:ring-offset-2`
+6. CTA on multiple backgrounds: `#06B6D4` must pass AA on all 4 contexts (dark hero, white, off-white, navy)
 
 ### Architecture Constraints
 
 - `app.vue` is the entire application shell — no `pages/` directory
 - All media > 20 KB on Cloudflare R2, never in `assets/images/`
 - API base URL via `runtimeConfig.public.apiBase` from env var — never hardcoded
-- Form locked at exactly 3 fields after v1.5: nome, email, whatsapp (gastoMensal and objetivo removed — Phase 11)
+- Form locked at exactly 3 fields: nome, email, whatsapp
+- All brand tokens in `app/assets/css/main.css` under `@theme {}` — no hardcoded hex values in component templates
+- No `tailwind.config.ts` — Nuxt UI v4 manages Tailwind v4 via CSS-first path
 
 ### Quick Tasks Completed
 
@@ -196,18 +227,11 @@ Last activity: 2026-03-24 — Milestone v1.6 started
 
 ## Session Continuity
 
-**Last action:** Quick task 260324-3z6 — header logo h-8 → h-10 (2026-03-24)
-**Next action:** /gsd:complete-milestone v1.5
-
-**Milestone status entering v1.5:**
-
-- v1.0 all complete (phases 1-3, 7 plans)
-- v1.1 all complete (phases 4-5, 4 plans): background token, AppHeader, SectionAbout, FAQ contrast, SectionMethod bento, form navy card, footer
-- v1.2 all complete (phase 6, 2 plans): FAQ contrast, form inputs, SectionAbout headline, Step 4 "Autonomia", SectionPrice offer block consolidation, back-to-top button
-- v1.3 all complete (phases 7-8): "consultoria" → "mentoria" migration, SectionProgramContent, SectionForWhom
-- v1.4 all complete (phases 9-10): logo in header, form card wrapper removed, footer Instagram CTA, footer dark background
+**Last action:** v1.6 roadmap created — 5 phases (15-19) defined
+**Next action:** `/gsd:plan-phase 15`
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
+**v1.6 insert:** SectionGuarantee will be added between SectionPrice and SectionFAQ (Phase 17)
 **Nav links:** Sobre, Conteudo, Como Funciona, Depoimentos, FAQ
 **Open:** Marcio's WhatsApp number (55XXXXXXXXXXX placeholder in SectionLeadForm.vue and AppFooter.vue)
 **Open:** Real content (photo, metrics, testimonials) still needed for launch
@@ -216,4 +240,4 @@ Last activity: 2026-03-24 — Milestone v1.6 started
 
 ---
 *State initialized: 2026-03-21*
-*Last updated: 2026-03-24 — v1.5 roadmap created (phases 11-14)*
+*Last updated: 2026-03-24 — v1.6 roadmap created (phases 15-19)*

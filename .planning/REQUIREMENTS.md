@@ -58,28 +58,28 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PAL-01 | — | Pending |
-| PAL-02 | — | Pending |
-| PAL-03 | — | Pending |
-| PAL-04 | — | Pending |
-| TIPO-01 | — | Pending |
-| TIPO-02 | — | Pending |
-| TIPO-03 | — | Pending |
-| DEP-01 | — | Pending |
-| DEP-02 | — | Pending |
-| DEP-03 | — | Pending |
-| GAR-01 | — | Pending |
-| GAR-02 | — | Pending |
-| GAR-03 | — | Pending |
-| FAQ-01 | — | Pending |
-| FAQ-02 | — | Pending |
-| FAQ-03 | — | Pending |
+| PAL-01 | Phase 15 | Pending |
+| PAL-02 | Phase 15 | Pending |
+| PAL-03 | Phase 15 | Pending |
+| PAL-04 | Phase 15 | Pending |
+| TIPO-01 | Phase 16 | Pending |
+| TIPO-02 | Phase 16 | Pending |
+| TIPO-03 | Phase 16 | Pending |
+| GAR-01 | Phase 17 | Pending |
+| GAR-02 | Phase 17 | Pending |
+| GAR-03 | Phase 17 | Pending |
+| DEP-01 | Phase 18 | Pending |
+| DEP-02 | Phase 18 | Pending |
+| DEP-03 | Phase 18 | Pending |
+| FAQ-01 | Phase 19 | Pending |
+| FAQ-02 | Phase 19 | Pending |
+| FAQ-03 | Phase 19 | Pending |
 
 **Coverage:**
 - v1.6 requirements: 16 total
-- Mapped to phases: 0
-- Unmapped: 16 (pending roadmap creation)
+- Mapped to phases: 16
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-03-24*
-*Last updated: 2026-03-24 after initial definition*
+*Last updated: 2026-03-24 — all 16 requirements mapped to phases 15-19*
