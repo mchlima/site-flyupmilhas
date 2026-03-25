@@ -98,10 +98,10 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 - ✓ CTAs variados por posição (Hero/ProgramContent/Price/Form) — v1.5 Phase 14
 - ✓ Paleta azul vibrante #1D4ED8 + CTA cyan #0891B2 + gradientes diagonais — v1.6 Phase 15
 - ✓ Dark backgrounds #0F172A (header/form) e #020617 (footer) — v1.6 Phase 15
+- ✓ Plus Jakarta Sans substituiu Inter + hierarquia tipografica (bold/semibold/medium + tracking) — v1.6 Phase 16
 
 ### Active
 
-- [ ] Tipografia moderna (substituir Inter)
 - [ ] Gradientes sutis de aviacao/viagens
 - [ ] Depoimentos com foto circular ou avatar iniciais
 - [ ] Secao dedicada Garantia 7 dias com selo dourado
@@ -166,4 +166,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 15 complete*
+*Last updated: 2026-03-25 after Phase 16 complete*
