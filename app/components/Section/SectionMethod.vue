@@ -67,6 +67,7 @@ const steps = [
             : 'bg-white shadow-sm'"
         >
           <span
+            aria-hidden="true"
             class="text-4xl font-bold opacity-30 block mb-2"
             :class="step.number === '04' ? 'text-white' : 'text-[var(--color-brand-cta)]'"
           >{{ step.number }}</span>
