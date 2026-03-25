@@ -39,6 +39,22 @@ export default defineNuxtConfig({
 
   experimental: {
     inlineSSRStyles: true,
+    treeshakeClientOnly: true,
+  },
+
+  vite: {
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            // Split Reka UI (accordion, form primitives) into lazy chunk
+            if (id.includes('reka-ui')) {
+              return 'reka-ui'
+            }
+          },
+        },
+      },
+    },
   },
 
   image: {
