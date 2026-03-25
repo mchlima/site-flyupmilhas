@@ -109,7 +109,7 @@ Plans:
   3. Lighthouse CLS score e < 0.1 em `nuxt preview` (nao dev server) — sem layout shift visivelmente detectavel durante carregamento
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
+- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
 
 #### Phase 17: SectionGuarantee
 **Goal**: Uma secao dedicada de garantia 7 dias esta inserida entre SectionPrice e SectionFAQ, visivel no fluxo de decisao de compra
@@ -121,7 +121,7 @@ Plans:
   3. A secao esta posicionada imediatamente apos SectionPrice (acima do FAQ) confirmado pela ordem em `app.vue`
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
+- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
 
 #### Phase 18: Avatares nos Depoimentos
 **Goal**: Cada depoimento WhatsApp exibe uma foto circular ou avatar com iniciais, tornando os testimonials visivelmente mais credíveis
@@ -133,7 +133,7 @@ Plans:
   3. O layout do chat bubble com avatar integrado e legivel e bem proporcionado em mobile 375px — o avatar nao empurra o texto para fora da area util
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
+- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
 
 #### Phase 19: FAQ Visual
 **Goal**: O FAQ exibe um design premium com cards numerados e hierarquia visual clara, mantendo navegacao por teclado funcional
@@ -145,7 +145,7 @@ Plans:
   3. Navegacao por teclado funciona: Tab move o foco entre triggers, Enter/Space abre e fecha, cada trigger ativo exibe focus ring visivel
 **Plans**: 1 plan
 Plans:
-- [ ] 15-01-PLAN.md — Token swap + gradient utilities + component updates
+- [ ] 16-01-PLAN.md — Font swap (Plus Jakarta Sans) + heading hierarchy
 
 ---
 
