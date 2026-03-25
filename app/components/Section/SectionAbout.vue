@@ -10,7 +10,7 @@ const { scrollTo } = useScroll()
       </h2>
 
       <div class="relative bg-brand-dark rounded-xl p-6 md:p-8 w-full my-10 overflow-hidden">
-        <UIcon name="i-heroicons-paper-airplane" class="absolute right-4 top-1/2 -translate-y-1/2 size-24 md:size-32 text-white/5 rotate-[-15deg] pointer-events-none" />
+        <img src="~/assets/img/logo-fly-up-milhas.png" alt="" aria-hidden="true" class="absolute right-4 top-1/2 -translate-y-1/2 w-24 md:w-32 opacity-5 pointer-events-none" />
         <p class="relative text-white/90 text-center text-base md:text-lg leading-relaxed">
           A maioria das pessoas acumula milhas, mas não sabe como usar e acaba pagando caro em passagens. Na Fly Up Milhas, você aprende de forma simples, como transformar seus gastos do dia a dia em viagens reais, pagando muito menos.
         </p>
