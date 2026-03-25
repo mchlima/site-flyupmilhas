@@ -7,8 +7,8 @@
   --color-brand-primary: #1D4ED8;       /* vibrant blue-700 — headings, text accents, icons */
   --color-brand-dark: #0F172A;          /* slate-900 — header bg, form section bg, dark overlays */
   --color-brand-bg: #F9FAFB;            /* branco gelo / cinza ultra claro — page background */
-  --color-brand-cta: #0891B2;           /* cyan-700 — CTA buttons and accents */
-  --color-brand-cta-hover: #0E7490;     /* cyan-800 — CTA hover state */
+  --color-brand-cta: #0E7490;           /* cyan-800 — CTA buttons (4.7:1 WCAG AA with white) */
+  --color-brand-cta-hover: #155E75;     /* cyan-900 — CTA hover state */
   --color-brand-text: #1a1a1a;          /* body text */
   --color-brand-text-muted: #6b7280;    /* secondary text */
   --color-brand-footer: #020617;        /* slate-950 — footer background */
