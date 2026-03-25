@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.5
-milestone_name: Refinamento de Copy e Conversao
-status: unknown
-last_updated: "2026-03-24T05:55:13.091Z"
+milestone: v1.6
+milestone_name: Upgrade de Identidade Visual
+status: active
+last_updated: "2026-03-24T12:00:00.000Z"
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 6
-  completed_plans: 6
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
 ---
 
 # State: Fly Up Milhas
@@ -16,14 +16,16 @@ progress:
 ## Project Reference
 
 **Core Value:** Converter visitantes em clientes da mentoria Fly Up Milhas atraves de uma LP de alta conversao
-**Current Focus:** Phase 14 — form-frontend-cta-pass
+**Current Focus:** Defining requirements for v1.6
 
 ---
 
 ## Current Position
 
-Phase: 14
-Plan: Not started
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-24 — Milestone v1.6 started
 
 ## Performance Metrics
 

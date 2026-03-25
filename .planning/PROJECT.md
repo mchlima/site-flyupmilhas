@@ -8,6 +8,20 @@ Uma landing page de alta conversao para a Fly Up Milhas, focada na venda de cons
 
 Converter visitantes em clientes da consultoria VIP atraves de uma LP que transmita autoridade, confianca e resultados reais no mercado de milhas.
 
+## Current Milestone: v1.6 Upgrade de Identidade Visual
+
+**Goal:** Elevar a identidade visual da LP com paleta azul mais vibrante, tipografia moderna, gradientes sutis de aviacao, e componentes redesenhados para transmitir sofisticacao e confianca.
+
+**Target features:**
+- Paleta azul vibrante e sofisticada (substituir navy abafado #1a3a5c)
+- Cor de CTA mais adequada ao tema premium/viagens (substituir laranja #e67e22)
+- Tipografia moderna e impactante (substituir Inter)
+- Gradientes sutis e elementos visuais que remetam a viagens/aviacao
+- Depoimentos WhatsApp com foto circular ou avatar com iniciais
+- Secao dedicada de Garantia 7 dias com selo dourado
+- FAQ redesenhado com mais impacto visual
+- Mais impacto visual nas secoes (hierarquia, espacamento, contraste)
+
 ## Current State
 
 Shipped v1.0 through v1.5 (Refinamento de Copy e Conversao) on 2026-03-24.
@@ -85,7 +99,14 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 
 ### Active
 
-(No active requirements — v1.5 milestone complete)
+- [ ] Paleta azul vibrante e sofisticada para toda a LP
+- [ ] Cor de CTA premium substituindo laranja
+- [ ] Tipografia moderna (substituir Inter)
+- [ ] Gradientes sutis de aviacao/viagens
+- [ ] Depoimentos com foto circular ou avatar iniciais
+- [ ] Secao dedicada Garantia 7 dias com selo dourado
+- [ ] FAQ redesenhado com mais impacto
+- [ ] Hierarquia visual e espacamento aprimorados
 
 ### Out of Scope
 
@@ -145,4 +166,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-24 after v1.5 milestone complete*
+*Last updated: 2026-03-24 after v1.6 milestone started*
