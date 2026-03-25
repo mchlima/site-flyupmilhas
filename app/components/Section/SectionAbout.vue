@@ -1,7 +1,3 @@
-<script setup lang="ts">
-const { scrollTo } = useScroll()
-</script>
-
 <template>
   <section id="sobre" class="gradient-section-about py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
@@ -48,15 +44,6 @@ const { scrollTo } = useScroll()
 
       </div>
 
-      <!-- CTA below cards -->
-      <div class="text-center mt-8">
-        <button
-          class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
-          @click="scrollTo('formulario')"
-        >
-          Quero dar o primeiro passo
-        </button>
-      </div>
     </div>
   </section>
 </template>
