@@ -46,10 +46,10 @@ const testimonials = [
   <section id="depoimentos" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-2xl mx-auto">
       <!-- Section heading -->
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-4">
         Casos reais de quem já aplicou
       </h2>
-      <p class="text-center text-[var(--color-brand-text-muted)] mb-12 max-w-lg mx-auto">
+      <p class="text-center text-brand-text-muted mb-12 max-w-lg mx-auto">
         Veja o que nossos alunos conquistaram depois de aplicar o método da Fly Up Milhas.
       </p>
 
@@ -58,21 +58,39 @@ const testimonials = [
         <div
           v-for="(t, index) in testimonials"
           :key="t.name"
-          :class="index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0'"
-          class="flex flex-col"
-          style="max-width: min(85%, 400px);"
+          :class="index % 2 === 0 ? 'ml-0 mr-auto' : 'ml-auto mr-0 flex-row-reverse'"
+          class="flex items-start gap-3"
+          style="max-width: min(85%, 440px);"
         >
-          <!-- Chat bubble -->
-          <div
-            class="chat-bubble px-4 py-3 rounded-xl text-[var(--color-brand-text)] leading-relaxed"
-            :class="index % 2 === 0 ? '' : 'chat-bubble-right'"
-            style="background-color: #DCF8C6; word-break: break-word; overflow-wrap: anywhere;"
-            v-html="t.text"
+          <!-- Avatar: photo or initials fallback -->
+          <img
+            v-if="t.avatar"
+            :src="t.avatar"
+            :alt="t.name"
+            class="w-10 h-10 rounded-full object-cover shrink-0 mt-1"
           />
-          <!-- Name and city below bubble -->
-          <div :class="index % 2 === 0 ? 'text-left' : 'text-right'" class="mt-1 px-1">
-            <span class="text-sm font-semibold text-[var(--color-brand-primary)]">{{ t.name }}</span>
-            <span class="text-xs text-[var(--color-brand-text-muted)] ml-2">{{ t.city }}</span>
+          <div
+            v-else
+            class="w-10 h-10 rounded-full shrink-0 mt-1 flex items-center justify-center text-white text-sm font-semibold"
+            :class="getAvatarColor(t.name)"
+          >
+            {{ getInitials(t.name) }}
+          </div>
+
+          <!-- Bubble + name column -->
+          <div class="flex flex-col" :class="index % 2 === 0 ? 'items-start' : 'items-end'">
+            <!-- Chat bubble -->
+            <div
+              class="chat-bubble px-4 py-3 rounded-xl text-brand-text leading-relaxed"
+              :class="index % 2 === 0 ? '' : 'chat-bubble-right'"
+              style="background-color: #DCF8C6; word-break: break-word; overflow-wrap: anywhere;"
+              v-html="t.text"
+            />
+            <!-- Name and city below bubble -->
+            <div :class="index % 2 === 0 ? 'text-left' : 'text-right'" class="mt-1 px-1">
+              <span class="text-sm font-semibold text-brand-primary">{{ t.name }}</span>
+              <span class="text-xs text-brand-text-muted ml-2">{{ t.city }}</span>
+            </div>
           </div>
         </div>
       </div>
