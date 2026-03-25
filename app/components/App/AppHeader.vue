@@ -46,7 +46,7 @@ function navigate(anchor: string) {
       <!-- Logo -->
       <button class="cursor-pointer" @click="scrollTo('hero')">
         <img
-          src="~/assets/img/logo-fly-up-milhas.png"
+          src="~/assets/img/logo-fly-up-milhas.webp"
           alt="Fly Up Milhas"
           class="h-10 w-auto"
         />
