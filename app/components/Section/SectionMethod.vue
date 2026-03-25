@@ -69,7 +69,7 @@ const steps = [
           <span
             aria-hidden="true"
             class="text-4xl font-bold block mb-2"
-            :class="step.number === '04' ? 'text-white/50' : 'text-brand-cta/50'"
+            :class="step.number === '04' ? 'text-white/80' : 'text-brand-cta'"
           >{{ step.number }}</span>
           <UIcon
             :name="step.icon"
