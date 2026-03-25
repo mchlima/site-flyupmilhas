@@ -134,7 +134,7 @@ Plans:
   3. O layout do chat bubble com avatar integrado e legivel e bem proporcionado em mobile 375px — o avatar nao empurra o texto para fora da area util
 **Plans**: 1 plan
 Plans:
-- [ ] 18-01-PLAN.md — [to be planned]
+- [ ] 18-01-PLAN.md — Avatar data model + photo imports + chat bubble layout integration
 
 #### Phase 19: FAQ Visual
 **Goal**: O FAQ exibe um design premium com cards numerados e hierarquia visual clara, mantendo navegacao por teclado funcional
