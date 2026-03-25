@@ -80,7 +80,7 @@ Full details: `.planning/milestones/v1.5-ROADMAP.md`
 
 - [x] **Phase 15: Paleta e Gradientes** — Nova paleta azul vibrante + CTA cyan + gradientes sutis aplicados em toda a LP (completed 2026-03-25)
 - [x] **Phase 16: Tipografia** — Plus Jakarta Sans substitui Inter com CLS verificado em preview build (gap closure in progress) (completed 2026-03-25)
-- [ ] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao
+- [x] **Phase 17: SectionGuarantee** — Nova secao dedicada de garantia 7 dias com selo dourado inserida no fluxo de conversao (completed 2026-03-25)
 - [ ] **Phase 18: Avatares nos Depoimentos** — Fotos circulares e fallback de iniciais integrados ao layout de chat bubble
 - [ ] **Phase 19: FAQ Visual** — FAQ redesenhado com cards numerados, hierarquia visual e acessibilidade preservada
 
@@ -122,7 +122,7 @@ Plans:
   3. A secao esta posicionada imediatamente apos SectionPrice (acima do FAQ) confirmado pela ordem em `app.vue`
 **Plans**: 1 plan
 Plans:
-- [ ] 17-01-PLAN.md — SectionGuarantee component + app.vue wiring + SectionPrice cleanup
+- [x] 17-01-PLAN.md — SectionGuarantee component + app.vue wiring + SectionPrice cleanup
 
 #### Phase 18: Avatares nos Depoimentos
 **Goal**: Cada depoimento WhatsApp exibe uma foto circular ou avatar com iniciais, tornando os testimonials visivelmente mais credíveis
@@ -170,7 +170,7 @@ Plans:
 | 14. Form Frontend & CTA Pass | v1.5 | 1/1 | Complete | 2026-03-24 |
 | 15. Paleta e Gradientes | v1.6 | 1/1 | Complete | 2026-03-25 |
 | 16. Tipografia | v1.6 | 2/2 | Complete    | 2026-03-25 |
-| 17. SectionGuarantee | v1.6 | 0/1 | Planned | — |
+| 17. SectionGuarantee | v1.6 | 1/1 | Complete   | 2026-03-25 |
 | 18. Avatares nos Depoimentos | v1.6 | 0/? | Not started | — |
 | 19. FAQ Visual | v1.6 | 0/? | Not started | — |
 

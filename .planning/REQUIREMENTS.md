@@ -28,9 +28,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 
 ### Garantia
 
-- [ ] **GAR-01**: Nova secao dedicada SectionGuarantee com selo dourado (PNG existente)
-- [ ] **GAR-02**: Copy de confianca enfatizando garantia de 7 dias sem risco
-- [ ] **GAR-03**: Posicionamento estrategico da secao proximo ao preco/formulario
+- [x] **GAR-01**: Nova secao dedicada SectionGuarantee com selo dourado (PNG existente)
+- [x] **GAR-02**: Copy de confianca enfatizando garantia de 7 dias sem risco
+- [x] **GAR-03**: Posicionamento estrategico da secao proximo ao preco/formulario
 
 ### FAQ
 
@@ -65,9 +65,9 @@ Requirements for milestone v1.6 — Upgrade de Identidade Visual. Each maps to r
 | TIPO-01 | Phase 16 | Complete |
 | TIPO-02 | Phase 16 | Complete |
 | TIPO-03 | Phase 16 | Complete |
-| GAR-01 | Phase 17 | Pending |
-| GAR-02 | Phase 17 | Pending |
-| GAR-03 | Phase 17 | Pending |
+| GAR-01 | Phase 17 | Complete |
+| GAR-02 | Phase 17 | Complete |
+| GAR-03 | Phase 17 | Complete |
 | DEP-01 | Phase 18 | Pending |
 | DEP-02 | Phase 18 | Pending |
 | DEP-03 | Phase 18 | Pending |
