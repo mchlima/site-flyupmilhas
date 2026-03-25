@@ -7,7 +7,7 @@
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" />
         </svg>
         <p class="text-white text-lg font-semibold">Acompanhe a Fly Up Milhas no Instagram</p>
-        <p class="text-white/70 text-sm max-w-md">Dicas de milhas, destinos incriveis e bastidores da mentoria. Siga para nao perder nenhuma novidade!</p>
+        <p class="text-white/80 text-sm max-w-md">Dicas de milhas, destinos incriveis e bastidores da mentoria. Siga para nao perder nenhuma novidade!</p>
         <a
           href="https://www.instagram.com/flyupmilhas"
           target="_blank"
@@ -28,9 +28,9 @@
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row md:justify-between md:items-center gap-4">
       <!-- Left: copyright + credit -->
       <div class="text-center md:text-left">
-        <p class="text-white/60 text-sm">&copy; {{ new Date().getFullYear() }} Fly Up Milhas. Todos os direitos reservados.</p>
+        <p class="text-white/80 text-sm">&copy; {{ new Date().getFullYear() }} Fly Up Milhas. Todos os direitos reservados.</p>
         <!-- TODO: Confirm Agência 201 URL -->
-        <p class="text-white/60 text-sm mt-1">Desenvolvido por <a href="https://agencia201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-primary underline underline-offset-2 transition-colors">Agência 201</a></p>
+        <p class="text-white/80 text-sm mt-1">Desenvolvido por <a href="https://agencia201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-primary underline underline-offset-2 transition-colors">Agência 201</a></p>
       </div>
       <!-- Right: social links (WhatsApp + Instagram) -->
       <div class="flex items-center gap-4 justify-center md:justify-end">

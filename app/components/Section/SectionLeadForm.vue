@@ -165,7 +165,7 @@ async function onSubmit() {
         </UForm>
 
         <!-- Security badge — outside UForm per D-03/D-05 -->
-        <div class="flex items-center justify-center gap-2 mt-4 text-white/60 text-sm">
+        <div class="flex items-center justify-center gap-2 mt-4 text-white/80 text-sm">
           <UIcon name="i-heroicons-lock-closed" class="w-4 h-4" />
           <span>Seus dados estao seguros</span>
         </div>

@@ -73,7 +73,7 @@ const steps = [
           <UIcon
             :name="step.icon"
             class="w-10 h-10 mb-3"
-            :class="step.number === '04' ? 'text-white/70' : 'text-[var(--color-brand-primary)]'"
+            :class="step.number === '04' ? 'text-white/80' : 'text-[var(--color-brand-primary)]'"
           />
           <h3
             class="text-lg font-medium mb-2"

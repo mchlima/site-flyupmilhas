@@ -23,7 +23,7 @@
         <p class="text-white/80 text-base leading-relaxed">
           Se em até 7 dias você sentir que a mentoria não é para você, devolvemos 100% do valor investido — sem perguntas, sem burocracia, sem complicação.
         </p>
-        <p class="text-white/60 text-sm">
+        <p class="text-white/80 text-sm">
           7 dias — 100% devolvido
         </p>
       </div>

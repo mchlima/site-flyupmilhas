@@ -43,7 +43,7 @@ const { scrollTo } = useScroll()
           Quero começar agora
         </button>
       </div>
-      <p class="text-sm text-white/60 text-center mt-3">Comece a economizar já no primeiro mês</p>
+      <p class="text-sm text-white/80 text-center mt-3">Comece a economizar já no primeiro mês</p>
     </div>
   </section>
 </template>

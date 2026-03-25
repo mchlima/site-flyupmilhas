@@ -15,6 +15,12 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  app: {
+    htmlAttrs: {
+      lang: 'pt-BR',
+    },
+  },
+
   site: {
     url: 'https://flyupmilhas.com.br',
     name: 'Fly Up Milhas — Consultoria VIP em Milhas Aéreas',
