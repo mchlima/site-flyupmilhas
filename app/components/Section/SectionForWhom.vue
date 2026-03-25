@@ -19,20 +19,18 @@ const negativeCards = [
 </script>
 
 <template>
-  <section id="para-quem-e" class="bg-white py-12 md:py-24 px-6">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-4">
+  <section id="para-quem-e" class="relative bg-white py-12 md:py-24 px-6 overflow-hidden">
+    <!-- Background image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      :style="{ backgroundImage: `url(${familyAirportImg})` }"
+    />
+    <div class="absolute inset-0 bg-white/90" />
+
+    <div class="relative max-w-5xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-10">
         Para quem é essa mentoria?
       </h2>
-
-      <!-- Hero image — smaller, centered -->
-      <div class="flex justify-center mb-10">
-        <img
-          :src="familyAirportImg"
-          alt="Família brasileira caminhando no aeroporto com malas, avião ao fundo"
-          class="rounded-2xl shadow-lg w-full max-w-2xl object-cover aspect-2/1"
-        />
-      </div>
 
       <!-- Positive cards — grid with icon circles -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
