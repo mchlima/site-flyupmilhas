@@ -33,10 +33,10 @@ const faqItems = [
     class="bg-[var(--color-brand-bg)] py-12 md:py-24 px-6"
   >
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-4">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-4">
         Perguntas Frequentes
       </h2>
-      <p class="text-[var(--color-brand-text-muted)] text-center mb-12">
+      <p class="text-brand-text-muted text-center mb-12">
         Tire suas dúvidas antes de decidir
       </p>
 
@@ -44,21 +44,21 @@ const faqItems = [
         <UAccordion
           :items="faqItems"
           :ui="{
-            trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-[var(--color-brand-text)] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
+            trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-brand-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
+            label: 'text-start break-words font-semibold text-base text-brand-text',
             content: 'bg-white rounded-b-xl -mt-2 pt-0'
           }"
         >
-          <template #default="{ item, index }">
-            <span class="text-lg font-bold text-[var(--color-brand-primary)] tabular-nums shrink-0">
+          <template #leading="{ index }">
+            <span class="text-lg font-bold text-brand-primary tabular-nums shrink-0">
               {{ String(index + 1).padStart(2, '0') }}
             </span>
-            <span class="text-[var(--color-brand-text)] font-semibold text-base text-left">{{ item.label }}</span>
-            <UIcon name="i-lucide-chevron-down" class="ml-auto shrink-0 size-5 text-[var(--color-brand-text-muted)] transition-transform duration-200 group-data-[state=open]:rotate-180" />
           </template>
-          <template #trailing />
-
+          <template #trailing="{ open }">
+            <UIcon name="i-lucide-chevron-down" class="shrink-0 size-5 text-brand-text-muted transition-transform duration-200 group-data-[state=open]:rotate-180" />
+          </template>
           <template #content="{ item }">
-            <p class="text-[var(--color-brand-text-muted)] text-sm leading-relaxed pb-4 px-5 pl-14">
+            <p class="text-brand-text-muted text-sm leading-relaxed pb-4 px-5 pl-14">
               {{ item.content }}
             </p>
           </template>
