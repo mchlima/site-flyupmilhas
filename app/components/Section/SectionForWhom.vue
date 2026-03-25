@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import familyAirportImg from '~/assets/img/brazilian-family-walking-airport.png'
 
+const { scrollTo } = useScroll()
+
 const cards = [
   { text: 'Pessoas que querem viajar mais gastando menos', icon: 'i-heroicons-paper-airplane' },
   { text: 'Quem está começando do zero em milhas', icon: 'i-heroicons-rocket-launch' },
@@ -19,50 +21,60 @@ const negativeCards = [
 <template>
   <section id="para-quem-e" class="bg-white py-12 md:py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-[var(--color-brand-primary)] text-center mb-10">
+      <h2 class="text-2xl md:text-3xl font-semibold tracking-[-0.015em] text-brand-primary text-center mb-4">
         Para quem é essa mentoria?
       </h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <!-- LEFT column: family image -->
-        <div>
-          <img
-            :src="familyAirportImg"
-            alt="Família brasileira caminhando no aeroporto com malas, avião ao fundo"
-            class="rounded-2xl shadow-lg w-full object-cover aspect-square"
-          />
-        </div>
+      <!-- Hero image — smaller, centered -->
+      <div class="flex justify-center mb-10">
+        <img
+          :src="familyAirportImg"
+          alt="Família brasileira caminhando no aeroporto com malas, avião ao fundo"
+          class="rounded-2xl shadow-lg w-full max-w-2xl object-cover aspect-2/1"
+        />
+      </div>
 
-        <!-- RIGHT column: info cards -->
-        <div class="flex flex-col gap-3">
-          <div
-            v-for="card in cards"
-            :key="card.text"
-            class="rounded-xl bg-white shadow-sm border border-gray-100 p-5 flex items-center gap-4"
-          >
-            <UIcon :name="card.icon" class="w-7 h-7 text-[var(--color-brand-cta)] shrink-0" />
-            <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
+      <!-- Positive cards — grid with icon circles -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+        <div
+          v-for="card in cards"
+          :key="card.text"
+          class="rounded-xl bg-white shadow-sm border border-gray-100 p-5 flex items-center gap-4"
+        >
+          <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
+            <UIcon :name="card.icon" class="w-5 h-5 text-brand-primary" />
           </div>
+          <p class="text-brand-text leading-relaxed text-sm md:text-base">{{ card.text }}</p>
         </div>
       </div>
 
       <!-- Separator: negative qualification -->
-      <div class="mt-12 mb-6 text-center">
-        <p class="text-lg font-semibold text-[var(--color-brand-primary)]">
+      <div class="mb-6 text-center">
+        <p class="text-lg font-semibold text-brand-primary">
           Essa mentoria não é para todos
         </p>
       </div>
 
       <!-- Negative qualification cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
         <div
           v-for="card in negativeCards"
           :key="card.text"
           class="rounded-xl bg-slate-50 border border-slate-200 p-5 flex items-center gap-4"
         >
           <UIcon :name="card.icon" class="w-7 h-7 text-brand-text-muted shrink-0" />
-          <p class="text-[var(--color-brand-text)] leading-relaxed text-sm md:text-base">{{ card.text }}</p>
+          <p class="text-brand-text leading-relaxed text-sm md:text-base">{{ card.text }}</p>
         </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <button
+          class="bg-brand-cta hover:bg-brand-cta-hover text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
+          @click="scrollTo('formulario')"
+        >
+          Quero dar o primeiro passo
+        </button>
       </div>
 
     </div>
