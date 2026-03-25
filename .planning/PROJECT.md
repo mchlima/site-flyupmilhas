@@ -100,10 +100,10 @@ Landing page fully optimized with client-approved copy, real pricing (R$ 299,90)
 - ✓ Dark backgrounds #0F172A (header/form) e #020617 (footer) — v1.6 Phase 15
 - ✓ Plus Jakarta Sans substituiu Inter + hierarquia tipografica (bold/semibold/medium + tracking) — v1.6 Phase 16
 - ✓ SectionGuarantee dedicada com selo dourado + copy acolhedor entre Price e FAQ — v1.6 Phase 17
+- ✓ Avatares circulares com fotos reais + fallback iniciais nos depoimentos WhatsApp — v1.6 Phase 18
 
 ### Active
 
-- [ ] Depoimentos com foto circular ou avatar iniciais
 - [ ] FAQ redesenhado com mais impacto
 - [ ] Hierarquia visual e espacamento aprimorados
 
@@ -165,4 +165,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-25 after Phase 17 complete*
+*Last updated: 2026-03-25 after Phase 18 complete*
