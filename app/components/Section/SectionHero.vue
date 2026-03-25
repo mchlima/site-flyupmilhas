@@ -18,13 +18,6 @@ const { scrollTo } = useScroll()
     <div class="absolute inset-0 gradient-hero opacity-90" />
 
     <div class="relative z-10 max-w-3xl mx-auto text-center px-6 py-12 md:py-24 flex flex-col justify-center min-h-screen">
-      <!-- Pain point chips -->
-      <div class="flex flex-wrap justify-center gap-2 mb-6">
-        <span class="text-xs md:text-sm px-3 py-1 rounded-full border border-white/30 text-white/90">Viajar de avião é caro</span>
-        <span class="text-xs md:text-sm px-3 py-1 rounded-full border border-white/30 text-white/90">Milhas é só para quem tem cartão black</span>
-        <span class="text-xs md:text-sm px-3 py-1 rounded-full border border-white/30 text-white/90">Não sei por onde começar</span>
-      </div>
-
       <h1
         class="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight mb-6"
       >
