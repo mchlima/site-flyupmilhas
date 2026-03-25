@@ -44,18 +44,16 @@ const faqItems = [
         <UAccordion
           :items="faqItems"
           :ui="{
-            trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl border border-gray-100 min-w-0 text-brand-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
+            trigger: 'group flex-1 flex items-center gap-4 font-semibold text-base py-4 px-5 bg-white rounded-xl min-w-0 text-brand-text focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-primary)]',
             label: 'text-start break-words font-semibold text-base text-brand-text',
             content: 'bg-white rounded-b-xl -mt-2 pt-0'
           }"
         >
           <template #leading="{ index }">
-            <UIcon name="i-lucide-chevron-down" class="shrink-0 size-5 text-brand-text-muted transition-transform duration-200 group-data-[state=open]:rotate-180" />
             <span class="text-lg font-bold text-brand-primary tabular-nums shrink-0">
               {{ String(index + 1).padStart(2, '0') }}
             </span>
           </template>
-          <template #trailing />
 
           <template #content="{ item }">
             <p class="text-brand-text-muted text-sm leading-relaxed pb-4 px-5 pl-14">
