@@ -42,6 +42,7 @@ useSchemaOrg([
       <SectionProgramContent />
       <SectionForWhom />
       <SectionMethod />
+      <SectionProvas />
       <SectionSocialProof />
       <SectionPrice />
       <SectionGuarantee />
