@@ -61,19 +61,20 @@ const steps = [
         <div
           v-for="step in steps"
           :key="step.number"
-          class="rounded-xl p-6"
+          class="step-card rounded-xl p-6"
+          style="position: relative; overflow: hidden;"
           :class="step.number === '04'
             ? 'bg-brand-dark text-white'
             : 'bg-white shadow-sm'"
         >
           <span
             aria-hidden="true"
-            class="text-4xl font-bold block mb-2"
-            :class="step.number === '04' ? 'text-white/80' : 'text-brand-cta'"
+            class="step-watermark"
+            :class="step.number === '04' ? 'step-watermark--light' : 'step-watermark--cta'"
           >{{ step.number }}</span>
           <UIcon
             :name="step.icon"
-            class="w-10 h-10 mb-3"
+            class="w-10 h-10 mb-3 relative z-10"
             :class="step.number === '04' ? 'text-white/80' : 'text-[var(--color-brand-primary)]'"
           />
           <h3
@@ -102,3 +103,26 @@ const steps = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.step-watermark {
+  position: absolute;
+  top: -1.25rem;
+  left: auto;
+  right: 0.5rem;
+  font-size: 8rem;
+  line-height: 1;
+  font-weight: 900;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.step-watermark--cta {
+  color: rgba(14, 116, 144, 0.15);
+}
+
+.step-watermark--light {
+  color: rgba(255, 255, 255, 0.2);
+}
+</style>
