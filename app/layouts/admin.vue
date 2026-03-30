@@ -17,6 +17,12 @@ const navItems = computed(() => [
       active: route.path.startsWith('/admin/customers'),
     },
     {
+      label: 'Avaliações',
+      icon: 'i-heroicons-clipboard-document-check',
+      to: '/admin/assessments',
+      active: route.path === '/admin/assessments',
+    },
+    {
       label: 'Encontros',
       icon: 'i-heroicons-video-camera',
       to: '/admin/meetings',
