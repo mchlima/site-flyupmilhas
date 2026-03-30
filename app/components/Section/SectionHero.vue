@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import bgHero from '~/assets/img/bg-hero.webp'
-
 const { scrollTo } = useScroll()
+
+useHead({
+  link: [{ rel: 'preload', as: 'image', href: '/img/bg-hero.webp', fetchpriority: 'high' }],
+})
 </script>
 
 <template>
@@ -12,7 +14,7 @@ const { scrollTo } = useScroll()
   >
     <!-- Background image — LCP element with slow zoom -->
     <img
-      :src="bgHero"
+      src="/img/bg-hero.webp"
       alt=""
       aria-hidden="true"
       fetchpriority="high"
