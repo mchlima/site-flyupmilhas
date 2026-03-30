@@ -32,6 +32,8 @@ const CustomerSchema = new Schema<ICustomer>({
   city: { type: String, default: '' },
   status: { type: String, enum: CUSTOMER_STATUS_VALUES, default: 'lead' },
   source: { type: String, default: 'lp-flyupmilhas' },
+  cpfCnpj: { type: String, default: '' },
+  asaasCustomerId: { type: String, default: '' },
 }, { timestamps: true })
 
 export const Customer = mongoose.models.Customer || mongoose.model<ICustomer>('Customer', CustomerSchema, 'customers')

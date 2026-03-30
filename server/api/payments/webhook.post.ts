@@ -4,48 +4,41 @@ import { Payment } from '../../models/Payment'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
-  const stripe = getStripe()
+  const body = await readBody(event)
 
-  const body = await readRawBody(event)
-  const signature = getHeader(event, 'stripe-signature')
-
-  if (!body || !signature) {
-    throw createError({ statusCode: 400, statusMessage: 'Missing body or signature' })
+  // Verify webhook token if configured
+  const token = getHeader(event, 'asaas-access-token')
+  if (config.asaasWebhookToken && token !== config.asaasWebhookToken) {
+    throw createError({ statusCode: 401, statusMessage: 'Invalid webhook token' })
   }
 
-  let stripeEvent
-  try {
-    stripeEvent = stripe.webhooks.constructEvent(body, signature, config.stripeWebhookSecret)
-  } catch {
-    throw createError({ statusCode: 400, statusMessage: 'Invalid signature' })
+  if (!body?.event || !body?.payment) {
+    throw createError({ statusCode: 400, statusMessage: 'Invalid payload' })
   }
 
   await connectDb()
 
-  if (stripeEvent.type === 'payment_intent.succeeded') {
-    const paymentIntent = stripeEvent.data.object
-    const payment = await Payment.findOne({ stripeSessionId: paymentIntent.id })
+  const chargeId = body.payment.id
+
+  if (body.event === 'PAYMENT_CONFIRMED' || body.event === 'PAYMENT_RECEIVED') {
+    const payment = await Payment.findOne({ externalId: chargeId })
 
     if (payment && payment.status !== 'paid') {
       payment.status = 'paid'
-      payment.stripePaymentIntentId = paymentIntent.id
       payment.paidAt = new Date()
       await payment.save()
 
-      // Mark invoice as paid
       if (payment.invoiceId) {
         await Invoice.findByIdAndUpdate(payment.invoiceId, { status: 'paid', paidAt: new Date() })
       }
 
-      // Update customer status
       await Customer.findByIdAndUpdate(payment.customerId, { status: 'paid' })
     }
   }
 
-  if (stripeEvent.type === 'payment_intent.payment_failed') {
-    const paymentIntent = stripeEvent.data.object
+  if (body.event === 'PAYMENT_OVERDUE' || body.event === 'PAYMENT_DELETED') {
     await Payment.findOneAndUpdate(
-      { stripeSessionId: paymentIntent.id },
+      { externalId: chargeId },
       { status: 'failed' },
     )
   }

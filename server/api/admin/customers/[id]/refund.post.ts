@@ -63,13 +63,30 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  // Process refund via Stripe
-  const stripe = getStripe()
-  const stripeRefund = await stripe.refunds.create({
-    payment_intent: payment.stripePaymentIntentId || payment.stripeSessionId,
-    amount,
-    reason: 'requested_by_customer',
-  })
+  // Process refund via Asaas
+  let refundResult: any
+  try {
+    refundResult = await asaasApi(`/payments/${payment.externalId}/refund`, {
+      method: 'POST',
+      body: {
+        value: amount / 100,
+        description: reason,
+      },
+    })
+  } catch (asaasError: any) {
+    // If individual refund fails (e.g. installment), record locally
+    const errorMsg = asaasError?.data?.errors?.[0]?.description || ''
+    if (errorMsg.includes('individualmente')) {
+      // Installment payment — refund must be done in Asaas dashboard
+      // Record locally for tracking
+      refundResult = { id: `local_${Date.now()}` }
+    } else {
+      throw createError({
+        statusCode: 400,
+        statusMessage: errorMsg || 'Erro ao processar estorno no gateway',
+      })
+    }
+  }
 
   // Update payment
   const newAmountRefunded = payment.amountRefunded + amount
@@ -78,7 +95,7 @@ export default defineEventHandler(async (event) => {
   payment.amountRefunded = newAmountRefunded
   payment.status = isFullRefund ? 'refunded' : 'partially_refunded'
   payment.refunds.push({
-    stripeRefundId: stripeRefund.id,
+    externalId: refundResult.id || `refund_${Date.now()}`,
     amount,
     reason: reason || '',
     createdAt: new Date(),
@@ -92,7 +109,7 @@ export default defineEventHandler(async (event) => {
 
   return {
     success: true,
-    refundId: stripeRefund.id,
+    refundId: refundResult.id,
     amountRefunded: newAmountRefunded,
     status: payment.status,
   }

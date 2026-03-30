@@ -42,11 +42,11 @@ export default defineNuxtConfig({
     mongodbUri: '',
     mongodbDatabase: 'flyupmilhas',
     jwtSecret: '',
-    stripeSecretKey: '',
-    stripeWebhookSecret: '',
+    asaasApiKey: '',
+    asaasWebhookToken: '',
     public: {
       r2BaseUrl: '',
-      stripePublishableKey: '',
+      asaasEnvironment: 'sandbox',
     },
   },
 

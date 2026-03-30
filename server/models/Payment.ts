@@ -1,7 +1,7 @@
 import mongoose, { Schema, type Document, type Types } from 'mongoose'
 
 export interface IRefund {
-  stripeRefundId: string
+  externalId: string
   amount: number
   reason: string
   createdAt: Date
@@ -10,8 +10,7 @@ export interface IRefund {
 export interface IPayment extends Document {
   customerId: Types.ObjectId
   invoiceId: Types.ObjectId
-  stripeSessionId: string
-  stripePaymentIntentId: string
+  externalId: string
   amount: number
   amountRefunded: number
   currency: string
@@ -23,7 +22,7 @@ export interface IPayment extends Document {
 }
 
 const RefundSchema = new Schema<IRefund>({
-  stripeRefundId: { type: String, required: true },
+  externalId: { type: String, default: '' },
   amount: { type: Number, required: true },
   reason: { type: String, default: '' },
   createdAt: { type: Date, default: Date.now },
@@ -32,8 +31,7 @@ const RefundSchema = new Schema<IRefund>({
 const PaymentSchema = new Schema<IPayment>({
   customerId: { type: Schema.Types.ObjectId, ref: 'Customer', required: true },
   invoiceId: { type: Schema.Types.ObjectId, ref: 'Invoice', default: null },
-  stripeSessionId: { type: String, required: true, unique: true },
-  stripePaymentIntentId: { type: String, default: '' },
+  externalId: { type: String, required: true },
   amount: { type: Number, required: true },
   amountRefunded: { type: Number, default: 0 },
   currency: { type: String, default: 'brl' },
