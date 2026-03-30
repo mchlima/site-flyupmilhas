@@ -128,10 +128,17 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const charge = await asaasApi('/payments', {
-    method: 'POST',
-    body: chargeBody,
-  }) as any
+  let charge: any
+  try {
+    charge = await asaasApi('/payments', {
+      method: 'POST',
+      body: chargeBody,
+    })
+  } catch (err: any) {
+    const errors = err?.data?.errors || err?.response?._data?.errors
+    const message = errors?.[0]?.description || 'Erro ao processar pagamento'
+    throw createError({ statusCode: 400, statusMessage: message })
+  }
 
   // Save payment
   const paymentMethod = method === 'CREDIT_CARD' ? 'card' : 'pix'
