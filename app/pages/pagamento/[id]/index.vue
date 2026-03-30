@@ -11,6 +11,7 @@ const customerId = route.params.id as string
 
 const { data: lead, error: fetchError } = await useFetch(`/api/customers/${customerId}`)
 const { data: invoiceData, refresh: refreshInvoices } = await useFetch(`/api/payments/${customerId}`)
+const { data: paymentSettings } = await useFetch('/api/settings/payment')
 
 const isLoading = ref(false)
 const error = ref('')
@@ -68,7 +69,8 @@ function formatCurrency(cents: number) {
 
 const installmentOptions = computed(() => {
   const amount = currentInvoiceAmount.value
-  const maxInstallments = Math.min(12, Math.floor(amount / 500))
+  const configMax = paymentSettings.value?.maxInstallments || 12
+  const maxInstallments = Math.min(configMax, Math.floor(amount / 500))
   const options = []
   for (let i = 1; i <= Math.max(1, maxInstallments); i++) {
     options.push({
@@ -490,6 +492,7 @@ function goBack() {
 }
 .pay-input:focus { border-color: var(--color-brand-cta); }
 .pay-input::placeholder { color: rgba(255,255,255,0.35); }
+select.pay-input option { background: #1e293b; color: white; }
 
 .pay-installment {
   display: flex;

@@ -15,7 +15,13 @@ export interface IPayment extends Document {
   amountRefunded: number
   currency: string
   method: 'card' | 'pix'
-  status: 'pending' | 'paid' | 'failed' | 'expired' | 'partially_refunded' | 'refunded'
+  installmentCount: number
+  installmentValue: number | null
+  cardHolderName: string | null
+  cardLastDigits: string | null
+  cardExpiry: string | null
+  cardBrand: string | null
+  status: 'pending' | 'paid' | 'failed' | 'cancelled' | 'expired' | 'partially_refunded' | 'refunded'
   refunds: IRefund[]
   paidAt: Date | null
   createdAt: Date
@@ -36,7 +42,13 @@ const PaymentSchema = new Schema<IPayment>({
   amountRefunded: { type: Number, default: 0 },
   currency: { type: String, default: 'brl' },
   method: { type: String, enum: ['card', 'pix'], default: 'card' },
-  status: { type: String, enum: ['pending', 'paid', 'failed', 'expired', 'partially_refunded', 'refunded'], default: 'pending' },
+  installmentCount: { type: Number, default: 1 },
+  installmentValue: { type: Number, default: null },
+  cardHolderName: { type: String, default: null },
+  cardLastDigits: { type: String, default: null },
+  cardExpiry: { type: String, default: null },
+  cardBrand: { type: String, default: null },
+  status: { type: String, enum: ['pending', 'paid', 'failed', 'cancelled', 'expired', 'partially_refunded', 'refunded'], default: 'pending' },
   refunds: { type: [RefundSchema], default: [] },
   paidAt: { type: Date, default: null },
 }, { timestamps: true })

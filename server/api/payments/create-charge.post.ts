@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { Customer } from '../../models/Customer'
 import { Invoice } from '../../models/Invoice'
 import { Payment } from '../../models/Payment'
+import { getSetting } from '../../models/Setting'
 
 const CreateChargeSchema = z.object({
   invoiceId: z.string().refine(val => mongoose.Types.ObjectId.isValid(val), 'Invalid ID'),
@@ -41,6 +42,14 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 400, statusMessage: 'Credit card data required' })
   }
 
+  // Validate installment count against settings
+  if (installmentCount && installmentCount > 1) {
+    const maxInstallments = await getSetting('payment.maxInstallments', 12)
+    if (installmentCount > maxInstallments) {
+      throw createError({ statusCode: 400, statusMessage: `Máximo de ${maxInstallments} parcelas permitido` })
+    }
+  }
+
   await connectDb()
 
   const invoice = await Invoice.findById(invoiceId).lean()
@@ -50,6 +59,14 @@ export default defineEventHandler(async (event) => {
 
   const customer = await Customer.findById(invoice.customerId).lean()
   if (!customer) throw createError({ statusCode: 404, statusMessage: 'Customer not found' })
+
+  // Cancel pending payments for this invoice
+  const pendingPayments = await Payment.find({ invoiceId, status: 'pending' })
+  for (const pp of pendingPayments) {
+    await asaasApi(`/payments/${pp.externalId}`, { method: 'DELETE' }).catch(() => {})
+    pp.status = 'cancelled'
+    await pp.save()
+  }
 
   // Resolve CPF
   const customerCpf = cpfCnpj || creditCardHolderInfo?.cpfCnpj || (customer as any).cpfCnpj || ''
@@ -118,6 +135,16 @@ export default defineEventHandler(async (event) => {
 
   // Save payment
   const paymentMethod = method === 'CREDIT_CARD' ? 'card' : 'pix'
+  const actualInstallments = installmentCount && installmentCount > 1 ? installmentCount : 1
+  const installmentValue = actualInstallments > 1 ? Math.round(invoice.amount / actualInstallments) : null
+  // Extract card info for display
+  const cardInfo = method === 'CREDIT_CARD' && creditCard ? {
+    cardHolderName: creditCard.holderName,
+    cardLastDigits: creditCard.number.replace(/\s/g, '').slice(-4),
+    cardExpiry: `${creditCard.expiryMonth}/${creditCard.expiryYear}`,
+    cardBrand: (charge.creditCard?.creditCardBrand || null) as string | null,
+  } : {}
+
   const payment = await Payment.create({
     customerId: invoice.customerId,
     invoiceId,
@@ -125,6 +152,9 @@ export default defineEventHandler(async (event) => {
     amount: invoice.amount,
     currency: 'brl',
     method: paymentMethod,
+    installmentCount: actualInstallments,
+    installmentValue,
+    ...cardInfo,
     status: charge.status === 'CONFIRMED' || charge.status === 'RECEIVED' ? 'paid' : 'pending',
     ...(charge.status === 'CONFIRMED' || charge.status === 'RECEIVED' ? { paidAt: new Date() } : {}),
   })

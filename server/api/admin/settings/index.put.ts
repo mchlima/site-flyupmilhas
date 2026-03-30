@@ -5,6 +5,7 @@ const UpdateSettingsSchema = z.object({
   'plan.price': z.number().min(100).optional(),
   'plan.name': z.string().min(1).max(200).optional(),
   'plan.description': z.string().max(500).optional(),
+  'payment.maxInstallments': z.number().min(1).max(12).optional(),
 })
 
 export default defineEventHandler(async (event) => {

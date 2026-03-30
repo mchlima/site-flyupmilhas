@@ -10,6 +10,7 @@ const form = reactive({
   name: '',
   description: '',
   priceDisplay: '',
+  maxInstallments: 12,
 })
 
 watch(settings, (val) => {
@@ -18,6 +19,7 @@ watch(settings, (val) => {
     form.description = (val['plan.description'] as string) || '3 encontros online + suporte via WhatsApp'
     const cents = (val['plan.price'] as number) || 20000
     form.priceDisplay = (cents / 100).toFixed(2).replace('.', ',')
+    form.maxInstallments = (val['payment.maxInstallments'] as number) || 12
   }
 }, { immediate: true })
 
@@ -43,6 +45,7 @@ async function onSubmit() {
         'plan.price': cents,
         'plan.name': form.name,
         'plan.description': form.description,
+        'payment.maxInstallments': form.maxInstallments,
       },
     })
     toast.add({ title: 'Configurações salvas', color: 'success' })
@@ -82,6 +85,16 @@ async function onSubmit() {
 
           <UFormField label="Preço (R$)">
             <UInput v-model="form.priceDisplay" placeholder="200,00" size="lg" icon="i-heroicons-currency-dollar" :ui="{ root: 'w-full' }" />
+          </UFormField>
+
+          <UFormField label="Máximo de parcelas no cartão" help="De 1 (somente à vista) até 12 parcelas">
+            <USelect
+              v-model="form.maxInstallments"
+              :items="Array.from({ length: 12 }, (_, i) => ({ label: i === 0 ? '1x (à vista)' : `${i + 1}x`, value: i + 1 }))"
+              value-key="value"
+              label-key="label"
+              size="lg"
+            />
           </UFormField>
         </div>
 

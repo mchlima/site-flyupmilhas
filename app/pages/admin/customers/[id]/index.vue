@@ -520,36 +520,54 @@ async function cancelInvoice(invoiceId: string) {
 
           <!-- Payments -->
           <div v-if="inv.payments?.length" style="padding: 0.5rem 0.75rem;">
-            <div v-for="p in inv.payments" :key="p._id" style="padding: 0.375rem 0;">
-              <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                  <UIcon name="i-heroicons-credit-card" style="width: 0.8rem; height: 0.8rem; color: var(--ui-text-muted);" />
-                  <UBadge v-if="p.status === 'paid'" color="success" variant="subtle" size="xs">Pago</UBadge>
-                  <UBadge v-else-if="p.status === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
-                  <UBadge v-else-if="p.status === 'failed'" color="error" variant="subtle" size="xs">Falhou</UBadge>
-                  <UBadge v-else-if="p.status === 'partially_refunded'" color="warning" variant="subtle" size="xs">Est. parcial</UBadge>
-                  <UBadge v-else-if="p.status === 'refunded'" color="error" variant="subtle" size="xs">Estornado</UBadge>
-                  <UBadge v-else color="neutral" variant="subtle" size="xs">{{ p.status }}</UBadge>
-                  <span style="font-size: 0.75rem; color: var(--ui-text-muted);">
-                    {{ p.method === 'card' ? 'Cartão' : 'PIX' }} · {{ formatCurrency(p.amount) }}
-                    <template v-if="p.amountRefunded > 0"> · Est: {{ formatCurrency(p.amountRefunded) }}</template>
-                  </span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 0.375rem;">
-                  <span style="font-size: 0.65rem; color: var(--ui-text-muted);">{{ p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt) }}</span>
-                  <UButton
-                    v-if="p.status === 'paid' || p.status === 'partially_refunded'"
-                    icon="i-heroicons-arrow-uturn-left"
-                    color="error"
-                    variant="ghost"
-                    size="xs"
-                    @click="openRefundModal(p._id)"
-                  />
+            <div v-for="p in inv.payments" :key="p._id" style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.5rem 0; border-top: 1px solid var(--ui-border);">
+              <div style="display: flex; align-items: center; gap: 0.625rem; flex: 1; min-width: 0;">
+                <UIcon v-if="p.method === 'pix'" name="i-heroicons-qr-code" style="width: 1.1rem; height: 1.1rem; color: #32bcad; flex-shrink: 0;" />
+                <UIcon v-else name="i-heroicons-credit-card" style="width: 1.1rem; height: 1.1rem; color: var(--ui-text-muted); flex-shrink: 0;" />
+
+                <div style="min-width: 0;">
+                  <div style="display: flex; align-items: center; gap: 0.375rem;">
+                    <UBadge v-if="p.status === 'paid'" color="success" variant="subtle" size="xs">Pago</UBadge>
+                    <UBadge v-else-if="p.status === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
+                    <UBadge v-else-if="p.status === 'failed'" color="error" variant="subtle" size="xs">Falhou</UBadge>
+                    <UBadge v-else-if="p.status === 'cancelled'" color="neutral" variant="subtle" size="xs">Cancelado</UBadge>
+                    <UBadge v-else-if="p.status === 'partially_refunded'" color="warning" variant="subtle" size="xs">Est. parcial</UBadge>
+                    <UBadge v-else-if="p.status === 'refunded'" color="error" variant="subtle" size="xs">Estornado</UBadge>
+                    <UBadge v-else color="neutral" variant="subtle" size="xs">{{ p.status }}</UBadge>
+                    <span style="font-size: 0.85rem; font-weight: 600; color: var(--ui-text);">{{ formatCurrency(p.amount) }}</span>
+                    <span v-if="p.installmentCount > 1" style="font-size: 0.7rem; color: var(--ui-text-muted);">em {{ p.installmentCount }}x de {{ formatCurrency(p.installmentValue) }}</span>
+                  </div>
+                  <div style="font-size: 0.7rem; color: var(--ui-text-muted); margin-top: 0.2rem;">
+                    <template v-if="p.method === 'card'">
+                      <span v-if="p.cardBrand" style="font-weight: 500;">{{ p.cardBrand }}</span>
+                      <template v-if="p.cardLastDigits"> •••• {{ p.cardLastDigits }}</template>
+                      <template v-if="p.cardHolderName"> · {{ p.cardHolderName }}</template>
+                      <template v-if="p.cardExpiry"> · {{ p.cardExpiry }}</template>
+                    </template>
+                    <template v-else>PIX</template>
+                    <template v-if="p.amountRefunded > 0">
+                      <span style="color: var(--ui-color-error-500);"> · Estornado: {{ formatCurrency(p.amountRefunded) }}</span>
+                    </template>
+                  </div>
                 </div>
               </div>
 
-              <!-- Refunds -->
-              <div v-if="p.refunds?.length" style="padding-left: 1.5rem; margin-top: 0.25rem;">
+              <div style="display: flex; align-items: center; gap: 0.375rem; flex-shrink: 0;">
+                <span style="font-size: 0.65rem; color: var(--ui-text-muted); white-space: nowrap;">{{ p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt) }}</span>
+                <UButton
+                  v-if="p.status === 'paid' || p.status === 'partially_refunded'"
+                  icon="i-heroicons-arrow-uturn-left"
+                  color="error"
+                  variant="ghost"
+                  size="xs"
+                  @click="openRefundModal(p._id)"
+                />
+              </div>
+            </div>
+
+            <!-- Refunds (outside payment row, grouped below) -->
+            <template v-for="p in inv.payments" :key="`refunds-${p._id}`">
+              <div v-if="p.refunds?.length" style="padding-left: 1.75rem; margin-bottom: 0.25rem;">
                 <div v-for="(r, ri) in p.refunds" :key="ri" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.65rem; color: var(--ui-text-muted); padding: 0.125rem 0;">
                   <UIcon name="i-heroicons-arrow-uturn-left" style="width: 0.6rem; height: 0.6rem;" />
                   <span>{{ formatCurrency(r.amount) }}</span>
@@ -557,7 +575,7 @@ async function cancelInvoice(invoiceId: string) {
                   <span style="margin-left: auto;">{{ new Date(r.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span>
                 </div>
               </div>
-            </div>
+            </template>
           </div>
         </div>
       </div>

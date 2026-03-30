@@ -36,10 +36,17 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  if (body.event === 'PAYMENT_OVERDUE' || body.event === 'PAYMENT_DELETED') {
+  if (body.event === 'PAYMENT_OVERDUE' || body.event === 'PAYMENT_DELETED' || body.event === 'PAYMENT_REPROVED_BY_RISK_ANALYSIS') {
     await Payment.findOneAndUpdate(
       { externalId: chargeId },
       { status: 'failed' },
+    )
+  }
+
+  if (body.event === 'PAYMENT_REFUNDED') {
+    await Payment.findOneAndUpdate(
+      { externalId: chargeId },
+      { status: 'refunded' },
     )
   }
 
