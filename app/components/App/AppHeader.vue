@@ -39,12 +39,12 @@ function navigate(anchor: string) {
 
 <template>
   <header
-    class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-brand-dark transition-transform duration-300"
-    :class="isVisible ? 'translate-y-0' : '-translate-y-full'"
+    class="header-bar"
+    :style="{ transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }"
   >
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
+    <div style="max-width: 64rem; margin: 0 auto; display: flex; align-items: center; justify-content: space-between;">
       <!-- Logo -->
-      <button class="cursor-pointer" @click="scrollTo('hero')">
+      <button style="cursor: pointer; background: none; border: none; padding: 0;" @click="scrollTo('hero')">
         <img
           src="~/assets/img/logo-fly-up-milhas.webp"
           alt="Fly Up Milhas"
@@ -52,22 +52,22 @@ function navigate(anchor: string) {
           height="40"
           fetchpriority="high"
           decoding="async"
-          class="h-10 w-auto"
+          style="height: 2.5rem; width: auto;"
         />
       </button>
 
       <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-6">
+      <nav class="header-desktop-nav">
         <button
           v-for="link in navLinks"
           :key="link.anchor"
-          class="text-white/80 hover:text-brand-primary text-sm font-medium transition-colors cursor-pointer"
+          class="header-nav-link"
           @click="navigate(link.anchor)"
         >
           {{ link.label }}
         </button>
         <button
-          class="bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-5 py-2 rounded-lg text-sm cursor-pointer transition-colors min-h-[44px]"
+          class="header-cta"
           @click="scrollTo('formulario')"
         >
           Quero dar o primeiro passo
@@ -76,42 +76,126 @@ function navigate(anchor: string) {
 
       <!-- Mobile hamburger -->
       <button
-        class="md:hidden text-white min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer"
+        class="header-hamburger"
         :aria-label="isMenuOpen ? 'Fechar menu' : 'Abrir menu'"
         :aria-expanded="isMenuOpen"
         @click="isMenuOpen = !isMenuOpen"
       >
         <UIcon
           :name="isMenuOpen ? 'i-heroicons-x-mark' : 'i-heroicons-bars-3'"
-          class="w-6 h-6"
+          style="width: 1.5rem; height: 1.5rem;"
         />
       </button>
     </div>
   </header>
 
   <!-- Mobile fullscreen overlay -->
-  <div
-    class="fixed inset-0 z-40 flex flex-col items-center justify-center bg-brand-dark transition-opacity duration-200"
-    :class="isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'"
-    role="dialog"
-    aria-modal="true"
-    :aria-hidden="!isMenuOpen"
-  >
-    <nav class="flex flex-col items-center gap-8">
+  <Transition name="menu">
+    <div
+      v-if="isMenuOpen"
+      style="position: fixed; inset: 0; z-index: 45; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #0F172A;"
+      role="dialog"
+      aria-modal="true"
+    >
+    <nav style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
       <button
         v-for="link in navLinks"
         :key="link.anchor"
-        class="text-white text-xl font-bold cursor-pointer"
+        style="color: white; font-size: 1.25rem; font-weight: 700; cursor: pointer; background: none; border: none;"
         @click="navigate(link.anchor)"
       >
         {{ link.label }}
       </button>
       <button
-        class="mt-4 bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors w-full max-w-xs"
+        class="header-cta"
+        style="margin-top: 1rem; padding: 1rem 2rem; font-size: 1.125rem; width: 100%; max-width: 20rem;"
         @click="navigate('formulario')"
       >
         Quero dar o primeiro passo
       </button>
     </nav>
   </div>
+  </Transition>
 </template>
+
+<style>
+.header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 1rem 1.5rem;
+  background: var(--color-brand-dark);
+  transition: transform 0.3s ease;
+}
+
+.header-desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .header-desktop-nav {
+    display: flex;
+  }
+  .header-hamburger {
+    display: none !important;
+  }
+}
+
+.header-nav-link {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav-link:hover {
+  color: var(--color-brand-primary);
+}
+
+.header-cta {
+  background: var(--color-brand-cta);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease;
+  min-height: 44px;
+}
+
+.header-cta:hover {
+  background: var(--color-brand-cta-hover);
+}
+
+.header-hamburger {
+  color: white;
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Menu transition */
+.menu-enter-active,
+.menu-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  opacity: 0;
+}
+</style>

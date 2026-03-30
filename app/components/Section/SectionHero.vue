@@ -30,7 +30,7 @@ const { scrollTo } = useScroll()
         class="hero-enter hero-enter--0"
         style="display: inline-flex; align-items: center; padding: 0.4rem 1.2rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: white; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(8px);"
       >
-        Consultoria exclusiva de milhas
+        Mentoria exclusiva de milhas
       </span>
 
       <!-- Headline -->
@@ -49,18 +49,8 @@ const { scrollTo } = useScroll()
         Um método simples e prático para transformar seus gastos do dia a dia em milhas e viajar mais, gastando menos.
       </p>
 
-      <!-- Social proof -->
-      <div
-        class="hero-enter hero-enter--3"
-        style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; flex-wrap: wrap;"
-      >
-        <span style="font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.7);">+500 clientes atendidos</span>
-        <span style="width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,0.4);" />
-        <span style="font-size: 0.85rem; font-weight: 500; color: rgba(255,255,255,0.7);">Nota 5.0 no Google</span>
-      </div>
-
       <!-- CTA -->
-      <div class="hero-enter hero-enter--4" style="display: flex; justify-content: center;">
+      <div class="hero-enter hero-enter--3" style="display: flex; justify-content: center;">
         <button
           class="hero-cta"
           style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; border-radius: 0.75rem; font-size: 1.15rem; font-weight: 700; color: white; background: var(--color-brand-cta); cursor: pointer; border: none; transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;"
@@ -72,7 +62,7 @@ const { scrollTo } = useScroll()
       </div>
 
       <p
-        class="hero-enter hero-enter--5"
+        class="hero-enter hero-enter--4"
         style="font-size: 0.85rem; color: rgba(255,255,255,0.6);"
       >
         Comece a economizar já no primeiro mês
@@ -81,7 +71,7 @@ const { scrollTo } = useScroll()
 
     <!-- Scroll indicator -->
     <div
-      class="hero-enter hero-enter--5"
+      class="hero-enter hero-enter--4"
       style="position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 10;"
     >
       <div style="width: 28px; height: 28px; border-right: 2px solid rgba(255,255,255,0.5); border-bottom: 2px solid rgba(255,255,255,0.5); transform: rotate(45deg); animation: bounceDn 2s ease-in-out infinite;" />
