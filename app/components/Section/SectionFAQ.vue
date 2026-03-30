@@ -1,8 +1,17 @@
 <script setup lang="ts">
-const faqItems = [
+const { data: planSettings } = await useFetch('/api/settings/payment')
+
+const priceText = computed(() => {
+  const cents = planSettings.value?.price || 20000
+  return `R$ ${(cents / 100).toFixed(2).replace('.', ',')}`
+})
+
+const maxInstallments = computed(() => planSettings.value?.maxInstallments || 12)
+
+const faqItems = computed(() => [
   {
     label: 'Quanto custa a mentoria?',
-    content: 'O investimento é de R$ 299,90 no PIX ou até 10x no cartão. Você tem 3 encontros individuais ao longo de 30 dias, suporte via WhatsApp e material de apoio. E se não ficar satisfeito, tem garantia de 7 dias com reembolso total.',
+    content: `O investimento é de ${priceText.value} no PIX ou até ${maxInstallments.value}x no cartão. Você tem 3 encontros individuais ao longo de 30 dias, suporte via WhatsApp e material de apoio. E se não ficar satisfeito, tem garantia de 7 dias com reembolso total.`,
   },
   {
     label: 'Funciona para quem está começando do zero?',
@@ -22,9 +31,9 @@ const faqItems = [
   },
   {
     label: 'Como funciona o pagamento?',
-    content: 'Após preencher o formulário, nossa equipe entra em contato pelo WhatsApp em até 24h para agendar seu primeiro encontro. O pagamento é feito antes do início, via PIX ou cartão de crédito em até 10x.',
+    content: `Após preencher o formulário, nossa equipe entra em contato pelo WhatsApp em até 24h para agendar seu primeiro encontro. O pagamento é feito antes do início, via PIX ou cartão de crédito em até ${maxInstallments.value}x.`,
   },
-]
+])
 </script>
 
 <template>

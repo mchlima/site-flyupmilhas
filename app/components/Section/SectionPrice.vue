@@ -1,6 +1,18 @@
 <script setup lang="ts">
 const { scrollTo } = useScroll()
 
+const { data: planSettings } = await useFetch('/api/settings/payment')
+
+const priceFormatted = computed(() => {
+  const cents = planSettings.value?.price || 20000
+  return `R$ ${(cents / 100).toFixed(2).replace('.', ',')}`
+})
+
+const installmentLabel = computed(() => {
+  const max = planSettings.value?.maxInstallments || 12
+  return max > 1 ? `no PIX ou até ${max}x no cartão` : 'no PIX ou cartão à vista'
+})
+
 const benefits = [
   { text: '3 encontros estratégicos (início, meio e fim)', icon: 'i-heroicons-video-camera' },
   { text: 'Suporte direto via WhatsApp', icon: 'i-heroicons-chat-bubble-left-right' },
@@ -37,10 +49,10 @@ const benefits = [
             Comece hoje sua jornada com milhas
           </p>
           <p class="text-4xl md:text-5xl font-bold text-[var(--color-brand-primary)] mb-1">
-            R$ 299,90
+            {{ priceFormatted }}
           </p>
           <p class="text-[var(--color-brand-text-muted)] text-base mb-6">
-            no PIX ou até 10x no cartão
+            {{ installmentLabel }}
           </p>
           <button
             class="w-full bg-[var(--color-brand-cta)] hover:bg-[var(--color-brand-cta-hover)] text-white font-semibold px-8 py-4 rounded-lg text-lg cursor-pointer transition-colors"
