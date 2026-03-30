@@ -82,9 +82,6 @@ export default defineNuxtConfig({
 
   fonts: {
     processCSSVariables: true,
-    defaults: {
-      preload: true,
-    },
     families: [
       {
         name: 'Plus Jakarta Sans',
@@ -92,7 +89,6 @@ export default defineNuxtConfig({
         global: true,
         weights: [400, 500, 600, 700],
         styles: ['normal'],
-        preload: true,
       }
     ]
   },
