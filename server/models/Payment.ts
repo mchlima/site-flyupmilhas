@@ -1,0 +1,46 @@
+import mongoose, { Schema, type Document, type Types } from 'mongoose'
+
+export interface IRefund {
+  stripeRefundId: string
+  amount: number
+  reason: string
+  createdAt: Date
+}
+
+export interface IPayment extends Document {
+  customerId: Types.ObjectId
+  invoiceId: Types.ObjectId
+  stripeSessionId: string
+  stripePaymentIntentId: string
+  amount: number
+  amountRefunded: number
+  currency: string
+  method: 'card' | 'pix'
+  status: 'pending' | 'paid' | 'failed' | 'expired' | 'partially_refunded' | 'refunded'
+  refunds: IRefund[]
+  paidAt: Date | null
+  createdAt: Date
+}
+
+const RefundSchema = new Schema<IRefund>({
+  stripeRefundId: { type: String, required: true },
+  amount: { type: Number, required: true },
+  reason: { type: String, default: '' },
+  createdAt: { type: Date, default: Date.now },
+}, { _id: false })
+
+const PaymentSchema = new Schema<IPayment>({
+  customerId: { type: Schema.Types.ObjectId, ref: 'Customer', required: true },
+  invoiceId: { type: Schema.Types.ObjectId, ref: 'Invoice', default: null },
+  stripeSessionId: { type: String, required: true, unique: true },
+  stripePaymentIntentId: { type: String, default: '' },
+  amount: { type: Number, required: true },
+  amountRefunded: { type: Number, default: 0 },
+  currency: { type: String, default: 'brl' },
+  method: { type: String, enum: ['card', 'pix'], default: 'card' },
+  status: { type: String, enum: ['pending', 'paid', 'failed', 'expired', 'partially_refunded', 'refunded'], default: 'pending' },
+  refunds: { type: [RefundSchema], default: [] },
+  paidAt: { type: Date, default: null },
+}, { timestamps: true })
+
+export const Payment = mongoose.models.Payment || mongoose.model<IPayment>('Payment', PaymentSchema)

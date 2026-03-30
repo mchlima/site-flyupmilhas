@@ -1,29 +1,28 @@
-// app/composables/useLeadForm.ts
+// app/composables/useCustomerForm.ts
 import { z } from 'zod'
 
-// Mirror server/leads/schema.ts EXACTLY — field names and validation rules are the backend contract
-export const LeadFormSchema = z.object({
-  nome: z.string().min(2, 'Nome deve ter ao menos 2 caracteres').max(100, 'Nome muito longo'),
+export const CustomerFormSchema = z.object({
+  name: z.string().min(2, 'Nome deve ter ao menos 2 caracteres').max(100, 'Nome muito longo'),
   email: z.string().email('Informe um e-mail valido'),
-  whatsapp: z.string().regex(
+  phone: z.string().regex(
     /^\d{10,11}$/,
     'WhatsApp deve conter 10 ou 11 dígitos (somente números)',
   ),
-  website: z.string().optional(), // Honeypot — include in POST body; backend handles silently
+  website: z.string().optional(),
 })
 
-export type LeadFormData = z.infer<typeof LeadFormSchema>
+export type CustomerFormData = z.infer<typeof CustomerFormSchema>
 
-export function useLeadForm() {
+export function useCustomerForm() {
   const isLoading = ref(false)
   const isSuccess = ref(false)
   const error = ref<string | null>(null)
-  async function submit(data: LeadFormData): Promise<void> {
+  async function submit(data: CustomerFormData): Promise<void> {
     isLoading.value = true
     error.value = null
 
     try {
-      await $fetch('/api/leads', {
+      await $fetch('/api/customers', {
         method: 'POST',
         body: data,
       })

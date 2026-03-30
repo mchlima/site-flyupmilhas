@@ -1,9 +1,10 @@
 import { z } from 'zod'
+import { Customer } from '../models/Customer'
 
-const LeadSchema = z.object({
-  nome: z.string().min(2, 'Nome deve ter ao menos 2 caracteres').max(100, 'Nome muito longo'),
+const CustomerSchema = z.object({
+  name: z.string().min(2, 'Nome deve ter ao menos 2 caracteres').max(100, 'Nome muito longo'),
   email: z.string().email('Informe um e-mail valido'),
-  whatsapp: z.string().regex(
+  phone: z.string().regex(
     /^\d{10,11}$/,
     'WhatsApp deve conter 10 ou 11 digitos (somente numeros)',
   ),
@@ -34,7 +35,7 @@ export default defineEventHandler(async (event) => {
 
   // Validate body
   const body = await readBody(event)
-  const result = LeadSchema.safeParse(body)
+  const result = CustomerSchema.safeParse(body)
 
   if (!result.success) {
     throw createError({
@@ -43,20 +44,15 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const { website, ...leadData } = result.data
+  const { website, ...customerData } = result.data
 
   // Honeypot: bot filled hidden field — silently discard
   if (website) {
     return { success: true, id: 'honeypot' }
   }
 
-  const db = await getMongoDb()
+  await connectDb()
+  const customer = await Customer.create(customerData)
 
-  const inserted = await db.collection('leads').insertOne({
-    ...leadData,
-    createdAt: new Date(),
-    source: 'lp-flyupmilhas',
-  })
-
-  return { success: true, id: inserted.insertedId.toString() }
+  return { success: true, id: customer._id.toString() }
 })

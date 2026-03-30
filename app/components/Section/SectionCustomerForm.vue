@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import { LeadFormSchema, useLeadForm } from '~/composables/useLeadForm'
+import { CustomerFormSchema, useCustomerForm } from '~/composables/useCustomerForm'
 
 // WhatsApp CTA URL — TODO: Replace 55XXXXXXXXXXX with real WhatsApp number before launch
 const WHATSAPP_URL = 'https://wa.me/55XXXXXXXXXXX?text=Ola%2C%20quero%20saber%20mais%20sobre%20a%20mentoria%20Fly%20Up%20Milhas.'
 
-const { isLoading, isSuccess, error, submit } = useLeadForm()
+const { isLoading, isSuccess, error, submit } = useCustomerForm()
 
-// Form reactive state — matches LeadFormData shape (nome, email, whatsapp, website)
 const state = reactive({
-  nome: '',
+  name: '',
   email: '',
-  whatsapp: '', // raw digits only — validated by Zod regex /^\d{10,11}$/
-  website: '', // honeypot — empty for humans, bots fill it
+  phone: '',
+  website: '',
 })
 
 // Separate display value for masked WhatsApp input
@@ -30,14 +29,14 @@ function onWhatsappInput(event: Event) {
     formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`
   }
   whatsappDisplay.value = formatted
-  state.whatsapp = digits // raw digits for Zod validation and submission
+  state.phone = digits // raw digits for Zod validation and submission
 }
 
 async function onSubmit() {
   await submit({
-    nome: state.nome,
+    name: state.name,
     email: state.email,
-    whatsapp: state.whatsapp,
+    phone: state.phone,
     website: state.website,
   })
 }
@@ -92,16 +91,16 @@ async function onSubmit() {
           {{ error }}
         </div>
 
-        <!-- UForm uses LeadFormSchema for blur + submit validation -->
-        <UForm :schema="LeadFormSchema" :state="state" class="space-y-6" @submit.prevent="onSubmit">
+        <!-- UForm uses CustomerFormSchema for blur + submit validation -->
+        <UForm :schema="CustomerFormSchema" :state="state" class="space-y-6" @submit.prevent="onSubmit">
 
           <!-- Nome (field 1) -->
-          <UFormField name="nome">
+          <UFormField name="name">
             <template #label>
               <span class="text-white">Seu nome</span>
             </template>
             <UInput
-              v-model="state.nome"
+              v-model="state.name"
               placeholder="Seu nome completo"
               autocomplete="name"
               class="w-full"
@@ -125,7 +124,7 @@ async function onSubmit() {
           </UFormField>
 
           <!-- WhatsApp with phone mask (field 3) — inputmode="numeric" for mobile keyboard -->
-          <UFormField name="whatsapp">
+          <UFormField name="phone">
             <template #label>
               <span class="text-white">WhatsApp</span>
             </template>

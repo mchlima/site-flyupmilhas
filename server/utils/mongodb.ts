@@ -1,10 +1,9 @@
-import { MongoClient, type Db } from 'mongodb'
+import mongoose from 'mongoose'
 
-let client: MongoClient | null = null
-let db: Db | null = null
+let isConnected = false
 
-export async function getMongoDb(): Promise<Db> {
-  if (db) return db
+export async function connectDb(): Promise<typeof mongoose> {
+  if (isConnected) return mongoose
 
   const config = useRuntimeConfig()
   const uri = config.mongodbUri
@@ -13,17 +12,15 @@ export async function getMongoDb(): Promise<Db> {
     throw new Error('NUXT_MONGODB_URI is not set')
   }
 
-  client = new MongoClient(uri)
-  await client.connect()
+  await mongoose.connect(uri, { dbName: config.mongodbDatabase })
+  isConnected = true
 
-  db = client.db(config.mongodbDatabase)
-  return db
+  return mongoose
 }
 
-export async function closeMongoDb(): Promise<void> {
-  if (client) {
-    await client.close()
-    client = null
-    db = null
+export async function disconnectDb(): Promise<void> {
+  if (isConnected) {
+    await mongoose.disconnect()
+    isConnected = false
   }
 }

@@ -1,7 +1,7 @@
-import { closeMongoDb } from '../utils/mongodb'
+import { disconnectDb } from '../utils/mongodb'
 
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('close', async () => {
-    await closeMongoDb()
+    await disconnectDb()
   })
 })

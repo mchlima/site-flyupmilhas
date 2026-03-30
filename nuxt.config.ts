@@ -15,6 +15,12 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  routeRules: {
+    '/admin/**': { ssr: false },
+    '/pagamento/**': { ssr: false },
+    '/encontros/**': { ssr: false },
+  },
+
   devServer: {
     port: 3002,
   },
@@ -35,8 +41,12 @@ export default defineNuxtConfig({
   runtimeConfig: {
     mongodbUri: '',
     mongodbDatabase: 'flyupmilhas',
+    jwtSecret: '',
+    stripeSecretKey: '',
+    stripeWebhookSecret: '',
     public: {
       r2BaseUrl: '',
+      stripePublishableKey: '',
     },
   },
 
