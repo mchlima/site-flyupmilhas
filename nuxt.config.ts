@@ -46,7 +46,6 @@ export default defineNuxtConfig({
     asaasApiKey: '',
     asaasWebhookToken: '',
     public: {
-      r2BaseUrl: '',
       asaasEnvironment: 'sandbox',
     },
   },
