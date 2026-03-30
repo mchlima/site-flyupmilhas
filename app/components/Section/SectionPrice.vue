@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { scrollTo } = useScroll()
 
-const { data: planSettings } = await useFetch('/api/settings/payment')
+const { data: planSettings } = usePlanSettings()
 
 const priceFormatted = computed(() => {
   const cents = planSettings.value?.price || 20000

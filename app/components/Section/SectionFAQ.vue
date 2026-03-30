@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: planSettings } = await useFetch('/api/settings/payment')
+const { data: planSettings } = usePlanSettings()
 
 const priceText = computed(() => {
   const cents = planSettings.value?.price || 20000
