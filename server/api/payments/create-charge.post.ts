@@ -128,6 +128,16 @@ export default defineEventHandler(async (event) => {
     }
   }
 
+  // Prepare card info for persistence
+  const paymentMethod = method === 'CREDIT_CARD' ? 'card' : 'pix'
+  const actualInstallments = installmentCount && installmentCount > 1 ? installmentCount : 1
+  const installmentValue = actualInstallments > 1 ? Math.round(invoice.amount / actualInstallments) : null
+  const cardInfo = method === 'CREDIT_CARD' && creditCard ? {
+    cardHolderName: creditCard.holderName,
+    cardLastDigits: creditCard.number.replace(/\s/g, '').slice(-4),
+    cardExpiry: `${creditCard.expiryMonth}/${creditCard.expiryYear}`,
+  } : {}
+
   let charge: any
   try {
     charge = await asaasApi('/payments', {
@@ -137,20 +147,23 @@ export default defineEventHandler(async (event) => {
   } catch (err: any) {
     const errors = err?.data?.errors || err?.response?._data?.errors
     const message = errors?.[0]?.description || 'Erro ao processar pagamento'
+
+    // Save failed payment for history
+    await Payment.create({
+      customerId: invoice.customerId,
+      invoiceId,
+      externalId: `failed_${Date.now()}`,
+      amount: invoice.amount,
+      currency: 'brl',
+      method: paymentMethod,
+      installmentCount: actualInstallments,
+      installmentValue,
+      ...cardInfo,
+      status: 'failed',
+    })
+
     throw createError({ statusCode: 400, statusMessage: message })
   }
-
-  // Save payment
-  const paymentMethod = method === 'CREDIT_CARD' ? 'card' : 'pix'
-  const actualInstallments = installmentCount && installmentCount > 1 ? installmentCount : 1
-  const installmentValue = actualInstallments > 1 ? Math.round(invoice.amount / actualInstallments) : null
-  // Extract card info for display
-  const cardInfo = method === 'CREDIT_CARD' && creditCard ? {
-    cardHolderName: creditCard.holderName,
-    cardLastDigits: creditCard.number.replace(/\s/g, '').slice(-4),
-    cardExpiry: `${creditCard.expiryMonth}/${creditCard.expiryYear}`,
-    cardBrand: (charge.creditCard?.creditCardBrand || null) as string | null,
-  } : {}
 
   const payment = await Payment.create({
     customerId: invoice.customerId,
@@ -162,6 +175,7 @@ export default defineEventHandler(async (event) => {
     installmentCount: actualInstallments,
     installmentValue,
     ...cardInfo,
+    cardBrand: (charge.creditCard?.creditCardBrand || null) as string | null,
     status: charge.status === 'CONFIRMED' || charge.status === 'RECEIVED' ? 'paid' : 'pending',
     ...(charge.status === 'CONFIRMED' || charge.status === 'RECEIVED' ? { paidAt: new Date() } : {}),
   })
