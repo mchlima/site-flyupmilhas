@@ -53,6 +53,15 @@ function onCpfInput(e: Event) {
   holder.cpfCnpj = formatted
 }
 
+function onPhoneInput(e: Event) {
+  const digits = (e.target as HTMLInputElement).value.replace(/\D/g, '').slice(0, 11)
+  let formatted = digits
+  if (digits.length > 10) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`
+  else if (digits.length > 6) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`
+  else if (digits.length > 2) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`
+  holder.phone = formatted
+}
+
 function formatCurrency(cents: number) {
   return `R$ ${(cents / 100).toFixed(2).replace('.', ',')}`
 }
@@ -344,7 +353,7 @@ function goBack() {
 
             <input :value="holder.cpfCnpj" type="text" placeholder="CPF: 000.000.000-00" inputmode="numeric" maxlength="14" class="pay-input" @input="onCpfInput" />
             <div style="display: flex; gap: 0.5rem;">
-              <input v-model="holder.phone" type="text" placeholder="Telefone com DDD" inputmode="numeric" class="pay-input" style="flex: 1;" />
+              <input :value="holder.phone" type="text" placeholder="(11) 99999-9999" inputmode="numeric" maxlength="15" class="pay-input" style="flex: 1;" @input="onPhoneInput" />
               <input v-model="holder.postalCode" type="text" placeholder="CEP" inputmode="numeric" maxlength="9" class="pay-input" style="flex: 1;" />
               <input v-model="holder.addressNumber" type="text" placeholder="Nº" class="pay-input" style="width: 70px;" />
             </div>
