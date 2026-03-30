@@ -93,7 +93,7 @@ async function onSubmit() {
         </div>
 
         <!-- UForm uses LeadFormSchema for blur + submit validation -->
-        <UForm :schema="LeadFormSchema" :state="state" class="space-y-6" @submit="onSubmit">
+        <UForm :schema="LeadFormSchema" :state="state" class="space-y-6" @submit.prevent="onSubmit">
 
           <!-- Nome (field 1) -->
           <UFormField name="nome">

@@ -18,14 +18,12 @@ export function useLeadForm() {
   const isLoading = ref(false)
   const isSuccess = ref(false)
   const error = ref<string | null>(null)
-  const config = useRuntimeConfig()
-
   async function submit(data: LeadFormData): Promise<void> {
     isLoading.value = true
     error.value = null
 
     try {
-      await $fetch(`${config.public.apiBase}/leads`, {
+      await $fetch('/api/leads', {
         method: 'POST',
         body: data,
       })

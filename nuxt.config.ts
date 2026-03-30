@@ -15,6 +15,10 @@ export default defineNuxtConfig({
 
   ssr: true,
 
+  devServer: {
+    port: 3002,
+  },
+
   app: {
     htmlAttrs: {
       lang: 'pt-BR',
@@ -29,8 +33,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    mongodbUri: '',
+    mongodbDatabase: 'flyupmilhas',
     public: {
-      apiBase: '',
       r2BaseUrl: '',
     },
   },

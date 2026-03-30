@@ -15,6 +15,7 @@
     "@nuxtjs/seo": "^4.0.2",
     "@takumi-rs/core": "^0.73.1",
     "@takumi-rs/wasm": "1.0.0-beta.8",
+    "mongodb": "^7.1.1",
     "nuxt": "^4.4.2",
     "tailwindcss": "^4.2.2",
     "vue": "^3.5.30",
