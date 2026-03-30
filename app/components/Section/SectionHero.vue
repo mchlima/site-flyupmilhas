@@ -18,7 +18,9 @@ const { scrollTo } = useScroll()
       fetchpriority="high"
       loading="eager"
       decoding="async"
-      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; animation: heroZoom 20s ease-out forwards;"
+      width="1920"
+      height="1080"
+      class="hero-bg-img"
     />
     <!-- Dark overlay -->
     <div style="position: absolute; inset: 0; background: linear-gradient(160deg, rgba(15,23,42,0.92) 0%, rgba(29,78,216,0.80) 100%);" />
@@ -106,6 +108,15 @@ const { scrollTo } = useScroll()
 @keyframes bounceDn {
   0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
   50%      { transform: rotate(45deg) translateY(8px); opacity: 1; }
+}
+
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: heroZoom 20s ease-out forwards;
 }
 
 .hero-cta:hover {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import prova1 from '~/assets/img/provas/prova1.jpeg'
-import prova2 from '~/assets/img/provas/prova2.jpeg'
-import prova3 from '~/assets/img/provas/prova3.jpeg'
-import prova4 from '~/assets/img/provas/prova4.jpeg'
-import prova5 from '~/assets/img/provas/prova5.jpeg'
+import prova1 from '~/assets/img/provas/prova1.webp'
+import prova2 from '~/assets/img/provas/prova2.webp'
+import prova3 from '~/assets/img/provas/prova3.webp'
+import prova4 from '~/assets/img/provas/prova4.webp'
+import prova5 from '~/assets/img/provas/prova5.webp'
 
 const cards = [
   {
@@ -93,6 +93,8 @@ const cards = [
             :alt="`Comprovante: ${card.rota}`"
             loading="lazy"
             decoding="async"
+            width="400"
+            height="300"
             class="w-full h-auto object-contain"
           />
 

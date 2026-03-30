@@ -6,7 +6,7 @@
       </h2>
 
       <div class="relative bg-brand-dark rounded-xl p-6 md:p-8 w-full my-10 overflow-hidden">
-        <img src="~/assets/img/logo-fly-up-milhas.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" class="absolute right-4 top-1/2 -translate-y-1/2 w-72 md:w-96 opacity-5 pointer-events-none" />
+        <img src="~/assets/img/logo-fly-up-milhas.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" width="384" height="384" class="absolute right-4 top-1/2 -translate-y-1/2 w-72 md:w-96 opacity-5 pointer-events-none" />
         <p class="relative text-white/90 text-center text-base md:text-lg leading-relaxed">
           A maioria das pessoas acumula milhas, mas não sabe como usar e acaba pagando caro em passagens. Na Fly Up Milhas, você aprende de forma simples, como transformar seus gastos do dia a dia em viagens reais, pagando muito menos.
         </p>
