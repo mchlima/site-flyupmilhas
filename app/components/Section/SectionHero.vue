@@ -9,7 +9,7 @@ useHead({
 <template>
   <section
     id="hero"
-    class="min-h-screen flex flex-col justify-center"
+    class="min-h-[calc(100svh-64px)] flex flex-col items-center justify-center"
     style="position: relative; overflow: hidden;"
   >
     <!-- Background image — LCP element with slow zoom -->
