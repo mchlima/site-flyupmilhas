@@ -80,22 +80,20 @@ const columns = [
 <template>
   <div>
     <!-- Header -->
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-      <div>
-        <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text);">Encontros</h1>
-        <p style="font-size: 0.875rem; color: var(--ui-text-muted);">{{ data?.total || 0 }} encontros</p>
-      </div>
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-[var(--ui-text)]">Encontros</h1>
+      <p class="text-sm text-[var(--ui-text-muted)]">{{ data?.total || 0 }} encontros</p>
     </div>
 
     <!-- Search + Filters + Table -->
     <UCard :ui="{ body: 'p-0' }">
-      <div style="padding: 0.75rem; border-bottom: 1px solid var(--ui-border);">
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <div class="p-3 border-b border-[var(--ui-border)]">
+        <div class="flex gap-2 items-center">
           <UInput
             icon="i-heroicons-magnifying-glass"
-            placeholder="Buscar por nome, email ou telefone do cliente..."
+            placeholder="Buscar por nome, email ou telefone..."
             :model-value="search"
-            style="flex: 1;"
+            class="flex-1"
             @update:model-value="onSearch($event as string)"
           />
           <UButton
@@ -108,20 +106,20 @@ const columns = [
           />
         </div>
 
-        <div v-if="showFilters" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--ui-border);">
+        <div v-if="showFilters" class="flex gap-2 flex-wrap items-center mt-3 pt-3 border-t border-[var(--ui-border)]">
           <USelect
             v-model="statusFilter"
             :items="statusOptions"
             value-key="value"
             label-key="label"
             size="sm"
-            style="min-width: 155px;"
+            class="min-w-[155px]"
             @update:model-value="page = 1"
           />
-          <div style="display: flex; align-items: center; gap: 0.25rem;">
-            <UInput v-model="dateFrom" type="date" size="sm" style="width: 140px;" @update:model-value="page = 1" />
-            <span style="font-size: 0.7rem; color: var(--ui-text-muted);">—</span>
-            <UInput v-model="dateTo" type="date" size="sm" style="width: 140px;" @update:model-value="page = 1" />
+          <div class="flex items-center gap-1">
+            <UInput v-model="dateFrom" type="date" size="sm" class="w-[140px]" @update:model-value="page = 1" />
+            <span class="text-xs text-[var(--ui-text-muted)]">—</span>
+            <UInput v-model="dateTo" type="date" size="sm" class="w-[140px]" @update:model-value="page = 1" />
           </div>
           <UButton
             v-if="activeFilterCount > 0"
@@ -136,64 +134,66 @@ const columns = [
       </div>
 
       <!-- Table -->
-      <UTable :columns="columns" :data="data?.meetings || []">
-        <template #customerName-cell="{ row }">
-          <NuxtLink :to="`/admin/customers/${row.original.customerId}`" style="text-decoration: none;">
-            <div style="font-weight: 500; color: var(--ui-text);">{{ row.original.customerName }}</div>
-            <div style="font-size: 0.7rem; color: var(--ui-text-muted);">{{ row.original.customerEmail }}</div>
-          </NuxtLink>
-        </template>
+      <div class="overflow-x-auto">
+        <UTable :columns="columns" :data="data?.meetings || []">
+          <template #customerName-cell="{ row }">
+            <NuxtLink :to="`/admin/customers/${row.original.customerId}`" class="no-underline">
+              <div class="font-medium text-[var(--ui-text)]">{{ row.original.customerName }}</div>
+              <div class="text-[0.7rem] text-[var(--ui-text-muted)]">{{ row.original.customerEmail }}</div>
+            </NuxtLink>
+          </template>
 
-        <template #title-cell="{ row }">
-          <span style="font-size: 0.85rem; color: var(--ui-text);">{{ row.original.title }}</span>
-        </template>
+          <template #title-cell="{ row }">
+            <span class="text-sm text-[var(--ui-text)]">{{ row.original.title }}</span>
+          </template>
 
-        <template #status-cell="{ row }">
-          <UBadge
-            :color="statusConfig[row.original.status]?.color || 'neutral'"
-            variant="subtle"
-            size="xs"
-          >
-            {{ statusConfig[row.original.status]?.label || row.original.status }}
-          </UBadge>
-        </template>
-
-        <template #scheduledAt-cell="{ row }">
-          <span v-if="row.original.scheduledAt" style="font-size: 0.8rem; color: var(--ui-text-muted);">
-            {{ formatDateTime(row.original.scheduledAt) }}
-          </span>
-          <span v-else style="font-size: 0.75rem; color: var(--ui-text-muted);">—</span>
-        </template>
-
-        <template #duration-cell="{ row }">
-          <span style="font-size: 0.8rem; color: var(--ui-text-muted);">{{ row.original.duration }} min</span>
-        </template>
-
-        <template #actions-cell="{ row }">
-          <div style="display: flex; align-items: center; gap: 0.25rem;">
-            <UButton
-              v-if="row.original.meetLink"
-              :href="row.original.meetLink"
-              target="_blank"
-              icon="i-heroicons-video-camera"
-              color="primary"
-              variant="ghost"
+          <template #status-cell="{ row }">
+            <UBadge
+              :color="statusConfig[row.original.status]?.color || 'neutral'"
+              variant="subtle"
               size="xs"
-            />
-            <UButton
-              :to="`/admin/customers/${row.original.customerId}`"
-              icon="i-heroicons-chevron-right"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-            />
-          </div>
-        </template>
-      </UTable>
+            >
+              {{ statusConfig[row.original.status]?.label || row.original.status }}
+            </UBadge>
+          </template>
+
+          <template #scheduledAt-cell="{ row }">
+            <span v-if="row.original.scheduledAt" class="text-[0.8rem] text-[var(--ui-text-muted)]">
+              {{ formatDateTime(row.original.scheduledAt) }}
+            </span>
+            <span v-else class="text-xs text-[var(--ui-text-muted)]">—</span>
+          </template>
+
+          <template #duration-cell="{ row }">
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ row.original.duration }} min</span>
+          </template>
+
+          <template #actions-cell="{ row }">
+            <div class="flex items-center gap-1">
+              <UButton
+                v-if="row.original.meetLink"
+                :href="row.original.meetLink"
+                target="_blank"
+                icon="i-heroicons-video-camera"
+                color="primary"
+                variant="ghost"
+                size="xs"
+              />
+              <UButton
+                :to="`/admin/customers/${row.original.customerId}`"
+                icon="i-heroicons-chevron-right"
+                color="neutral"
+                variant="ghost"
+                size="xs"
+              />
+            </div>
+          </template>
+        </UTable>
+      </div>
     </UCard>
 
     <!-- Pagination -->
-    <div v-if="data && data.totalPages > 1" style="display: flex; justify-content: center; margin-top: 1rem;">
+    <div v-if="data && data.totalPages > 1" class="flex justify-center mt-4">
       <UPagination
         v-model="page"
         :total="data.total"

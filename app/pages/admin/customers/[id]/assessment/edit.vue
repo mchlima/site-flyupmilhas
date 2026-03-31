@@ -64,26 +64,26 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div style="max-width: 720px;">
+  <div class="max-w-3xl">
     <!-- Header -->
-    <div style="margin-bottom: 1.5rem;">
-      <NuxtLink :to="`/admin/customers/${id}/assessment`" style="font-size: 0.8rem; color: var(--ui-text-muted); text-decoration: none;">&larr; Voltar</NuxtLink>
-      <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text); margin-top: 0.5rem;">Editar Avaliação</h1>
-      <span style="font-size: 0.85rem; color: var(--ui-text-muted);">{{ lead?.name }}</span>
+    <div class="mb-6">
+      <NuxtLink :to="`/admin/customers/${id}/assessment`" class="text-[0.8rem] text-[var(--ui-text-muted)] no-underline">&larr; Voltar</NuxtLink>
+      <h1 class="text-2xl font-bold text-[var(--ui-text)] mt-2">Editar Avaliação</h1>
+      <span class="text-sm text-[var(--ui-text-muted)]">{{ lead?.name }}</span>
     </div>
 
     <form @submit.prevent="onSubmit">
       <!-- Experiência -->
-      <UCard style="margin-bottom: 1rem;">
+      <UCard class="mb-4">
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-academic-cap" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">Experiência com milhas</span>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-academic-cap" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">Experiência com milhas</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div class="flex flex-col gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <UFormField label="Participa de programas">
               <USelect v-model="form.hasPrograms" :items="hasProgramsItems" value-key="value" label-key="label" size="lg" />
             </UFormField>
@@ -94,7 +94,7 @@ async function onSubmit() {
           </div>
 
           <UFormField v-if="form.hasPrograms === 'yes'" label="Programas">
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <div class="flex flex-wrap gap-2">
               <UButton
                 v-for="(label, i) in programItems"
                 :key="programValues[i]"
@@ -110,17 +110,17 @@ async function onSubmit() {
       </UCard>
 
       <!-- Objetivos -->
-      <UCard style="margin-bottom: 1rem;">
+      <UCard class="mb-4">
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-globe-alt" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">Objetivos e viagens</span>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-globe-alt" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">Objetivos e viagens</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="flex flex-col gap-6">
           <UFormField label="Objetivos">
-            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            <div class="flex flex-wrap gap-2">
               <UButton
                 v-for="(label, i) in goalItems"
                 :key="goalValues[i]"
@@ -140,20 +140,20 @@ async function onSubmit() {
       </UCard>
 
       <!-- Financeiro -->
-      <UCard style="margin-bottom: 1rem;">
+      <UCard class="mb-4">
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-credit-card" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">Financeiro</span>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-credit-card" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">Financeiro</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="flex flex-col gap-6">
           <UFormField label="Cartões de crédito">
             <UInput v-model="form.creditCards" placeholder="Ex: Nubank, Itaú..." size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <UFormField label="Gastos mensais no cartão">
               <USelect v-model="form.monthlySpending" :items="spendingItems" value-key="value" label-key="label" size="lg" />
             </UFormField>
@@ -170,15 +170,15 @@ async function onSubmit() {
       </UCard>
 
       <!-- Expectativas -->
-      <UCard style="margin-bottom: 1rem;">
+      <UCard class="mb-4">
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-chat-bubble-bottom-center-text" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">Expectativas</span>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-chat-bubble-bottom-center-text" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">Expectativas</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="flex flex-col gap-6">
           <UFormField label="Principal dificuldade">
             <UTextarea v-model="form.mainChallenge" :rows="3" placeholder="Maior dúvida ou desafio com milhas..." size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
@@ -190,7 +190,7 @@ async function onSubmit() {
       </UCard>
 
       <!-- Actions -->
-      <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+      <div class="flex gap-3 justify-end">
         <UButton :to="`/admin/customers/${id}/assessment`" label="Cancelar" color="neutral" variant="ghost" />
         <UButton type="submit" label="Salvar alterações" color="primary" icon="i-heroicons-check" :loading="isLoading" />
       </div>

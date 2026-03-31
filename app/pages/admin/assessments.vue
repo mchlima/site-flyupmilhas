@@ -54,15 +54,13 @@ const columns = [
 
 <template>
   <div>
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
-      <div>
-        <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text);">Avaliações</h1>
-        <p style="font-size: 0.875rem; color: var(--ui-text-muted);">{{ data?.total || 0 }} avaliações</p>
-      </div>
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-[var(--ui-text)]">Avaliações</h1>
+      <p class="text-sm text-[var(--ui-text-muted)]">{{ data?.total || 0 }} avaliações</p>
     </div>
 
     <UCard :ui="{ body: 'p-0' }">
-      <div style="padding: 0.75rem; border-bottom: 1px solid var(--ui-border);">
+      <div class="p-3 border-b border-[var(--ui-border)]">
         <UInput
           icon="i-heroicons-magnifying-glass"
           placeholder="Buscar por nome, email ou telefone do cliente..."
@@ -71,52 +69,54 @@ const columns = [
         />
       </div>
 
-      <UTable :columns="columns" :data="data?.assessments || []">
-        <template #customerName-cell="{ row }">
-          <NuxtLink :to="`/admin/customers/${row.original.customerId}`" style="text-decoration: none;">
-            <div style="font-weight: 500; color: var(--ui-text);">{{ row.original.customerName }}</div>
-            <div style="font-size: 0.7rem; color: var(--ui-text-muted);">{{ row.original.customerEmail }}</div>
-          </NuxtLink>
-        </template>
+      <div class="overflow-x-auto">
+        <UTable :columns="columns" :data="data?.assessments || []">
+          <template #customerName-cell="{ row }">
+            <NuxtLink :to="`/admin/customers/${row.original.customerId}`" class="no-underline">
+              <div class="font-medium text-[var(--ui-text)]">{{ row.original.customerName }}</div>
+              <div class="text-[0.7rem] text-[var(--ui-text-muted)]">{{ row.original.customerEmail }}</div>
+            </NuxtLink>
+          </template>
 
-        <template #knowledgeLevel-cell="{ row }">
-          <UBadge color="info" variant="subtle" size="xs">{{ knowledgeLabels[row.original.knowledgeLevel] || row.original.knowledgeLevel }}</UBadge>
-        </template>
+          <template #knowledgeLevel-cell="{ row }">
+            <UBadge color="info" variant="subtle" size="xs">{{ knowledgeLabels[row.original.knowledgeLevel] || row.original.knowledgeLevel }}</UBadge>
+          </template>
 
-        <template #monthlySpending-cell="{ row }">
-          <span style="font-size: 0.8rem; color: var(--ui-text-muted);">{{ spendingLabels[row.original.monthlySpending] || row.original.monthlySpending }}</span>
-        </template>
+          <template #monthlySpending-cell="{ row }">
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ spendingLabels[row.original.monthlySpending] || row.original.monthlySpending }}</span>
+          </template>
 
-        <template #timeframe-cell="{ row }">
-          <span style="font-size: 0.8rem; color: var(--ui-text-muted);">{{ timeframeLabels[row.original.timeframe] || row.original.timeframe }}</span>
-        </template>
+          <template #timeframe-cell="{ row }">
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ timeframeLabels[row.original.timeframe] || row.original.timeframe }}</span>
+          </template>
 
-        <template #createdAt-cell="{ row }">
-          <span style="font-size: 0.8rem; color: var(--ui-text-muted);">{{ formatDate(row.original.createdAt) }}</span>
-        </template>
+          <template #createdAt-cell="{ row }">
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ formatDate(row.original.createdAt) }}</span>
+          </template>
 
-        <template #actions-cell="{ row }">
-          <div style="display: flex; gap: 0.25rem;">
-            <UButton
-              :to="`/admin/customers/${row.original.customerId}/assessment`"
-              icon="i-heroicons-eye"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-            />
-            <UButton
-              :to="`/admin/customers/${row.original.customerId}`"
-              icon="i-heroicons-chevron-right"
-              color="neutral"
-              variant="ghost"
-              size="xs"
-            />
-          </div>
-        </template>
-      </UTable>
+          <template #actions-cell="{ row }">
+            <div class="flex gap-1">
+              <UButton
+                :to="`/admin/customers/${row.original.customerId}/assessment`"
+                icon="i-heroicons-eye"
+                color="neutral"
+                variant="ghost"
+                size="xs"
+              />
+              <UButton
+                :to="`/admin/customers/${row.original.customerId}`"
+                icon="i-heroicons-chevron-right"
+                color="neutral"
+                variant="ghost"
+                size="xs"
+              />
+            </div>
+          </template>
+        </UTable>
+      </div>
     </UCard>
 
-    <div v-if="data && data.totalPages > 1" style="display: flex; justify-content: center; margin-top: 1rem;">
+    <div v-if="data && data.totalPages > 1" class="flex justify-center mt-4">
       <UPagination
         v-model="page"
         :total="data.total"

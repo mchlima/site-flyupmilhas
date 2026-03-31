@@ -41,21 +41,21 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div style="max-width: 640px;">
+  <div class="max-w-2xl">
     <!-- Header -->
-    <div style="margin-bottom: 1.5rem;">
-      <NuxtLink :to="`/admin/customers/${id}`" style="font-size: 0.8rem; color: var(--ui-text-muted); text-decoration: none;">&larr; Voltar</NuxtLink>
-      <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text); margin-top: 0.5rem;">Editar Cliente</h1>
-      <span style="font-size: 0.85rem; color: var(--ui-text-muted);">{{ lead?.name }}</span>
+    <div class="mb-6">
+      <NuxtLink :to="`/admin/customers/${id}`" class="text-[0.8rem] text-[var(--ui-text-muted)] no-underline">&larr; Voltar</NuxtLink>
+      <h1 class="text-2xl font-bold text-[var(--ui-text)] mt-2">Editar Cliente</h1>
+      <span class="text-sm text-[var(--ui-text-muted)]">{{ lead?.name }}</span>
     </div>
 
     <UCard>
-      <form style="display: flex; flex-direction: column; gap: 1.5rem;" @submit.prevent="onSubmit">
+      <form class="flex flex-col gap-6" @submit.prevent="onSubmit">
         <UFormField label="Nome completo" name="name">
           <UInput v-model="form.name" placeholder="Nome completo" icon="i-heroicons-user" size="lg" :ui="{ root: 'w-full' }" />
         </UFormField>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <UFormField label="Email" name="email">
             <UInput v-model="form.email" type="email" placeholder="email@exemplo.com" icon="i-heroicons-envelope" size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
@@ -69,7 +69,7 @@ async function onSubmit() {
           <UInput v-model="form.birthDate" type="date" size="lg" :ui="{ root: 'w-full' }" />
         </UFormField>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <UFormField label="Estado" name="state">
             <UInputMenu
               v-model="form.state"
@@ -94,7 +94,7 @@ async function onSubmit() {
 
         <USeparator />
 
-        <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+        <div class="flex gap-3 justify-end">
           <UButton :to="`/admin/customers/${id}`" label="Cancelar" color="neutral" variant="ghost" />
           <UButton type="submit" label="Salvar alterações" color="primary" icon="i-heroicons-check" :loading="isLoading" />
         </div>

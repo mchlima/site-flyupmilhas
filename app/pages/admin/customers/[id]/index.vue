@@ -283,17 +283,17 @@ async function cancelInvoice(invoiceId: string) {
 <template>
   <div v-if="lead">
     <!-- Header -->
-    <div style="margin-bottom: 1.5rem;">
-      <NuxtLink to="/admin/customers" style="font-size: 0.8rem; color: #64748b; text-decoration: none;">&larr; Voltar para clientes</NuxtLink>
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; flex-wrap: wrap; gap: 0.75rem;">
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
+    <div class="mb-6">
+      <NuxtLink to="/admin/customers" class="text-[0.8rem] text-[var(--ui-text-muted)] no-underline">&larr; Voltar para clientes</NuxtLink>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mt-2">
+        <div class="flex items-center gap-3">
           <UAvatar :text="lead.name.charAt(0)" size="lg" />
           <div>
-            <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text); line-height: 1.2;">{{ lead.name }}</h1>
-            <span style="font-size: 0.8rem; color: #64748b;">{{ lead.email }}</span>
+            <h1 class="text-2xl font-bold text-[var(--ui-text)] leading-tight">{{ lead.name }}</h1>
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ lead.email }}</span>
           </div>
         </div>
-        <div style="display: flex; gap: 0.5rem;">
+        <div class="flex gap-2">
           <UButton :to="`/admin/customers/${id}/edit`" label="Editar" color="neutral" variant="outline" icon="i-heroicons-pencil-square" />
           <UButton
             v-if="lead.hasAssessment"
@@ -309,129 +309,127 @@ async function cancelInvoice(invoiceId: string) {
     <!-- Informações do cliente -->
     <UCard>
       <template #header>
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-identification" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.9rem;">Informações do cliente</span>
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-identification" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-[0.9rem]">Informações do cliente</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <USelect
-              :model-value="selectedStatus"
-              :items="statusItems"
-              value-key="value"
-              label-key="label"
-              size="sm"
-              style="min-width: 160px;"
-              @update:model-value="changeStatus($event as string)"
-            />
-          </div>
+          <USelect
+            :model-value="selectedStatus"
+            :items="statusItems"
+            value-key="value"
+            label-key="label"
+            size="sm"
+            class="min-w-[160px]"
+            @update:model-value="changeStatus($event as string)"
+          />
         </div>
       </template>
 
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Nome</div>
-          <div style="font-weight: 500; color: var(--ui-text); overflow-wrap: break-word;">{{ lead.name }}</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Nome</div>
+          <div class="font-medium text-[var(--ui-text)] break-words">{{ lead.name }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Email</div>
-          <div style="font-weight: 500; color: var(--ui-text); overflow-wrap: break-word;">{{ lead.email }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Email</div>
+          <div class="font-medium text-[var(--ui-text)] break-words">{{ lead.email }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Telefone</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ lead.phone }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Telefone</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ lead.phone }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Data de nascimento</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ lead.birthDate ? formatBirthDate(lead.birthDate) : '—' }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Data de nascimento</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ lead.birthDate ? formatBirthDate(lead.birthDate) : '—' }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Estado</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ lead.state ? BRAZILIAN_STATES.find(s => s.value === lead.state)?.label || lead.state : '—' }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Estado</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ lead.state ? BRAZILIAN_STATES.find(s => s.value === lead.state)?.label || lead.state : '—' }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Cidade</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ lead.city || '—' }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Cidade</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ lead.city || '—' }}</div>
         </div>
-        <div style="min-width: 0;">
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Origem</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ lead.source }}</div>
-        </div>
-        <div>
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Criado em</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ formatDate(lead.createdAt) }}</div>
+        <div class="min-w-0">
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Origem</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ lead.source }}</div>
         </div>
         <div>
-          <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.25rem;">Atualizado em</div>
-          <div style="font-weight: 500; color: var(--ui-text);">{{ formatDate(lead.updatedAt) }}</div>
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Criado em</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ formatDate(lead.createdAt) }}</div>
+        </div>
+        <div>
+          <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1">Atualizado em</div>
+          <div class="font-medium text-[var(--ui-text)]">{{ formatDate(lead.updatedAt) }}</div>
         </div>
       </div>
 
       <!-- Avaliação -->
-      <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid var(--ui-border); display: flex; align-items: center; justify-content: space-between;">
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <span style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted);">Avaliação</span>
+      <div class="mt-5 pt-4 border-t border-[var(--ui-border)] flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div class="flex items-center gap-2">
+          <span class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)]">Avaliação</span>
           <UBadge v-if="lead.hasAssessment" color="success" variant="subtle" size="xs">Preenchida</UBadge>
           <UBadge v-else color="warning" variant="subtle" size="xs">Aguardando</UBadge>
         </div>
-        <div style="display: flex; align-items: center; gap: 0.375rem;">
-          <code style="font-size: 0.6rem; word-break: break-all; padding: 0.25rem 0.5rem; background: var(--ui-bg-elevated); border-radius: 0.25rem; border: 1px solid var(--ui-border); max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ assessmentUrl }}</code>
+        <div class="flex items-center gap-1.5">
+          <code class="text-[0.6rem] break-all py-1 px-2 bg-[var(--ui-bg-elevated)] rounded border border-[var(--ui-border)] max-w-[300px] overflow-hidden text-ellipsis whitespace-nowrap">{{ assessmentUrl }}</code>
           <UButton icon="i-heroicons-clipboard-document" color="neutral" variant="ghost" size="xs" @click="copyLink(assessmentUrl, 'Link da avaliação')" />
         </div>
       </div>
     </UCard>
 
     <!-- Encontros -->
-    <UCard style="margin-top: 1rem;">
+    <UCard class="mt-4">
       <template #header>
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-video-camera" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.9rem;">Encontros</span>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-video-camera" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-[0.9rem]">Encontros</span>
           </div>
           <UButton label="Novo encontro" color="primary" variant="outline" size="xs" icon="i-heroicons-plus" @click="openNewMeetingModal" />
         </div>
       </template>
 
       <!-- Link dos encontros -->
-      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ui-border);">
-        <span style="font-size: 0.7rem; color: var(--ui-text-muted); white-space: nowrap;">Link:</span>
-        <code style="font-size: 0.65rem; word-break: break-all; flex: 1; padding: 0.375rem 0.5rem; background: var(--ui-bg-elevated); border-radius: 0.25rem; border: 1px solid var(--ui-border);">{{ meetingsUrl }}</code>
+      <div class="flex items-center gap-2 mb-4 pb-3 border-b border-[var(--ui-border)]">
+        <span class="text-[0.7rem] text-[var(--ui-text-muted)] whitespace-nowrap">Link:</span>
+        <code class="text-[0.65rem] break-all flex-1 py-1.5 px-2 bg-[var(--ui-bg-elevated)] rounded border border-[var(--ui-border)]">{{ meetingsUrl }}</code>
         <UButton icon="i-heroicons-clipboard-document" color="neutral" variant="ghost" size="xs" @click="copyLink(meetingsUrl, 'Link dos encontros')" />
       </div>
 
-      <div v-if="meetings?.length" style="display: flex; flex-direction: column; gap: 0.5rem;">
+      <div v-if="meetings?.length" class="flex flex-col gap-2">
         <div
           v-for="(m, i) in meetings"
           :key="m._id"
-          style="display: flex; align-items: center; gap: 0.75rem; padding: 0.625rem 0.75rem; border: 1px solid var(--ui-border); border-radius: 0.5rem; cursor: pointer;"
+          class="flex items-center gap-3 p-2.5 border border-[var(--ui-border)] rounded-lg cursor-pointer hover:bg-[var(--ui-bg-elevated)] transition-colors"
           @click="openMeetingModal(m)"
         >
           <!-- Number -->
-          <div style="width: 1.75rem; height: 1.75rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.75rem; flex-shrink: 0;" :style="{ background: `var(--ui-color-${meetingStatusLabels[m.status]?.color || 'neutral'}-500)`, color: 'white' }">
+          <div class="size-7 rounded-full flex items-center justify-center font-bold text-xs shrink-0 text-white" :style="{ background: `var(--ui-color-${meetingStatusLabels[m.status]?.color || 'neutral'}-500)` }">
             {{ i + 1 }}
           </div>
 
           <!-- Info -->
-          <div style="flex: 1; min-width: 0;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <span style="font-size: 0.85rem; font-weight: 500; color: var(--ui-text);">{{ m.title }}</span>
+          <div class="flex-1 min-w-0">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="text-sm font-medium text-[var(--ui-text)]">{{ m.title }}</span>
               <UBadge :color="meetingStatusLabels[m.status]?.color || 'neutral'" variant="subtle" size="xs">
                 {{ meetingStatusLabels[m.status]?.label || m.status }}
               </UBadge>
             </div>
-            <div v-if="m.scheduledAt" style="font-size: 0.75rem; color: var(--ui-text-muted); margin-top: 0.125rem;">
+            <div v-if="m.scheduledAt" class="text-xs text-[var(--ui-text-muted)] mt-0.5">
               {{ formatMeetingDate(m.scheduledAt) }} · {{ m.duration }} min
             </div>
           </div>
 
           <!-- Meet link indicator -->
-          <UIcon v-if="m.meetLink" name="i-heroicons-video-camera" style="width: 0.85rem; height: 0.85rem; color: var(--ui-text-muted);" />
-          <UIcon name="i-heroicons-chevron-right" style="width: 0.85rem; height: 0.85rem; color: var(--ui-text-muted);" />
+          <UIcon v-if="m.meetLink" name="i-heroicons-video-camera" class="size-3.5 text-[var(--ui-text-muted)]" />
+          <UIcon name="i-heroicons-chevron-right" class="size-3.5 text-[var(--ui-text-muted)]" />
         </div>
       </div>
 
-      <div v-if="!meetings?.length" style="color: var(--ui-text-muted); font-size: 0.85rem;">
+      <div v-if="!meetings?.length" class="text-[var(--ui-text-muted)] text-sm">
         Nenhum encontro criado.
       </div>
     </UCard>
@@ -439,23 +437,29 @@ async function cancelInvoice(invoiceId: string) {
     <!-- Meeting modal -->
     <UModal v-model:open="meetingModalOpen">
       <template #content>
-        <div style="padding: 1.5rem;">
-          <h2 style="font-size: 1.125rem; font-weight: 700; color: var(--ui-text); margin-bottom: 1.25rem;">{{ editingMeeting ? 'Editar encontro' : 'Novo encontro' }}</h2>
+        <div class="p-6">
+          <h2 class="text-lg font-bold text-[var(--ui-text)] mb-5">{{ editingMeeting ? 'Editar encontro' : 'Novo encontro' }}</h2>
 
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="flex flex-col gap-4">
             <UFormField label="Título">
               <UInput v-model="meetingForm.title" size="lg" :ui="{ root: 'w-full' }" />
             </UFormField>
 
-            <UFormField label="Status">
-              <USelect
-                v-model="meetingForm.status"
-                :items="meetingStatusOptions"
-                value-key="value"
-                label-key="label"
-                size="lg"
-              />
-            </UFormField>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <UFormField label="Status">
+                <USelect
+                  v-model="meetingForm.status"
+                  :items="meetingStatusOptions"
+                  value-key="value"
+                  label-key="label"
+                  size="lg"
+                />
+              </UFormField>
+
+              <UFormField label="Duração (minutos)">
+                <UInput v-model.number="meetingForm.duration" type="number" size="lg" :ui="{ root: 'w-full' }" />
+              </UFormField>
+            </div>
 
             <UFormField label="Data e hora">
               <UInput v-model="meetingForm.scheduledAt" type="datetime-local" size="lg" :ui="{ root: 'w-full' }" />
@@ -465,16 +469,12 @@ async function cancelInvoice(invoiceId: string) {
               <UInput v-model="meetingForm.meetLink" placeholder="https://meet.google.com/abc-defg-hij" size="lg" icon="i-heroicons-video-camera" :ui="{ root: 'w-full' }" />
             </UFormField>
 
-            <UFormField label="Duração (minutos)">
-              <UInput v-model.number="meetingForm.duration" type="number" size="lg" :ui="{ root: 'w-full' }" />
-            </UFormField>
-
             <UFormField label="Observações">
               <UTextarea v-model="meetingForm.notes" :rows="2" placeholder="Anotações sobre o encontro..." size="lg" :ui="{ root: 'w-full' }" />
             </UFormField>
           </div>
 
-          <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <div class="flex gap-3 justify-end mt-6">
             <UButton label="Cancelar" color="neutral" variant="ghost" @click="meetingModalOpen = false" />
             <UButton label="Salvar" color="primary" icon="i-heroicons-check" @click="saveMeeting" />
           </div>
@@ -483,50 +483,50 @@ async function cancelInvoice(invoiceId: string) {
     </UModal>
 
     <!-- Financeiro (Faturas + Pagamentos + Estornos) -->
-    <UCard style="margin-top: 1rem;">
+    <UCard class="mt-4">
       <template #header>
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-banknotes" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.9rem;">Financeiro</span>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-banknotes" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-[0.9rem]">Financeiro</span>
           </div>
           <UButton label="Nova fatura" color="primary" variant="outline" size="xs" icon="i-heroicons-plus" @click="invoiceModalOpen = true" />
         </div>
       </template>
 
       <!-- Link de pagamento -->
-      <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--ui-border);">
-        <span style="font-size: 0.7rem; color: var(--ui-text-muted); white-space: nowrap;">Link:</span>
-        <code style="font-size: 0.65rem; word-break: break-all; flex: 1; padding: 0.375rem 0.5rem; background: var(--ui-bg-elevated); border-radius: 0.25rem; border: 1px solid var(--ui-border);">{{ paymentUrl }}</code>
+      <div class="flex items-center gap-2 mb-4 pb-3 border-b border-[var(--ui-border)]">
+        <span class="text-[0.7rem] text-[var(--ui-text-muted)] whitespace-nowrap">Link:</span>
+        <code class="text-[0.65rem] break-all flex-1 py-1.5 px-2 bg-[var(--ui-bg-elevated)] rounded border border-[var(--ui-border)]">{{ paymentUrl }}</code>
         <UButton icon="i-heroicons-clipboard-document" color="neutral" variant="ghost" size="xs" @click="copyLink(paymentUrl, 'Link de pagamento')" />
       </div>
 
-      <div v-if="lead.invoices?.length" style="display: flex; flex-direction: column; gap: 0.75rem;">
-        <div v-for="inv in lead.invoices" :key="inv._id" style="border: 1px solid var(--ui-border); border-radius: 0.5rem; overflow: hidden;">
+      <div v-if="lead.invoices?.length" class="flex flex-col gap-3">
+        <div v-for="inv in lead.invoices" :key="inv._id" class="border border-[var(--ui-border)] rounded-lg overflow-hidden">
           <!-- Invoice header -->
-          <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.625rem 0.75rem; background: var(--ui-bg-elevated);">
-            <div style="display: flex; align-items: center; gap: 0.5rem; flex: 1; min-width: 0;">
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between p-2.5 bg-[var(--ui-bg-elevated)]">
+            <div class="flex items-center gap-2 flex-1 min-w-0">
               <UBadge v-if="inv.status === 'paid'" color="success" variant="subtle" size="xs">Paga</UBadge>
               <UBadge v-else-if="inv.status === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
               <UBadge v-else color="neutral" variant="subtle" size="xs">Cancelada</UBadge>
-              <span style="font-size: 0.85rem; color: var(--ui-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ inv.description }}</span>
+              <span class="text-sm text-[var(--ui-text)] overflow-hidden text-ellipsis whitespace-nowrap">{{ inv.description }}</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;">
-              <span style="font-size: 0.85rem; font-weight: 600; color: var(--ui-text);">{{ formatCurrency(inv.amount) }}</span>
-              <span style="font-size: 0.65rem; color: var(--ui-text-muted);">{{ new Date(inv.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) }}</span>
+            <div class="flex items-center gap-2 shrink-0">
+              <span class="text-sm font-semibold text-[var(--ui-text)]">{{ formatCurrency(inv.amount) }}</span>
+              <span class="text-[0.65rem] text-[var(--ui-text-muted)]">{{ new Date(inv.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' }) }}</span>
               <UButton v-if="inv.status === 'pending'" icon="i-heroicons-x-mark" color="error" variant="ghost" size="xs" @click="cancelInvoice(inv._id)" />
             </div>
           </div>
 
           <!-- Payments -->
-          <div v-if="inv.payments?.length" style="padding: 0.5rem 0.75rem;">
-            <div v-for="p in inv.payments" :key="p._id" style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.5rem 0; border-top: 1px solid var(--ui-border);">
-              <div style="display: flex; align-items: center; gap: 0.625rem; flex: 1; min-width: 0;">
-                <UIcon v-if="p.method === 'pix'" name="i-heroicons-qr-code" style="width: 1.1rem; height: 1.1rem; color: #32bcad; flex-shrink: 0;" />
-                <UIcon v-else name="i-heroicons-credit-card" style="width: 1.1rem; height: 1.1rem; color: var(--ui-text-muted); flex-shrink: 0;" />
+          <div v-if="inv.payments?.length" class="px-3 py-2">
+            <div v-for="p in inv.payments" :key="p._id" class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between py-2 border-t border-[var(--ui-border)]">
+              <div class="flex items-center gap-2.5 flex-1 min-w-0">
+                <UIcon v-if="p.method === 'pix'" name="i-heroicons-qr-code" class="size-[1.1rem] text-[#32bcad] shrink-0" />
+                <UIcon v-else name="i-heroicons-credit-card" class="size-[1.1rem] text-[var(--ui-text-muted)] shrink-0" />
 
-                <div style="min-width: 0;">
-                  <div style="display: flex; align-items: center; gap: 0.375rem;">
+                <div class="min-w-0">
+                  <div class="flex flex-wrap items-center gap-1.5">
                     <UBadge v-if="p.status === 'paid'" color="success" variant="subtle" size="xs">Pago</UBadge>
                     <UBadge v-else-if="p.status === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
                     <UBadge v-else-if="p.status === 'failed'" color="error" variant="subtle" size="xs">Falhou</UBadge>
@@ -534,26 +534,26 @@ async function cancelInvoice(invoiceId: string) {
                     <UBadge v-else-if="p.status === 'partially_refunded'" color="warning" variant="subtle" size="xs">Est. parcial</UBadge>
                     <UBadge v-else-if="p.status === 'refunded'" color="error" variant="subtle" size="xs">Estornado</UBadge>
                     <UBadge v-else color="neutral" variant="subtle" size="xs">{{ p.status }}</UBadge>
-                    <span style="font-size: 0.85rem; font-weight: 600; color: var(--ui-text);">{{ formatCurrency(p.amount) }}</span>
-                    <span v-if="p.installmentCount > 1" style="font-size: 0.7rem; color: var(--ui-text-muted);">em {{ p.installmentCount }}x de {{ formatCurrency(p.installmentValue) }}</span>
+                    <span class="text-sm font-semibold text-[var(--ui-text)]">{{ formatCurrency(p.amount) }}</span>
+                    <span v-if="p.installmentCount > 1" class="text-[0.7rem] text-[var(--ui-text-muted)]">em {{ p.installmentCount }}x de {{ formatCurrency(p.installmentValue) }}</span>
                   </div>
-                  <div style="font-size: 0.7rem; color: var(--ui-text-muted); margin-top: 0.2rem;">
+                  <div class="text-[0.7rem] text-[var(--ui-text-muted)] mt-0.5">
                     <template v-if="p.method === 'card'">
-                      <span v-if="p.cardBrand" style="font-weight: 500;">{{ p.cardBrand }}</span>
+                      <span v-if="p.cardBrand" class="font-medium">{{ p.cardBrand }}</span>
                       <template v-if="p.cardLastDigits"> •••• {{ p.cardLastDigits }}</template>
                       <template v-if="p.cardHolderName"> · {{ p.cardHolderName }}</template>
                       <template v-if="p.cardExpiry"> · {{ p.cardExpiry }}</template>
                     </template>
                     <template v-else>PIX</template>
                     <template v-if="p.amountRefunded > 0">
-                      <span style="color: var(--ui-color-error-500);"> · Estornado: {{ formatCurrency(p.amountRefunded) }}</span>
+                      <span class="text-[var(--ui-color-error-500)]"> · Estornado: {{ formatCurrency(p.amountRefunded) }}</span>
                     </template>
                   </div>
                 </div>
               </div>
 
-              <div style="display: flex; align-items: center; gap: 0.375rem; flex-shrink: 0;">
-                <span style="font-size: 0.65rem; color: var(--ui-text-muted); white-space: nowrap;">{{ p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt) }}</span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span class="text-[0.65rem] text-[var(--ui-text-muted)] whitespace-nowrap">{{ p.paidAt ? formatDate(p.paidAt) : formatDate(p.createdAt) }}</span>
                 <UButton
                   v-if="p.status === 'paid' || p.status === 'partially_refunded'"
                   icon="i-heroicons-arrow-uturn-left"
@@ -565,14 +565,14 @@ async function cancelInvoice(invoiceId: string) {
               </div>
             </div>
 
-            <!-- Refunds (outside payment row, grouped below) -->
+            <!-- Refunds -->
             <template v-for="p in inv.payments" :key="`refunds-${p._id}`">
-              <div v-if="p.refunds?.length" style="padding-left: 1.75rem; margin-bottom: 0.25rem;">
-                <div v-for="(r, ri) in p.refunds" :key="ri" style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.65rem; color: var(--ui-text-muted); padding: 0.125rem 0;">
-                  <UIcon name="i-heroicons-arrow-uturn-left" style="width: 0.6rem; height: 0.6rem;" />
+              <div v-if="p.refunds?.length" class="pl-7 mb-1">
+                <div v-for="(r, ri) in p.refunds" :key="ri" class="flex items-center gap-2 text-[0.65rem] text-[var(--ui-text-muted)] py-0.5">
+                  <UIcon name="i-heroicons-arrow-uturn-left" class="size-2.5" />
                   <span>{{ formatCurrency(r.amount) }}</span>
                   <span v-if="r.reason">— {{ r.reason }}</span>
-                  <span style="margin-left: auto;">{{ new Date(r.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span>
+                  <span class="ml-auto">{{ new Date(r.createdAt).toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) }}</span>
                 </div>
               </div>
             </template>
@@ -580,7 +580,7 @@ async function cancelInvoice(invoiceId: string) {
         </div>
       </div>
 
-      <div v-else style="color: var(--ui-text-muted); font-size: 0.85rem;">
+      <div v-else class="text-[var(--ui-text-muted)] text-sm">
         Nenhuma fatura criada
       </div>
     </UCard>
@@ -588,10 +588,10 @@ async function cancelInvoice(invoiceId: string) {
     <!-- Invoice modal -->
     <UModal v-model:open="invoiceModalOpen">
       <template #content>
-        <div style="padding: 1.5rem;">
-          <h2 style="font-size: 1.125rem; font-weight: 700; color: var(--ui-text); margin-bottom: 1.25rem;">Nova fatura</h2>
+        <div class="p-6">
+          <h2 class="text-lg font-bold text-[var(--ui-text)] mb-5">Nova fatura</h2>
 
-          <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+          <div class="flex flex-wrap gap-2 mb-5">
             <UButton
               v-for="preset in invoicePresets"
               :key="preset.label"
@@ -603,7 +603,7 @@ async function cancelInvoice(invoiceId: string) {
             />
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="flex flex-col gap-4">
             <UFormField label="Descrição" required>
               <UInput v-model="invoiceDesc" placeholder="Ex: Mentoria VIP, Extensão, Multa..." size="lg" :ui="{ root: 'w-full' }" />
             </UFormField>
@@ -613,7 +613,7 @@ async function cancelInvoice(invoiceId: string) {
             </UFormField>
           </div>
 
-          <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <div class="flex gap-3 justify-end mt-6">
             <UButton label="Cancelar" color="neutral" variant="ghost" @click="invoiceModalOpen = false" />
             <UButton label="Criar fatura" color="primary" icon="i-heroicons-plus" :loading="invoiceLoading" @click="createInvoice" />
           </div>
@@ -624,17 +624,17 @@ async function cancelInvoice(invoiceId: string) {
     <!-- Refund modal -->
     <UModal v-model:open="refundModalOpen">
       <template #content>
-        <div style="padding: 1.5rem;">
-          <h2 style="font-size: 1.125rem; font-weight: 700; color: var(--ui-text); margin-bottom: 1.25rem;">Estornar pagamento</h2>
+        <div class="p-6">
+          <h2 class="text-lg font-bold text-[var(--ui-text)] mb-5">Estornar pagamento</h2>
 
           <!-- Type -->
-          <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+          <div class="flex gap-2 mb-5">
             <UButton
               label="Total"
               :color="refundType === 'full' ? 'error' : 'neutral'"
               :variant="refundType === 'full' ? 'soft' : 'outline'"
               size="lg"
-              style="flex: 1;"
+              class="flex-1"
               @click="refundType = 'full'"
             />
             <UButton
@@ -642,13 +642,13 @@ async function cancelInvoice(invoiceId: string) {
               :color="refundType === 'partial' ? 'error' : 'neutral'"
               :variant="refundType === 'partial' ? 'soft' : 'outline'"
               size="lg"
-              style="flex: 1;"
+              class="flex-1"
               @click="refundType = 'partial'"
             />
           </div>
 
           <!-- Amount -->
-          <UFormField label="Valor (R$)" required style="margin-bottom: 1rem;">
+          <UFormField label="Valor (R$)" required class="mb-4">
             <UInput
               v-model="refundAmount"
               placeholder="0,00"
@@ -663,11 +663,11 @@ async function cancelInvoice(invoiceId: string) {
           </UFormField>
 
           <!-- Reason -->
-          <UFormField label="Motivo" required style="margin-bottom: 1.5rem;">
+          <UFormField label="Motivo" required class="mb-6">
             <UTextarea v-model="refundReason" :rows="2" placeholder="Motivo do estorno..." size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
 
-          <div style="display: flex; gap: 0.75rem; justify-content: flex-end;">
+          <div class="flex gap-3 justify-end">
             <UButton label="Cancelar" color="neutral" variant="ghost" @click="refundModalOpen = false" />
             <UButton
               label="Confirmar estorno"

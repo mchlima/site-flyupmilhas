@@ -91,23 +91,23 @@ const columns = [
 <template>
   <div>
     <!-- Header -->
-    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem;">
+    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
       <div>
-        <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text);">Clientes</h1>
-        <p style="font-size: 0.875rem; color: var(--ui-text-muted);">{{ data?.total || 0 }} clientes</p>
+        <h1 class="text-2xl font-bold text-[var(--ui-text)]">Clientes</h1>
+        <p class="text-sm text-[var(--ui-text-muted)]">{{ data?.total || 0 }} clientes</p>
       </div>
       <UButton to="/admin/customers/new" label="Novo cliente" color="primary" icon="i-heroicons-plus" />
     </div>
 
     <!-- Search + filter toggle -->
     <UCard :ui="{ body: 'p-0' }">
-      <div style="padding: 0.75rem; border-bottom: 1px solid var(--ui-border);">
-        <div style="display: flex; gap: 0.5rem; align-items: center;">
+      <div class="p-3 border-b border-[var(--ui-border)]">
+        <div class="flex gap-2 items-center">
           <UInput
             icon="i-heroicons-magnifying-glass"
             placeholder="Buscar por nome, email ou telefone..."
             :model-value="search"
-            style="flex: 1;"
+            class="flex-1"
             @update:model-value="onSearch($event as string)"
           />
           <UButton
@@ -121,14 +121,14 @@ const columns = [
         </div>
 
         <!-- Expandable filters -->
-        <div v-if="showFilters" style="display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--ui-border);">
+        <div v-if="showFilters" class="flex gap-2 flex-wrap items-center mt-3 pt-3 border-t border-[var(--ui-border)]">
           <USelect
             v-model="statusFilter"
             :items="statusOptions"
             value-key="value"
             label-key="label"
             size="sm"
-            style="min-width: 155px;"
+            class="min-w-[155px]"
             @update:model-value="page = 1"
           />
           <USelect
@@ -137,7 +137,7 @@ const columns = [
             value-key="value"
             label-key="label"
             size="sm"
-            style="min-width: 135px;"
+            class="min-w-[135px]"
             @update:model-value="page = 1"
           />
           <USelect
@@ -146,14 +146,14 @@ const columns = [
             value-key="value"
             label-key="label"
             size="sm"
-            style="min-width: 145px;"
+            class="min-w-[145px]"
             @update:model-value="page = 1"
           />
 
-          <div style="display: flex; align-items: center; gap: 0.25rem;">
-            <UInput v-model="dateFrom" type="date" size="sm" style="width: 140px;" @update:model-value="page = 1" />
-            <span style="font-size: 0.7rem; color: var(--ui-text-muted);">—</span>
-            <UInput v-model="dateTo" type="date" size="sm" style="width: 140px;" @update:model-value="page = 1" />
+          <div class="flex items-center gap-1">
+            <UInput v-model="dateFrom" type="date" size="sm" class="w-[140px]" @update:model-value="page = 1" />
+            <span class="text-xs text-[var(--ui-text-muted)]">—</span>
+            <UInput v-model="dateTo" type="date" size="sm" class="w-[140px]" @update:model-value="page = 1" />
           </div>
 
           <UButton
@@ -169,52 +169,54 @@ const columns = [
       </div>
 
       <!-- Table -->
-      <UTable :columns="columns" :data="data?.customers || []">
-        <template #name-cell="{ row }">
-          <NuxtLink :to="`/admin/customers/${row.original._id}`" style="font-weight: 500; color: var(--ui-text); text-decoration: none;">
-            {{ row.original.name }}
-          </NuxtLink>
-        </template>
+      <div class="overflow-x-auto">
+        <UTable :columns="columns" :data="data?.customers || []">
+          <template #name-cell="{ row }">
+            <NuxtLink :to="`/admin/customers/${row.original._id}`" class="font-medium text-[var(--ui-text)] no-underline">
+              {{ row.original.name }}
+            </NuxtLink>
+          </template>
 
-        <template #email-cell="{ row }">
-          <span style="font-size: 0.8rem; color: var(--ui-text-muted);">{{ row.original.email }}</span>
-        </template>
+          <template #email-cell="{ row }">
+            <span class="text-[0.8rem] text-[var(--ui-text-muted)]">{{ row.original.email }}</span>
+          </template>
 
-        <template #status-cell="{ row }">
-          <UBadge :color="getStatusColor(row.original.status || 'lead')" variant="subtle" size="xs">
-            {{ getStatusLabel(row.original.status || 'lead') }}
-          </UBadge>
-        </template>
+          <template #status-cell="{ row }">
+            <UBadge :color="getStatusColor(row.original.status || 'lead')" variant="subtle" size="xs">
+              {{ getStatusLabel(row.original.status || 'lead') }}
+            </UBadge>
+          </template>
 
-        <template #hasAssessment-cell="{ row }">
-          <UBadge v-if="row.original.hasAssessment" color="success" variant="subtle" size="xs">Sim</UBadge>
-          <UBadge v-else color="neutral" variant="subtle" size="xs">Não</UBadge>
-        </template>
+          <template #hasAssessment-cell="{ row }">
+            <UBadge v-if="row.original.hasAssessment" color="success" variant="subtle" size="xs">Sim</UBadge>
+            <UBadge v-else color="neutral" variant="subtle" size="xs">Não</UBadge>
+          </template>
 
-        <template #paymentStatus-cell="{ row }">
-          <UBadge v-if="row.original.paymentStatus === 'paid'" color="success" variant="subtle" size="xs">Pago</UBadge>
-          <UBadge v-else-if="row.original.paymentStatus === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
-          <span v-else style="color: var(--ui-text-muted); font-size: 0.75rem;">—</span>
-        </template>
+          <template #paymentStatus-cell="{ row }">
+            <UBadge v-if="row.original.paymentStatus === 'paid'" color="success" variant="subtle" size="xs">Pago</UBadge>
+            <UBadge v-else-if="row.original.paymentStatus === 'pending'" color="warning" variant="subtle" size="xs">Pendente</UBadge>
+            <span v-else class="text-[var(--ui-text-muted)] text-xs">—</span>
+          </template>
 
-        <template #createdAt-cell="{ row }">
-          <span style="color: var(--ui-text-muted); font-size: 0.8rem;">{{ formatDate(row.original.createdAt) }}</span>
-        </template>
+          <template #createdAt-cell="{ row }">
+            <span class="text-[var(--ui-text-muted)] text-[0.8rem]">{{ formatDate(row.original.createdAt) }}</span>
+          </template>
 
-        <template #actions-cell="{ row }">
-          <UButton
-            :to="`/admin/customers/${row.original._id}`"
-            icon="i-heroicons-chevron-right"
-            color="neutral"
-            variant="ghost"
-            size="xs"
-          />
-        </template>
-      </UTable>
+          <template #actions-cell="{ row }">
+            <UButton
+              :to="`/admin/customers/${row.original._id}`"
+              icon="i-heroicons-chevron-right"
+              color="neutral"
+              variant="ghost"
+              size="xs"
+            />
+          </template>
+        </UTable>
+      </div>
     </UCard>
 
     <!-- Pagination -->
-    <div v-if="data && data.totalPages > 1" style="display: flex; justify-content: center; margin-top: 1rem;">
+    <div v-if="data && data.totalPages > 1" class="flex justify-center mt-4">
       <UPagination
         v-model="page"
         :total="data.total"

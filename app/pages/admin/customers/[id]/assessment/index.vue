@@ -84,34 +84,34 @@ const sections: Section[] = [
 </script>
 
 <template>
-  <div style="max-width: 720px;">
+  <div class="max-w-3xl">
     <!-- Header -->
-    <div style="margin-bottom: 1.5rem;">
-      <NuxtLink :to="`/admin/customers/${id}`" style="font-size: 0.8rem; color: var(--ui-text-muted); text-decoration: none;">&larr; Voltar ao cliente</NuxtLink>
-      <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.5rem; flex-wrap: wrap; gap: 0.75rem;">
-        <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text);">Avaliação — {{ lead?.name || '' }}</h1>
+    <div class="mb-6">
+      <NuxtLink :to="`/admin/customers/${id}`" class="text-[0.8rem] text-[var(--ui-text-muted)] no-underline">&larr; Voltar ao cliente</NuxtLink>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mt-2">
+        <h1 class="text-2xl font-bold text-[var(--ui-text)]">Avaliação — {{ lead?.name || '' }}</h1>
         <UButton :to="`/admin/customers/${id}/assessment/edit`" label="Editar" color="neutral" variant="outline" icon="i-heroicons-pencil-square" />
       </div>
     </div>
 
     <template v-if="assessment">
-      <UCard v-for="section in sections" :key="section.title" style="margin-bottom: 1rem;">
+      <UCard v-for="section in sections" :key="section.title" class="mb-4">
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon :name="section.icon" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">{{ section.title }}</span>
+          <div class="flex items-center gap-2">
+            <UIcon :name="section.icon" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">{{ section.title }}</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+        <div class="flex flex-col gap-5">
           <div v-for="field in section.fields" :key="field.key">
-            <div style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ui-text-muted); margin-bottom: 0.375rem;">
+            <div class="text-[0.7rem] uppercase tracking-wide text-[var(--ui-text-muted)] mb-1.5">
               {{ field.label }}
             </div>
 
             <!-- Badges -->
             <template v-if="field.type === 'badges'">
-              <div style="display: flex; flex-wrap: wrap; gap: 0.375rem;">
+              <div class="flex flex-wrap gap-1.5">
                 <UBadge
                   v-for="item in formatValueAsBadges((assessment as Record<string, unknown>)[field.key])"
                   :key="item"
@@ -123,21 +123,21 @@ const sections: Section[] = [
                 </UBadge>
                 <span
                   v-if="!((assessment as Record<string, unknown>)[field.key] as string[])?.length"
-                  style="color: var(--ui-text-muted); font-size: 0.875rem;"
+                  class="text-[var(--ui-text-muted)] text-sm"
                 >—</span>
               </div>
             </template>
 
             <!-- Long text -->
             <template v-else-if="field.type === 'long'">
-              <div style="font-size: 0.875rem; line-height: 1.6; color: var(--ui-text); white-space: pre-wrap; padding: 0.75rem; background: var(--ui-bg-elevated); border-radius: 0.375rem;">
+              <div class="text-sm leading-relaxed text-[var(--ui-text)] whitespace-pre-wrap p-3 bg-[var(--ui-bg-elevated)] rounded-md">
                 {{ formatValue((assessment as Record<string, unknown>)[field.key]) }}
               </div>
             </template>
 
             <!-- Default -->
             <template v-else>
-              <div style="font-size: 0.9rem; font-weight: 500; color: var(--ui-text);">
+              <div class="text-[0.9rem] font-medium text-[var(--ui-text)]">
                 {{ formatValue((assessment as Record<string, unknown>)[field.key]) }}
               </div>
             </template>
@@ -146,10 +146,10 @@ const sections: Section[] = [
       </UCard>
     </template>
 
-    <UCard v-else style="text-align: center;">
-      <div style="padding: 2rem;">
-        <UIcon name="i-heroicons-document-magnifying-glass" style="width: 2.5rem; height: 2.5rem; color: var(--ui-text-muted); margin-bottom: 0.75rem;" />
-        <p style="color: var(--ui-text-muted); font-size: 0.9rem;">Avaliação não encontrada</p>
+    <UCard v-else class="text-center">
+      <div class="py-8">
+        <UIcon name="i-heroicons-document-magnifying-glass" class="size-10 text-[var(--ui-text-muted)] mb-3" />
+        <p class="text-[var(--ui-text-muted)] text-[0.9rem]">Avaliação não encontrada</p>
       </div>
     </UCard>
   </div>

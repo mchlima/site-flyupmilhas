@@ -59,22 +59,22 @@ async function onSubmit() {
 </script>
 
 <template>
-  <div style="max-width: 640px;">
-    <div style="margin-bottom: 1.5rem;">
-      <h1 style="font-size: 1.5rem; font-weight: 700; color: var(--ui-text);">Configurações</h1>
-      <p style="font-size: 0.875rem; color: var(--ui-text-muted);">Gerencie o plano e preços da mentoria</p>
+  <div class="max-w-2xl">
+    <div class="mb-6">
+      <h1 class="text-2xl font-bold text-[var(--ui-text)]">Configurações</h1>
+      <p class="text-sm text-[var(--ui-text-muted)]">Gerencie o plano e preços da mentoria</p>
     </div>
 
     <form @submit.prevent="onSubmit">
       <UCard>
         <template #header>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <UIcon name="i-heroicons-currency-dollar" style="width: 1.1rem; height: 1.1rem; color: var(--ui-color-primary-500);" />
-            <span style="font-weight: 600; font-size: 0.875rem;">Plano da mentoria</span>
+          <div class="flex items-center gap-2">
+            <UIcon name="i-heroicons-currency-dollar" class="size-[1.1rem] text-[var(--ui-color-primary-500)]" />
+            <span class="font-semibold text-sm">Plano da mentoria</span>
           </div>
         </template>
 
-        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <div class="flex flex-col gap-6">
           <UFormField label="Nome do plano">
             <UInput v-model="form.name" placeholder="Mentoria Fly Up Milhas" size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
@@ -83,23 +83,25 @@ async function onSubmit() {
             <UTextarea v-model="form.description" :rows="2" placeholder="Descrição curta do plano" size="lg" :ui="{ root: 'w-full' }" />
           </UFormField>
 
-          <UFormField label="Preço (R$)">
-            <UInput v-model="form.priceDisplay" placeholder="200,00" size="lg" icon="i-heroicons-currency-dollar" :ui="{ root: 'w-full' }" />
-          </UFormField>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <UFormField label="Preço (R$)">
+              <UInput v-model="form.priceDisplay" placeholder="200,00" size="lg" icon="i-heroicons-currency-dollar" :ui="{ root: 'w-full' }" />
+            </UFormField>
 
-          <UFormField label="Máximo de parcelas no cartão" help="De 1 (somente à vista) até 12 parcelas">
-            <USelect
-              v-model="form.maxInstallments"
-              :items="Array.from({ length: 12 }, (_, i) => ({ label: i === 0 ? '1x (à vista)' : `${i + 1}x`, value: i + 1 }))"
-              value-key="value"
-              label-key="label"
-              size="lg"
-            />
-          </UFormField>
+            <UFormField label="Máximo de parcelas no cartão" help="De 1 (somente à vista) até 12 parcelas">
+              <USelect
+                v-model="form.maxInstallments"
+                :items="Array.from({ length: 12 }, (_, i) => ({ label: i === 0 ? '1x (à vista)' : `${i + 1}x`, value: i + 1 }))"
+                value-key="value"
+                label-key="label"
+                size="lg"
+              />
+            </UFormField>
+          </div>
         </div>
 
         <template #footer>
-          <div style="display: flex; justify-content: flex-end;">
+          <div class="flex justify-end">
             <UButton type="submit" label="Salvar configurações" color="primary" icon="i-heroicons-check" :loading="isLoading" />
           </div>
         </template>
