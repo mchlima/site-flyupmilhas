@@ -220,7 +220,7 @@ const ibovArrow = computed(() =>
 
       <!-- Bolsa -->
       <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/70">Bolsa</span>
+        <span class="uppercase tracking-wider text-white/70">Ibov</span>
         <span
           v-if="pendingIbov"
           class="inline-block w-20 h-4 bg-white/20 animate-pulse rounded"
