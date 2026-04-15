@@ -222,12 +222,13 @@ Plan: Not started
 | 260324-cpx | Add subtitle copy to SectionSocialProof | 2026-03-24 | 8884d11 | — |
 | 260325-1na | Fix FAQ spacing, duplicate arrow, separator line | 2026-03-25 | 0583a9b | [260325-1na](./quick/260325-1na-fix-sectionfaq-spacing-duplicate-arrow-s/) |
 | 260415-ksf | Add subtle hover effect to cards in 4 sections | 2026-04-15 | 419ac74 | [260415-ksf](./quick/260415-ksf-adicionar-efeito-hover-sutil-nos-cards-d/) |
+| 260415-m3g | Market ticker bar (USD, EUR, IBOV) between Hero and About | 2026-04-15 | d6e49dc | [260415-m3g](./quick/260415-m3g-crie-uma-barra-entre-a-hero-e-a-sess-o-d/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Quick 260415-ksf complete — Added subtle hover effect (scale-[1.02] + shadow-lg with 300ms transition) to card elements in SectionAbout, SectionForWhom, SectionMethod, SectionProvas; SectionPrice excluded; build verified (95s)
+**Last action:** Quick 260415-m3g complete — Added SectionMarketTicker (USD, EUR, IBOV) between Hero and About via SSR useFetch (AwesomeAPI + brapi.dev); skeleton placeholders, graceful error fallback; build verified
 **Next action:** Phase 19 (FAQ redesign) or remaining v1.6 phases
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
