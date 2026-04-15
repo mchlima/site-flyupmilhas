@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/seo',
     '@nuxt/eslint',
+    '@vercel/analytics',
   ],
 
   ssr: true,
@@ -58,6 +59,11 @@ export default defineNuxtConfig({
   },
 
   vite: {
+    optimizeDeps: {
+      include: [
+        'zod',
+      ],
+    },
     server: {
       allowedHosts: true,
     },
@@ -73,6 +79,10 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  ogImage: {
+    zeroRuntime: true,
   },
 
   image: {
