@@ -13,13 +13,16 @@ interface AwesomeApiResponse {
   EURBRL: FxEntry
 }
 
-interface BrapiResult {
+interface YahooChartMeta {
   regularMarketPrice: number
-  regularMarketChangePercent: number
+  chartPreviousClose: number
 }
 
-interface BrapiResponse {
-  results: BrapiResult[]
+interface YahooChartResponse {
+  chart: {
+    result: Array<{ meta: YahooChartMeta }> | null
+    error: unknown
+  }
 }
 
 // Currencies (USD-BRL, EUR-BRL) — AwesomeAPI, no auth required.
@@ -42,19 +45,25 @@ const {
   },
 )
 
-// Bolsa (IBOVESPA) — brapi.dev, public endpoint.
+// Bolsa (IBOVESPA) — Yahoo Finance chart endpoint, public, no auth.
+// brapi.dev now requires a token (returns 401 MISSING_TOKEN); Yahoo remains free.
 const {
   data: ibovData,
   pending: pendingIbov,
   error: errorIbov,
-} = await useFetch<BrapiResponse>(
-  'https://brapi.dev/api/quote/%5EBVSP',
+} = await useFetch<YahooChartResponse>(
+  'https://query1.finance.yahoo.com/v8/finance/chart/%5EBVSP',
   {
     key: 'market-ibov',
     server: true,
     lazy: false,
     dedupe: 'defer',
-    headers: { 'cache-control': 'no-store' },
+    query: { interval: '1d' },
+    headers: {
+      'cache-control': 'no-store',
+      // Yahoo blocks requests without a UA header from server-side fetchers.
+      'user-agent': 'Mozilla/5.0 (compatible; FlyUpMilhas/1.0)',
+    },
     onResponseError() {
       /* handled via `error` ref */
     },
@@ -134,21 +143,32 @@ const eurPctClass = computed(() =>
 const eurArrow = computed(() => (showEur.value ? pctArrow(eurPct.value) : ''))
 
 // --- IBOV ---
+const ibovMeta = computed(() => ibovData.value?.chart?.result?.[0]?.meta)
 const showIbov = computed(
   () =>
     !pendingIbov.value
     && !errorIbov.value
-    && !!ibovData.value?.results?.[0]?.regularMarketPrice,
+    && typeof ibovMeta.value?.regularMarketPrice === 'number',
 )
 const ibov = computed(() => {
-  const price = ibovData.value?.results?.[0]?.regularMarketPrice
+  const price = ibovMeta.value?.regularMarketPrice
   return typeof price === 'number' && Number.isFinite(price)
     ? formatPoints(price)
     : PLACEHOLDER
 })
 const ibovPct = computed(() => {
-  const p = ibovData.value?.results?.[0]?.regularMarketChangePercent
-  return typeof p === 'number' && Number.isFinite(p) ? p : 0
+  const price = ibovMeta.value?.regularMarketPrice
+  const prev = ibovMeta.value?.chartPreviousClose
+  if (
+    typeof price !== 'number'
+    || typeof prev !== 'number'
+    || !Number.isFinite(price)
+    || !Number.isFinite(prev)
+    || prev === 0
+  ) {
+    return 0
+  }
+  return ((price - prev) / prev) * 100
 })
 const ibovPctLabel = computed(() =>
   showIbov.value ? formatPct(ibovPct.value) : PLACEHOLDER,
