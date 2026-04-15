@@ -149,53 +149,129 @@ const {
 <template>
   <section
     aria-label="Cotações de mercado"
-    class="text-white border-y border-white/10"
+    class="text-white border-y border-white/10 overflow-hidden md:overflow-visible"
     :style="{ backgroundColor: 'var(--color-brand-primary)' }"
   >
-    <div
-      class="max-w-5xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs md:text-sm font-semibold"
-    >
-      <!-- Dólar -->
-      <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/90">Dólar</span>
-        <span
-          v-if="pendingUsd"
-          class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
-          aria-hidden="true"
-        />
-        <template v-else>
-          <span>{{ usdValue }}</span>
-          <span :class="usdPctColor">{{ usdArrow }} {{ usdPctLabel }}</span>
-        </template>
-      </div>
+    <div class="py-2.5 md:max-w-5xl md:mx-auto md:px-4">
+      <div
+        class="marquee-track flex items-center whitespace-nowrap text-xs md:text-sm font-semibold md:flex-wrap md:justify-center md:gap-x-6 md:gap-y-2"
+      >
+        <!-- First copy: visible always -->
+        <div class="flex shrink-0 items-center gap-x-6 pl-6 md:contents">
+          <!-- Dólar -->
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Dólar</span>
+            <span
+              v-if="pendingUsd"
+              class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
+              aria-hidden="true"
+            />
+            <template v-else>
+              <span>{{ usdValue }}</span>
+              <span :class="usdPctColor">{{ usdArrow }} {{ usdPctLabel }}</span>
+            </template>
+          </div>
 
-      <!-- Euro -->
-      <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/90">Euro</span>
-        <span
-          v-if="pendingEur"
-          class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
-          aria-hidden="true"
-        />
-        <template v-else>
-          <span>{{ eurValue }}</span>
-          <span :class="eurPctColor">{{ eurArrow }} {{ eurPctLabel }}</span>
-        </template>
-      </div>
+          <!-- Euro -->
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Euro</span>
+            <span
+              v-if="pendingEur"
+              class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
+              aria-hidden="true"
+            />
+            <template v-else>
+              <span>{{ eurValue }}</span>
+              <span :class="eurPctColor">{{ eurArrow }} {{ eurPctLabel }}</span>
+            </template>
+          </div>
 
-      <!-- Ibov -->
-      <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/90">Ibov</span>
-        <span
-          v-if="pendingIbov"
-          class="inline-block w-20 h-4 bg-white/20 animate-pulse rounded"
+          <!-- Ibov -->
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Ibov</span>
+            <span
+              v-if="pendingIbov"
+              class="inline-block w-20 h-4 bg-white/20 animate-pulse rounded"
+              aria-hidden="true"
+            />
+            <template v-else>
+              <span>{{ ibovValue }}<span v-if="ibovOk" class="text-white/90 ml-1">pts</span></span>
+              <span :class="ibovPctColor">{{ ibovArrow }} {{ ibovPctLabel }}</span>
+            </template>
+          </div>
+        </div>
+
+        <!-- Second copy: seamless marquee loop on mobile; hidden on md+
+             Must be structurally identical to first copy so -50% translate
+             lands exactly at its start (seamless loop math). -->
+        <div
+          class="flex shrink-0 items-center gap-x-6 pl-6 md:hidden"
           aria-hidden="true"
-        />
-        <template v-else>
-          <span>{{ ibovValue }}<span v-if="ibovOk" class="text-white/90 ml-1">pts</span></span>
-          <span :class="ibovPctColor">{{ ibovArrow }} {{ ibovPctLabel }}</span>
-        </template>
+        >
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Dólar</span>
+            <span
+              v-if="pendingUsd"
+              class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
+            />
+            <template v-else>
+              <span>{{ usdValue }}</span>
+              <span :class="usdPctColor">{{ usdArrow }} {{ usdPctLabel }}</span>
+            </template>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Euro</span>
+            <span
+              v-if="pendingEur"
+              class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
+            />
+            <template v-else>
+              <span>{{ eurValue }}</span>
+              <span :class="eurPctColor">{{ eurArrow }} {{ eurPctLabel }}</span>
+            </template>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="uppercase tracking-wider text-white/90">Ibov</span>
+            <span
+              v-if="pendingIbov"
+              class="inline-block w-20 h-4 bg-white/20 animate-pulse rounded"
+            />
+            <template v-else>
+              <span>{{ ibovValue }}<span v-if="ibovOk" class="text-white/90 ml-1">pts</span></span>
+              <span :class="ibovPctColor">{{ ibovArrow }} {{ ibovPctLabel }}</span>
+            </template>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+@media (min-width: 768px) {
+  .marquee-track {
+    width: auto;
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+</style>
