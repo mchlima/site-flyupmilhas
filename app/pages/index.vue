@@ -38,6 +38,7 @@ useSchemaOrg([
     <AppHeader />
     <main id="main-content" class="pt-16">
       <SectionHero />
+      <SectionMarketTicker />
       <SectionAbout />
       <SectionProgramContent />
       <SectionForWhom />
