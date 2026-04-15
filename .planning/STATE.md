@@ -221,12 +221,13 @@ Plan: Not started
 | 260324-bpx | Add CTA button at end of SectionMethod | 2026-03-24 | e05ea65 | [260324-bpx](./quick/260324-bpx-insira-um-cta-no-fim-da-sessao-como-func/) |
 | 260324-cpx | Add subtitle copy to SectionSocialProof | 2026-03-24 | 8884d11 | — |
 | 260325-1na | Fix FAQ spacing, duplicate arrow, separator line | 2026-03-25 | 0583a9b | [260325-1na](./quick/260325-1na-fix-sectionfaq-spacing-duplicate-arrow-s/) |
+| 260415-ksf | Add subtle hover effect to cards in 4 sections | 2026-04-15 | 419ac74 | [260415-ksf](./quick/260415-ksf-adicionar-efeito-hover-sutil-nos-cards-d/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Phase 18 P01 complete — SectionSocialProof.vue updated with circular photo avatars (real photos for Ana Paula, Carlos Eduardo, Juliana Martins) beside each WhatsApp chat bubble; initials fallback with deterministic brand color hash; flex-row-reverse layout for odd-index right-side placement; production build verified (108s)
+**Last action:** Quick 260415-ksf complete — Added subtle hover effect (scale-[1.02] + shadow-lg with 300ms transition) to card elements in SectionAbout, SectionForWhom, SectionMethod, SectionProvas; SectionPrice excluded; build verified (95s)
 **Next action:** Phase 19 (FAQ redesign) or remaining v1.6 phases
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
