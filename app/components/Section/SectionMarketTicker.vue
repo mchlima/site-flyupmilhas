@@ -1,17 +1,12 @@
 <script setup lang="ts">
 // Market quotes bar — shows live USD-BRL, EUR-BRL and IBOVESPA values.
 // Data fetched fresh on every page open via SSR-friendly useFetch.
+//
+// All three quotes come from Yahoo Finance's public chart endpoint:
+//   - AwesomeAPI hit 429/QuotaExceeded on Vercel's shared egress IPs
+//   - brapi.dev now requires a registered token (returns 401 MISSING_TOKEN)
+//   - Yahoo Finance remains free, no auth, and handles all three symbols
 // No axios, no setInterval — per plan 260415-m3g.
-
-interface FxEntry {
-  bid: string
-  pctChange: string
-}
-
-interface AwesomeApiResponse {
-  USDBRL: FxEntry
-  EURBRL: FxEntry
-}
 
 interface YahooChartMeta {
   regularMarketPrice: number
@@ -25,50 +20,31 @@ interface YahooChartResponse {
   }
 }
 
-// Currencies (USD-BRL, EUR-BRL) — AwesomeAPI, no auth required.
-const {
-  data: fxData,
-  pending: pendingFx,
-  error: errorFx,
-} = await useFetch<AwesomeApiResponse>(
-  'https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL',
-  {
-    key: 'market-fx',
-    server: true,
-    lazy: false,
-    dedupe: 'defer',
-    headers: { 'cache-control': 'no-store' },
-    // Never let a rejected promise bubble up and break SSR.
-    onResponseError() {
-      /* handled via `error` ref */
+function useYahooQuote(key: string, symbol: string) {
+  return useFetch<YahooChartResponse>(
+    `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}`,
+    {
+      key,
+      server: true,
+      lazy: false,
+      dedupe: 'defer',
+      query: { interval: '1d' },
+      headers: {
+        'cache-control': 'no-store',
+        // Yahoo blocks requests without a UA header from server-side fetchers.
+        'user-agent': 'Mozilla/5.0 (compatible; FlyUpMilhas/1.0)',
+      },
+      // Never let a rejected promise bubble up and break SSR.
+      onResponseError() {
+        /* handled via `error` ref */
+      },
     },
-  },
-)
+  )
+}
 
-// Bolsa (IBOVESPA) — Yahoo Finance chart endpoint, public, no auth.
-// brapi.dev now requires a token (returns 401 MISSING_TOKEN); Yahoo remains free.
-const {
-  data: ibovData,
-  pending: pendingIbov,
-  error: errorIbov,
-} = await useFetch<YahooChartResponse>(
-  'https://query1.finance.yahoo.com/v8/finance/chart/%5EBVSP',
-  {
-    key: 'market-ibov',
-    server: true,
-    lazy: false,
-    dedupe: 'defer',
-    query: { interval: '1d' },
-    headers: {
-      'cache-control': 'no-store',
-      // Yahoo blocks requests without a UA header from server-side fetchers.
-      'user-agent': 'Mozilla/5.0 (compatible; FlyUpMilhas/1.0)',
-    },
-    onResponseError() {
-      /* handled via `error` ref */
-    },
-  },
-)
+const { data: usdData, pending: pendingUsd, error: errorUsd } = await useYahooQuote('market-usd', 'USDBRL=X')
+const { data: eurData, pending: pendingEur, error: errorEur } = await useYahooQuote('market-eur', 'EURBRL=X')
+const { data: ibovData, pending: pendingIbov, error: errorIbov } = await useYahooQuote('market-ibov', '^BVSP')
 
 // --- Formatting helpers ---
 
@@ -102,83 +78,72 @@ function pctArrow(value: number): string {
   return value >= 0 ? '▲' : '▼'
 }
 
-// --- USD ---
-const showUsd = computed(
-  () => !pendingFx.value && !errorFx.value && !!fxData.value?.USDBRL?.bid,
-)
-const usd = computed(() => {
-  const bid = Number(fxData.value?.USDBRL?.bid)
-  return Number.isFinite(bid) ? formatBrl(bid) : PLACEHOLDER
-})
-const usdPct = computed(() => {
-  const p = Number(fxData.value?.USDBRL?.pctChange)
-  return Number.isFinite(p) ? p : 0
-})
-const usdPctLabel = computed(() =>
-  showUsd.value ? formatPct(usdPct.value) : PLACEHOLDER,
-)
-const usdPctClass = computed(() =>
-  showUsd.value ? pctClass(usdPct.value) : 'text-white/80',
-)
-const usdArrow = computed(() => (showUsd.value ? pctArrow(usdPct.value) : ''))
+type QuoteRef = Ref<YahooChartResponse | null>
 
-// --- EUR ---
-const showEur = computed(
-  () => !pendingFx.value && !errorFx.value && !!fxData.value?.EURBRL?.bid,
-)
-const eur = computed(() => {
-  const bid = Number(fxData.value?.EURBRL?.bid)
-  return Number.isFinite(bid) ? formatBrl(bid) : PLACEHOLDER
-})
-const eurPct = computed(() => {
-  const p = Number(fxData.value?.EURBRL?.pctChange)
-  return Number.isFinite(p) ? p : 0
-})
-const eurPctLabel = computed(() =>
-  showEur.value ? formatPct(eurPct.value) : PLACEHOLDER,
-)
-const eurPctClass = computed(() =>
-  showEur.value ? pctClass(eurPct.value) : 'text-white/80',
-)
-const eurArrow = computed(() => (showEur.value ? pctArrow(eurPct.value) : ''))
+function quotePresentation(
+  data: QuoteRef,
+  pending: Ref<boolean>,
+  error: Ref<unknown>,
+  format: (value: number) => string,
+) {
+  const meta = computed(() => data.value?.chart?.result?.[0]?.meta)
+  const price = computed(() => meta.value?.regularMarketPrice)
+  const prev = computed(() => meta.value?.chartPreviousClose)
 
-// --- IBOV ---
-const ibovMeta = computed(() => ibovData.value?.chart?.result?.[0]?.meta)
-const showIbov = computed(
-  () =>
-    !pendingIbov.value
-    && !errorIbov.value
-    && typeof ibovMeta.value?.regularMarketPrice === 'number',
-)
-const ibov = computed(() => {
-  const price = ibovMeta.value?.regularMarketPrice
-  return typeof price === 'number' && Number.isFinite(price)
-    ? formatPoints(price)
-    : PLACEHOLDER
-})
-const ibovPct = computed(() => {
-  const price = ibovMeta.value?.regularMarketPrice
-  const prev = ibovMeta.value?.chartPreviousClose
-  if (
-    typeof price !== 'number'
-    || typeof prev !== 'number'
-    || !Number.isFinite(price)
-    || !Number.isFinite(prev)
-    || prev === 0
-  ) {
-    return 0
-  }
-  return ((price - prev) / prev) * 100
-})
-const ibovPctLabel = computed(() =>
-  showIbov.value ? formatPct(ibovPct.value) : PLACEHOLDER,
-)
-const ibovPctClass = computed(() =>
-  showIbov.value ? pctClass(ibovPct.value) : 'text-white/80',
-)
-const ibovArrow = computed(() =>
-  showIbov.value ? pctArrow(ibovPct.value) : '',
-)
+  const ok = computed(
+    () =>
+      !pending.value
+      && !error.value
+      && typeof price.value === 'number'
+      && Number.isFinite(price.value),
+  )
+
+  const value = computed(() =>
+    ok.value && typeof price.value === 'number' ? format(price.value) : PLACEHOLDER,
+  )
+
+  const pct = computed(() => {
+    const p = price.value
+    const c = prev.value
+    if (
+      typeof p !== 'number'
+      || typeof c !== 'number'
+      || !Number.isFinite(p)
+      || !Number.isFinite(c)
+      || c === 0
+    ) {
+      return 0
+    }
+    return ((p - c) / c) * 100
+  })
+  const pctLabel = computed(() => (ok.value ? formatPct(pct.value) : PLACEHOLDER))
+  const pctColor = computed(() => (ok.value ? pctClass(pct.value) : 'text-white/80'))
+  const arrow = computed(() => (ok.value ? pctArrow(pct.value) : ''))
+
+  return { ok, value, pctLabel, pctColor, arrow }
+}
+
+const {
+  value: usdValue,
+  pctLabel: usdPctLabel,
+  pctColor: usdPctColor,
+  arrow: usdArrow,
+} = quotePresentation(usdData, pendingUsd, errorUsd, formatBrl)
+
+const {
+  value: eurValue,
+  pctLabel: eurPctLabel,
+  pctColor: eurPctColor,
+  arrow: eurArrow,
+} = quotePresentation(eurData, pendingEur, errorEur, formatBrl)
+
+const {
+  ok: ibovOk,
+  value: ibovValue,
+  pctLabel: ibovPctLabel,
+  pctColor: ibovPctColor,
+  arrow: ibovArrow,
+} = quotePresentation(ibovData, pendingIbov, errorIbov, formatPoints)
 </script>
 
 <template>
@@ -194,13 +159,13 @@ const ibovArrow = computed(() =>
       <div class="flex items-center gap-1.5">
         <span class="uppercase tracking-wider text-white/90">Dólar</span>
         <span
-          v-if="pendingFx"
+          v-if="pendingUsd"
           class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
           aria-hidden="true"
         />
         <template v-else>
-          <span>{{ usd }}</span>
-          <span :class="usdPctClass">{{ usdArrow }} {{ usdPctLabel }}</span>
+          <span>{{ usdValue }}</span>
+          <span :class="usdPctColor">{{ usdArrow }} {{ usdPctLabel }}</span>
         </template>
       </div>
 
@@ -208,17 +173,17 @@ const ibovArrow = computed(() =>
       <div class="flex items-center gap-1.5">
         <span class="uppercase tracking-wider text-white/90">Euro</span>
         <span
-          v-if="pendingFx"
+          v-if="pendingEur"
           class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
           aria-hidden="true"
         />
         <template v-else>
-          <span>{{ eur }}</span>
-          <span :class="eurPctClass">{{ eurArrow }} {{ eurPctLabel }}</span>
+          <span>{{ eurValue }}</span>
+          <span :class="eurPctColor">{{ eurArrow }} {{ eurPctLabel }}</span>
         </template>
       </div>
 
-      <!-- Bolsa -->
+      <!-- Ibov -->
       <div class="flex items-center gap-1.5">
         <span class="uppercase tracking-wider text-white/90">Ibov</span>
         <span
@@ -227,8 +192,8 @@ const ibovArrow = computed(() =>
           aria-hidden="true"
         />
         <template v-else>
-          <span>{{ ibov }}<span v-if="showIbov" class="text-white/90 ml-1">pts</span></span>
-          <span :class="ibovPctClass">{{ ibovArrow }} {{ ibovPctLabel }}</span>
+          <span>{{ ibovValue }}<span v-if="ibovOk" class="text-white/90 ml-1">pts</span></span>
+          <span :class="ibovPctColor">{{ ibovArrow }} {{ ibovPctLabel }}</span>
         </template>
       </div>
     </div>
