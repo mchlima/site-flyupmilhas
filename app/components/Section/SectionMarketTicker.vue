@@ -95,7 +95,7 @@ function formatPct(value: number): string {
 }
 
 function pctClass(value: number): string {
-  return value >= 0 ? 'text-emerald-400' : 'text-rose-400'
+  return value >= 0 ? 'text-emerald-300' : 'text-rose-300'
 }
 
 function pctArrow(value: number): string {
@@ -118,7 +118,7 @@ const usdPctLabel = computed(() =>
   showUsd.value ? formatPct(usdPct.value) : PLACEHOLDER,
 )
 const usdPctClass = computed(() =>
-  showUsd.value ? pctClass(usdPct.value) : 'text-white/60',
+  showUsd.value ? pctClass(usdPct.value) : 'text-white/80',
 )
 const usdArrow = computed(() => (showUsd.value ? pctArrow(usdPct.value) : ''))
 
@@ -138,7 +138,7 @@ const eurPctLabel = computed(() =>
   showEur.value ? formatPct(eurPct.value) : PLACEHOLDER,
 )
 const eurPctClass = computed(() =>
-  showEur.value ? pctClass(eurPct.value) : 'text-white/60',
+  showEur.value ? pctClass(eurPct.value) : 'text-white/80',
 )
 const eurArrow = computed(() => (showEur.value ? pctArrow(eurPct.value) : ''))
 
@@ -174,7 +174,7 @@ const ibovPctLabel = computed(() =>
   showIbov.value ? formatPct(ibovPct.value) : PLACEHOLDER,
 )
 const ibovPctClass = computed(() =>
-  showIbov.value ? pctClass(ibovPct.value) : 'text-white/60',
+  showIbov.value ? pctClass(ibovPct.value) : 'text-white/80',
 )
 const ibovArrow = computed(() =>
   showIbov.value ? pctArrow(ibovPct.value) : '',
@@ -188,11 +188,11 @@ const ibovArrow = computed(() =>
     :style="{ backgroundColor: 'var(--color-brand-primary)' }"
   >
     <div
-      class="max-w-5xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs md:text-sm font-medium"
+      class="max-w-5xl mx-auto px-4 py-2.5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs md:text-sm font-semibold"
     >
       <!-- Dólar -->
       <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/70">Dólar</span>
+        <span class="uppercase tracking-wider text-white/90">Dólar</span>
         <span
           v-if="pendingFx"
           class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
@@ -206,7 +206,7 @@ const ibovArrow = computed(() =>
 
       <!-- Euro -->
       <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/70">Euro</span>
+        <span class="uppercase tracking-wider text-white/90">Euro</span>
         <span
           v-if="pendingFx"
           class="inline-block w-16 h-4 bg-white/20 animate-pulse rounded"
@@ -220,14 +220,14 @@ const ibovArrow = computed(() =>
 
       <!-- Bolsa -->
       <div class="flex items-center gap-1.5">
-        <span class="uppercase tracking-wider text-white/70">Ibov</span>
+        <span class="uppercase tracking-wider text-white/90">Ibov</span>
         <span
           v-if="pendingIbov"
           class="inline-block w-20 h-4 bg-white/20 animate-pulse rounded"
           aria-hidden="true"
         />
         <template v-else>
-          <span>{{ ibov }}<span v-if="showIbov" class="text-white/70 ml-1">pts</span></span>
+          <span>{{ ibov }}<span v-if="showIbov" class="text-white/90 ml-1">pts</span></span>
           <span :class="ibovPctClass">{{ ibovArrow }} {{ ibovPctLabel }}</span>
         </template>
       </div>
