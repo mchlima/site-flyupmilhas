@@ -85,7 +85,7 @@ const cards = [
         <div
           v-for="card in cards"
           :key="card.rota"
-          class="rounded-xl bg-white shadow-sm border border-gray-100 overflow-hidden flex flex-col"
+          class="rounded-xl bg-white shadow-sm border border-gray-100 overflow-hidden flex flex-col transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
         >
           <!-- Proof image -->
           <img

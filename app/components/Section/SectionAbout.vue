@@ -16,7 +16,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
 
         <!-- Card 1: Conforto -->
-        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
+        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg">
           <UIcon name="i-heroicons-paper-airplane" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
           <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Viaje com mais conforto pagando menos</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
@@ -25,7 +25,7 @@
         </div>
 
         <!-- Card 2: Economia -->
-        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
+        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg">
           <UIcon name="i-heroicons-banknotes" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
           <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Economize nas viagens do dia a dia</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">
@@ -34,7 +34,7 @@
         </div>
 
         <!-- Card 3: Estratégia -->
-        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6">
+        <div class="rounded-xl bg-white shadow-sm border border-gray-100 p-6 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg">
           <UIcon name="i-heroicons-light-bulb" class="w-8 h-8 text-[var(--color-brand-primary)] mb-3" />
           <h3 class="text-base font-medium text-[var(--color-brand-primary)] mb-2">Use suas milhas com estratégia</h3>
           <p class="text-sm text-[var(--color-brand-text-muted)] leading-relaxed">

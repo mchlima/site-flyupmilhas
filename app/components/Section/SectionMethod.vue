@@ -61,7 +61,7 @@ const steps = [
         <div
           v-for="step in steps"
           :key="step.number"
-          class="step-card rounded-xl p-6"
+          class="step-card rounded-xl p-6 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
           style="position: relative; overflow: hidden;"
           :class="step.number === '04'
             ? 'bg-brand-dark text-white'

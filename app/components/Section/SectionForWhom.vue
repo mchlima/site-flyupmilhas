@@ -37,7 +37,7 @@ const negativeCards = [
         <div
           v-for="card in cards"
           :key="card.text"
-          class="rounded-xl bg-white shadow-sm border border-gray-100 p-5 flex items-center gap-4"
+          class="rounded-xl bg-white shadow-sm border border-gray-100 p-5 flex items-center gap-4 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
         >
           <div class="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center shrink-0">
             <UIcon :name="card.icon" class="w-5 h-5 text-brand-primary" />
@@ -58,7 +58,7 @@ const negativeCards = [
         <div
           v-for="card in negativeCards"
           :key="card.text"
-          class="rounded-xl bg-slate-50 border border-slate-200 p-5 flex items-center gap-4"
+          class="rounded-xl bg-slate-50 border border-slate-200 p-5 flex items-center gap-4 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
         >
           <UIcon :name="card.icon" class="w-7 h-7 text-brand-text-muted shrink-0" />
           <p class="text-brand-text leading-relaxed text-sm md:text-base">{{ card.text }}</p>
