@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.6
 milestone_name: Upgrade de Identidade Visual
 status: unknown
-last_updated: "2026-03-25T04:22:35.792Z"
+last_updated: "2026-04-16T20:55:46Z"
 progress:
   total_phases: 5
   completed_phases: 5
@@ -223,12 +223,13 @@ Plan: Not started
 | 260325-1na | Fix FAQ spacing, duplicate arrow, separator line | 2026-03-25 | 0583a9b | [260325-1na](./quick/260325-1na-fix-sectionfaq-spacing-duplicate-arrow-s/) |
 | 260415-ksf | Add subtle hover effect to cards in 4 sections | 2026-04-15 | 419ac74 | [260415-ksf](./quick/260415-ksf-adicionar-efeito-hover-sutil-nos-cards-d/) |
 | 260415-m3g | Market ticker bar (USD, EUR, IBOV) between Hero and About | 2026-04-15 | d6e49dc | [260415-m3g](./quick/260415-m3g-crie-uma-barra-entre-a-hero-e-a-sess-o-d/) |
+| 260416-otk | Integrate Google Analytics gtag.js (G-HNPWG94BEE) globally via nuxt.config.ts | 2026-04-16 | 1c0f681 | [260416-otk](./quick/260416-otk-integrar-google-analytics-tag-g-hnpwg94b/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Quick 260415-m3g complete — Added SectionMarketTicker (USD, EUR, IBOV) between Hero and About via SSR useFetch (AwesomeAPI + brapi.dev); skeleton placeholders, graceful error fallback; build verified
+**Last action:** Quick 260416-otk complete — Integrated Google Analytics gtag.js (G-HNPWG94BEE) globally via nuxt.config.ts app.head.script; SSR-verified on preview build
 **Next action:** Phase 19 (FAQ redesign) or remaining v1.6 phases
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
