@@ -32,6 +32,22 @@ export default defineNuxtConfig({
     htmlAttrs: {
       lang: 'pt-BR',
     },
+    head: {
+      script: [
+        // Google tag (gtag.js) — loader
+        {
+          src: 'https://www.googletagmanager.com/gtag/js?id=G-HNPWG94BEE',
+          async: true,
+        },
+        // Google tag (gtag.js) — init
+        {
+          innerHTML: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HNPWG94BEE');`,
+        },
+      ],
+    },
   },
 
   site: {
