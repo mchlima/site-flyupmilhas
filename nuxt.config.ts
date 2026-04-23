@@ -65,6 +65,7 @@ gtag('config', 'G-HNPWG94BEE');`,
     asaasWebhookToken: '',
     public: {
       asaasEnvironment: 'sandbox',
+      comingSoon: true,
     },
   },
 
