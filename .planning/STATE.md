@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.6
 milestone_name: Upgrade de Identidade Visual
 status: unknown
-last_updated: "2026-04-23T17:21:33Z"
+last_updated: "2026-04-23T17:25:47Z"
 progress:
   total_phases: 5
   completed_phases: 5
@@ -226,12 +226,13 @@ Plan: Not started
 | 260416-otk | Integrate Google Analytics gtag.js (G-HNPWG94BEE) globally via nuxt.config.ts | 2026-04-16 | 1c0f681 | [260416-otk](./quick/260416-otk-integrar-google-analytics-tag-g-hnpwg94b/) |
 | 260423-jmg | Transform SectionProvas into swipeable UCarousel (3 cards desktop + arrow, 1 card mobile + swipe/dots) | 2026-04-23 | 89234aa | [260423-jmg](./quick/260423-jmg-transforme-a-se-o-exemplos-reais-de-pass/) |
 | 260423-jwh | Wrap SectionForWhom negative-card X icons in red circular badge for visual parity with positive cards | 2026-04-23 | 0834f8d | [260423-jwh](./quick/260423-jwh-na-se-o-para-quem-essa-mentoria-nos-iten/) |
+| 260423-jzz | Add "Grupo VIP com alertas de passagens (bônus especial)" as 5th benefit in SectionPrice mentoria list | 2026-04-23 | df47f82 | [260423-jzz](./quick/260423-jzz-em-tudo-o-que-voc-recebe-na-mentoria-inc/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Quick 260423-jwh complete — Negative qualification cards in SectionForWhom now use red circular badge (bg-red-100 + text-red-600) around the X icon for visual parity with the positive cards' blue badges
+**Last action:** Quick 260423-jzz complete — Added "Grupo VIP com alertas de passagens (bônus especial)" as 5th benefit item in SectionPrice mentoria list (i-heroicons-bell-alert icon, appended last to read as additive bonus)
 **Next action:** Phase 19 (FAQ redesign) or remaining v1.6 phases
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
