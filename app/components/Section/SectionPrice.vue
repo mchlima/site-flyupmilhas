@@ -18,6 +18,7 @@ const benefits = [
   { text: 'Suporte direto via WhatsApp', icon: 'i-heroicons-chat-bubble-left-right' },
   { text: 'Material prático para aplicação imediata', icon: 'i-heroicons-document-text' },
   { text: 'Plano personalizado para seu perfil', icon: 'i-heroicons-user-circle' },
+  { text: 'Grupo VIP com alertas de passagens (bônus especial)', icon: 'i-heroicons-bell-alert' },
 ]
 </script>
 
