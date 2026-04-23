@@ -80,17 +80,22 @@ const cards = [
         Veja na prática como é possível pagar muito menos usando milhas.
       </p>
 
-      <!-- Cards grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Cards carousel -->
+      <UCarousel
+        v-slot="{ item }"
+        :items="cards"
+        :ui="{ item: 'basis-full lg:basis-1/3 pl-4' }"
+        arrows
+        dots
+        class="lg:-mx-4"
+      >
         <div
-          v-for="card in cards"
-          :key="card.rota"
-          class="rounded-xl bg-white shadow-sm border border-gray-100 overflow-hidden flex flex-col transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
+          class="rounded-xl bg-white shadow-sm border border-gray-100 overflow-hidden flex flex-col h-full transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-lg"
         >
           <!-- Proof image -->
           <img
-            :src="card.imagem"
-            :alt="`Comprovante: ${card.rota}`"
+            :src="item.imagem"
+            :alt="`Comprovante: ${item.rota}`"
             loading="lazy"
             decoding="async"
             width="400"
@@ -103,41 +108,41 @@ const cards = [
             <!-- Tags -->
             <div class="flex items-center gap-2 mb-3">
               <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-brand-primary">
-                {{ card.tag }}
+                {{ item.tag }}
               </span>
               <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-100 text-brand-text-muted">
-                {{ card.companhia }}
+                {{ item.companhia }}
               </span>
             </div>
 
             <!-- Route -->
             <h3 class="text-lg font-semibold text-brand-primary mb-1">
-              {{ card.rota }}
+              {{ item.rota }}
             </h3>
 
             <!-- Flight details -->
             <div class="text-sm text-brand-text-muted space-y-0.5 mb-4">
-              <p>{{ card.classe }}</p>
-              <p>{{ card.duracao }} · {{ card.info }}</p>
+              <p>{{ item.classe }}</p>
+              <p>{{ item.duracao }} · {{ item.info }}</p>
             </div>
 
             <!-- Miles & savings -->
             <div class="mt-auto pt-4 border-t border-gray-100">
               <p class="text-sm font-bold text-brand-primary">
-                {{ card.milhas }}
+                {{ item.milhas }}
               </p>
               <div class="flex items-center justify-between mt-2">
                 <span class="text-sm text-brand-text-muted">
-                  Equivalente: <strong class="text-brand-text">{{ card.equivalente }}</strong>
+                  Equivalente: <strong class="text-brand-text">{{ item.equivalente }}</strong>
                 </span>
                 <span class="text-xs font-bold px-2 py-1 rounded-full bg-green-100 text-green-700">
-                  -{{ card.economia }}
+                  -{{ item.economia }}
                 </span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </UCarousel>
 
       <!-- Impact phrase -->
       <p class="text-center text-brand-text-muted mt-12 max-w-2xl mx-auto leading-relaxed">
