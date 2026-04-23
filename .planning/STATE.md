@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.6
 milestone_name: Upgrade de Identidade Visual
 status: unknown
-last_updated: "2026-04-16T20:55:46Z"
+last_updated: "2026-04-23T17:13:05Z"
 progress:
   total_phases: 5
   completed_phases: 5
@@ -224,12 +224,13 @@ Plan: Not started
 | 260415-ksf | Add subtle hover effect to cards in 4 sections | 2026-04-15 | 419ac74 | [260415-ksf](./quick/260415-ksf-adicionar-efeito-hover-sutil-nos-cards-d/) |
 | 260415-m3g | Market ticker bar (USD, EUR, IBOV) between Hero and About | 2026-04-15 | d6e49dc | [260415-m3g](./quick/260415-m3g-crie-uma-barra-entre-a-hero-e-a-sess-o-d/) |
 | 260416-otk | Integrate Google Analytics gtag.js (G-HNPWG94BEE) globally via nuxt.config.ts | 2026-04-16 | 1c0f681 | [260416-otk](./quick/260416-otk-integrar-google-analytics-tag-g-hnpwg94b/) |
+| 260423-jmg | Transform SectionProvas into swipeable UCarousel (3 cards desktop + arrow, 1 card mobile + swipe/dots) | 2026-04-23 | 89234aa | [260423-jmg](./quick/260423-jmg-transforme-a-se-o-exemplos-reais-de-pass/) |
 
 ---
 
 ## Session Continuity
 
-**Last action:** Quick 260416-otk complete — Integrated Google Analytics gtag.js (G-HNPWG94BEE) globally via nuxt.config.ts app.head.script; SSR-verified on preview build
+**Last action:** Quick 260423-jmg complete — Converted SectionProvas grid to UCarousel (3-up desktop with arrows, 1-up mobile with swipe/dots); all 5 proof cards SSR-preserved
 **Next action:** Phase 19 (FAQ redesign) or remaining v1.6 phases
 
 **Reading flow (current):** Hero > About > ProgramContent > ForWhom > Method > SocialProof > Price > FAQ > Form
