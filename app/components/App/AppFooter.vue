@@ -29,8 +29,7 @@
       <!-- Left: copyright + credit -->
       <div class="text-center md:text-left">
         <p class="text-white/80 text-sm">&copy; {{ new Date().getFullYear() }} Fly Up Milhas. Todos os direitos reservados.</p>
-        <!-- TODO: Confirm Agência 201 URL -->
-        <p class="text-white/80 text-sm mt-1">Desenvolvido por <a href="https://agencia201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-primary underline underline-offset-2 transition-colors">Agência 201</a></p>
+        <p class="text-white/80 text-sm mt-1">Desenvolvido por <a href="https://www.stack201.com.br" target="_blank" rel="noopener noreferrer" class="text-white hover:text-brand-primary underline underline-offset-2 transition-colors">Stack201</a></p>
       </div>
       <!-- Right: social links (WhatsApp + Instagram) -->
       <div class="flex items-center gap-4 justify-center md:justify-end">
